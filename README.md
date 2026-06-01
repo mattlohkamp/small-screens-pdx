@@ -4,7 +4,7 @@ A unified showtime aggregator for Portland's independent cinemas. Each theater p
 
 ## What it covers
 
-11 venues across Portland proper: Cinema 21, Hollywood Theatre, Living Room Theaters, Laurelhurst Theater, Academy Theater, Whitsell Auditorium (PAM), Clinton Street Theater, Cinemagic, and the three McMenamins theaters (Mission, Baghdad, Kennedy School).
+11 venues across Portland proper: Cinema 21, Hollywood Theatre, Living Room Theaters, Laurelhurst Theater, Academy Theater, Whitsell Auditorium (PAM CUT), Clinton Street Theater, Cinemagic, and the McMenamins theaters (Baghdad, Kennedy School).
 
 ## How it works
 
@@ -20,7 +20,47 @@ A GitHub Actions cron job runs daily scrapers for each venue, enriches film data
 
 ## Development
 
-> Setup instructions coming once the project scaffold is in place.
+### Prerequisites
+
+- Node.js 20+
+- A free [TMDB API key](https://www.themoviedb.org/settings/api)
+
+### Setup
+
+```bash
+npm install
+cp .env.example .env
+# add your TMDB_API_KEY to .env
+```
+
+### Running the scraper
+
+```bash
+# Scrape all venues, enrich via TMDB, write public/data/upcoming.json
+npm run scrape
+
+# Force re-enrich all films (bypasses cache)
+npm run scrape:force
+```
+
+On subsequent runs, films already in the enrichment cache (`data/enrichment-cache.json`) are skipped — only new films and previous TMDB failures are re-queried. If any films couldn't be matched, a `public/data/failed-matches.json` is written with details; add the correct TMDB ID to `TMDB_ID_OVERRIDES` in [src/enrich.ts](src/enrich.ts) and re-run.
+
+### Project structure
+
+```
+src/
+  scrape.ts          # Entry point — orchestrates scraping, merging, enrichment
+  enrich.ts          # TMDB enrichment, caching, failure tracking
+  cache.ts           # Enrichment cache read/write
+  types.ts           # Shared TypeScript types
+  scrapers/
+    cinemagic.ts     # The Cinemagic Theater scraper
+public/
+  data/
+    upcoming.json    # Generated output (gitignored)
+data/
+  enrichment-cache.json  # Persisted TMDB results (gitignored)
+```
 
 ---
 

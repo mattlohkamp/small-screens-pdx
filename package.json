@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "scrape": "tsx src/scrape.ts",
+    "scrape:force": "tsx src/scrape.ts --force",
     "scrape:cinemagic": "tsx src/scrapers/cinemagic.ts"
   },
   "dependencies": {
