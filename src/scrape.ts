@@ -4,6 +4,9 @@ import { scrapeCinemagic } from "./scrapers/cinemagic.js";
 import { scrapeClintontStreet } from "./scrapers/clinton-street.js";
 import { scrapeLaurelhurst } from "./scrapers/laurelhurst.js";
 import { scrapeMcmenamins } from "./scrapers/mcmenamins.js";
+import { scrapeAcademy } from "./scrapers/academy.js";
+import { scrapeLivingRoom } from "./scrapers/living-room.js";
+import { closeBrowser } from "./browser.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import type { Schedule, Film } from "./types.js";
@@ -74,8 +77,17 @@ async function main() {
   const mcmenaminsFilms = await scrapeMcmenamins();
   console.log(`  ${mcmenaminsFilms.length} films`);
 
+  console.log("Scraping Academy Theater...");
+  const academyFilms = await scrapeAcademy();
+  console.log(`  ${academyFilms.length} films`);
+
+  console.log("Scraping Living Room Theaters...");
+  const livingRoomFilms = await scrapeLivingRoom();
+  console.log(`  ${livingRoomFilms.length} films`);
+  await closeBrowser();
+
   // Merge across all scrapers before enriching — shared films get one TMDB call
-  const rawFilms = mergeFilms([cinemagicFilms, cstFilms, laurelhurstFilms, mcmenaminsFilms]);
+  const rawFilms = mergeFilms([cinemagicFilms, cstFilms, laurelhurstFilms, mcmenaminsFilms, academyFilms, livingRoomFilms]);
   console.log(`  ${rawFilms.length} unique films after merge`);
 
   console.log("Enriching via TMDB...");
@@ -150,6 +162,26 @@ async function main() {
         lng: -122.6481,
         website: "https://www.mcmenamins.com/kennedy-school/kennedy-school-theater",
         group: "McMenamins",
+      },
+      {
+        id: "academy",
+        name: "Academy Theater",
+        neighborhood: "SE Portland / Montavilla",
+        address: "7818 SE Stark St, Portland OR",
+        lat: 45.5191,
+        lng: -122.5829,
+        website: "https://www.academytheaterpdx.com",
+        group: null,
+      },
+      {
+        id: "living-room",
+        name: "Living Room Theaters",
+        neighborhood: "Downtown",
+        address: "341 SW 10th Ave, Portland OR",
+        lat: 45.5215,
+        lng: -122.6826,
+        website: "https://www.livingroomtheaters.com",
+        group: null,
       },
     ],
     films,

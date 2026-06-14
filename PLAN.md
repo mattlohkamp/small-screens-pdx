@@ -203,13 +203,13 @@ GitHub Actions cron (daily, ~5am Pacific)
 - [x] **M0 — Audit:** All target venues assessed. Rendering approach, ticketing platform, and scrape strategy documented per venue.
 - [x] **M1 — First scraper:** Cinemagic scraper complete. Outputs normalized JSON with titles, showtimes, and ticket URLs.
 - [x] **M2 — TMDB integration:** Enrichment working. Film records include poster, overview, canonical TMDB ID, director, genres. Enrichment cache, failure queue, and `--force` flag in place.
-- [ ] **M3 — All scrapers:** Full `upcoming.json` generated locally from all venues.
+- [x] **M3 — All scrapers:** Full `upcoming.json` generated locally from all venues. 54 films, 384 showtimes across 7 venues.
   - [x] Clinton Street Theater — The Events Calendar REST API (`/wp-json/tribe/events/v1/events`). Title normalization strips CST series labels ("Church of Film", "Cult Sensation:", Rocky Horror shadowcast suffixes). HTML entities decoded via cheerio.
   - [x] Laurelhurst Theater — `var gbl_movies` JSON blob embedded in homepage HTML. `dateTimeCMP` (YYYYMMDDHHMM 24h) parsed directly. "(open caption)" variants normalized and merged. Ticket URL constructed from `rtsSaleID_pk`.
   - [x] **McMenamins (Baghdad + Kennedy School)** — Scrapes `mcmenamins.com` venue pages (server-rendered HTML). Ticket URLs use Veezi ticketing (`ticketing.uswest.veezi.com`). One scraper covers both venues via `VENUES` array in `src/scrapers/mcmenamins.ts`. OCAP variants normalized and merged. Note: Veezi back-office REST API (`api.us.veezi.com`) requires a separate account token; the public `siteToken` in purchase URLs is for the consumer ticketing widget only and does not grant API access.
-  - [ ] **Next: Living Room Theaters** — JS-rendered (Playwright)
-  - [ ] Academy Theater — JS-rendered (Playwright)
-  - [ ] Cinema 21 / Hollywood Theatre — block scrapers, approach TBD
+  - [x] **Academy Theater** — Webedia CMS REST API (`/api/gatsby-source-boxofficeapi/*`). No Playwright needed. Theater ID `X07OU`. Three endpoints: `scheduledMovies`, `schedule` (showtimes + ticket URLs per day), `movies` (details). Scraper at `src/scrapers/academy.ts`.
+  - [x] **Living Room Theaters** — Playwright + GraphQL (`pdx.livingroomtheaters.com/graphql`). Portland site ID `317`, circuit ID `146`. Page load establishes session; custom headers (`site-id`, `circuit-id`, `client-type`) required for `showingsForDate` queries. Movies queried via intercepted response on page load; showings queried in parallel per date via `page.evaluate`. Ticket URLs constructed as `/purchase/{slug}?showingId={id}`. Scraper at `src/scrapers/living-room.ts`.
+  - [ ] Cinema 21 / Hollywood Theatre — block scrapers, approach TBD (out of scope for M3)
 - [ ] **M4 — Frontend v1:** List view of today's showtimes. Filter by date and venue. Deployed to NFSN.
 - [ ] **M5 — Automated pipeline:** GitHub Actions cron running, daily rebuild and deploy working end-to-end.
 - [ ] **M6 — Polish:** Calendar view, by-film and by-venue views, mobile layout, TMDB attribution.
