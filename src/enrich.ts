@@ -7,6 +7,10 @@ const TMDB_BASE = "https://api.themoviedb.org/3";
 // Key: exact title string from the venue site. Value: TMDB integer ID.
 const TMDB_ID_OVERRIDES: Record<string, number> = {
   "964 Pinnochio": 50162,
+  // CST title uses the original German title; TMDB has it as "Anita – Dances of Vice"
+  "ANITA: DANCES OF VICE (1987)": 131338,
+  // CST title uses the full English subtitle; TMDB canonical is slightly different
+  "IT IS BETTER TO BE WEALTHY & HEALTHY THAN POOR & ILL (1992)": 259436,
 };
 
 function apiKey(): string {

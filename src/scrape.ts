@@ -1,6 +1,8 @@
 import "dotenv/config";
 import { writeFileSync, mkdirSync, readFileSync } from "fs";
 import { scrapeCinemagic } from "./scrapers/cinemagic.js";
+import { scrapeClintontStreet } from "./scrapers/clinton-street.js";
+import { scrapeLaurelhurst } from "./scrapers/laurelhurst.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import type { Schedule, Film } from "./types.js";
@@ -59,8 +61,16 @@ async function main() {
   const cinemagicFilms = await scrapeCinemagic();
   console.log(`  ${cinemagicFilms.length} films`);
 
+  console.log("Scraping Clinton Street Theater...");
+  const cstFilms = await scrapeClintontStreet();
+  console.log(`  ${cstFilms.length} films`);
+
+  console.log("Scraping Laurelhurst Theater...");
+  const laurelhurstFilms = await scrapeLaurelhurst();
+  console.log(`  ${laurelhurstFilms.length} films`);
+
   // Merge across all scrapers before enriching — shared films get one TMDB call
-  const rawFilms = mergeFilms([cinemagicFilms]);
+  const rawFilms = mergeFilms([cinemagicFilms, cstFilms, laurelhurstFilms]);
   console.log(`  ${rawFilms.length} unique films after merge`);
 
   console.log("Enriching via TMDB...");
@@ -94,6 +104,26 @@ async function main() {
         lat: 45.5122,
         lng: -122.6366,
         website: "https://www.thecinemagictheater.com",
+        group: null,
+      },
+      {
+        id: "clinton-street",
+        name: "Clinton Street Theater",
+        neighborhood: "SE Portland",
+        address: "2522 SE Clinton St, Portland OR",
+        lat: 45.5058,
+        lng: -122.6482,
+        website: "https://www.cstpdx.com",
+        group: null,
+      },
+      {
+        id: "laurelhurst",
+        name: "Laurelhurst Theater",
+        neighborhood: "NE Portland",
+        address: "2735 E Burnside St, Portland OR",
+        lat: 45.5231,
+        lng: -122.6375,
+        website: "https://www.laurelhursttheater.com",
         group: null,
       },
     ],

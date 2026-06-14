@@ -204,6 +204,12 @@ GitHub Actions cron (daily, ~5am Pacific)
 - [x] **M1 — First scraper:** Cinemagic scraper complete. Outputs normalized JSON with titles, showtimes, and ticket URLs.
 - [x] **M2 — TMDB integration:** Enrichment working. Film records include poster, overview, canonical TMDB ID, director, genres. Enrichment cache, failure queue, and `--force` flag in place.
 - [ ] **M3 — All scrapers:** Full `upcoming.json` generated locally from all venues.
+  - [x] Clinton Street Theater — The Events Calendar REST API (`/wp-json/tribe/events/v1/events`). Title normalization strips CST series labels ("Church of Film", "Cult Sensation:", Rocky Horror shadowcast suffixes). HTML entities decoded via cheerio.
+  - [x] Laurelhurst Theater — `var gbl_movies` JSON blob embedded in homepage HTML. `dateTimeCMP` (YYYYMMDDHHMM 24h) parsed directly. "(open caption)" variants normalized and merged. Ticket URL constructed from `rtsSaleID_pk`.
+  - [ ] **Next: McMenamins (Baghdad + Kennedy School)** — Veezi REST API (`api.us.veezi.com`). Site token embedded in ticket purchase URLs. One integration covers both venues.
+  - [ ] Living Room Theaters — JS-rendered (Playwright)
+  - [ ] Academy Theater — JS-rendered (Playwright)
+  - [ ] Cinema 21 / Hollywood Theatre — block scrapers, approach TBD
 - [ ] **M4 — Frontend v1:** List view of today's showtimes. Filter by date and venue. Deployed to NFSN.
 - [ ] **M5 — Automated pipeline:** GitHub Actions cron running, daily rebuild and deploy working end-to-end.
 - [ ] **M6 — Polish:** Calendar view, by-film and by-venue views, mobile layout, TMDB attribution.
