@@ -3,6 +3,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "fs";
 import { scrapeCinemagic } from "./scrapers/cinemagic.js";
 import { scrapeClintontStreet } from "./scrapers/clinton-street.js";
 import { scrapeLaurelhurst } from "./scrapers/laurelhurst.js";
+import { scrapeMcmenamins } from "./scrapers/mcmenamins.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import type { Schedule, Film } from "./types.js";
@@ -69,8 +70,12 @@ async function main() {
   const laurelhurstFilms = await scrapeLaurelhurst();
   console.log(`  ${laurelhurstFilms.length} films`);
 
+  console.log("Scraping McMenamins (Baghdad + Kennedy School)...");
+  const mcmenaminsFilms = await scrapeMcmenamins();
+  console.log(`  ${mcmenaminsFilms.length} films`);
+
   // Merge across all scrapers before enriching — shared films get one TMDB call
-  const rawFilms = mergeFilms([cinemagicFilms, cstFilms, laurelhurstFilms]);
+  const rawFilms = mergeFilms([cinemagicFilms, cstFilms, laurelhurstFilms, mcmenaminsFilms]);
   console.log(`  ${rawFilms.length} unique films after merge`);
 
   console.log("Enriching via TMDB...");
@@ -125,6 +130,26 @@ async function main() {
         lng: -122.6375,
         website: "https://www.laurelhursttheater.com",
         group: null,
+      },
+      {
+        id: "baghdad",
+        name: "Bagdad Theater & Pub",
+        neighborhood: "SE Portland",
+        address: "3702 SE Hawthorne Blvd, Portland OR",
+        lat: 45.5120,
+        lng: -122.6244,
+        website: "https://www.mcmenamins.com/bagdad-theater-pub",
+        group: "McMenamins",
+      },
+      {
+        id: "kennedy-school",
+        name: "Kennedy School Theater",
+        neighborhood: "NE Portland",
+        address: "5736 NE 33rd Ave, Portland OR",
+        lat: 45.5613,
+        lng: -122.6481,
+        website: "https://www.mcmenamins.com/kennedy-school/kennedy-school-theater",
+        group: "McMenamins",
       },
     ],
     films,

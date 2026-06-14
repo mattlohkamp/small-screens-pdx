@@ -206,8 +206,8 @@ GitHub Actions cron (daily, ~5am Pacific)
 - [ ] **M3 — All scrapers:** Full `upcoming.json` generated locally from all venues.
   - [x] Clinton Street Theater — The Events Calendar REST API (`/wp-json/tribe/events/v1/events`). Title normalization strips CST series labels ("Church of Film", "Cult Sensation:", Rocky Horror shadowcast suffixes). HTML entities decoded via cheerio.
   - [x] Laurelhurst Theater — `var gbl_movies` JSON blob embedded in homepage HTML. `dateTimeCMP` (YYYYMMDDHHMM 24h) parsed directly. "(open caption)" variants normalized and merged. Ticket URL constructed from `rtsSaleID_pk`.
-  - [ ] **Next: McMenamins (Baghdad + Kennedy School)** — Veezi REST API (`api.us.veezi.com`). Site token embedded in ticket purchase URLs. One integration covers both venues.
-  - [ ] Living Room Theaters — JS-rendered (Playwright)
+  - [x] **McMenamins (Baghdad + Kennedy School)** — Scrapes `mcmenamins.com` venue pages (server-rendered HTML). Ticket URLs use Veezi ticketing (`ticketing.uswest.veezi.com`). One scraper covers both venues via `VENUES` array in `src/scrapers/mcmenamins.ts`. OCAP variants normalized and merged. Note: Veezi back-office REST API (`api.us.veezi.com`) requires a separate account token; the public `siteToken` in purchase URLs is for the consumer ticketing widget only and does not grant API access.
+  - [ ] **Next: Living Room Theaters** — JS-rendered (Playwright)
   - [ ] Academy Theater — JS-rendered (Playwright)
   - [ ] Cinema 21 / Hollywood Theatre — block scrapers, approach TBD
 - [ ] **M4 — Frontend v1:** List view of today's showtimes. Filter by date and venue. Deployed to NFSN.
