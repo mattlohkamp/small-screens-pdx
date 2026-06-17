@@ -4,7 +4,7 @@ A unified showtime aggregator for Portland's independent cinemas. Each theater p
 
 ## What it covers
 
-11 venues across Portland proper: Cinema 21, Hollywood Theatre, Living Room Theaters, Laurelhurst Theater, Academy Theater, Whitsell Auditorium (PAM CUT), Clinton Street Theater, Cinemagic, and the McMenamins theaters (Baghdad, Kennedy School).
+12 venues across Portland proper: Cinema 21, Hollywood Theatre, Living Room Theaters, Laurelhurst Theater, Academy Theater, Whitsell Auditorium (PAM CUT), Clinton Street Theater, Cinemagic, OMSI's Empirical Theatre, and the McMenamins theaters (Baghdad, Kennedy School).
 
 ## How it works
 

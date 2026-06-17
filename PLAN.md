@@ -25,8 +25,21 @@ Portland proper only — no Vancouver WA, Beaverton, or Clackamas.
 | Baghdad Theater | SE Portland | McMenamins | 1 | mcmenamins.com/bagdad-theater-pub | **Server-rendered ✓** | **Veezi API** |
 | Kennedy School Theater | NE Portland | McMenamins | 1 | mcmenamins.com/kennedy-school-theater | **Server-rendered ✓** | **Veezi API** |
 | Mission Theater | NW Portland | McMenamins | 1 | mcmenamins.com/mission-theater | — | — |
+| OMSI Empirical Theatre | SE Portland | — | 1 | omsi.edu/exhibits/empirical-theater/ | JS-rendered (Playwright) | Eventbrite white-label (tickets.omsi.edu) |
 
 > **Mission Theater note:** Primarily a live events/music venue. No regular film screenings confirmed — likely out of scope.
+
+> **OMSI Empirical Theatre note:** Mixed programming — nature docs, IMAX-style films, and real theatrical releases (e.g. *Project Hail Mary*, *Disclosure Day*). Non-film content (e.g. "World-Class Soccer 2026", category "Matches at the Museum") should be filtered out.
+>
+> Two-step scrape strategy:
+> 1. **Cheerio** on `https://omsi.edu/exhibits/empirical-theater/` — server-rendered HTML listing all current/upcoming films with today's showtimes and `tickets.omsi.edu/events/[uuid]` links per film.
+> 2. **Playwright** on each `tickets.omsi.edu/events/[uuid]` — JS-rendered (Eventbrite white-label), needed to get the full multi-date showtime schedule.
+>
+> Alternative discovery path (both JS-rendered, Playwright required):
+> - `https://tickets.omsi.edu/events?category=Feature%20Films`
+> - `https://tickets.omsi.edu/events?category=Documentary%20Films`
+>
+> venue_id: `omsi`.
 
 > **McMenamins note:** Baghdad and Kennedy School both use the Veezi ticketing platform, which has a public REST API (`api.us.veezi.com`). Site token is embedded in ticket purchase URLs. One integration covers both venues.
 
@@ -69,6 +82,7 @@ One file covers a rolling 2-week window. Generated fresh on each scrape run.
       "overview": "...",
       "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
       "genres": ["Horror", "Science Fiction"],
+      "release_date": "2024-09-20",
       "showtimes": [
         {
           "venue_id": "cinema-21",
@@ -119,6 +133,15 @@ Each venue site is different — one scraper per venue. High-level approach:
 4. **Merge and write** — combine venue data and enriched film data into `upcoming.json`.
 5. **Run on a schedule** — daily cron via GitHub Actions.
 
+### Venue investigation workflow
+
+For each new venue, we use a two-person approach before writing any code:
+
+1. **Human:** Browse the site as a normal visitor — find the pages that actually show the schedule (the daily listings view, the "what's on" page, category filters, etc.) and share those URLs.
+2. **Claude:** Investigate the underlying data layer — fetch those pages, look for JSON-LD, embedded JSON blobs, REST endpoints, GraphQL queries, third-party ticketing platform patterns, and any API calls the page makes.
+
+Together this gives us a much better chance of finding a clean, stable data source rather than scraping fragile rendered HTML. The ideal outcome is an API call or data feed; the fallback is cheerio on server-rendered HTML; the last resort is Playwright on JS-rendered pages.
+
 ### Scraping tools
 
 **Language: Node/TypeScript** throughout.
@@ -168,6 +191,7 @@ TMDB API is free. Requires a free account + API key. Rate limit: 40 req/sec. Att
 **Later (P1+):**
 - Distance filtering (browser geolocation + venue lat/lng, client-side)
 - Filter by format (35mm, 70mm, etc.)
+- **Filter by new releases / first run** — use `release_date` from TMDB to surface films in their initial theatrical window (e.g., released within last 4 weeks). TMDB's top-level `release_date` field (US theatrical) is sufficient for this; `/movie/{id}/release_dates` gives a finer breakdown by release type if needed. Complements venue-type context: Academy and Laurelhurst are known second-run houses, so a new-releases filter naturally skews toward Living Room, Cinema 21, OMSI, etc.
 - iCal / RSS feed
 - Email/SMS alerts for specific films or directors
 - Historical archive browsing
