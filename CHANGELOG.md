@@ -2,7 +2,40 @@
 
 ## [Unreleased]
 
-Next: frontend scaffolding (Next.js static export, load `upcoming.json`, render showtime list).
+---
+
+## [0.4.0] — 2026-06-19
+
+### Added
+- Next.js frontend (`app/`) with `output: 'export'` static build — fetches `upcoming.json` client-side
+- **What's on view** — default landing page showing showtimes for a selected date across all venues
+- Date picker dropdown (2-week window), defaults to today
+- Expanded layout — film poster, title, year, director, runtime, genres, showtimes grouped by venue
+- Compact layout — dense single-line format, no poster; toggle persisted to `localStorage`
+- Fuzzy search via Fuse.js across title (weight 4), genre (2), venue name (1.5), director (1) with match character highlighting in results
+- Genre filter (multi-select chips, collapsible), venue filter (collapsible), both default to collapsed with active-selection summary shown in header
+- Matinee toggle (before 5pm) and < 2h runtime toggle, inline next to date picker
+- Sort by showtime, A–Z, or runtime; RT Score placeholder (greyed out, planned)
+- Genre and venue chips disabled with tooltip when no showtimes available on selected date
+- TMDB poster images hotlinked from `image.tmdb.org/t/p/w154`
+- TMDB attribution in footer
+
+---
+
+## [0.3.0] — 2026-06-19
+
+### Added
+- Clinton Street Theater scraper (`src/scrapers/clinton-street.ts`) — The Events Calendar REST API (`/wp-json/tribe/events/v1/events`); strips series labels ("Church of Film:", "Cult Sensation:", Rocky Horror shadowcast suffixes); decodes HTML entities via cheerio
+- Laurelhurst Theater scraper (`src/scrapers/laurelhurst.ts`) — parses `var gbl_movies` JSON blob embedded in homepage HTML; `dateTimeCMP` field (YYYYMMDDHHMM) parsed directly; open caption variants normalized and merged
+- McMenamins scraper (`src/scrapers/mcmenamins.ts`) — covers Baghdad Theater and Kennedy School Theater via server-rendered HTML; one scraper, two venues via `VENUES` array; OCAP variants normalized
+- Academy Theater scraper (`src/scrapers/academy.ts`) — Webedia CMS REST API (`/api/gatsby-source-boxofficeapi/*`); no Playwright needed; theater ID `X07OU`
+- Living Room Theaters scraper (`src/scrapers/living-room.ts`) — Playwright + GraphQL (`pdx.livingroomtheaters.com/graphql`); Portland site ID `317`; custom headers established via page load; showings queried in parallel per date via `page.evaluate`
+- OMSI Empirical Theatre scraper (`src/scrapers/omsi.ts`) — Cheerio on `omsi.edu` to extract event UUIDs; Eventbrite white-label REST API (`tickets.omsi.edu/cached_api`) for event details, available dates, and UTC session times; no Playwright needed; non-film categories filtered via `category` field
+- Partial scrape support — `npm run scrape [venue-id...]` runs only the specified scrapers and patches the existing `upcoming.json` (strips old showtimes for those venues, merges fresh data, re-enriches new titles); full per-venue npm scripts added
+- `SCRAPERS` registry in `src/scrape.ts` mapping scraper IDs to functions and covered venue IDs
+
+### Fixed
+- `mergeFilms()` now deduplicates case-insensitively (`"STOP! THAT! TRAIN!"` + `"Stop! That! Train!"` → one record)
 
 ---
 

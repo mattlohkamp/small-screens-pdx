@@ -1,0 +1,489 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.header {
+  padding: 32px 0 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Filters */
+.filters {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chipGroup {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-right: 6px;
+  padding: 6px 0 2px;
+}
+
+.collapsible {
+  border-bottom: 1px solid var(--border);
+  padding: 2px 0;
+}
+
+.collapsibleToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 6px 0;
+  text-align: left;
+  gap: 8px;
+}
+
+.collapsibleToggle:hover .collapsibleLabel {
+  color: var(--accent);
+}
+
+.collapsibleLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.collapsibleSummary {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collapsibleCaret {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.dateSelect {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: 6px 10px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.1s;
+}
+
+.dateSelect:hover,
+.dateSelect:focus {
+  border-color: var(--accent);
+}
+
+.toggleBtn {
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: var(--radius);
+  padding: 6px 11px;
+  font-size: 0.8rem;
+  transition: all 0.1s;
+}
+
+.toggleBtn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.toggleBtnActive {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.viewToggle {
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  transition: all 0.1s;
+}
+
+.viewToggle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.searchRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: 7px 32px 7px 12px;
+  outline: none;
+  transition: border-color 0.1s;
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.searchInput:focus {
+  border-color: var(--accent);
+}
+
+/* hide browser-native clear button so we control it */
+.searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.searchClear {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  padding: 2px 4px;
+  line-height: 1;
+}
+
+.searchClear:hover {
+  color: var(--text);
+}
+
+/* kept for legacy reference, superseded by .chipGroup */
+.venueFilter {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.venueChip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 0.78rem;
+  transition: all 0.1s;
+}
+
+.venueChip:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.venueChipActive {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chipUnavailable {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.chipUnavailable:hover {
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  padding: 16px 0;
+}
+
+.filmList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.empty {
+  color: var(--text-muted);
+  padding: 48px 0;
+  text-align: center;
+}
+
+/* Film row */
+.filmRow {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.poster {
+  flex-shrink: 0;
+  width: 77px;
+  height: 116px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.posterPlaceholder {
+  flex-shrink: 0;
+  width: 77px;
+  height: 116px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.filmInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filmMeta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  line-height: 1.3;
+}
+
+.filmTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.filmYear,
+.filmDirector,
+.filmRuntime {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.genres {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.genre {
+  font-size: 0.72rem;
+  background: var(--surface-raised);
+  border-radius: 4px;
+  padding: 2px 7px;
+  color: var(--text-muted);
+}
+
+/* Showtimes */
+.showtimesByVenue {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.venueShowtimes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.venueName {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  min-width: 130px;
+}
+
+.times {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.timeLink {
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3px 8px;
+  color: var(--text);
+  transition: all 0.1s;
+}
+
+.timeLink:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.format {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+/* Footer */
+.footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Compact view */
+.filmRowCompact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.filmMetaCompact {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filmTitleCompact {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.filmYearCompact,
+.filmDirectorCompact {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.showtimesCompact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.venueBlockCompact {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.venueNameCompact {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.venueNameCompact::after {
+  content: ":";
+}
+
+.timeLinkCompact {
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  padding: 1px 0;
+}
+
+.timeLinkCompact:hover {
+  text-decoration: underline;
+}
+
+/* Search highlights */
+.highlight {
+  background: none;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* States */
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--text-muted);
+}
+
+.error {
+  color: #e87070;
+}

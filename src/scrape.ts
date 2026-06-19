@@ -13,15 +13,27 @@ import { loadCache, saveCache } from "./cache.js";
 import type { Schedule, Film } from "./types.js";
 import type { FailedMatch } from "./enrich.js";
 
+// Registry: scraper-id → { fn, venueIds covered }
+const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; label: string }> = {
+  cinemagic:       { fn: scrapeCinemagic,      venueIds: ["cinemagic"],                    label: "Cinemagic" },
+  "clinton-street":{ fn: scrapeClintontStreet,  venueIds: ["clinton-street"],               label: "Clinton Street Theater" },
+  laurelhurst:     { fn: scrapeLaurelhurst,     venueIds: ["laurelhurst"],                  label: "Laurelhurst Theater" },
+  mcmenamins:      { fn: scrapeMcmenamins,      venueIds: ["baghdad", "kennedy-school"],    label: "McMenamins (Baghdad + Kennedy School)" },
+  academy:         { fn: scrapeAcademy,         venueIds: ["academy"],                      label: "Academy Theater" },
+  "living-room":   { fn: scrapeLivingRoom,      venueIds: ["living-room"],                  label: "Living Room Theaters" },
+  omsi:            { fn: scrapeOmsi,            venueIds: ["omsi"],                         label: "OMSI Empirical Theatre" },
+};
+
 // Merge films from multiple scrapers: same title → one record, combined showtimes.
 function mergeFilms(filmLists: Film[][]): Film[] {
   const byTitle = new Map<string, Film>();
   for (const film of filmLists.flat()) {
-    const existing = byTitle.get(film.title);
+    const key = film.title.toLowerCase();
+    const existing = byTitle.get(key);
     if (existing) {
       existing.showtimes = [...existing.showtimes, ...film.showtimes];
     } else {
-      byTitle.set(film.title, { ...film, showtimes: [...film.showtimes] });
+      byTitle.set(key, { ...film, showtimes: [...film.showtimes] });
     }
   }
   return [...byTitle.values()];
@@ -48,10 +60,34 @@ function loadPreviousFailures(): Set<string> {
   }
 }
 
+function loadExistingSchedule(): Schedule | null {
+  try {
+    return JSON.parse(readFileSync("public/data/upcoming.json", "utf8")) as Schedule;
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
+  const args = process.argv.slice(2).filter(a => !a.startsWith("--"));
   const force = process.argv.includes("--force");
   const start = today();
   const end = addDays(start, WINDOW_DAYS);
+
+  // Determine which scrapers to run
+  const allIds = Object.keys(SCRAPERS);
+  const selectedIds = args.length > 0 ? args : allIds;
+  const unknown = selectedIds.filter(id => !SCRAPERS[id]);
+  if (unknown.length) {
+    console.error(`Unknown scraper(s): ${unknown.join(", ")}`);
+    console.error(`Available: ${allIds.join(", ")}`);
+    process.exit(1);
+  }
+
+  const partial = selectedIds.length < allIds.length;
+  if (partial) {
+    console.log(`Scraping: ${selectedIds.join(", ")} (partial update)`);
+  }
 
   const cache = loadCache();
   const retryTitles = force ? new Set<string>() : loadPreviousFailures();
@@ -62,37 +98,32 @@ async function main() {
     console.log(`Retrying ${retryTitles.size} previous failure(s), using cache for the rest`);
   }
 
-  console.log("Scraping Cinemagic...");
-  const cinemagicFilms = await scrapeCinemagic();
-  console.log(`  ${cinemagicFilms.length} films`);
-
-  console.log("Scraping Clinton Street Theater...");
-  const cstFilms = await scrapeClintontStreet();
-  console.log(`  ${cstFilms.length} films`);
-
-  console.log("Scraping Laurelhurst Theater...");
-  const laurelhurstFilms = await scrapeLaurelhurst();
-  console.log(`  ${laurelhurstFilms.length} films`);
-
-  console.log("Scraping McMenamins (Baghdad + Kennedy School)...");
-  const mcmenaminsFilms = await scrapeMcmenamins();
-  console.log(`  ${mcmenaminsFilms.length} films`);
-
-  console.log("Scraping Academy Theater...");
-  const academyFilms = await scrapeAcademy();
-  console.log(`  ${academyFilms.length} films`);
-
-  console.log("Scraping Living Room Theaters...");
-  const livingRoomFilms = await scrapeLivingRoom();
-  console.log(`  ${livingRoomFilms.length} films`);
-
-  console.log("Scraping OMSI Empirical Theatre...");
-  const omsiFilms = await scrapeOmsi();
-  console.log(`  ${omsiFilms.length} films`);
+  // Run selected scrapers
+  const freshFilmLists: Film[][] = [];
+  for (const id of selectedIds) {
+    const { fn, label } = SCRAPERS[id];
+    console.log(`Scraping ${label}...`);
+    const films = await fn();
+    console.log(`  ${films.length} films`);
+    freshFilmLists.push(films);
+  }
   await closeBrowser();
 
-  // Merge across all scrapers before enriching — shared films get one TMDB call
-  const rawFilms = mergeFilms([cinemagicFilms, cstFilms, laurelhurstFilms, mcmenaminsFilms, academyFilms, livingRoomFilms, omsiFilms]);
+  // For partial runs: load existing data and strip showtimes from refreshed venues,
+  // then merge fresh data in. Full runs start from scratch.
+  let baseFilms: Film[] = [];
+  if (partial) {
+    const existing = loadExistingSchedule();
+    if (existing) {
+      const refreshedVenueIds = new Set(selectedIds.flatMap(id => SCRAPERS[id].venueIds));
+      baseFilms = existing.films.map(film => ({
+        ...film,
+        showtimes: film.showtimes.filter(s => !refreshedVenueIds.has(s.venue_id)),
+      })).filter(film => film.showtimes.length > 0);
+    }
+  }
+
+  const rawFilms = mergeFilms([baseFilms, ...freshFilmLists]);
   console.log(`  ${rawFilms.length} unique films after merge`);
 
   console.log("Enriching via TMDB...");

@@ -192,6 +192,7 @@ TMDB API is free. Requires a free account + API key. Rate limit: 40 req/sec. Att
 - Distance filtering (browser geolocation + venue lat/lng, client-side)
 - Filter by format (35mm, 70mm, etc.)
 - **Filter by new releases / first run** — use `release_date` from TMDB to surface films in their initial theatrical window (e.g., released within last 4 weeks). TMDB's top-level `release_date` field (US theatrical) is sufficient for this; `/movie/{id}/release_dates` gives a finer breakdown by release type if needed. Complements venue-type context: Academy and Laurelhurst are known second-run houses, so a new-releases filter naturally skews toward Living Room, Cinema 21, OMSI, etc.
+- **Rotten Tomatoes ratings** — fetch RT score per film and store in `upcoming.json`. Enables "sort by RT score" in the frontend. RT doesn't have a public API; options: (1) scrape `rottentomatoes.com/m/{slug}` for the Tomatometer, (2) use a third-party wrapper, (3) use TMDB's `/movie/{id}/external_ids` to get IMDB id, then pull from OMDB API (has RT score field). OMDB is simplest — free tier, `omdbapi.com/?i={imdb_id}&apikey={key}` returns `tomatoScore`. Add `rt_score: number | null` to the `Film` type and enrich alongside TMDB.
 - iCal / RSS feed
 - Email/SMS alerts for specific films or directors
 - Historical archive browsing

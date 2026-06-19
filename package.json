@@ -4,15 +4,30 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "scrape": "tsx src/scrape.ts",
     "scrape:force": "tsx src/scrape.ts --force",
-    "scrape:cinemagic": "tsx src/scrapers/cinemagic.ts"
+    "scrape:cinemagic": "tsx src/scrape.ts cinemagic",
+    "scrape:clinton-street": "tsx src/scrape.ts clinton-street",
+    "scrape:laurelhurst": "tsx src/scrape.ts laurelhurst",
+    "scrape:mcmenamins": "tsx src/scrape.ts mcmenamins",
+    "scrape:academy": "tsx src/scrape.ts academy",
+    "scrape:living-room": "tsx src/scrape.ts living-room",
+    "scrape:omsi": "tsx src/scrape.ts omsi"
   },
   "dependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "cheerio": "^1.0.0",
     "dotenv": "^16.0.0",
+    "fuse.js": "^7.4.2",
+    "next": "^16.2.9",
     "node-fetch": "^3.3.2",
-    "playwright": "^1.60.0"
+    "playwright": "^1.60.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
