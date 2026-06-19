@@ -6,6 +6,7 @@ import { scrapeLaurelhurst } from "./scrapers/laurelhurst.js";
 import { scrapeMcmenamins } from "./scrapers/mcmenamins.js";
 import { scrapeAcademy } from "./scrapers/academy.js";
 import { scrapeLivingRoom } from "./scrapers/living-room.js";
+import { scrapeOmsi } from "./scrapers/omsi.js";
 import { closeBrowser } from "./browser.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
@@ -84,10 +85,14 @@ async function main() {
   console.log("Scraping Living Room Theaters...");
   const livingRoomFilms = await scrapeLivingRoom();
   console.log(`  ${livingRoomFilms.length} films`);
+
+  console.log("Scraping OMSI Empirical Theatre...");
+  const omsiFilms = await scrapeOmsi();
+  console.log(`  ${omsiFilms.length} films`);
   await closeBrowser();
 
   // Merge across all scrapers before enriching — shared films get one TMDB call
-  const rawFilms = mergeFilms([cinemagicFilms, cstFilms, laurelhurstFilms, mcmenaminsFilms, academyFilms, livingRoomFilms]);
+  const rawFilms = mergeFilms([cinemagicFilms, cstFilms, laurelhurstFilms, mcmenaminsFilms, academyFilms, livingRoomFilms, omsiFilms]);
   console.log(`  ${rawFilms.length} unique films after merge`);
 
   console.log("Enriching via TMDB...");
@@ -181,6 +186,16 @@ async function main() {
         lat: 45.5215,
         lng: -122.6826,
         website: "https://www.livingroomtheaters.com",
+        group: null,
+      },
+      {
+        id: "omsi",
+        name: "OMSI Empirical Theatre",
+        neighborhood: "SE Portland",
+        address: "1945 SE Water Ave, Portland OR",
+        lat: 45.5083,
+        lng: -122.6672,
+        website: "https://omsi.edu/exhibits/empirical-theater/",
         group: null,
       },
     ],
