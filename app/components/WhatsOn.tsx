@@ -71,6 +71,24 @@ interface Schedule {
   films: Film[];
 }
 
+function buildFilmPageUrl(venueId: string, film: Film, venue: Venue): string {
+  const titleSlug = film.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  switch (venueId) {
+    case "living-room":
+      return `https://pdx.livingroomtheaters.com/movie/${titleSlug}`;
+    default:
+      return venue.website;
+  }
+}
+
+function formatRuntime(minutes: number): string {
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  if (h === 0) return `${m} ${m === 1 ? "minute" : "minutes"}`;
+  if (m === 0) return `${h} ${h === 1 ? "hour" : "hours"}`;
+  return `${h} ${h === 1 ? "hr" : "hrs"} ${m} ${m === 1 ? "min" : "mins"}`;
+}
+
 function formatTime(datetime: string): string {
   const [, time] = datetime.split("T");
   const [h, m] = time.split(":");
@@ -81,12 +99,14 @@ function formatTime(datetime: string): string {
 }
 
 function formatDateLabel(dateStr: string, today: string): string {
-  if (dateStr === today) return "Today";
   const d = new Date(dateStr + "T12:00:00");
+  const short = d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+  if (dateStr === today) return `Today (${short})`;
   const tomorrow = new Date(today + "T12:00:00");
   tomorrow.setDate(tomorrow.getDate() + 1);
-  if (dateStr === tomorrow.toISOString().slice(0, 10)) return "Tomorrow";
-  return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+  const tomorrowStr = `${tomorrow.getFullYear()}-${String(tomorrow.getMonth() + 1).padStart(2, "0")}-${String(tomorrow.getDate()).padStart(2, "0")}`;
+  if (dateStr === tomorrowStr) return `Tomorrow (${short})`;
+  return short;
 }
 
 function buildDateWindow(start: string, end: string): string[] {
@@ -108,6 +128,7 @@ const MATINEE_CUTOFF = "17:00"; // before 5pm
 export default function WhatsOn() {
   const [schedule, setSchedule] = useState<Schedule | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [posterModal, setPosterModal] = useState<{ src: string; title: string } | null>(null);
   const [selectedDate, setSelectedDate] = useState<string>("");
   const [selectedVenues, setSelectedVenues] = useState<Set<string>>(new Set());
   const [viewMode, setViewMode] = useState<ViewMode>("expanded");
@@ -116,8 +137,18 @@ export default function WhatsOn() {
   const [genreFilter, setGenreFilter] = useState<Set<string>>(new Set());
   const [matineeOnly, setMatineeOnly] = useState(false);
   const [shortOnly, setShortOnly] = useState(false);
+  const [hidePast, setHidePast] = useState(true);
   const [venuesOpen, setVenuesOpen] = useState(false);
   const [genresOpen, setGenresOpen] = useState(false);
+  const [filtersVisible, setFiltersVisible] = useState(false);
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setPosterModal(null);
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   useEffect(() => {
     const saved = localStorage.getItem("viewMode");
@@ -130,10 +161,11 @@ export default function WhatsOn() {
       })
       .then((data) => {
         setSchedule(data);
-        const today = new Date().toISOString().slice(0, 10);
+        const d = new Date();
+        const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
         const start = data.window.start;
         setSelectedDate(today >= start ? today : start);
-        setSelectedVenues(new Set(data.venues.map((v) => v.id)));
       })
       .catch((e) => setError(String(e)));
   }, []);
@@ -146,7 +178,10 @@ export default function WhatsOn() {
     });
   }
 
-  const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const today = useMemo(() => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  }, []);
   const dates = useMemo(
     () => (schedule ? buildDateWindow(schedule.window.start, schedule.window.end) : []),
     [schedule]
@@ -187,14 +222,20 @@ export default function WhatsOn() {
       .filter((film) => !matchedSlugs || matchedSlugs.has(film.slug))
       // Genre filter
       .filter((film) =>
-        genreFilter.size === 0 || film.genres.some((g) => genreFilter.has(g))
+        genreFilter.size === 0 ||
+        film.genres.length === 0 ||
+        film.genres.some((g) => genreFilter.has(g))
       )
       // Runtime filter
       .filter((film) => !shortOnly || film.runtime_minutes == null || film.runtime_minutes <= 120)
       .map((film) => {
-        let showtimes = film.showtimes.filter(
-          (s) => s.datetime.startsWith(selectedDate) && selectedVenues.has(s.venue_id)
-        );
+        const now = new Date();
+        let showtimes = film.showtimes.filter((s) => {
+          if (!s.datetime.startsWith(selectedDate)) return false;
+          if (selectedVenues.size > 0 && !selectedVenues.has(s.venue_id)) return false;
+          if (hidePast && selectedDate === today && new Date(s.datetime) < now) return false;
+          return true;
+        });
         // Matinee filter: restrict to showtimes before cutoff
         if (matineeOnly) {
           showtimes = showtimes.filter((s) => s.datetime.slice(11, 16) < MATINEE_CUTOFF);
@@ -225,14 +266,14 @@ export default function WhatsOn() {
       const bMin = b.showtimes[0].datetime;
       return aMin < bMin ? -1 : aMin > bMin ? 1 : 0;
     });
-  }, [schedule, selectedDate, selectedVenues, query, fuse, genreFilter, matineeOnly, shortOnly, sortBy]);
+  }, [schedule, selectedDate, selectedVenues, query, fuse, genreFilter, matineeOnly, shortOnly, hidePast, today, sortBy]);
 
   // Genres that have at least one showtime on the selected date+venues (ignoring genre filter)
   const availableGenres = useMemo(() => {
     if (!schedule) return new Set<string>();
     return new Set(
       schedule.films
-        .filter((f) => f.showtimes.some((s) => s.datetime.startsWith(selectedDate) && selectedVenues.has(s.venue_id)))
+        .filter((f) => f.showtimes.some((s) => s.datetime.startsWith(selectedDate) && (selectedVenues.size === 0 || selectedVenues.has(s.venue_id))))
         .flatMap((f) => f.genres)
     );
   }, [schedule, selectedDate, selectedVenues]);
@@ -250,27 +291,14 @@ export default function WhatsOn() {
     [schedule]
   );
 
+  const MCMENAMINS_IDS = new Set(["baghdad", "kennedy-school"]);
+
   function toggleVenue(id: string) {
     setSelectedVenues((prev) => {
       const next = new Set(prev);
-      if (next.has(id)) {
-        if (next.size === 1) return prev; // keep at least one
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
+      next.has(id) ? next.delete(id) : next.add(id);
       return next;
     });
-  }
-
-  function toggleAllVenues() {
-    if (!schedule) return;
-    const allIds = new Set(schedule.venues.map((v) => v.id));
-    if (selectedVenues.size === allIds.size) {
-      setSelectedVenues(new Set([schedule.venues[0].id]));
-    } else {
-      setSelectedVenues(allIds);
-    }
   }
 
   if (error) {
@@ -280,7 +308,11 @@ export default function WhatsOn() {
     return <div className={styles.loading}>Loading…</div>;
   }
 
-  const allSelected = selectedVenues.size === schedule.venues.length;
+  const allSelected = selectedVenues.size === 0;
+  const notMcmenaminsIds = new Set(schedule.venues.map((v) => v.id).filter((id) => !MCMENAMINS_IDS.has(id)));
+  const notMcmenaminsActive =
+    selectedVenues.size === notMcmenaminsIds.size &&
+    [...selectedVenues].every((id) => notMcmenaminsIds.has(id));
 
   return (
     <div className={styles.root}>
@@ -292,6 +324,7 @@ export default function WhatsOn() {
       <div className={styles.filters}>
         {/* Date + quick toggles + view mode */}
         <div className={styles.filterRow}>
+          <div className={styles.dateSelectWrapper}>
           <select
             className={styles.dateSelect}
             value={selectedDate}
@@ -303,6 +336,7 @@ export default function WhatsOn() {
               </option>
             ))}
           </select>
+          </div>
           <button
             className={`${styles.toggleBtn} ${matineeOnly ? styles.toggleBtnActive : ""}`}
             onClick={() => setMatineeOnly((v) => !v)}
@@ -318,14 +352,23 @@ export default function WhatsOn() {
             &lt; 2h
           </button>
           <button
-            className={styles.viewToggle}
-            onClick={toggleViewMode}
-            title={viewMode === "expanded" ? "Switch to compact view" : "Switch to expanded view"}
+            className={`${styles.toggleBtn} ${hidePast ? styles.toggleBtnActive : ""}`}
+            onClick={() => setHidePast((v) => !v)}
+            title="Hide showtimes that have already started"
           >
-            {viewMode === "expanded" ? "Compact" : "Expanded"}
+            Hide past
+          </button>
+          <button
+            className={`${styles.toggleBtn} ${filtersVisible ? styles.toggleBtnActive : ""} ${(query || selectedVenues.size > 0 || genreFilter.size > 0) && !filtersVisible ? styles.toggleBtnDot : ""}`}
+            onClick={() => setFiltersVisible((v) => !v)}
+            title={filtersVisible ? "Hide search and filters" : "Show search and filters"}
+          >
+            {filtersVisible ? "Hide filters" : "Show more filters"}
           </button>
         </div>
 
+        <div className={`${styles.filtersPanel} ${filtersVisible ? styles.filtersPanelOpen : ""}`}>
+        <div className={styles.filtersPanelInner}>
         {/* Search */}
         <div className={styles.searchRow}>
           <input
@@ -345,30 +388,48 @@ export default function WhatsOn() {
         {/* Venue filter — collapsible */}
         <div className={styles.collapsible}>
           <button className={styles.collapsibleToggle} onClick={() => setVenuesOpen((o) => !o)}>
+            <span className={styles.collapsibleCaret}>{venuesOpen ? "▲" : "▼"}</span>
             <span className={styles.collapsibleLabel}>
               Venue
-              {!allSelected && (
-                <span className={styles.collapsibleSummary}>
-                  {[...selectedVenues].map((id) => schedule.venues.find((v) => v.id === id)?.name).filter(Boolean).join(", ")}
-                </span>
+              {selectedVenues.size > 0 && (
+                <>
+                  <span className={styles.collapsibleSummary}>
+                    {notMcmenaminsActive
+                      ? "Not McMenamins"
+                      : [...selectedVenues].map((id) => schedule.venues.find((v) => v.id === id)?.name).filter(Boolean).join(", ")}
+                  </span>
+                  <span
+                    className={styles.clearFilter}
+                    role="button"
+                    tabIndex={0}
+                    title="Clear venue filter"
+                    onClick={(e) => { e.stopPropagation(); setSelectedVenues(new Set()); }}
+                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); setSelectedVenues(new Set()); } }}
+                  >✕</span>
+                </>
               )}
             </span>
-            <span className={styles.collapsibleCaret}>{venuesOpen ? "▲" : "▼"}</span>
           </button>
           {venuesOpen && (
             <div className={styles.chipGroup}>
               <button
                 className={`${styles.venueChip} ${allSelected ? styles.venueChipActive : ""}`}
-                onClick={toggleAllVenues}
+                onClick={() => setSelectedVenues(new Set())}
               >
                 All
+              </button>
+              <button
+                className={`${styles.venueChip} ${notMcmenaminsActive ? styles.venueChipActive : ""}`}
+                onClick={() => setSelectedVenues(new Set(notMcmenaminsIds))}
+              >
+                Not McMenamins
               </button>
               {schedule.venues.map((v) => {
                 const unavailable = !availableVenueIds.has(v.id);
                 return (
                   <button
                     key={v.id}
-                    className={`${styles.venueChip} ${selectedVenues.has(v.id) && !allSelected ? styles.venueChipActive : ""} ${unavailable ? styles.chipUnavailable : ""}`}
+                    className={`${styles.venueChip} ${!allSelected && selectedVenues.has(v.id) ? styles.venueChipActive : ""} ${unavailable ? styles.chipUnavailable : ""}`}
                     aria-disabled={unavailable}
                     title={unavailable ? "No showtimes at this venue today" : undefined}
                     onClick={() => !unavailable && toggleVenue(v.id)}
@@ -384,13 +445,23 @@ export default function WhatsOn() {
         {/* Genre filter — collapsible */}
         <div className={styles.collapsible}>
           <button className={styles.collapsibleToggle} onClick={() => setGenresOpen((o) => !o)}>
+            <span className={styles.collapsibleCaret}>{genresOpen ? "▲" : "▼"}</span>
             <span className={styles.collapsibleLabel}>
               Genre
               {genreFilter.size > 0 && (
-                <span className={styles.collapsibleSummary}>{[...genreFilter].join(", ")}</span>
+                <>
+                  <span className={styles.collapsibleSummary}>{[...genreFilter].join(", ")}</span>
+                  <span
+                    className={styles.clearFilter}
+                    role="button"
+                    tabIndex={0}
+                    title="Clear genre filter"
+                    onClick={(e) => { e.stopPropagation(); setGenreFilter(new Set()); }}
+                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); setGenreFilter(new Set()); } }}
+                  >✕</span>
+                </>
               )}
             </span>
-            <span className={styles.collapsibleCaret}>{genresOpen ? "▲" : "▼"}</span>
           </button>
           {genresOpen && (
             <div className={styles.chipGroup}>
@@ -424,6 +495,7 @@ export default function WhatsOn() {
             </div>
           )}
         </div>
+        </div></div>
 
         {/* Sort */}
         <div className={styles.filterRow}>
@@ -434,6 +506,14 @@ export default function WhatsOn() {
             <button className={`${styles.venueChip} ${sortBy === "runtime" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("runtime")}>Runtime</button>
             <button className={`${styles.venueChip} ${styles.chipUnavailable}`} aria-disabled title="Coming soon — Rotten Tomatoes integration planned">RT Score</button>
           </div>
+          <button
+            className={styles.viewToggle}
+            style={{ marginLeft: "auto" }}
+            onClick={toggleViewMode}
+            title={viewMode === "expanded" ? "Switch to compact view" : "Switch to expanded view"}
+          >
+            {viewMode === "expanded" ? "Compact" : "Expanded"}
+          </button>
         </div>
       </div>
 
@@ -443,7 +523,17 @@ export default function WhatsOn() {
         ) : (
           <div className={styles.filmList}>
             {filmsOnDate.map(({ film, showtimes, matches }) => (
-              <FilmRow key={film.id ?? film.slug} film={film} showtimes={showtimes} venues={schedule.venues} viewMode={viewMode} fuseMatches={matches} />
+              <FilmRow
+                key={film.id ?? film.slug}
+                film={film}
+                showtimes={showtimes}
+                venues={schedule.venues}
+                viewMode={viewMode}
+                fuseMatches={matches}
+                onVenueClick={(id) => { setSelectedVenues(new Set([id])); setFiltersVisible(true); }}
+                onGenreClick={(g) => { setGenreFilter(new Set([g])); setFiltersVisible(true); }}
+                onPosterClick={(src, title) => setPosterModal({ src, title })}
+              />
             ))}
           </div>
         )}
@@ -469,6 +559,16 @@ export default function WhatsOn() {
           </a>
         </p>
       </footer>
+
+      {posterModal && (
+        <div className={styles.modalOverlay} onClick={() => setPosterModal(null)}>
+          <img
+            className={styles.modalPoster}
+            src={posterModal.src}
+            alt={`${posterModal.title} poster`}
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -489,12 +589,18 @@ function FilmRow({
   venues,
   viewMode,
   fuseMatches,
+  onVenueClick,
+  onGenreClick,
+  onPosterClick,
 }: {
   film: Film;
   showtimes: Showtime[];
   venues: Venue[];
   viewMode: ViewMode;
   fuseMatches: FuseResultMatch[];
+  onVenueClick: (venueId: string) => void;
+  onGenreClick: (genre: string) => void;
+  onPosterClick: (src: string, title: string) => void;
 }) {
   const matches = useMemo(() => extractMatches(fuseMatches), [fuseMatches]);
   const venueMap = useMemo(
@@ -522,14 +628,27 @@ function FilmRow({
           <span className={styles.filmTitleCompact}>{highlightText(film.title, matches.title)}</span>
           {film.year && <span className={styles.filmYearCompact}>{film.year}</span>}
           {film.director && <span className={styles.filmDirectorCompact}>dir. {highlightText(film.director, matches.director)}</span>}
-          {film.runtime_minutes && <span className={styles.filmYearCompact}>{film.runtime_minutes}m</span>}
+          {film.runtime_minutes && <span className={styles.filmYearCompact}>{formatRuntime(film.runtime_minutes)}</span>}
         </div>
         <div className={styles.showtimesCompact}>
           {[...byVenue.entries()].map(([venueId, times]) => (
             <span key={venueId} className={styles.venueBlockCompact}>
-              <span className={styles.venueNameCompact}>
+              <button
+                className={styles.venueNameCompact}
+                onClick={() => onVenueClick(venueId)}
+                title="View all from this venue"
+              >
                 {venueMap[venueId]?.name ?? venueId}
-              </span>
+              </button>
+              {venueMap[venueId] && (
+                <a
+                  className={styles.venueFilmLink}
+                  href={buildFilmPageUrl(venueId, film, venueMap[venueId])}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="View on venue website"
+                >🎟&#xFE0E;↗</a>
+              )}
               {times
                 .sort((a, b) => (a.datetime < b.datetime ? -1 : 1))
                 .map((s) => (
@@ -555,12 +674,14 @@ function FilmRow({
     <article className={styles.filmRow}>
       {posterUrl ? (
         <img
-          className={styles.poster}
+          className={`${styles.poster} ${styles.posterClickable}`}
           src={posterUrl}
           alt={`${film.title} poster`}
           width={77}
           height={116}
           loading="lazy"
+          onClick={() => onPosterClick(`https://image.tmdb.org/t/p/w500${film.poster_path}`, film.title)}
+          title="View full poster"
         />
       ) : (
         <div className={styles.posterPlaceholder} />
@@ -568,22 +689,36 @@ function FilmRow({
 
       <div className={styles.filmInfo}>
         <div className={styles.filmMeta}>
-          <h2 className={styles.filmTitle}>{highlightText(film.title, matches.title)}</h2>
+          <h2 className={styles.filmTitle}>
+            <a
+              href={`https://www.imdb.com/find?q=${encodeURIComponent(`${film.title} ${film.year ?? ""}`)}&s=tt&ttype=ft`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.filmTitleLink}
+            >
+              {highlightText(film.title, matches.title)}
+            </a>
+          </h2>
           <span className={styles.filmYear}>{film.year}</span>
           {film.director && (
             <span className={styles.filmDirector}>dir. {highlightText(film.director, matches.director)}</span>
           )}
           {film.runtime_minutes && (
-            <span className={styles.filmRuntime}>{film.runtime_minutes}m</span>
+            <span className={styles.filmRuntime}>{formatRuntime(film.runtime_minutes)}</span>
           )}
         </div>
 
         {film.genres.length > 0 && (
           <div className={styles.genres}>
             {film.genres.map((g) => (
-              <span key={g} className={styles.genre}>
+              <button
+                key={g}
+                className={styles.genre}
+                onClick={() => onGenreClick(g)}
+                title="View only this genre"
+              >
                 {highlightText(g, matches.genres.get(g) ?? [])}
-              </span>
+              </button>
             ))}
           </div>
         )}
@@ -591,8 +726,23 @@ function FilmRow({
         <div className={styles.showtimesByVenue}>
           {[...byVenue.entries()].map(([venueId, times]) => (
             <div key={venueId} className={styles.venueShowtimes}>
-              <span className={styles.venueName}>
-                {venueMap[venueId]?.name ?? venueId}
+              <span className={styles.venueNameGroup}>
+                <button
+                  className={styles.venueName}
+                  onClick={() => onVenueClick(venueId)}
+                  title="View all from this venue"
+                >
+                  {venueMap[venueId]?.name ?? venueId}
+                </button>
+                {venueMap[venueId] && (
+                  <a
+                    className={styles.venueFilmLink}
+                    href={buildFilmPageUrl(venueId, film, venueMap[venueId])}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View on venue website"
+                  >🎟&#xFE0E;↗</a>
+                )}
               </span>
               <div className={styles.times}>
                 {times
