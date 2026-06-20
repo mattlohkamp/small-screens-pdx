@@ -98,15 +98,17 @@ async function main() {
     console.log(`Retrying ${retryTitles.size} previous failure(s), using cache for the rest`);
   }
 
-  // Run selected scrapers
-  const freshFilmLists: Film[][] = [];
-  for (const id of selectedIds) {
-    const { fn, label } = SCRAPERS[id];
-    console.log(`Scraping ${label}...`);
-    const films = await fn();
-    console.log(`  ${films.length} films`);
-    freshFilmLists.push(films);
-  }
+  // Run selected scrapers in parallel
+  const freshFilmLists = await Promise.all(
+    selectedIds.map(async (id) => {
+      const { fn, label } = SCRAPERS[id];
+      console.log(`Scraping ${label}...`);
+      const t = Date.now();
+      const films = await fn();
+      console.log(`  ${label}: ${films.length} films (${((Date.now() - t) / 1000).toFixed(1)}s)`);
+      return films;
+    })
+  );
   await closeBrowser();
 
   // For partial runs: load existing data and strip showtimes from refreshed venues,

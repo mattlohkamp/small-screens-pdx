@@ -48,12 +48,23 @@ function addDays(date: string, days: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-async function fetchJson<T>(url: string): Promise<T> {
-  const res = await fetch(url, {
-    headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-  return res.json() as Promise<T>;
+async function fetchJson<T>(url: string, attempt = 1): Promise<T> {
+  try {
+    const res = await fetch(url, {
+      headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" },
+      signal: AbortSignal.timeout(45_000),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+    return res.json() as Promise<T>;
+  } catch (err) {
+    if (attempt < 3) {
+      const delay = attempt * 2000;
+      console.warn(`  Academy fetch failed (attempt ${attempt}), retrying in ${delay / 1000}s...`);
+      await new Promise((r) => setTimeout(r, delay));
+      return fetchJson<T>(url, attempt + 1);
+    }
+    throw err;
+  }
 }
 
 function formatTag(tags: string[]): string | null {
