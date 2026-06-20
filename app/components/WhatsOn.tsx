@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import dynamic from "next/dynamic";
 import Fuse, { type FuseResult, type FuseResultMatch } from "fuse.js";
 import styles from "./WhatsOn.module.css";
+
+const VenueMap = dynamic(() => import("./VenueMap"), { ssr: false });
 
 type MatchIndices = ReadonlyArray<[number, number]>;
 
@@ -516,6 +519,16 @@ export default function WhatsOn() {
           </button>
         </div>
       </div>
+
+      {schedule && (
+        <VenueMap
+          venues={schedule.venues}
+          onVenueClick={(id) => {
+            setSelectedVenues(new Set([id]));
+            setFiltersVisible(true);
+          }}
+        />
+      )}
 
       <main className={styles.main}>
         {filmsOnDate.length === 0 ? (

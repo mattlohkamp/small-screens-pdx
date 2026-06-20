@@ -1,0 +1,25 @@
+.mapWrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.map {
+  height: 300px;
+  width: 100%;
+}
+
+.popupBtn {
+  margin-top: 6px;
+  background: none;
+  border: none;
+  color: #b08d47;
+  font-size: 0.78rem;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.popupBtn:hover {
+  color: #d4a853;
+}
