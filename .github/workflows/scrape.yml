@@ -30,8 +30,6 @@ jobs:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
 
       - name: Commit updated data
-        env:
-          HUSKY: "0"
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -41,5 +39,5 @@ jobs:
           else
             git commit -m "chore: daily scrape $(date -u +%Y-%m-%d)"
             git pull --rebase origin main
-            git push
+            git push --no-verify
           fi
