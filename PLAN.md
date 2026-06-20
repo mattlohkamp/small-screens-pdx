@@ -201,25 +201,28 @@ TMDB API is free. Requires a free account + API key. Rate limit: 40 req/sec. Att
 
 ## Hosting & Deployment
 
-**Host:** NearlyFreeSpeech.net — pay-per-use, static file serving, SSH/rsync deployment.
+**Host:** GitHub Pages — free static hosting, deploys via `actions/deploy-pages`. NearlyFreeSpeech.net kept as a documented alternative if needed.
 
 **Pipeline:**
 
 ```
 GitHub Actions cron (daily, ~5am Pacific)
   1. checkout repo
-  2. npm run scrape
-       → run each venue scraper
+  2. npm run scrape (all scrapers run in parallel)
        → merge films across venues (dedup by title)
        → enrich via TMDB API (cache + retry failures)
        → write public/data/upcoming.json
-  3. npm run build
+  3. commit upcoming.json → push to main
+       → triggers deploy workflow via paths filter
+
+deploy workflow (on release-* tag OR push to main touching upcoming.json)
+  1. npm run build
        → Next.js static export
        → outputs flat HTML/CSS/JS to /out/
-  4. rsync /out → NFSN via SSH
+  2. actions/deploy-pages → GitHub Pages
 ```
 
-**Failure handling:** If any scraper throws, abort without overwriting `upcoming.json`. NFSN continues serving the previous build.
+**Failure handling:** If any scraper throws, abort without overwriting `upcoming.json`. GitHub Pages continues serving the previous build.
 
 ---
 
@@ -236,9 +239,9 @@ GitHub Actions cron (daily, ~5am Pacific)
   - [x] **Living Room Theaters** — Playwright + GraphQL (`pdx.livingroomtheaters.com/graphql`). Portland site ID `317`, circuit ID `146`. Page load establishes session; custom headers (`site-id`, `circuit-id`, `client-type`) required for `showingsForDate` queries. Movies queried via intercepted response on page load; showings queried in parallel per date via `page.evaluate`. Ticket URLs constructed as `/purchase/{slug}?showingId={id}`. Scraper at `src/scrapers/living-room.ts`.
   - [x] **OMSI Empirical Theatre** — Cheerio on omsi.edu to extract event UUIDs; Eventbrite white-label REST API (`tickets.omsi.edu/cached_api`) for event details, calendar (available dates), and sessions (showtimes in UTC). No Playwright needed. Non-film categories filtered via `category` field in API response. `venue_id: omsi`.
   - [ ] Cinema 21 / Hollywood Theatre — block scrapers, approach TBD (out of scope for M3)
-- [ ] **M4 — Frontend v1:** List view of today's showtimes. Filter by date and venue. Deployed to NFSN.
-- [ ] **M5 — Automated pipeline:** GitHub Actions cron running, daily rebuild and deploy working end-to-end.
-- [ ] **M6 — Polish:** Calendar view, by-film and by-venue views, mobile layout, TMDB attribution.
+- [x] **M4 — Frontend v1:** What's on view with date picker, venue/genre filters, fuzzy search, compact/expanded modes, sort, Leaflet venue map, poster modal, IMDB links, ticket links. Deployed to GitHub Pages.
+- [x] **M5 — Automated pipeline:** GitHub Actions cron running daily at 5am Pacific. Scrapers run in parallel. Scrape commits `upcoming.json` → triggers auto-deploy to GitHub Pages. Release tags (`release-X.Y.Z`) also trigger deploy.
+- [ ] **M6 — Polish:** Calendar view, by-film and by-venue views, mobile layout polish, TMDB attribution, RT scores.
 
 ---
 
