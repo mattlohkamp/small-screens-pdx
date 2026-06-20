@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./VenueMap.module.css";
@@ -9,6 +9,7 @@ interface Venue {
   id: string;
   name: string;
   neighborhood: string;
+  website: string;
   lat: number;
   lng: number;
 }
@@ -24,6 +25,16 @@ const defaultIcon = L.icon({
   shadowSize: [41, 41],
 });
 
+function FitBounds({ coords }: { coords: [number, number][] }) {
+  const map = useMap();
+  useEffect(() => {
+    if (coords.length > 0) {
+      map.fitBounds(coords, { padding: [40, 40] });
+    }
+  }, [map, coords]);
+  return null;
+}
+
 interface VenueMapProps {
   venues: Venue[];
   onVenueClick: (id: string) => void;
@@ -37,13 +48,13 @@ export default function VenueMap({ venues, onVenueClick }: VenueMapProps) {
   const withCoords = venues.filter((v) => v.lat != null && v.lng != null);
   if (withCoords.length === 0) return null;
 
-  const centerLat = withCoords.reduce((s, v) => s + v.lat!, 0) / withCoords.length;
-  const centerLng = withCoords.reduce((s, v) => s + v.lng!, 0) / withCoords.length;
+  const coords: [number, number][] = withCoords.map((v) => [v.lat, v.lng]);
+  const center = coords[0];
 
   return (
     <div className={styles.mapWrap}>
       <MapContainer
-        center={[centerLat, centerLng]}
+        center={center}
         zoom={13}
         className={styles.map}
         scrollWheelZoom={false}
@@ -52,13 +63,22 @@ export default function VenueMap({ venues, onVenueClick }: VenueMapProps) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <FitBounds coords={coords} />
         {withCoords.map((venue) => (
-          <Marker key={venue.id} position={[venue.lat!, venue.lng!]}>
+          <Marker key={venue.id} position={[venue.lat, venue.lng]}>
             <Popup>
-              <strong>{venue.name}</strong>
-              <br />
-              {venue.neighborhood}
-              <br />
+              <a
+                href={venue.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.popupVenueName}
+              >
+                {venue.name}
+                <svg className={styles.externalIcon} viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+                  <path d="M1 1h4v1H2v6h6V5h1v4H1V1zm5 0h3v3H8V2.707L5.354 5.354l-.708-.708L7.293 2H6V1z" />
+                </svg>
+              </a>
+              <div className={styles.popupNeighborhood}>{venue.neighborhood}</div>
               <button
                 onClick={() => onVenueClick(venue.id)}
                 className={styles.popupBtn}

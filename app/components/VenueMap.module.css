@@ -9,8 +9,35 @@
   width: 100%;
 }
 
+.popupVenueName {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.popupVenueName:hover {
+  color: #b08d47;
+  text-decoration: underline;
+}
+
+.externalIcon {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.popupNeighborhood {
+  font-size: 0.78rem;
+  color: #666;
+  margin: 3px 0 6px;
+}
+
 .popupBtn {
-  margin-top: 6px;
   background: none;
   border: none;
   color: #b08d47;
