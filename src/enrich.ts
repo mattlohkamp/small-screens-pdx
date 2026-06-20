@@ -13,6 +13,14 @@ const TMDB_ID_OVERRIDES: Record<string, number> = {
   "IT IS BETTER TO BE WEALTHY & HEALTHY THAN POOR & ILL (1992)": 259436,
 };
 
+// Events that are not films and should be silently dropped before enrichment.
+const NON_FILM_TITLES = new Set([
+  // Cinemagic recurring trivia night
+  "The Movie Quiz",
+  // CST special double-feature event, not a single film
+  "An Evening with Alex Cox: Dead Souls & Walker",
+]);
+
 function apiKey(): string {
   const key = process.env.TMDB_API_KEY;
   if (!key) throw new Error("TMDB_API_KEY is not set");
@@ -165,6 +173,11 @@ export async function enrichFilms(films: Film[], opts: EnrichOptions = {}): Prom
   const failures: FailedMatch[] = [];
 
   for (const film of films) {
+    if (NON_FILM_TITLES.has(film.title)) {
+      console.log(`  Skipping: ${film.title} (non-film event)`);
+      continue;
+    }
+
     const cached = cache[film.title];
     const shouldSkip = !force && cached && !retryTitles.has(film.title);
 
