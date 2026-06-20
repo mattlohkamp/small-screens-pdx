@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import Fuse, { type FuseResultMatch } from "fuse.js";
+import Fuse, { type FuseResult, type FuseResultMatch } from "fuse.js";
 import styles from "./WhatsOn.module.css";
 
 type MatchIndices = ReadonlyArray<[number, number]>;
@@ -25,7 +25,7 @@ function highlightText(text: string, indices: MatchIndices): React.ReactNode {
   return <>{parts}</>;
 }
 
-function buildMatchMap(results: Fuse.FuseResult<{ film: { slug: string } }>[]): Map<string, FuseResultMatch[]> {
+function buildMatchMap(results: FuseResult<{ film: { slug: string } }>[]): Map<string, FuseResultMatch[]> {
   const map = new Map<string, FuseResultMatch[]>();
   for (const r of results) {
     map.set(r.item.film.slug, r.matches ?? []);
