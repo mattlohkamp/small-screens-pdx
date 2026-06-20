@@ -4,6 +4,28 @@
 
 ---
 
+## [1.0.0] — 2026-06-19
+
+### Added
+- GitHub Actions deploy workflow — push a `release-1.x.x` tag to build and rsync to NearlyFreeSpeech.net
+- Filter UX: opt-in model (empty = All; first click narrows to one venue/genre; additional clicks expand selection); "Not McMenamins" preset shortcut
+- "Hide past showtimes" toggle (on by default)
+- Compact/Expanded view toggle moved inline with sort controls
+- Show/Hide filters panel (search, venue, genre) — hidden by default, slides open; auto-reveals when a filter is applied from the film list
+- Venue names and genre tags in film rows clickable as filter shortcuts, with tooltips
+- Ticket icon link (🎟↗) next to each venue's showtimes → venue's own film page
+- Poster click → full-size modal; film title click → IMDB search in new tab
+- Runtime displayed as human-readable text (e.g. "50 minutes", "1 hour", "2 hrs 15 mins")
+- Date labels show full date context ("Today (Thu, Jun 19)", "Tomorrow (Fri, Jun 20)")
+- Clear (✕) button inline after active filter summary
+
+### Fixed
+- "Today" and the explicit date entry now always match — UTC date bug (using `toISOString()` after 5pm Pacific returned the next day's date; fixed using local `getFullYear/getMonth/getDate`)
+- Custom date picker chevron spacing (replaced browser-native arrow with `appearance: none` + CSS `::after` overlay)
+- Collapsible caret moved to left of label as bullet prefix
+
+---
+
 ## [0.4.0] — 2026-06-19
 
 ### Added

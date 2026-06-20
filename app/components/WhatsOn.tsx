@@ -154,7 +154,7 @@ export default function WhatsOn() {
     const saved = localStorage.getItem("viewMode");
     if (saved === "compact" || saved === "expanded") setViewMode(saved);
 
-    fetch("/data/upcoming.json")
+    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data/upcoming.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json() as Promise<Schedule>;
