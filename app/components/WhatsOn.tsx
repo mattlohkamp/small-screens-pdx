@@ -660,7 +660,7 @@ function FilmRow({
                     className={styles.timeLinkCompact}
                   >
                     {formatTime(s.datetime)}
-                    {s.format && <span className={styles.format}> {s.format}</span>}
+                    {s.format && s.format.toUpperCase() !== "DCP" && <span className={styles.format}> (format: {s.format})</span>}
                   </a>
                 ))}
             </span>
@@ -756,8 +756,8 @@ function FilmRow({
                       className={styles.timeLink}
                     >
                       {formatTime(s.datetime)}
-                      {s.format && (
-                        <span className={styles.format}> {s.format}</span>
+                      {s.format && s.format.toUpperCase() !== "DCP" && (
+                        <span className={styles.format}> (format: {s.format})</span>
                       )}
                     </a>
                   ))}
