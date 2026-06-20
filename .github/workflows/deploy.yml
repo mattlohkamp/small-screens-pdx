@@ -4,6 +4,10 @@ on:
   push:
     tags:
       - "release-*"
+    branches:
+      - main
+    paths:
+      - "public/data/upcoming.json"
 
 permissions:
   contents: read

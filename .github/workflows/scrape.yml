@@ -1,0 +1,42 @@
+name: Scrape
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # 5am Pacific (PDT = UTC-7)
+  workflow_dispatch: # allow manual trigger from Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Scrape
+        run: npm run scrape
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/upcoming.json
+          if git diff --staged --quiet; then
+            echo "No changes — skipping commit"
+          else
+            git commit -m "chore: daily scrape $(date -u +%Y-%m-%d)"
+            git push
+          fi
