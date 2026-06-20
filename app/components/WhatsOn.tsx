@@ -322,6 +322,16 @@ export default function WhatsOn() {
       <header className={styles.header}>
         <h1 className={styles.title}>Small Screens PDX</h1>
         <p className={styles.subtitle}>Independent cinema in Portland</p>
+        {schedule && (
+          <VenueMap
+            venues={schedule.venues}
+            selectedVenues={selectedVenues}
+            onVenueClick={(id) => {
+              setSelectedVenues(new Set([id]));
+              setFiltersVisible(true);
+            }}
+          />
+        )}
       </header>
 
       <div className={styles.filters}>
@@ -520,15 +530,6 @@ export default function WhatsOn() {
         </div>
       </div>
 
-      {schedule && (
-        <VenueMap
-          venues={schedule.venues}
-          onVenueClick={(id) => {
-            setSelectedVenues(new Set([id]));
-            setFiltersVisible(true);
-          }}
-        />
-      )}
 
       <main className={styles.main}>
         {filmsOnDate.length === 0 ? (
