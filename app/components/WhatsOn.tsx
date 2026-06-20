@@ -28,7 +28,7 @@ function highlightText(text: string, indices: MatchIndices): React.ReactNode {
 function buildMatchMap(results: FuseResult<{ film: { slug: string } }>[]): Map<string, FuseResultMatch[]> {
   const map = new Map<string, FuseResultMatch[]>();
   for (const r of results) {
-    map.set(r.item.film.slug, r.matches ?? []);
+    map.set(r.item.film.slug, (r.matches ?? []) as FuseResultMatch[]);
   }
   return map;
 }
