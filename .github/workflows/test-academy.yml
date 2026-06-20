@@ -1,0 +1,15 @@
+name: Test Academy API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe Academy API
+        run: |
+          curl -v --max-time 30 \
+            -H "User-Agent: small-screens-pdx/0.1 (portland cinema aggregator)" \
+            "https://www.academytheaterpdx.com/api/gatsby-source-boxofficeapi/scheduledMovies?theaterId=X07OU" \
+            2>&1 | head -60
