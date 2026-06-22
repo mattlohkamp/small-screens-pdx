@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-21T14:16:44.566Z",
+  "generated_at": "2026-06-22T17:02:36.808Z",
   "window": {
-    "start": "2026-06-21",
-    "end": "2026-07-05"
+    "start": "2026-06-22",
+    "end": "2026-07-06"
   },
   "venues": [
     {
@@ -88,58 +88,52 @@
   ],
   "films": [
     {
-      "id": 797,
-      "slug": "persona-1966",
-      "title": "Persona",
-      "year": 1966,
-      "director": "Ingmar Bergman",
-      "runtime_minutes": 84,
-      "overview": "A young nurse, Alma, is put in charge of Elisabeth Vogler: an actress who is seemingly healthy in all respects, but will not talk. As they spend time together, Alma speaks to Elisabeth constantly, never receiving any answer.",
-      "poster_path": "/fVA5hTcAOlW2LJyelViQfWHxUcx.jpg",
+      "id": 11969,
+      "slug": "tombstone-1993",
+      "title": "Tombstone",
+      "year": 1993,
+      "director": "George P. Cosmatos",
+      "runtime_minutes": 130,
+      "overview": "Legendary marshal Wyatt Earp, now a weary gunfighter, joins his brothers Morgan and Virgil to pursue their collective fortune in the thriving mining town of Tombstone. But Earp is forced to don a badge again and get help from his notorious pal Doc Holliday when a gang of renegade brigands and rustlers begins terrorizing the town.",
+      "poster_path": "/wGFCvylul8iEQhJOKfwZGGvXMzA.jpg",
       "genres": [
-        "Drama"
+        "Western",
+        "Action"
       ],
       "showtimes": [
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-06-21T14:00:00",
+          "datetime": "2026-06-22T19:00:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/persona/3194681"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-06-25T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/persona/3194682"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/tombstone/3089981"
         }
       ]
     },
     {
-      "id": 788,
-      "slug": "mrs-doubtfire-1993",
-      "title": "Mrs. Doubtfire",
-      "year": 1993,
-      "director": "Chris Columbus",
-      "runtime_minutes": 125,
-      "overview": "Loving but irresponsible dad Daniel Hillard, estranged from his exasperated spouse, is crushed by a court order allowing only weekly visits with his kids. When Daniel learns his ex needs a housekeeper, he gets the job -- disguised as a British nanny. Soon he becomes not only his children's best pal but the kind of parent he should have been from the start.",
-      "poster_path": "/shHrSmXS5140o6sQzgzXxn3KqSm.jpg",
+      "id": 1280738,
+      "slug": "the-furious-2026",
+      "title": "The Furious",
+      "year": 2026,
+      "director": "Kenji Tanigaki",
+      "runtime_minutes": 113,
+      "overview": "After Wang Wei's daughter is kidnapped by a criminal network and he receives no help from the corrupt police, Wei sets out to find her himself. His only ally is Navin, a relentless journalist whose wife has mysteriously disappeared. Fueled by a furious vengeance, the unlikely duo ruthlessly battle the kidnappers in this explosive martial arts showdown.",
+      "poster_path": "/zP19YO60jwEsfKd5Qf1UvA5uJu8.jpg",
       "genres": [
-        "Comedy",
-        "Drama",
-        "Family"
+        "Action",
+        "Crime"
       ],
       "showtimes": [
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-06-21T19:00:00",
+          "datetime": "2026-06-23T19:00:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/mrs-doubtfire/3290990"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-furious/3383634"
         },
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-06-24T16:20:00",
+          "datetime": "2026-07-05T19:00:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/mrs-doubtfire/3290989"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-furious/3387550"
         }
       ]
     },
@@ -207,6 +201,27 @@
           "datetime": "2026-06-28T21:00:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/964-pinnochio/3117218"
+        }
+      ]
+    },
+    {
+      "id": 797,
+      "slug": "persona-1966",
+      "title": "Persona",
+      "year": 1966,
+      "director": "Ingmar Bergman",
+      "runtime_minutes": 85,
+      "overview": "A young nurse, Alma, is put in charge of Elisabeth Vogler: an actress who is seemingly healthy in all respects, but will not talk. As they spend time together, Alma speaks to Elisabeth constantly, never receiving any answer.",
+      "poster_path": "/fVA5hTcAOlW2LJyelViQfWHxUcx.jpg",
+      "genres": [
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-06-25T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/persona/3194682"
         }
       ]
     },
@@ -279,6 +294,12 @@
           "datetime": "2026-07-05T14:20:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/before-sunrise/3314064"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-07-06T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/before-sunrise/3314065"
         }
       ]
     },
@@ -424,6 +445,41 @@
           "datetime": "2026-07-01T19:00:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/paths-of-glory/3314031"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "slug": "run-lola-run-1998",
+      "title": "Run Lola Run",
+      "year": 1998,
+      "director": "Tom Tykwer",
+      "runtime_minutes": 80,
+      "overview": "Lola receives a phone call from her boyfriend Manni. He lost 100,000 DM in a subway train that belongs to a very bad guy. She has 20 minutes to raise this amount and meet Manni. Otherwise, he will rob a store to get the money. Three different alternatives may happen depending on some minor event along Lola's run.",
+      "poster_path": "/v0giIi4bTILVhNhJajet3WWY3FA.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-06-27T17:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/run-lola-run/3314015"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-07-01T17:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/run-lola-run/3314028"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-07-02T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/run-lola-run/3314018"
         }
       ]
     },
@@ -667,24 +723,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T12:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44410"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44411"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44412"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-06-22T15:30:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44427"
@@ -730,24 +768,6 @@
           "datetime": "2026-06-24T18:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44462"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-06-21T11:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/99786?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-06-21T15:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/99792?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-06-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/99798?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         },
         {
           "venue_id": "baghdad",
@@ -802,24 +822,6 @@
           "datetime": "2026-06-23T15:00:00",
           "format": "OC",
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/99794?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-21T12:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012868000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-21T16:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012867000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-21T19:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012869000005"
         },
         {
           "venue_id": "academy",
@@ -1045,24 +1047,6 @@
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-06-21T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3378491"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T15:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3378501"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3378508"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-06-22T12:00:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3378740"
@@ -1145,24 +1129,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T13:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44414"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T16:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44415"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T19:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44416"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-06-22T16:15:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44431"
@@ -1208,30 +1174,6 @@
           "datetime": "2026-06-24T19:15:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44464"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T13:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3378495"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T15:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3378500"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T17:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3378505"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T19:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3378511"
         },
         {
           "venue_id": "living-room",
@@ -1348,24 +1290,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T12:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44402"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T16:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44403"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44404"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-06-22T16:00:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44419"
@@ -1430,24 +1354,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T12:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44406"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44407"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44408"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-06-22T15:45:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44423"
@@ -1507,12 +1413,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-06-21T15:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100164?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-06-22T19:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100170?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -1545,12 +1445,6 @@
         "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-06-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100165?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
         {
           "venue_id": "kennedy-school",
           "datetime": "2026-06-22T12:30:00",
@@ -1610,7 +1504,7 @@
       "director": "Andrew Stanton",
       "runtime_minutes": 102,
       "overview": "When Bonnie receives a Lilypad tablet as a gift and becomes obsessed, Buzz, Woody, Jessie and the rest of the gang's jobs become exponentially harder when they have to go head to head with the all-new threat to playtime.",
-      "poster_path": "/pxG26JdyuiDvJbSoucknaFiLeZD.jpg",
+      "poster_path": "/a6H2U7pjibMia41TwyFVd1PVQw3.jpg",
       "genres": [
         "Animation",
         "Family",
@@ -1618,24 +1512,6 @@
         "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-21T12:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012863000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-21T16:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012865000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-21T19:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012864000007"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-06-22T12:45:00",
@@ -1860,30 +1736,6 @@
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-06-21T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3378490"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T14:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3378496"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T16:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3378502"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T18:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3378507"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-06-22T11:45:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3378739"
@@ -1998,12 +1850,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-06-21T18:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012660000006"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-06-22T13:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012661000006"
@@ -2046,12 +1892,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-06-21T16:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012659000006"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-06-22T19:15:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012663000006"
@@ -2089,12 +1929,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-21T13:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012658000006"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-06-22T16:45:00",
@@ -2348,6 +2182,12 @@
           "datetime": "2026-07-04T19:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013005000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-07-05T13:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013006000006"
         }
       ]
     },
@@ -2377,6 +2217,12 @@
           "datetime": "2026-07-04T13:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013002000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-07-05T16:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013007000006"
         }
       ]
     },
@@ -2412,6 +2258,12 @@
           "datetime": "2026-07-04T21:45:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013004000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-07-05T19:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013008000006"
         }
       ]
     },
@@ -2428,12 +2280,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T12:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/ask-e-jean?showingId=3335575"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-06-22T13:30:00",
@@ -2474,30 +2320,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T12:35:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3378494"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T14:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3378497"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T16:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3378503"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T18:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3225769"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-06-22T12:35:00",
@@ -2613,24 +2435,6 @@
       "showtimes": [
         {
           "venue_id": "living-room",
-          "datetime": "2026-06-21T14:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-love-boosters?showingId=3378499"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T17:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-love-boosters?showingId=3378506"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T19:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-love-boosters?showingId=3378512"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-06-22T14:45:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-love-boosters?showingId=3378747"
@@ -2699,30 +2503,6 @@
         "Romance"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T12:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/leviticus?showingId=3378493"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T15:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/leviticus?showingId=3378498"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T17:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/leviticus?showingId=3378504"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-21T19:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/leviticus?showingId=3378510"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-06-22T12:20:00",
