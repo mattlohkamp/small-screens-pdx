@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-27T13:47:04.541Z",
+  "generated_at": "2026-06-28T13:50:25.046Z",
   "window": {
-    "start": "2026-06-27",
-    "end": "2026-07-11"
+    "start": "2026-06-28",
+    "end": "2026-07-12"
   },
   "venues": [
     {
@@ -88,92 +88,59 @@
   ],
   "films": [
     {
-      "id": 104,
-      "slug": "run-lola-run-1998",
-      "title": "Run Lola Run",
-      "year": 1998,
-      "director": "Tom Tykwer",
-      "runtime_minutes": 80,
-      "overview": "Lola receives a phone call from her boyfriend Manni. He lost 100,000 DM in a subway train that belongs to a very bad guy. She has 20 minutes to raise this amount and meet Manni. Otherwise, he will rob a store to get the money. Three different alternatives may happen depending on some minor event along Lola's run.",
-      "poster_path": "/v0giIi4bTILVhNhJajet3WWY3FA.jpg",
+      "id": 975,
+      "slug": "paths-of-glory-1957",
+      "title": "Paths of Glory",
+      "year": 1957,
+      "director": "Stanley Kubrick",
+      "runtime_minutes": 88,
+      "overview": "A commanding officer defends three scapegoats on trial for a failed offensive that occurred within the French Army in 1916.",
+      "poster_path": "/p7OHwomA8UOhe3EhckF2IetBTh9.jpg",
       "genres": [
-        "Action",
-        "Drama",
+        "War",
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-06-28T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/paths-of-glory/3314008"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-06-30T17:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/paths-of-glory/3314010"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-07-01T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/paths-of-glory/3314031"
+        }
+      ]
+    },
+    {
+      "id": 50162,
+      "slug": "964-pinnochio-1991",
+      "title": "964 Pinnochio",
+      "year": 1991,
+      "director": "Shozin Fukui",
+      "runtime_minutes": 97,
+      "overview": "A memory-wiped and defective cyborg sex slave is tossed onto the streets and taken in by a homeless woman while his corporate creators hunt him down.",
+      "poster_path": "/99iOoaDyFElUA5ihgBYKmGRhPJs.jpg",
+      "genres": [
+        "Horror",
+        "Science Fiction",
         "Thriller"
       ],
       "showtimes": [
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-06-27T17:00:00",
+          "datetime": "2026-06-28T21:00:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/run-lola-run/3314015"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-07-01T17:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/run-lola-run/3314028"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-07-02T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/run-lola-run/3314018"
-        }
-      ]
-    },
-    {
-      "id": 24804,
-      "slug": "black-dynamite-2009",
-      "title": "Black Dynamite",
-      "year": 2009,
-      "director": "Scott Sanders",
-      "runtime_minutes": 85,
-      "overview": "This is the story of 1970s African-American action legend Black Dynamite. The Man killed his brother, pumped heroin into local orphanages, and flooded the ghetto with adulterated malt liquor. Black Dynamite was the one hero willing to fight The Man all the way from the blood-soaked city streets to the hallowed halls of the Honky House.",
-      "poster_path": "/u3oWQDz0JggzzsVlsuHY7XVxp5Y.jpg",
-      "genres": [
-        "Comedy",
-        "Action"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-06-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/black-dynamite/3314022"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-07-01T21:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/black-dynamite/3314020"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-07-02T17:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/black-dynamite/3314030"
-        }
-      ]
-    },
-    {
-      "id": 35192,
-      "slug": "black-past-1989",
-      "title": "Black Past",
-      "year": 1989,
-      "director": "Olaf Ittenbach",
-      "runtime_minutes": 83,
-      "overview": "Tommy finds a cursed mirror and a diary in an attic in the new house they moved in. The mirror starts to give Tommy horrible and gruesome visions as his crush keeps rising from the dead.",
-      "poster_path": "/380rsbBSyDhfjgzRB0Uonh14J7m.jpg",
-      "genres": [
-        "Horror"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-06-27T21:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/black-past/3117217"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/964-pinnochio/3117218"
         }
       ]
     },
@@ -332,57 +299,6 @@
       ]
     },
     {
-      "id": 50162,
-      "slug": "964-pinnochio-1991",
-      "title": "964 Pinnochio",
-      "year": 1991,
-      "director": "Shozin Fukui",
-      "runtime_minutes": 97,
-      "overview": "A memory-wiped and defective cyborg sex slave is tossed onto the streets and taken in by a homeless woman while his corporate creators hunt him down.",
-      "poster_path": "/99iOoaDyFElUA5ihgBYKmGRhPJs.jpg",
-      "genres": [
-        "Horror",
-        "Science Fiction",
-        "Thriller"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-06-28T21:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/964-pinnochio/3117218"
-        }
-      ]
-    },
-    {
-      "id": 133919,
-      "slug": "scenes-from-a-marriage-1974",
-      "title": "Scenes From A Marriage",
-      "year": 1974,
-      "director": "Ingmar Bergman",
-      "runtime_minutes": 169,
-      "overview": "Johan and Marianne are married and seem to have it all. Their happiness, however, is a façade for a troubled relationship, which becomes even rockier when Johan admits that he's having an affair. Before long, the spouses separate and move towards finalizing their divorce, but they make attempts at reconciling. Even as they pursue other relationships, Johan and Marianne realize that they have a significant bond, but also many issues that hinder that connection.",
-      "poster_path": "/ArKEdvJesIktFX8OAhcdKAOLl6I.jpg",
-      "genres": [
-        "Drama",
-        "Romance"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-06-28T15:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/scenes-from-a-marriage/3194688"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-06-30T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/scenes-from-a-marriage/3194689"
-        }
-      ]
-    },
-    {
       "id": 12761,
       "slug": "autumn-sonata-1978",
       "title": "Autumn Sonata",
@@ -425,6 +341,12 @@
       ],
       "showtimes": [
         {
+          "venue_id": "cinemagic",
+          "datetime": "2026-07-12T16:50:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/hour-of-the-wolf/3194693"
+        },
+        {
           "venue_id": "academy",
           "datetime": "2026-07-10T16:00:00",
           "format": "DCP",
@@ -435,6 +357,12 @@
           "datetime": "2026-07-10T21:45:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013024000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-07-11T13:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013029000006"
         }
       ]
     },
@@ -489,36 +417,24 @@
       ]
     },
     {
-      "id": 975,
-      "slug": "paths-of-glory-1957",
-      "title": "Paths of Glory",
-      "year": 1957,
-      "director": "Stanley Kubrick",
-      "runtime_minutes": 88,
-      "overview": "A commanding officer defends three scapegoats on trial for a failed offensive that occurred within the French Army in 1916.",
-      "poster_path": "/p7OHwomA8UOhe3EhckF2IetBTh9.jpg",
+      "id": 9473,
+      "slug": "south-park-bigger-longer-uncut-1999",
+      "title": "South Park: Bigger, Longer & Uncut",
+      "year": 1999,
+      "director": "Trey Parker",
+      "runtime_minutes": 81,
+      "overview": "In this feature film based on the hit animated series, the third graders of South Park sneak into an R-rated film by ultra-vulgar Canadian television personalities Terrance and Phillip, and emerge with expanded vocabularies that leave their parents and teachers scandalized. When outraged Americans try to censor the film, the controversy spirals into a call to wage war on Canada and Terrance and Phillip end up on death row, with the kids their only hope of rescue.",
+      "poster_path": "/tS0PedvA2mFO9VCHYwQpaU1K36U.jpg",
       "genres": [
-        "War",
-        "Drama"
+        "Animation",
+        "Comedy"
       ],
       "showtimes": [
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-06-28T19:00:00",
+          "datetime": "2026-07-02T21:00:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/paths-of-glory/3314008"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-06-30T17:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/paths-of-glory/3314010"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-07-01T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/paths-of-glory/3314031"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/south-park-bigger-longer-uncut/3314013"
         }
       ]
     },
@@ -543,64 +459,6 @@
           "datetime": "2026-07-03T22:00:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/live-wire/3380544"
-        }
-      ]
-    },
-    {
-      "id": 20770,
-      "slug": "but-i-m-a-cheerleader-2000",
-      "title": "But I’m a Cheerleader",
-      "year": 2000,
-      "director": "Jamie Babbit",
-      "runtime_minutes": 85,
-      "overview": "Megan is an all-American girl. A cheerleader. She has a boyfriend. But Megan doesn't like kissing her boyfriend very much. And she's pretty touchy with her cheerleader friends. Her conservative parents worry that she must be a lesbian and send her off to \"sexual redirection\" school, where she must, with other lesbians and gays learn how to be straight.",
-      "poster_path": "/dGEwlAuzTZoZjvsqgT2MRKHnGi8.jpg",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Romance"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-06-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/cult-sensation-but-i-m-a-cheerleader-saturday-june-27th-at-7-00-pm/FK6YIAPAK4RNNCIE2ZU2S6QX"
-        }
-      ]
-    },
-    {
-      "id": 36685,
-      "slug": "the-rocky-horror-picture-show-1975",
-      "title": "The Rocky Horror Picture Show",
-      "year": 1975,
-      "director": "Jim Sharman",
-      "runtime_minutes": 100,
-      "overview": "After getting a flat tire in the middle of nowhere, newly engaged couple Brad and Janet encounter the eerie mansion of the flamboyant, seductive Dr Frank-N-Furter and a variety of eccentric characters. Through elaborate dance and rock music, the mad scientist unveils his latest creation: a perfect, muscular man.",
-      "poster_path": "/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
-      "genres": [
-        "Comedy",
-        "Science Fiction",
-        "Horror"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-06-27T23:00:00",
-          "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/the-rocky-horror-picture-show-for-virgins-saturday-june-27th-at-11-00-pm/LQHZCTYMHSKKZYCVSDWOG5CJ"
-        },
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-07-04T22:30:00",
-          "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/the-rocky-horror-picture-show-with-the-clinton-street-cabaret-saturday-july-4th-at-10-30-pm/ZZNMFVUDWGTEGSN4WUHNTGJF"
-        },
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-07-11T23:00:00",
-          "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/the-rocky-horror-picture-show-for-virgins-saturday-july-11th-at-11-00-pm/QWGK3ZHRCHEZ7TK5WPOY5XNG"
         }
       ]
     },
@@ -646,6 +504,25 @@
       ]
     },
     {
+      "id": null,
+      "slug": "different-1962",
+      "title": "DIFFERENT (1962)",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-07-01T19:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/different-1962-church-of-film-wednesday-july-1st-at-7-00-pm/M2KFFWGFJSKQELJN2W4V2BZC"
+        }
+      ]
+    },
+    {
       "id": 13820,
       "slug": "repo-man-1984",
       "title": "Repo Man",
@@ -668,6 +545,35 @@
       ]
     },
     {
+      "id": 36685,
+      "slug": "the-rocky-horror-picture-show-1975",
+      "title": "The Rocky Horror Picture Show",
+      "year": 1975,
+      "director": "Jim Sharman",
+      "runtime_minutes": 100,
+      "overview": "After getting a flat tire in the middle of nowhere, newly engaged couple Brad and Janet encounter the eerie mansion of the flamboyant, seductive Dr Frank-N-Furter and a variety of eccentric characters. Through elaborate dance and rock music, the mad scientist unveils his latest creation: a perfect, muscular man.",
+      "poster_path": "/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
+      "genres": [
+        "Comedy",
+        "Science Fiction",
+        "Horror"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-07-04T22:30:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/the-rocky-horror-picture-show-with-the-clinton-street-cabaret-saturday-july-4th-at-10-30-pm/ZZNMFVUDWGTEGSN4WUHNTGJF"
+        },
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-07-11T23:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/the-rocky-horror-picture-show-for-virgins-saturday-july-11th-at-11-00-pm/QWGK3ZHRCHEZ7TK5WPOY5XNG"
+        }
+      ]
+    },
+    {
       "id": null,
       "slug": "twin-peaks-season-2-episodes-6-7-8-9-10",
       "title": "Twin Peaks Season 2: Episodes 6, 7, 8, 9, 10",
@@ -683,6 +589,25 @@
           "datetime": "2026-07-05T14:00:00",
           "format": null,
           "ticket_url": "https://cstpdxtickets.square.site/product/twin-peaks-season-2-episodes-6-7-8-9-10-sunday-july-5th-at-2-00-pm/4IPWYVKKBZRHL5MBVEH7YESS"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "the-last-farm-in-the-valley-1950",
+      "title": "THE LAST FARM IN THE VALLEY (1950)",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-07-08T19:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/the-last-farm-in-the-valley-1950-church-of-film-wednesday-july-8th-at-7-00-pm/TR7E55ZCETSSLCC56PSXI3NI"
         }
       ]
     },
@@ -764,30 +689,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T13:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44493"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T16:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44494"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T19:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44495"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T21:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44496"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-06-28T13:00:00",
@@ -872,30 +773,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T12:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44485"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44486"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T18:20:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44487"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T21:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44488"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-06-28T12:15:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44501"
@@ -959,30 +836,6 @@
           "datetime": "2026-07-01T18:20:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44556"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T12:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012915000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T15:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013178000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T18:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012912000006"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T21:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012917000005"
         },
         {
           "venue_id": "academy",
@@ -1082,30 +935,6 @@
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-06-27T12:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3420572"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T15:35:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3420580"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T18:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3420588"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T20:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3420590"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-06-28T12:30:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3420551"
@@ -1187,6 +1016,30 @@
           "datetime": "2026-07-02T18:45:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/disclosure-day?showingId=3420510"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-28T15:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e6fa0-faee-87dc-273a-1457e03a0973"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-28T17:45:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e6fa0-faee-87dc-273a-1457e03a0973"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-29T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e6fa0-faee-87dc-273a-1457e03a0973"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-30T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e6fa0-faee-87dc-273a-1457e03a0973"
         }
       ]
     },
@@ -1205,30 +1058,6 @@
         "Science Fiction"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T12:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44481"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T16:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44482"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44483"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T21:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44484"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-06-28T12:30:00",
@@ -1313,30 +1142,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T12:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44489"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44490"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44491"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-06-27T21:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44492"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-06-28T12:45:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=44505"
@@ -1418,30 +1223,6 @@
         "Science Fiction"
       ],
       "showtimes": [
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-06-27T12:45:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100292?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-06-27T15:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100299?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-06-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100306?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-06-27T22:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100313?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
         {
           "venue_id": "baghdad",
           "datetime": "2026-06-28T12:45:00",
@@ -1648,36 +1429,6 @@
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-06-27T12:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/supergirl?showingId=3420571"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T14:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/supergirl?showingId=3420576"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T16:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/supergirl?showingId=3420583"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/supergirl?showingId=3283104"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T21:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/supergirl?showingId=3283105"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-06-28T12:10:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/supergirl?showingId=3420550"
@@ -1817,12 +1568,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-06-27T13:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100242?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-06-28T16:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100244?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -1861,12 +1606,6 @@
         "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-06-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100237?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
         {
           "venue_id": "kennedy-school",
           "datetime": "2026-06-28T19:00:00",
@@ -1912,12 +1651,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-06-27T16:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100233?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-06-28T13:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/100246?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -1952,30 +1685,6 @@
         "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T12:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013177000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T16:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012911000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T19:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012953000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T22:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012913000007"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-06-28T12:45:00",
@@ -2224,36 +1933,6 @@
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-06-27T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3420569"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T13:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3420575"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T16:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3420581"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T18:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3420586"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T21:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3420593"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-06-28T11:45:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/toy-story-5?showingId=3420548"
@@ -2389,12 +2068,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-06-27T13:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012678000006"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-06-28T19:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012682000006"
@@ -2446,12 +2119,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-06-27T19:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012680000007"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-06-28T16:30:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012683000006"
@@ -2497,18 +2164,6 @@
         "Science Fiction"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T16:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012679000006"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-06-27T21:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/012681000006"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-06-28T13:00:00",
@@ -2758,6 +2413,12 @@
           "datetime": "2026-07-10T13:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013022000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-07-11T19:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013028000006"
         }
       ]
     },
@@ -2782,6 +2443,18 @@
           "datetime": "2026-07-10T19:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013025000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-07-11T16:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013026000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-07-11T21:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013027000006"
         }
       ]
     },
@@ -2798,24 +2471,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T12:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/couture?showingId=3420573"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T17:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/couture?showingId=3420584"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T19:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/couture?showingId=3188955"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-06-28T12:40:00",
@@ -2924,36 +2579,6 @@
       "showtimes": [
         {
           "venue_id": "living-room",
-          "datetime": "2026-06-27T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3420570"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T14:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3420577"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T16:25:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3420582"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T18:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3420587"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T20:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3420591"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-06-28T12:00:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/girls-like-girls?showingId=3420549"
@@ -3035,30 +2660,6 @@
         "Crime"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T14:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-love-boosters?showingId=3420578"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T17:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-love-boosters?showingId=3420585"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T19:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-love-boosters?showingId=3420589"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T21:35:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-love-boosters?showingId=3420592"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-06-28T14:50:00",
@@ -3161,24 +2762,6 @@
       "showtimes": [
         {
           "venue_id": "living-room",
-          "datetime": "2026-06-27T12:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3420574"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T15:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3420579"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-06-27T22:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3420594"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-06-28T12:50:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3420553"
@@ -3236,6 +2819,229 @@
           "datetime": "2026-07-02T15:00:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/stop-that-train?showingId=3420503"
+        }
+      ]
+    },
+    {
+      "id": 1315772,
+      "slug": "minions-monsters-2026",
+      "title": "Minions & Monsters",
+      "year": 2026,
+      "director": "Pierre Coffin",
+      "runtime_minutes": 90,
+      "overview": "This is the rambunctious, ridiculous and totally true story of how the Minions conquered Hollywood, became movie stars, lost everything, unleashed monsters onto the world and then banded together to try and save the planet from the mayhem they had just created.",
+      "poster_path": "/nz7i42yhLIJ4ve9JKgM6NthoLHO.jpg",
+      "genres": [
+        "Adventure",
+        "Animation",
+        "Comedy",
+        "Family",
+        "Fantasy"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-01T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e89ec-85a0-8f44-c1f2-1b09f8f0d49c"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-01T16:15:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e89ec-85a0-8f44-c1f2-1b09f8f0d49c"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-01T18:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e89ec-85a0-8f44-c1f2-1b09f8f0d49c"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-01T18:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e89ec-85a0-8f44-c1f2-1b09f8f0d49c"
+        }
+      ]
+    },
+    {
+      "id": 1711116,
+      "slug": "running-wild-return-to-the-river-2026",
+      "title": "Running Wild: Return to the River",
+      "year": 2026,
+      "director": "Myles Connolly",
+      "runtime_minutes": 45,
+      "overview": "Pacific salmon swim upstream on their homeward journey, bearing witness to the interconnected web of life linking land and sea.",
+      "poster_path": null,
+      "genres": [
+        "Documentary"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-28T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-29T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-29T17:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-30T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-30T17:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-01T11:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-02T11:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-03T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-04T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-05T11:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-06T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-07T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-08T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-09T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-10T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-11T10:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-11T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-11T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-12T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-12T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        }
+      ]
+    },
+    {
+      "id": 1511663,
+      "slug": "elephants-giants-of-the-desert-2024",
+      "title": "Elephants: Giants of the Desert",
+      "year": 2024,
+      "director": "Paul Phelan",
+      "runtime_minutes": 45,
+      "overview": "Embark on an epic journey across Africa’s Namib Desert with an adorable elephant calf and her resilient family in a tale of survival and adaptation in immersive IMAX 3D!  Filmed in one of the world’s oldest deserts, get up close with Africa’s gentle giants alongside an iconic supporting cast of giraffes, monkeys and lions for a real-life Lion King experience.  This stunning film provides unprecedented access to one of the only herds of desert elephants in the world, showing off their elephant superpowers to find hidden underground aquifers and predict sandstorms.",
+      "poster_path": "/kNr8gTXEgIKstZarg37EnZrpKyA.jpg",
+      "genres": [
+        "Documentary"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-29T18:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-06-30T18:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-02T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-08T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-07-11T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
         }
       ]
     }
