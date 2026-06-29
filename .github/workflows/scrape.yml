@@ -32,8 +32,12 @@ jobs:
           path: ~/.cache/ms-playwright
           key: playwright-chromium-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright browser
+        # Browser binary comes from the cache above. The runner image already
+        # ships Chromium's system libraries, so we skip --with-deps — its apt
+        # step only added fonts we don't need for headless scraping and cost
+        # ~12s every run. Re-add --with-deps if a browser launch ever fails.
+        run: npx playwright install chromium
 
       - name: Scrape
         run: npm run scrape
