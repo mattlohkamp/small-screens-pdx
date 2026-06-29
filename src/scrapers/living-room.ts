@@ -1,5 +1,6 @@
 import type { Film, Showtime } from "../types.js";
 import { getBrowser } from "../browser.js";
+import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "living-room";
 const MOVIES_URL = "https://pdx.livingroomtheaters.com/movies";
@@ -87,7 +88,7 @@ export async function scrapeLivingRoom(): Promise<Film[]> {
 
     // Build the set of upcoming dates that have showings (from datesWithPublicShowing)
     const start = today();
-    const end = addDays(start, 14);
+    const end = addDays(start, WINDOW_DAYS - 1);
     const datesWithShowings = new Set(
       moviesData.flatMap(m => m.datesWithPublicShowing ?? [])
         .filter(d => d >= start && d <= end)

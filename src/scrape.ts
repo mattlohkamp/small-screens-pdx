@@ -10,6 +10,7 @@ import { scrapeOmsi } from "./scrapers/omsi.js";
 import { closeBrowser } from "./browser.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
+import { WINDOW_DAYS } from "./window.js";
 import type { Schedule, Film } from "./types.js";
 import type { FailedMatch } from "./enrich.js";
 
@@ -38,8 +39,6 @@ function mergeFilms(filmLists: Film[][]): Film[] {
   }
   return [...byTitle.values()];
 }
-
-const WINDOW_DAYS = 14;
 
 function today(): string {
   return new Date().toISOString().slice(0, 10);
@@ -72,7 +71,7 @@ async function main() {
   const args = process.argv.slice(2).filter(a => !a.startsWith("--"));
   const force = process.argv.includes("--force");
   const start = today();
-  const end = addDays(start, WINDOW_DAYS);
+  const end = addDays(start, WINDOW_DAYS - 1); // inclusive: start + 6 = 7 days total
 
   // Determine which scrapers to run
   const allIds = Object.keys(SCRAPERS);
@@ -149,17 +148,9 @@ async function main() {
   const rawFilms = mergeFilms([baseFilms, ...freshFilmLists]);
   console.log(`  ${rawFilms.length} unique films after merge`);
 
-  console.log("Enriching via TMDB...");
-  const { films: enrichedFilms, failures } = await enrichFilms(rawFilms, {
-    force,
-    retryTitles,
-    cache,
-  });
-
-  saveCache(cache);
-
-  // Filter showtimes to the 2-week window and drop films with no remaining showtimes
-  const films = enrichedFilms
+  // Trim to the 7-day window BEFORE enriching. We don't spend TMDB calls — or
+  // emit match-failure noise — on showtimes outside the window we expose.
+  const windowedFilms = rawFilms
     .map((film) => ({
       ...film,
       showtimes: film.showtimes.filter(
@@ -167,6 +158,17 @@ async function main() {
       ),
     }))
     .filter((film) => film.showtimes.length > 0);
+  console.log(`  ${windowedFilms.length} films within ${start} → ${end}`);
+
+  console.log("Enriching via TMDB...");
+  // Enrichment only adds metadata; it leaves showtimes (already windowed) intact.
+  const { films, failures } = await enrichFilms(windowedFilms, {
+    force,
+    retryTitles,
+    cache,
+  });
+
+  saveCache(cache);
 
   const schedule: Schedule = {
     generated_at: new Date().toISOString(),

@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
 import { fetchText, fetchWithRetry } from "../fetch.js";
+import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "omsi";
 const OMSI_URL = "https://omsi.edu/exhibits/empirical-theater/";
@@ -128,7 +129,7 @@ async function fetchSessionsForDate(
 
 export async function scrapeOmsi(): Promise<Film[]> {
   const start = today();
-  const end = addDays(start, 14);
+  const end = addDays(start, WINDOW_DAYS - 1);
 
   console.log("  Fetching OMSI film list...");
   const uuids = await fetchEventUUIDs();

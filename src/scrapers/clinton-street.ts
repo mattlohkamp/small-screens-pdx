@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
 import { fetchJson } from "../fetch.js";
+import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "clinton-street";
 const API_BASE = "https://cstpdx.com/wp-json/tribe/events/v1/events";
@@ -24,7 +25,7 @@ function addDays(days: number): string {
 
 async function fetchAllEvents(): Promise<TribeEvent[]> {
   const startDate = new Date().toISOString().slice(0, 10);
-  const endDate = addDays(14);
+  const endDate = addDays(WINDOW_DAYS - 1);
   let url: string | undefined =
     `${API_BASE}?per_page=50&status=publish&start_date=${startDate}&end_date=${endDate}`;
 

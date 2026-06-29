@@ -1,5 +1,6 @@
 import type { Film, Showtime } from "../types.js";
 import { fetchJson as fetchJsonShared } from "../fetch.js";
+import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "academy";
 const BASE = "https://www.academytheaterpdx.com";
@@ -76,7 +77,7 @@ function ticketUrl(showing: Showing): string | null {
 
 export async function scrapeAcademy(): Promise<Film[]> {
   const start = today();
-  const end = addDays(start, 14);
+  const end = addDays(start, WINDOW_DAYS - 1);
 
   const theatersParam = encodeURIComponent(JSON.stringify({ id: THEATER_ID, timeZone: TZ }));
   const fromParam = encodeURIComponent(`${start}T03:00:00`);
