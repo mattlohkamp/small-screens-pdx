@@ -48,7 +48,12 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes — skipping commit"
           else
-            git commit -m "chore: daily scrape $(date -u +%Y-%m-%d)"
+            if [ "${{ github.event_name }}" = "schedule" ]; then
+              KIND="daily"
+            else
+              KIND="manual"
+            fi
+            git commit -m "chore: ${KIND} scrape $(date -u +%Y-%m-%d)"
             git pull --rebase origin main
             git push --no-verify
           fi
