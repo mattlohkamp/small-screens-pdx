@@ -185,10 +185,15 @@ export default function WhatsOn() {
     const d = new Date();
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   }, []);
-  const dates = useMemo(
-    () => (schedule ? buildDateWindow(schedule.window.start, schedule.window.end) : []),
-    [schedule]
-  );
+  // Date picker offers today + the next 6 days (7 total), never past dates and
+  // never beyond the scraped window. window.start can lag behind today when the
+  // data is from an earlier scrape, so anchor on whichever is later.
+  const DATE_WINDOW_DAYS = 7;
+  const dates = useMemo(() => {
+    if (!schedule) return [];
+    const start = today > schedule.window.start ? today : schedule.window.start;
+    return buildDateWindow(start, schedule.window.end).slice(0, DATE_WINDOW_DAYS);
+  }, [schedule, today]);
 
   // Build Fuse index once per schedule load. Denormalize venue names into each entry
   // so searches like "living room" or "omsi" work.
