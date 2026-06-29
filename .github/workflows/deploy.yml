@@ -35,6 +35,9 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /small-screens-pdx
+          # Tag releases stamp the tag name (e.g. release-3); manual runs leave this
+          # empty so next.config falls back to the short GITHUB_SHA.
+          NEXT_PUBLIC_BUILD_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
 
       - name: Publish UI to gh-pages
         run: |
