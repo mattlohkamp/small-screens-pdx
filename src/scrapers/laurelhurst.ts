@@ -1,4 +1,5 @@
 import type { Film, Showtime } from "../types.js";
+import { fetchText } from "../fetch.js";
 
 const VENUE_ID = "laurelhurst";
 const BASE = "https://www.laurelhursttheater.com";
@@ -22,11 +23,11 @@ interface LaurelhurstFilm {
 }
 
 async function fetchHomepage(): Promise<string> {
-  const res = await fetch(BASE, {
-    headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${BASE}`);
-  return res.text();
+  return fetchText(
+    BASE,
+    { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+    "Laurelhurst Theater"
+  );
 }
 
 function extractGblMovies(html: string): Record<string, LaurelhurstFilm> {

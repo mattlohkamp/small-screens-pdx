@@ -1,15 +1,16 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
+import { fetchText } from "../fetch.js";
 
 const BASE = "https://tickets.thecinemagictheater.com";
 const VENUE_ID = "cinemagic";
 
 async function fetchHtml(url: string): Promise<string> {
-  const res = await fetch(url, {
-    headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-  return res.text();
+  return fetchText(
+    url,
+    { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+    "Cinemagic"
+  );
 }
 
 // Parse ISO 8601 duration like "PT3H49M" or "PT1H45M" → minutes

@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
+import { fetchJson } from "../fetch.js";
 
 const VENUE_ID = "clinton-street";
 const API_BASE = "https://cstpdx.com/wp-json/tribe/events/v1/events";
@@ -29,11 +30,11 @@ async function fetchAllEvents(): Promise<TribeEvent[]> {
 
   const all: TribeEvent[] = [];
   while (url) {
-    const res = await fetch(url, {
-      headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" },
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-    const data = (await res.json()) as TribeResponse;
+    const data: TribeResponse = await fetchJson<TribeResponse>(
+      url,
+      { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+      "Clinton Street Theater"
+    );
     all.push(...(data.events ?? []));
     url = data.next_rest_url;
   }

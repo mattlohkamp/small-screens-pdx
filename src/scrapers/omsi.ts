@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
+import { fetchText, fetchWithRetry } from "../fetch.js";
 
 const VENUE_ID = "omsi";
 const OMSI_URL = "https://omsi.edu/exhibits/empirical-theater/";
@@ -51,10 +52,7 @@ function utcToLocalPacific(utc: string): string {
 
 // Extract all unique event UUIDs from the OMSI theater page
 async function fetchEventUUIDs(): Promise<string[]> {
-  const res = await fetch(OMSI_URL, { headers: HEADERS });
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${OMSI_URL}`);
-
-  const html = await res.text();
+  const html = await fetchText(OMSI_URL, { headers: HEADERS }, "OMSI");
   const $ = cheerio.load(html);
   const uuids = new Set<string>();
 
@@ -70,7 +68,7 @@ async function fetchEventUUIDs(): Promise<string[]> {
 // Get event title, category, and ticket_group_id from the Eventbrite white-label API
 async function fetchEventDetails(uuid: string): Promise<EventDetails | null> {
   const url = `${API_BASE}/events/${uuid}?_embed=ticket_group`;
-  const res = await fetch(url, { headers: HEADERS });
+  const res = await fetchWithRetry(url, { headers: HEADERS }, { label: "OMSI", throwOnHttpError: false });
   if (!res.ok) {
     console.warn(`  OMSI: HTTP ${res.status} for event ${uuid}`);
     return null;
@@ -101,7 +99,7 @@ async function fetchAvailableDates(
   // No start filter — the endpoint returns the rolling window the platform shows.
   // We filter client-side to our window.
   const url = `${API_BASE}/events/${uuid}/calendar?_format=extended&ticket_group_id._in=${ticketGroupId}`;
-  const res = await fetch(url, { headers: HEADERS });
+  const res = await fetchWithRetry(url, { headers: HEADERS }, { label: "OMSI", throwOnHttpError: false });
   if (!res.ok) return [];
   const json = await res.json() as { calendar?: { _data?: CalendarDate[] } };
 
@@ -117,7 +115,7 @@ async function fetchSessionsForDate(
   date: string
 ): Promise<EventSession[]> {
   const url = `${API_BASE}/events/${uuid}/sessions?_ondate=${date}&ticket_group.id._in=${ticketGroupId}`;
-  const res = await fetch(url, { headers: HEADERS });
+  const res = await fetchWithRetry(url, { headers: HEADERS }, { label: "OMSI", throwOnHttpError: false });
   if (!res.ok) return [];
   const json = await res.json() as { event_session?: { _data?: EventSession[] } };
   return json?.event_session?._data ?? [];

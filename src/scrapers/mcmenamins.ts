@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
+import { fetchText } from "../fetch.js";
 
 interface McmVenue {
   id: string;
@@ -43,11 +44,11 @@ function normalizeTitle(raw: string): { title: string; format: string | null } {
 }
 
 async function scrapeVenue(venue: McmVenue): Promise<Film[]> {
-  const res = await fetch(venue.url, {
-    headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${venue.url}`);
-  const html = await res.text();
+  const html = await fetchText(
+    venue.url,
+    { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+    `McMenamins ${venue.id}`
+  );
   const $ = cheerio.load(html);
   const films: Film[] = [];
 

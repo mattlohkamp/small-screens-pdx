@@ -98,8 +98,9 @@ async function main() {
     console.log(`Retrying ${retryTitles.size} previous failure(s), using cache for the rest`);
   }
 
-  // Run selected scrapers in parallel
-  const freshFilmLists = await Promise.all(
+  // Run selected scrapers in parallel. Isolate failures: one venue being slow or
+  // unreachable must not discard the venues that scraped fine.
+  const settled = await Promise.allSettled(
     selectedIds.map(async (id) => {
       const { fn, label } = SCRAPERS[id];
       console.log(`Scraping ${label}...`);
@@ -111,13 +112,33 @@ async function main() {
   );
   await closeBrowser();
 
-  // For partial runs: load existing data and strip showtimes from refreshed venues,
-  // then merge fresh data in. Full runs start from scratch.
+  const freshFilmLists: Film[][] = [];
+  const failedScrapers: string[] = [];
+  settled.forEach((result, i) => {
+    if (result.status === "fulfilled") {
+      freshFilmLists.push(result.value);
+    } else {
+      failedScrapers.push(selectedIds[i]);
+      console.error(`✗ ${SCRAPERS[selectedIds[i]].label} failed:`, result.reason);
+    }
+  });
+
+  if (failedScrapers.length === selectedIds.length) {
+    throw new Error(`All scrapers failed (${failedScrapers.join(", ")}); aborting without overwriting data.`);
+  }
+
+  // Only venues that actually scraped get their showtimes replaced. For partial runs
+  // (venues not selected) and for venues whose scraper failed this run, preserve the
+  // existing last-known-good showtimes so a transient outage doesn't drop a venue.
+  const succeededIds = selectedIds.filter(id => !failedScrapers.includes(id));
+  const refreshedVenueIds = new Set(succeededIds.flatMap(id => SCRAPERS[id].venueIds));
+  const coversAllVenues =
+    refreshedVenueIds.size === new Set(allIds.flatMap(id => SCRAPERS[id].venueIds)).size;
+
   let baseFilms: Film[] = [];
-  if (partial) {
+  if (!coversAllVenues) {
     const existing = loadExistingSchedule();
     if (existing) {
-      const refreshedVenueIds = new Set(selectedIds.flatMap(id => SCRAPERS[id].venueIds));
       baseFilms = existing.films.map(film => ({
         ...film,
         showtimes: film.showtimes.filter(s => !refreshedVenueIds.has(s.venue_id)),
@@ -240,6 +261,12 @@ async function main() {
   console.log(`\nWrote public/data/upcoming.json`);
   console.log(`  ${films.length} films, ${films.flatMap((f) => f.showtimes).length} showtimes`);
   console.log(`  Window: ${start} → ${end}`);
+
+  if (failedScrapers.length > 0) {
+    const labels = failedScrapers.map(id => SCRAPERS[id].label).join(", ");
+    console.warn(`\n⚠  Degraded run: ${failedScrapers.length} scraper(s) failed (${labels}).`);
+    console.warn(`   Preserved last-known-good showtimes for those venues.`);
+  }
 
   if (failures.length > 0) {
     writeFileSync("public/data/failed-matches.json", JSON.stringify(failures, null, 2));

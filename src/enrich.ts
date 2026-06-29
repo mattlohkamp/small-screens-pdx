@@ -1,5 +1,6 @@
 import "dotenv/config";
 import type { Film } from "./types.js";
+import { fetchWithRetry } from "./fetch.js";
 
 const TMDB_BASE = "https://api.themoviedb.org/3";
 
@@ -32,9 +33,12 @@ async function tmdbGet<T>(path: string, params: Record<string, string> = {}): Pr
   url.searchParams.set("api_key", apiKey());
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
 
-  const res = await fetch(url.toString(), {
-    headers: { "User-Agent": "small-screens-pdx/0.1" },
-  });
+  // throwOnHttpError:false + a path-based message keeps the api_key out of error/retry logs.
+  const res = await fetchWithRetry(
+    url.toString(),
+    { headers: { "User-Agent": "small-screens-pdx/0.1" } },
+    { label: "TMDB", throwOnHttpError: false }
+  );
   if (!res.ok) throw new Error(`TMDB HTTP ${res.status} for ${path}`);
   return res.json() as Promise<T>;
 }
