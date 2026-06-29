@@ -1,29 +1,26 @@
-name: Deploy
+name: Deploy UI
 
+# Manual UI release. The daily scrape deploys data on its own (see scrape.yml);
+# this workflow is the only thing that ships frontend/code changes to the live
+# site, and it only runs when you choose to — via the "Run workflow" button or
+# by pushing a release-* tag.
 on:
+  workflow_dispatch:
   push:
     tags:
       - "release-*"
-    branches:
-      - main
-    paths:
-      - "public/data/upcoming.json"
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
+# Serialize with the data deploy so the two never push gh-pages at once.
 concurrency:
-  group: pages
+  group: gh-pages
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  deploy-ui:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -39,10 +36,31 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /small-screens-pdx
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: out/
+      - name: Publish UI to gh-pages
+        run: |
+          set -euo pipefail
+          touch out/.nojekyll  # let GitHub Pages serve Next.js _next/ dirs
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages
+            git worktree add -B gh-pages gh-pages-wt origin/gh-pages
+          else
+            echo "gh-pages does not exist yet — creating it."
+            git worktree add -b gh-pages gh-pages-wt
+          fi
+
+          # Full UI replace: drop everything tracked, lay down the fresh build.
+          # This also ships the data file that was current in main at build time;
+          # subsequent daily data deploys keep it up to date.
+          find gh-pages-wt -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -r out/. gh-pages-wt/
+
+          git -C gh-pages-wt add -A
+          if git -C gh-pages-wt diff --staged --quiet; then
+            echo "No UI changes to publish."
+          else
+            git -C gh-pages-wt commit -m "ui: release ${GITHUB_SHA::7}"
+            git -C gh-pages-wt push origin gh-pages
+          fi

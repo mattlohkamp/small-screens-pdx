@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+# Serialize with the UI release so the two never push gh-pages at once.
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -46,4 +51,30 @@ jobs:
             git commit -m "chore: daily scrape $(date -u +%Y-%m-%d)"
             git pull --rebase origin main
             git push --no-verify
+          fi
+
+      # Deploy ONLY the data file to the live site. This touches data/upcoming.json
+      # on gh-pages and nothing else, so the daily scrape never ships UI changes —
+      # those go out solely via the manual Deploy UI workflow.
+      - name: Deploy data to gh-pages
+        run: |
+          set -euo pipefail
+          if ! git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            echo "gh-pages does not exist yet — run the Deploy UI workflow once to create it. Skipping data deploy."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages
+          git worktree add -B gh-pages gh-pages-wt origin/gh-pages
+
+          mkdir -p gh-pages-wt/data
+          cp public/data/upcoming.json gh-pages-wt/data/upcoming.json
+
+          git -C gh-pages-wt add data/upcoming.json
+          if git -C gh-pages-wt diff --staged --quiet; then
+            echo "Live data already current — nothing to deploy."
+          else
+            git -C gh-pages-wt commit -m "data: scrape $(date -u +%Y-%m-%d)"
+            git -C gh-pages-wt push origin gh-pages
           fi
