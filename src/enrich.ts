@@ -68,11 +68,31 @@ async function fetchDetails(id: number): Promise<TmdbMovieDetails> {
   return tmdbGet<TmdbMovieDetails>(`/movie/${id}`, { append_to_response: "credits" });
 }
 
+// Several venues (notably Clinton Street) format titles as "Title (YYYY)".
+// TMDB's full-text search chokes on the embedded year — it belongs in the
+// primary_release_year filter, not the query string. Pull it out.
+function parseTitleYear(raw: string): { title: string; year: number | null } {
+  const m = raw.match(/^(.*?)\s*\((\d{4})\)\s*$/);
+  if (m) return { title: m[1].trim(), year: parseInt(m[2], 10) };
+  return { title: raw, year: null };
+}
+
 async function findBestCandidate(
   results: TmdbSearchResult[],
-  runtimeMinutes: number | null
+  runtimeMinutes: number | null,
+  year: number | null
 ): Promise<TmdbSearchResult> {
-  if (results.length === 1 || !runtimeMinutes) return results[0];
+  if (results.length === 1) return results[0];
+
+  // With no runtime to match on (common for venues that omit it), fall back to
+  // the parsed release year so we don't blindly take the first fuzzy result.
+  if (!runtimeMinutes) {
+    if (year) {
+      const yearMatch = results.find((r) => r.release_date?.startsWith(String(year)));
+      if (yearMatch) return yearMatch;
+    }
+    return results[0];
+  }
 
   let best = results[0];
   let bestDiff = Infinity;
@@ -103,22 +123,29 @@ export async function enrichFilm(film: Film): Promise<Film> {
   if (overrideId) {
     tmdbId = overrideId;
   } else {
-    let searchResults: { results: TmdbSearchResult[] };
+    const { title: searchTitle, year: searchYear } = parseTitleYear(film.title);
+    let results: TmdbSearchResult[];
     try {
-      searchResults = await tmdbGet<{ results: TmdbSearchResult[] }>("/search/movie", {
-        query: film.title,
-      });
+      const params: Record<string, string> = { query: searchTitle };
+      if (searchYear) params.primary_release_year = String(searchYear);
+      results = (await tmdbGet<{ results: TmdbSearchResult[] }>("/search/movie", params)).results;
+
+      // The year filter can be too strict if TMDB's primary_release_year differs
+      // from the venue's stated year (re-releases, regional dates). Retry without it.
+      if (results.length === 0 && searchYear) {
+        results = (await tmdbGet<{ results: TmdbSearchResult[] }>("/search/movie", { query: searchTitle })).results;
+      }
     } catch (err) {
       console.warn(`  TMDB search failed for "${film.title}":`, err);
       return film;
     }
 
-    if (searchResults.results.length === 0) {
+    if (results.length === 0) {
       console.warn(`  No TMDB results for "${film.title}"`);
       return film;
     }
 
-    const candidate = await findBestCandidate(searchResults.results, film.runtime_minutes);
+    const candidate = await findBestCandidate(results, film.runtime_minutes, searchYear);
     tmdbId = candidate.id;
   }
 
