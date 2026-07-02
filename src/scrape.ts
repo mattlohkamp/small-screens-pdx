@@ -8,6 +8,7 @@ import { scrapeAcademy } from "./scrapers/academy.js";
 import { scrapeLivingRoom } from "./scrapers/living-room.js";
 import { scrapeOmsi } from "./scrapers/omsi.js";
 import { scrapeCinema21 } from "./scrapers/cinema-21.js";
+import { scrapeHollywood } from "./scrapers/hollywood.js";
 import { closeBrowser } from "./browser.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
@@ -25,6 +26,7 @@ const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; 
   "living-room":   { fn: scrapeLivingRoom,      venueIds: ["living-room"],                  label: "Living Room Theaters" },
   omsi:            { fn: scrapeOmsi,            venueIds: ["omsi"],                         label: "OMSI Empirical Theatre" },
   "cinema-21":     { fn: scrapeCinema21,        venueIds: ["cinema-21"],                    label: "Cinema 21" },
+  hollywood:       { fn: scrapeHollywood,       venueIds: ["hollywood"],                    label: "Hollywood Theatre" },
 };
 
 // Merge films from multiple scrapers: same title → one record, combined showtimes.
@@ -264,6 +266,16 @@ async function main() {
         lat: 45.5271,
         lng: -122.6975,
         website: "https://www.cinema21.com",
+        group: null,
+      },
+      {
+        id: "hollywood",
+        name: "Hollywood Theatre",
+        neighborhood: "NE Portland",
+        address: "4122 NE Sandy Blvd, Portland OR",
+        lat: 45.5315,
+        lng: -122.6240,
+        website: "https://hollywoodtheatre.org",
         group: null,
       },
     ],
