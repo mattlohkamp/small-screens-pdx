@@ -9,6 +9,8 @@ import { scrapeLivingRoom } from "./scrapers/living-room.js";
 import { scrapeOmsi } from "./scrapers/omsi.js";
 import { scrapeCinema21 } from "./scrapers/cinema-21.js";
 import { scrapeHollywood } from "./scrapers/hollywood.js";
+import { scrapeStJohns } from "./scrapers/st-johns.js";
+import { scrapeMoreland } from "./scrapers/moreland.js";
 import { closeBrowser } from "./browser.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
@@ -27,6 +29,8 @@ const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; 
   omsi:            { fn: scrapeOmsi,            venueIds: ["omsi"],                         label: "OMSI Empirical Theatre" },
   "cinema-21":     { fn: scrapeCinema21,        venueIds: ["cinema-21"],                    label: "Cinema 21" },
   hollywood:       { fn: scrapeHollywood,       venueIds: ["hollywood"],                    label: "Hollywood Theatre" },
+  "st-johns":      { fn: scrapeStJohns,         venueIds: ["st-johns"],                     label: "St. Johns Cinema" },
+  moreland:        { fn: scrapeMoreland,         venueIds: ["moreland"],                     label: "Moreland Theater" },
 };
 
 // Merge films from multiple scrapers: same title → one record, combined showtimes.
@@ -276,6 +280,26 @@ async function main() {
         lat: 45.5315,
         lng: -122.6240,
         website: "https://hollywoodtheatre.org",
+        group: null,
+      },
+      {
+        id: "st-johns",
+        name: "St. Johns Twin Cinema & Pub",
+        neighborhood: "N Portland / St. Johns",
+        address: "8704 N Lombard St, Portland OR",
+        lat: 45.5944,
+        lng: -122.7457,
+        website: "https://www.saintjohnspub.net",
+        group: null,
+      },
+      {
+        id: "moreland",
+        name: "Moreland Theater",
+        neighborhood: "SE Portland / Sellwood",
+        address: "6712 SE Milwaukie Ave, Portland OR",
+        lat: 45.4752,
+        lng: -122.6504,
+        website: "https://morelandtheater.com",
         group: null,
       },
     ],
