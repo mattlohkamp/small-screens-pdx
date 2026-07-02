@@ -1,17 +1,19 @@
 import * as cheerio from "cheerio";
+import type { Page } from "playwright";
 import type { Film, Showtime } from "../types.js";
-import { fetchText, fetchWithRetry } from "../fetch.js";
+import { fetchText } from "../fetch.js";
+import { getBrowser, closeBrowser } from "../browser.js";
 import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "omsi";
 const OMSI_URL = "https://omsi.edu/exhibits/empirical-theater/";
-const API_BASE = "https://tickets.omsi.edu/cached_api";
+const TICKETS_ORIGIN = "https://tickets.omsi.edu";
+const API_BASE = `${TICKETS_ORIGIN}/cached_api`;
 const HEADERS = { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" };
+const BROWSER_UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
 
-// OMSI's ticketing API sits behind CloudFront, whose WAF intermittently 403s valid
-// requests (especially from datacenter IPs like CI runners). Retry 403 alongside the
-// usual transient codes so a flaky rejection doesn't silently drop a real screening.
-const OMSI_RETRY_STATUSES = [403, 408, 429, 500, 502, 503, 504];
+const MAX_API_ATTEMPTS = 3;
 
 // Categories that indicate non-film programming to exclude
 const NON_FILM_CATEGORIES = new Set(["Matches at the Museum"]);
@@ -56,6 +58,51 @@ function utcToLocalPacific(utc: string): string {
   return d.toLocaleString("sv-SE", { timeZone: "America/Los_Angeles" }).replace(" ", "T");
 }
 
+// The ticketing API sits behind CloudFront, whose WAF 403s bare node `fetch` from
+// datacenter IPs (CI runners) regardless of headers — the block is deterministic, so
+// retrying the same request never clears it. A real Chrome network stack (matching TLS
+// fingerprint + headers) passes, so we route every API call through a Playwright page
+// landed on the ticketing origin and fetch same-origin from inside the page.
+let _apiPage: Page | null = null;
+
+async function getApiPage(): Promise<Page> {
+  if (_apiPage) return _apiPage;
+  const browser = await getBrowser();
+  const ctx = await browser.newContext({ userAgent: BROWSER_UA });
+  const page = await ctx.newPage();
+  await page.goto(`${TICKETS_ORIGIN}/`, { waitUntil: "domcontentloaded", timeout: 30000 });
+  _apiPage = page;
+  return page;
+}
+
+// GET JSON from the ticketing API through the browser page. Returns null on non-2xx
+// (a meaningful "no data" answer) after retrying transient failures.
+async function fetchApiJson<T>(url: string): Promise<T | null> {
+  const page = await getApiPage();
+  for (let attempt = 1; ; attempt++) {
+    const result = await page.evaluate(async (u) => {
+      try {
+        const res = await fetch(u, { headers: { Accept: "application/json" } });
+        return { ok: res.ok, status: res.status, body: res.ok ? await res.text() : null };
+      } catch (e) {
+        return { ok: false, status: 0, body: null, error: String(e) };
+      }
+    }, url);
+
+    if (result.ok && result.body) return JSON.parse(result.body) as T;
+
+    // status 0 = network/timeout inside the page; retry. Real HTTP errors are terminal.
+    if (result.status === 0 && attempt < MAX_API_ATTEMPTS) {
+      const delay = attempt * 2000;
+      console.warn(`  OMSI API fetch failed (attempt ${attempt}), retrying in ${delay / 1000}s...`);
+      await new Promise((r) => setTimeout(r, delay));
+      continue;
+    }
+    if (result.status !== 0) console.warn(`  OMSI: HTTP ${result.status} for ${url}`);
+    return null;
+  }
+}
+
 // Extract all unique event UUIDs from the OMSI theater page
 async function fetchEventUUIDs(): Promise<string[]> {
   const html = await fetchText(OMSI_URL, { headers: HEADERS }, "OMSI");
@@ -74,15 +121,11 @@ async function fetchEventUUIDs(): Promise<string[]> {
 // Get event title, category, and ticket_group_id from the Eventbrite white-label API
 async function fetchEventDetails(uuid: string): Promise<EventDetails | null> {
   const url = `${API_BASE}/events/${uuid}?_embed=ticket_group`;
-  const res = await fetchWithRetry(url, { headers: HEADERS }, { label: "OMSI", throwOnHttpError: false, retryStatuses: OMSI_RETRY_STATUSES });
-  if (!res.ok) {
-    console.warn(`  OMSI: HTTP ${res.status} for event ${uuid}`);
-    return null;
-  }
-  const json = await res.json() as {
+  const json = await fetchApiJson<{
     event_template?: { _data?: Array<{ name?: string; category?: string }> };
     ticket_group?: { _data?: Array<{ id?: string }> };
-  };
+  }>(url);
+  if (!json) return null;
 
   const template = json?.event_template?._data?.[0];
   const ticketGroupId = json?.ticket_group?._data?.[0]?.id;
@@ -105,9 +148,8 @@ async function fetchAvailableDates(
   // No start filter — the endpoint returns the rolling window the platform shows.
   // We filter client-side to our window.
   const url = `${API_BASE}/events/${uuid}/calendar?_format=extended&ticket_group_id._in=${ticketGroupId}`;
-  const res = await fetchWithRetry(url, { headers: HEADERS }, { label: "OMSI", throwOnHttpError: false, retryStatuses: OMSI_RETRY_STATUSES });
-  if (!res.ok) return [];
-  const json = await res.json() as { calendar?: { _data?: CalendarDate[] } };
+  const json = await fetchApiJson<{ calendar?: { _data?: CalendarDate[] } }>(url);
+  if (!json) return [];
 
   return (json?.calendar?._data ?? [])
     .filter(d => d.status === "available" && d.date >= start && d.date <= end)
@@ -121,9 +163,8 @@ async function fetchSessionsForDate(
   date: string
 ): Promise<EventSession[]> {
   const url = `${API_BASE}/events/${uuid}/sessions?_ondate=${date}&ticket_group.id._in=${ticketGroupId}`;
-  const res = await fetchWithRetry(url, { headers: HEADERS }, { label: "OMSI", throwOnHttpError: false, retryStatuses: OMSI_RETRY_STATUSES });
-  if (!res.ok) return [];
-  const json = await res.json() as { event_session?: { _data?: EventSession[] } };
+  const json = await fetchApiJson<{ event_session?: { _data?: EventSession[] } }>(url);
+  if (!json) return [];
   return json?.event_session?._data ?? [];
 }
 
@@ -193,4 +234,5 @@ export async function scrapeOmsi(): Promise<Film[]> {
 if (process.argv[1].includes("omsi")) {
   const films = await scrapeOmsi();
   console.log(JSON.stringify(films, null, 2));
+  await closeBrowser(); // release the shared browser so the process exits
 }
