@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { writeFileSync, mkdirSync, readFileSync } from "fs";
+import { writeFileSync, mkdirSync, readFileSync, appendFileSync } from "fs";
 import { scrapeCinemagic } from "./scrapers/cinemagic.js";
 import { scrapeClintontStreet } from "./scrapers/clinton-street.js";
 import { scrapeLaurelhurst } from "./scrapers/laurelhurst.js";
@@ -80,6 +80,25 @@ function loadExistingSchedule(): Schedule | null {
 }
 
 async function main() {
+  const runStart = new Date();
+  const logLines: string[] = [];
+  const log = (msg: string) => {
+    console.log(msg);
+    logLines.push(msg);
+  };
+  try {
+    await run(runStart, log);
+  } catch (err) {
+    log(`=== Scrape run FAILED: ${new Date().toISOString()} ===`);
+    log(err instanceof Error ? err.stack ?? err.message : String(err));
+    throw err;
+  } finally {
+    mkdirSync("public/data", { recursive: true });
+    appendFileSync("public/data/scrape.log", logLines.join("\n") + "\n");
+  }
+}
+
+async function run(runStart: Date, log: (msg: string) => void) {
   const args = process.argv.slice(2).filter(a => !a.startsWith("--"));
   const force = process.argv.includes("--force");
   const start = today();
@@ -95,18 +114,19 @@ async function main() {
     process.exit(1);
   }
 
+  log(`=== Scrape run: ${runStart.toISOString()} ===`);
   const partial = selectedIds.length < allIds.length;
   if (partial) {
-    console.log(`Scraping: ${selectedIds.join(", ")} (partial update)`);
+    log(`Scraping: ${selectedIds.join(", ")} (partial update)`);
   }
 
   const cache = loadCache();
   const retryTitles = force ? new Set<string>() : loadPreviousFailures();
 
   if (force) {
-    console.log("--force: re-enriching all films");
+    log("--force: re-enriching all films");
   } else if (retryTitles.size > 0) {
-    console.log(`Retrying ${retryTitles.size} previous failure(s), using cache for the rest`);
+    log(`Retrying ${retryTitles.size} previous failure(s), using cache for the rest`);
   }
 
   // Run selected scrapers in parallel. Isolate failures: one venue being slow or
@@ -114,10 +134,10 @@ async function main() {
   const settled = await Promise.allSettled(
     selectedIds.map(async (id) => {
       const { fn, label } = SCRAPERS[id];
-      console.log(`Scraping ${label}...`);
+      log(`Scraping ${label}...`);
       const t = Date.now();
       const films = await fn();
-      console.log(`  ${label}: ${films.length} films (${((Date.now() - t) / 1000).toFixed(1)}s)`);
+      log(`  ${label}: ${films.length} films (${((Date.now() - t) / 1000).toFixed(1)}s)`);
       return films;
     })
   );
@@ -131,6 +151,7 @@ async function main() {
     } else {
       failedScrapers.push(selectedIds[i]);
       console.error(`✗ ${SCRAPERS[selectedIds[i]].label} failed:`, result.reason);
+      log(`✗ ${SCRAPERS[selectedIds[i]].label} failed: ${result.reason}`);
     }
   });
 
@@ -158,7 +179,7 @@ async function main() {
   }
 
   const rawFilms = mergeFilms([baseFilms, ...freshFilmLists]);
-  console.log(`  ${rawFilms.length} unique films after merge`);
+  log(`  ${rawFilms.length} unique films after merge`);
 
   // Trim to the 7-day window BEFORE enriching. We don't spend TMDB calls — or
   // emit match-failure noise — on showtimes outside the window we expose.
@@ -170,9 +191,9 @@ async function main() {
       ),
     }))
     .filter((film) => film.showtimes.length > 0);
-  console.log(`  ${windowedFilms.length} films within ${start} → ${end}`);
+  log(`  ${windowedFilms.length} films within ${start} → ${end}`);
 
-  console.log("Enriching via TMDB...");
+  log("Enriching via TMDB...");
   // Enrichment only adds metadata; it leaves showtimes (already windowed) intact.
   const { films, failures } = await enrichFilms(windowedFilms, {
     force,
@@ -332,27 +353,31 @@ async function main() {
 
   mkdirSync("public/data", { recursive: true });
   writeFileSync("public/data/upcoming.json", JSON.stringify(schedule, null, 2));
-  console.log(`\nWrote public/data/upcoming.json`);
-  console.log(`  ${films.length} films, ${films.flatMap((f) => f.showtimes).length} showtimes`);
-  console.log(`  Window: ${start} → ${end}`);
+  log(`\nWrote public/data/upcoming.json`);
+  log(`  ${films.length} films, ${films.flatMap((f) => f.showtimes).length} showtimes`);
+  log(`  Window: ${start} → ${end}`);
 
   if (failedScrapers.length > 0) {
     const labels = failedScrapers.map(id => SCRAPERS[id].label).join(", ");
     console.warn(`\n⚠  Degraded run: ${failedScrapers.length} scraper(s) failed (${labels}).`);
     console.warn(`   Preserved last-known-good showtimes for those venues.`);
+    log(`\n⚠  Degraded run: ${failedScrapers.length} scraper(s) failed (${labels}).`);
+    log(`   Preserved last-known-good showtimes for those venues.`);
   }
 
   if (failures.length > 0) {
     writeFileSync("public/data/failed-matches.json", JSON.stringify(failures, null, 2));
-    console.log(`\n⚠  ${failures.length} film(s) could not be matched to TMDB:`);
+    log(`\n⚠  ${failures.length} film(s) could not be matched to TMDB:`);
     for (const f of failures) {
-      console.log(`   • "${f.title}" (${f.runtime_minutes ?? "?"}min) — ${f.venue_id}`);
+      log(`   • "${f.title}" (${f.runtime_minutes ?? "?"}min) — ${f.venue_id}`);
     }
-    console.log(`\n   Fix: add entries to TMDB_ID_OVERRIDES in src/enrich.ts`);
-    console.log(`   Details written to public/data/failed-matches.json`);
+    log(`\n   Fix: add entries to TMDB_ID_OVERRIDES in src/enrich.ts`);
+    log(`   Details written to public/data/failed-matches.json`);
   } else {
-    console.log("\nAll films matched successfully.");
+    log("\nAll films matched successfully.");
   }
+
+  log(`=== Run finished: ${new Date().toISOString()} (${((Date.now() - runStart.getTime()) / 1000).toFixed(1)}s) ===\n`);
 }
 
 main().catch((err) => {

@@ -52,6 +52,7 @@ interface Showtime {
   datetime: string;
   format: string | null;
   ticket_url: string | null;
+  event_note?: string | null;
 }
 
 interface Film {
@@ -64,7 +65,9 @@ interface Film {
   overview: string | null;
   poster_path: string | null;
   genres: string[];
+  imdb_id?: string | null;
   showtimes: Showtime[];
+  match_confidence?: "verified" | "fallback";
 }
 
 interface Schedule {
@@ -82,6 +85,13 @@ function buildFilmPageUrl(venueId: string, film: Film, venue: Venue): string {
     default:
       return venue.website;
   }
+}
+
+// Link directly to the matched title's IMDB page when we have it; only fall
+// back to an IMDB search for films that TMDB didn't resolve (id === null).
+function imdbUrl(film: Film): string {
+  if (film.imdb_id) return `https://www.imdb.com/title/${film.imdb_id}/`;
+  return `https://www.imdb.com/find?q=${encodeURIComponent(`${film.title} ${film.year ?? ""}`)}&s=tt&ttype=ft`;
 }
 
 function formatRuntime(minutes: number): string {
@@ -112,6 +122,28 @@ function formatDateLabel(dateStr: string, today: string): string {
   return short;
 }
 
+function ordinal(n: number): string {
+  if (n % 10 === 1 && n % 100 !== 11) return `${n}st`;
+  if (n % 10 === 2 && n % 100 !== 12) return `${n}nd`;
+  if (n % 10 === 3 && n % 100 !== 13) return `${n}rd`;
+  return `${n}th`;
+}
+
+function formatFullDateLabel(dateStr: string): string {
+  const d = new Date(dateStr + "T12:00:00");
+  const month = d.toLocaleDateString("en-US", { month: "long" });
+  const year = d.getFullYear();
+  return `${month} ${ordinal(d.getDate())}, ${year}`;
+}
+
+function formatDayCardLabel(dateStr: string): { weekday: string; month: string; day: string } {
+  const d = new Date(dateStr + "T12:00:00");
+  const weekday = d.toLocaleDateString("en-US", { weekday: "short" });
+  const month = d.toLocaleDateString("en-US", { month: "short" }).toUpperCase();
+  const day = ordinal(d.getDate());
+  return { weekday, month, day };
+}
+
 function buildDateWindow(start: string, end: string): string[] {
   const dates: string[] = [];
   const d = new Date(start + "T12:00:00");
@@ -127,6 +159,7 @@ type ViewMode = "expanded" | "compact";
 type SortBy = "time" | "title" | "runtime";
 
 const MATINEE_CUTOFF = "17:00"; // before 5pm
+const MCMENAMINS_IDS = new Set(["baghdad", "kennedy-school", "mission"]);
 
 export default function WhatsOn() {
   const [schedule, setSchedule] = useState<Schedule | null>(null);
@@ -141,8 +174,11 @@ export default function WhatsOn() {
   const [matineeOnly, setMatineeOnly] = useState(false);
   const [shortOnly, setShortOnly] = useState(false);
   const [hidePast, setHidePast] = useState(true);
+  const [hideMcmenamins, setHideMcmenamins] = useState(false);
+  const [hideUnverified, setHideUnverified] = useState(false);
   const [venuesOpen, setVenuesOpen] = useState(false);
   const [genresOpen, setGenresOpen] = useState(false);
+  const [mapOpen, setMapOpen] = useState(false);
   const [filtersVisible, setFiltersVisible] = useState(false);
 
   useEffect(() => {
@@ -218,29 +254,86 @@ export default function WhatsOn() {
     });
   }, [schedule]);
 
-  const filmsOnDate = useMemo(() => {
-    if (!schedule || !selectedDate) return [];
-
+  // Films matching search + genre only — the shared baseline the toggle filters
+  // (matinee, <2h, hide past, hide McMenamins, hide unverified) all narrow further.
+  const { searchedFilms, matchMap } = useMemo(() => {
+    if (!schedule) return { searchedFilms: [] as Film[], matchMap: null as Map<string, FuseResultMatch[]> | null };
     const trimmed = query.trim();
     const fuseResults = trimmed && fuse ? fuse.search(trimmed) : null;
     const matchMap = fuseResults ? buildMatchMap(fuseResults) : null;
     const matchedSlugs = matchMap ? new Set(matchMap.keys()) : null;
 
-    const entries = schedule.films
+    const searchedFilms = schedule.films
       .filter((film) => !matchedSlugs || matchedSlugs.has(film.slug))
-      // Genre filter
       .filter((film) =>
         genreFilter.size === 0 ||
         film.genres.length === 0 ||
         film.genres.some((g) => genreFilter.has(g))
-      )
+      );
+    return { searchedFilms, matchMap };
+  }, [schedule, query, fuse, genreFilter]);
+
+  interface ToggleFlags {
+    matineeOnly: boolean;
+    shortOnly: boolean;
+    hidePast: boolean;
+    hideMcmenamins: boolean;
+    hideUnverified: boolean;
+  }
+
+  // Counts how many showtimes on selectedDate survive a given combination of
+  // toggle filters, on top of the search/genre/venue baseline.
+  const countShowtimes = (films: Film[], flags: ToggleFlags): number => {
+    const now = new Date();
+    return films
+      .filter((film) => !flags.shortOnly || film.runtime_minutes == null || film.runtime_minutes <= 120)
+      .filter((film) => !flags.hideUnverified || film.id != null)
+      .reduce((sum, film) => {
+        const count = film.showtimes.filter((s) => {
+          if (!s.datetime.startsWith(selectedDate)) return false;
+          if (selectedVenues.size > 0 && !selectedVenues.has(s.venue_id)) return false;
+          if (flags.hideMcmenamins && MCMENAMINS_IDS.has(s.venue_id)) return false;
+          if (flags.hidePast && selectedDate === today && new Date(s.datetime) < now) return false;
+          if (flags.matineeOnly && s.datetime.slice(11, 16) >= MATINEE_CUTOFF) return false;
+          return true;
+        }).length;
+        return sum + count;
+      }, 0);
+  };
+
+  const currentFlags: ToggleFlags = { matineeOnly, shortOnly, hidePast, hideMcmenamins, hideUnverified };
+
+  // Count next to each toggle button: for "show only" toggles (Matinee, <2h) this is
+  // how many showtimes qualify; for "hide" toggles this is how many would be removed.
+  // Both are computed against the other toggles' current state.
+  const toggleCounts = useMemo(() => {
+    const matches = (flag: keyof ToggleFlags) =>
+      countShowtimes(searchedFilms, { ...currentFlags, [flag]: true });
+    const baseline = countShowtimes(searchedFilms, currentFlags);
+    const removedBy = (flag: keyof ToggleFlags) => baseline - matches(flag);
+    return {
+      matineeOnly: matches("matineeOnly"),
+      shortOnly: matches("shortOnly"),
+      hidePast: removedBy("hidePast"),
+      hideMcmenamins: removedBy("hideMcmenamins"),
+      hideUnverified: removedBy("hideUnverified"),
+    };
+  }, [searchedFilms, selectedDate, selectedVenues, today, matineeOnly, shortOnly, hidePast, hideMcmenamins, hideUnverified]);
+
+  const filmsOnDate = useMemo(() => {
+    if (!schedule || !selectedDate) return [];
+
+    const entries = searchedFilms
       // Runtime filter
       .filter((film) => !shortOnly || film.runtime_minutes == null || film.runtime_minutes <= 120)
+      // Verification filter: films we couldn't match to a movie database entry
+      .filter((film) => !hideUnverified || film.id != null)
       .map((film) => {
         const now = new Date();
         let showtimes = film.showtimes.filter((s) => {
           if (!s.datetime.startsWith(selectedDate)) return false;
           if (selectedVenues.size > 0 && !selectedVenues.has(s.venue_id)) return false;
+          if (hideMcmenamins && MCMENAMINS_IDS.has(s.venue_id)) return false;
           if (hidePast && selectedDate === today && new Date(s.datetime) < now) return false;
           return true;
         });
@@ -259,7 +352,13 @@ export default function WhatsOn() {
       if (!deduped.has(key)) {
         deduped.set(key, { ...entry, showtimes: [...entry.showtimes] });
       } else {
-        deduped.get(key)!.showtimes.push(...entry.showtimes);
+        const existing = deduped.get(key)!;
+        existing.showtimes.push(...entry.showtimes);
+        // A verified match on any title for this film outweighs a fallback
+        // match on another — the fallback guess is now cross-confirmed.
+        if (existing.film.match_confidence === "fallback" && entry.film.match_confidence === "verified") {
+          existing.film = entry.film;
+        }
       }
     }
 
@@ -274,7 +373,40 @@ export default function WhatsOn() {
       const bMin = b.showtimes[0].datetime;
       return aMin < bMin ? -1 : aMin > bMin ? 1 : 0;
     });
-  }, [schedule, selectedDate, selectedVenues, query, fuse, genreFilter, matineeOnly, shortOnly, hidePast, today, sortBy]);
+  }, [schedule, selectedDate, selectedVenues, searchedFilms, matchMap, matineeOnly, shortOnly, hidePast, hideMcmenamins, hideUnverified, today, sortBy]);
+
+  // Total showtimes on this date, regardless of filters, vs. how many survive them.
+  const showtimeCounts = useMemo(() => {
+    if (!schedule || !selectedDate) return { total: 0, shown: 0 };
+    const total = schedule.films.reduce(
+      (sum, film) => sum + film.showtimes.filter((s) => s.datetime.startsWith(selectedDate)).length,
+      0
+    );
+    const shown = filmsOnDate.reduce((sum, { showtimes }) => sum + showtimes.length, 0);
+    return { total, shown };
+  }, [schedule, selectedDate, filmsOnDate]);
+
+  // Whether today's showtimes have all already passed (vs. there being none at all).
+  // Only relevant when filmsOnDate is empty, we're on today, and "Hide past" is on.
+  const allShowtimesPassedToday =
+    filmsOnDate.length === 0 &&
+    selectedDate === today &&
+    hidePast &&
+    !!schedule &&
+    schedule.films.some((film) =>
+      film.showtimes.some((s) => {
+        if (!s.datetime.startsWith(selectedDate)) return false;
+        if (selectedVenues.size > 0 && !selectedVenues.has(s.venue_id)) return false;
+        if (hideMcmenamins && MCMENAMINS_IDS.has(s.venue_id)) return false;
+        if (matineeOnly && s.datetime.slice(11, 16) >= MATINEE_CUTOFF) return false;
+        return true;
+      })
+    );
+
+  const nextDate = useMemo(() => {
+    const idx = dates.indexOf(selectedDate);
+    return idx >= 0 && idx + 1 < dates.length ? dates[idx + 1] : null;
+  }, [dates, selectedDate]);
 
   // Genres that have at least one showtime on the selected date+venues (ignoring genre filter)
   const availableGenres = useMemo(() => {
@@ -298,8 +430,6 @@ export default function WhatsOn() {
     () => (schedule ? [...new Set(schedule.films.flatMap((f) => f.genres))].sort() : []),
     [schedule]
   );
-
-  const MCMENAMINS_IDS = new Set(["baghdad", "kennedy-school"]);
 
   function toggleVenue(id: string) {
     setSelectedVenues((prev) => {
@@ -327,21 +457,31 @@ export default function WhatsOn() {
       <header className={styles.header}>
         <h1 className={styles.title}>Small Screens PDX</h1>
         <p className={styles.subtitle}>Independent cinema in Portland</p>
-        {schedule && (
-          <VenueMap
-            venues={schedule.venues}
-            selectedVenues={selectedVenues}
-            onVenueClick={(id) => {
-              setSelectedVenues(new Set([id]));
-              setFiltersVisible(true);
-            }}
-          />
-        )}
       </header>
 
       <div className={styles.filters}>
-        {/* Date + quick toggles + view mode */}
+        {/* Date picker: 7 calendar-day cards spanning the full width */}
+        <div className={styles.dateCards}>
+          {dates.map((d) => {
+            const { weekday, month, day } = formatDayCardLabel(d);
+            const isToday = d === today;
+            return (
+              <button
+                key={d}
+                className={`${styles.dateCard} ${d === selectedDate ? styles.dateCardActive : ""} ${isToday ? styles.dateCardToday : ""}`}
+                onClick={() => setSelectedDate(d)}
+              >
+                <span className={styles.dateCardMonth}>{month}</span>
+                <span className={styles.dateCardDay}>{day}</span>
+                <span className={styles.dateCardWeekday}>{isToday ? "Today" : weekday}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Quick toggles + view mode */}
         <div className={styles.filterRow}>
+          {/*
           <div className={styles.dateSelectWrapper}>
           <select
             className={styles.dateSelect}
@@ -355,26 +495,41 @@ export default function WhatsOn() {
             ))}
           </select>
           </div>
+          */}
           <button
             className={`${styles.toggleBtn} ${matineeOnly ? styles.toggleBtnActive : ""}`}
             onClick={() => setMatineeOnly((v) => !v)}
             title="Show only showtimes before 5pm"
           >
-            Matinee
+            Matinee <span className={styles.toggleCount}>({toggleCounts.matineeOnly})</span>
           </button>
           <button
             className={`${styles.toggleBtn} ${shortOnly ? styles.toggleBtnActive : ""}`}
             onClick={() => setShortOnly((v) => !v)}
             title="Show only films under 2 hours"
           >
-            &lt; 2h
+            &lt; 2h <span className={styles.toggleCount}>({toggleCounts.shortOnly})</span>
           </button>
           <button
             className={`${styles.toggleBtn} ${hidePast ? styles.toggleBtnActive : ""}`}
             onClick={() => setHidePast((v) => !v)}
             title="Hide showtimes that have already started"
           >
-            Hide past
+            Hide past <span className={styles.toggleCount}>({toggleCounts.hidePast})</span>
+          </button>
+          <button
+            className={`${styles.toggleBtn} ${hideMcmenamins ? styles.toggleBtnActive : ""}`}
+            onClick={() => setHideMcmenamins((v) => !v)}
+            title="Hide showtimes at McMenamins venues (Bagdad, Kennedy School, Mission)"
+          >
+            Hide McMenamins <span className={styles.toggleCount}>({toggleCounts.hideMcmenamins})</span>
+          </button>
+          <button
+            className={`${styles.toggleBtn} ${hideUnverified ? styles.toggleBtnActive : ""}`}
+            onClick={() => setHideUnverified((v) => !v)}
+            title="Some showtimes can't be matched to a movie database entry — they're still real screenings, just without poster art or details. Hide them here if you'd rather only see verified listings."
+          >
+            Hide unverified <span className={styles.toggleCount}>({toggleCounts.hideUnverified})</span>
           </button>
           <button
             className={`${styles.toggleBtn} ${filtersVisible ? styles.toggleBtnActive : ""} ${(query || selectedVenues.size > 0 || genreFilter.size > 0) && !filtersVisible ? styles.toggleBtnDot : ""}`}
@@ -515,6 +670,40 @@ export default function WhatsOn() {
         </div>
         </div></div>
 
+        {/* Map — collapsible */}
+        <div className={styles.collapsible}>
+          <button className={styles.collapsibleToggle} onClick={() => setMapOpen((o) => !o)}>
+            <span className={styles.collapsibleCaret}>{mapOpen ? "▲" : "▼"}</span>
+            <span className={styles.collapsibleLabel}>
+              <svg className={styles.mapIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+                <line x1="8" y1="2" x2="8" y2="18" />
+                <line x1="16" y1="6" x2="16" y2="22" />
+              </svg>
+              See venues on map ({schedule.venues.length})
+            </span>
+          </button>
+          {mapOpen && (
+            <VenueMap
+              venues={schedule.venues}
+              selectedVenues={selectedVenues}
+              onVenueClick={(id) => {
+                setSelectedVenues(new Set([id]));
+                setFiltersVisible(true);
+              }}
+            />
+          )}
+        </div>
+
+        <h2 className={styles.resultsHeading}>
+          Showtimes {formatFullDateLabel(selectedDate)}
+          {showtimeCounts.total > 0 && (
+            <span className={styles.resultsCounts}>
+              {" "}({showtimeCounts.shown} shown, {showtimeCounts.total - showtimeCounts.shown} filtered out)
+            </span>
+          )}
+        </h2>
+
         {/* Sort */}
         <div className={styles.filterRow}>
           <span className={styles.filterLabel}>Sort</span>
@@ -538,7 +727,18 @@ export default function WhatsOn() {
 
       <main className={styles.main}>
         {filmsOnDate.length === 0 ? (
-          <div className={styles.empty}>No showtimes for this date.</div>
+          <div className={styles.empty}>
+            {allShowtimesPassedToday && nextDate ? (
+              <>
+                No more showtimes today.{" "}
+                <button className={styles.viewTomorrowLink} onClick={() => setSelectedDate(nextDate)}>
+                  View {formatDateLabel(nextDate, today).toLowerCase()}
+                </button>
+              </>
+            ) : (
+              "No showtimes for this date."
+            )}
+          </div>
         ) : (
           <div className={styles.filmList}>
             {filmsOnDate.map(({ film, showtimes, matches }) => (
@@ -590,6 +790,53 @@ export default function WhatsOn() {
       )}
     </div>
   );
+}
+
+const REPORT_REPO = "mattlohkamp/small-screens-pdx";
+
+function reportMatchIssueUrl(film: Film, kind: "unverified" | "mismatch"): string {
+  const title = encodeURIComponent(
+    kind === "unverified" ? `Unmatched listing: "${film.title}"` : `Possible mismatch: "${film.title}"`
+  );
+  const body = encodeURIComponent(
+    `Scraped title: ${film.title}\n` +
+      (kind === "mismatch"
+        ? `Currently matched to: ${film.title} (TMDB ID ${film.id})\nWhat's wrong: <describe the correct film here>\n`
+        : `This listing couldn't be matched to a movie database entry at all.\n`)
+  );
+  return `https://github.com/${REPORT_REPO}/issues/new?title=${title}&body=${body}&labels=match-feedback`;
+}
+
+// Flags a film's match quality: unmatched entirely, or matched via a fallback
+// guess (title had event flair stripped before searching) worth a second look.
+function MatchBadge({ film, className }: { film: Film; className: string }) {
+  if (film.id == null) {
+    return (
+      <a
+        className={className}
+        href={reportMatchIssueUrl(film, "unverified")}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="We couldn't match this listing to a movie database entry — it's still a real screening, just without poster art or details. Click to report if you recognize this film."
+      >
+        Unverified
+      </a>
+    );
+  }
+  if (film.match_confidence === "fallback") {
+    return (
+      <a
+        className={`${className} ${styles.possibleMismatchBadge}`}
+        href={reportMatchIssueUrl(film, "mismatch")}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="This listing's title didn't match directly — we guessed the film after stripping off extra event wording. Click to report if this looks wrong."
+      >
+        Possible mismatch
+      </a>
+    );
+  }
+  return null;
 }
 
 function extractMatches(fuseMatches: FuseResultMatch[]): FilmMatches {
@@ -645,6 +892,7 @@ function FilmRow({
       <article className={styles.filmRowCompact}>
         <div className={styles.filmMetaCompact}>
           <span className={styles.filmTitleCompact}>{highlightText(film.title, matches.title)}</span>
+          <MatchBadge film={film} className={styles.unverifiedBadge} />
           {film.year && <span className={styles.filmYearCompact}>{film.year}</span>}
           {film.director && <span className={styles.filmDirectorCompact}>dir. {highlightText(film.director, matches.director)}</span>}
           {film.runtime_minutes && <span className={styles.filmYearCompact}>{formatRuntime(film.runtime_minutes)}</span>}
@@ -680,6 +928,9 @@ function FilmRow({
                   >
                     {formatTime(s.datetime)}
                     {s.format && s.format.toUpperCase() !== "DCP" && <span className={styles.format}> (format: {s.format})</span>}
+                    {s.event_note && (
+                      <span className={styles.eventNote} title={`Special showing: ${s.event_note}`}> · {s.event_note}</span>
+                    )}
                   </a>
                 ))}
             </span>
@@ -710,7 +961,7 @@ function FilmRow({
         <div className={styles.filmMeta}>
           <h2 className={styles.filmTitle}>
             <a
-              href={`https://www.imdb.com/find?q=${encodeURIComponent(`${film.title} ${film.year ?? ""}`)}&s=tt&ttype=ft`}
+              href={imdbUrl(film)}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.filmTitleLink}
@@ -718,6 +969,7 @@ function FilmRow({
               {highlightText(film.title, matches.title)}
             </a>
           </h2>
+          <MatchBadge film={film} className={styles.unverifiedBadge} />
           <span className={styles.filmYear}>{film.year}</span>
           {film.director && (
             <span className={styles.filmDirector}>dir. {highlightText(film.director, matches.director)}</span>
@@ -777,6 +1029,9 @@ function FilmRow({
                       {formatTime(s.datetime)}
                       {s.format && s.format.toUpperCase() !== "DCP" && (
                         <span className={styles.format}> (format: {s.format})</span>
+                      )}
+                      {s.event_note && (
+                        <span className={styles.eventNote} title={`Special showing: ${s.event_note}`}> · {s.event_note}</span>
                       )}
                     </a>
                   ))}

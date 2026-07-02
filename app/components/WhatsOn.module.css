@@ -105,6 +105,12 @@
   min-width: 0;
 }
 
+.mapIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
 .collapsibleSummary {
   font-size: 0.75rem;
   color: var(--accent);
@@ -118,6 +124,75 @@
   font-size: 0.6rem;
   color: var(--text-muted);
   flex-shrink: 0;
+}
+
+.dateCards {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.dateCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  padding: 0 0 6px;
+  transition: all 0.1s;
+}
+
+.dateCard:hover {
+  border-color: var(--accent);
+}
+
+.dateCardActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.dateCardMonth {
+  width: 100%;
+  background: var(--text-muted);
+  color: var(--surface);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 3px 0;
+  margin-bottom: 4px;
+}
+
+.dateCardActive .dateCardMonth,
+.dateCardToday .dateCardMonth {
+  background: var(--accent);
+}
+
+.dateCardDay {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dateCardActive .dateCardDay {
+  color: var(--accent);
+}
+
+.dateCardWeekday {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.dateCardActive .dateCardWeekday {
+  color: var(--accent);
 }
 
 .dateSelectWrapper {
@@ -177,6 +252,11 @@
   border-color: var(--accent);
   color: var(--accent);
   font-weight: 600;
+}
+
+.toggleCount {
+  opacity: 0.65;
+  font-size: 0.75em;
 }
 
 .toggleBtnDot::after {
@@ -309,6 +389,18 @@
   padding: 16px 0;
 }
 
+.resultsHeading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.resultsCounts {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
 .filmList {
   display: flex;
   flex-direction: column;
@@ -319,6 +411,16 @@
   color: var(--text-muted);
   padding: 48px 0;
   text-align: center;
+}
+
+.viewTomorrowLink {
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* Film row */
@@ -390,6 +492,37 @@
 .filmRuntime {
   font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+.unverifiedBadge {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 1px 8px;
+  text-decoration: none;
+  cursor: help;
+}
+
+.unverifiedBadge:hover {
+  border-color: var(--text-muted);
+  text-decoration: underline;
+}
+
+.possibleMismatchBadge {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.possibleMismatchBadge:hover {
+  border-color: var(--accent);
+}
+
+.eventNote {
+  color: var(--accent);
+  font-size: 0.72rem;
 }
 
 .genres {

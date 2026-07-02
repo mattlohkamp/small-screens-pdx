@@ -9,7 +9,18 @@ const BASE = "https://hollywoodtheatre.org";
 // Non-film recurring events in Hollywood's calendar
 const NON_FILM: Set<string> = new Set([
   "My Own Private Miniplex",
+  // A 4-week film class ("Enrollment is limited to 18 students"), not a
+  // screening — the WP title's date/time is a class session, not a showtime.
+  "Jim Jarmusch's America",
 ]);
+
+// Hollywood reuses their generic "event" WP post type for non-screening posts
+// (blog/podcast series, etc.) with a date/time suffix baked into the title just
+// like real screenings — but with an empty body and no ticketing info, and they
+// don't appear on Hollywood's public calendar. Filter by known series prefixes.
+const NON_FILM_PREFIXES: string[] = [
+  "The World is Wrong About",
+];
 
 const execFileAsync = promisify(execFile);
 
@@ -146,6 +157,7 @@ export async function scrapeHollywood(): Promise<Film[]> {
     if (date < start || date > end) continue;
 
     if (NON_FILM.has(title) || title.toLowerCase().startsWith("miniplex")) continue;
+    if (NON_FILM_PREFIXES.some((p) => title.startsWith(p))) continue;
 
     const key = title.toLowerCase();
     if (!filmMap.has(key)) {

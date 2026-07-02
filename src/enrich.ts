@@ -12,6 +12,9 @@ const TMDB_ID_OVERRIDES: Record<string, number> = {
   "ANITA: DANCES OF VICE (1987)": 131338,
   // CST title uses the full English subtitle; TMDB canonical is slightly different
   "IT IS BETTER TO BE WEALTHY & HEALTHY THAN POOR & ILL (1992)": 259436,
+  // Hollywood's event title references the film by tour/song name, not its
+  // actual title: TMDB has it as "In the Beginning Was the End: The Truth About De-Evolution"
+  "Devo 250: The Beginning Was The End": 471648,
 };
 
 // Events that are not films and should be silently dropped before enrichment.
@@ -62,10 +65,13 @@ interface TmdbMovieDetails {
   credits: {
     crew: { job: string; name: string }[];
   };
+  external_ids: {
+    imdb_id: string | null;
+  };
 }
 
 async function fetchDetails(id: number): Promise<TmdbMovieDetails> {
-  return tmdbGet<TmdbMovieDetails>(`/movie/${id}`, { append_to_response: "credits" });
+  return tmdbGet<TmdbMovieDetails>(`/movie/${id}`, { append_to_response: "credits,external_ids" });
 }
 
 // Several venues (notably Clinton Street) format titles as "Title (YYYY)".
@@ -75,6 +81,82 @@ function parseTitleYear(raw: string): { title: string; year: number | null } {
   const m = raw.match(/^(.*?)\s*\((\d{4})\)\s*$/);
   if (m) return { title: m[1].trim(), year: parseInt(m[2], 10) };
   return { title: raw, year: null };
+}
+
+// Venues sometimes tack event flair onto a real title: "BACKROOMS: Everything
+// Must Go Ed. w/ Extra Footage", "UNCLE SAM (1996) ON THE FOURTH OF JULY". When
+// the verbatim title fails to match, peel off the tacked-on part and retry —
+// conservatively, since a wrong guess means the wrong poster/director/overview
+// gets attached to a real showtime.
+interface FallbackCandidate {
+  searchTitle: string;
+  year: number | null;
+  eventNote: string;
+}
+
+function fallbackCandidates(raw: string): FallbackCandidate[] {
+  const candidates: FallbackCandidate[] = [];
+
+  // "Title (YYYY) trailing flair" — year embedded mid-string, not at the end.
+  const midYear = raw.match(/^(.*?)\s*\((\d{4})\)\s*(.+)$/);
+  if (midYear) {
+    const [, title, year, trailing] = midYear;
+    candidates.push({ searchTitle: title.trim(), year: parseInt(year, 10), eventNote: trailing.trim() });
+  }
+
+  // "Title: flair" / "Title w/ flair" / "Title – flair" — truncate at the first delimiter.
+  const delimiterMatch = raw.match(/^(.+?)\s*(?::|w\/|–|-)\s*(.+)$/i);
+  if (delimiterMatch) {
+    const [, title, trailing] = delimiterMatch;
+    if (title.trim().length >= 3) {
+      candidates.push({ searchTitle: title.trim(), year: null, eventNote: trailing.trim() });
+    }
+  }
+
+  return candidates;
+}
+
+// Only auto-accept an ambiguous fallback search if it can be disambiguated with
+// high confidence; otherwise stay Unverified rather than guess.
+async function findConfidentCandidate(
+  results: TmdbSearchResult[],
+  runtimeMinutes: number | null,
+  year: number | null,
+  searchTitle: string
+): Promise<TmdbSearchResult | null> {
+  if (results.length === 0) return null;
+  if (results.length === 1) return results[0];
+
+  if (year) {
+    const yearMatches = results.filter((r) => r.release_date?.startsWith(String(year)));
+    if (yearMatches.length === 1) return yearMatches[0];
+  }
+
+  // A candidate whose title matches exactly and has an actual release date beats
+  // undated/uncatalogued duplicates (fan re-uploads, placeholder entries) — this
+  // catches cases like "extended cut" showings where runtime won't line up with
+  // the theatrical release's runtime.
+  const exactWithDate = results.filter(
+    (r) => r.title.toLowerCase() === searchTitle.toLowerCase() && r.release_date
+  );
+  if (exactWithDate.length === 1) return exactWithDate[0];
+
+  if (runtimeMinutes) {
+    const scored: { r: TmdbSearchResult; diff: number }[] = [];
+    for (const r of results.slice(0, 5)) {
+      try {
+        const details = await fetchDetails(r.id);
+        scored.push({ r, diff: Math.abs((details.runtime ?? 0) - runtimeMinutes) });
+      } catch {
+        // skip unusable candidate
+      }
+    }
+    scored.sort((a, b) => a.diff - b.diff);
+    const [best, second] = scored;
+    if (best && best.diff <= 5 && (!second || second.diff - best.diff >= 10)) return best.r;
+  }
+
+  return null;
 }
 
 async function findBestCandidate(
@@ -114,10 +196,25 @@ async function findBestCandidate(
   return best;
 }
 
+async function searchTmdb(searchTitle: string, year: number | null): Promise<TmdbSearchResult[]> {
+  const params: Record<string, string> = { query: searchTitle };
+  if (year) params.primary_release_year = String(year);
+  let results = (await tmdbGet<{ results: TmdbSearchResult[] }>("/search/movie", params)).results;
+
+  // The year filter can be too strict if TMDB's primary_release_year differs
+  // from the venue's stated year (re-releases, regional dates). Retry without it.
+  if (results.length === 0 && year) {
+    results = (await tmdbGet<{ results: TmdbSearchResult[] }>("/search/movie", { query: searchTitle })).results;
+  }
+  return results;
+}
+
 export async function enrichFilm(film: Film): Promise<Film> {
   if (film.id !== null) return film;
 
   let tmdbId: number;
+  let eventNote: string | null = null;
+  let matchConfidence: "verified" | "fallback" = "verified";
   const overrideId = TMDB_ID_OVERRIDES[film.title];
 
   if (overrideId) {
@@ -126,27 +223,42 @@ export async function enrichFilm(film: Film): Promise<Film> {
     const { title: searchTitle, year: searchYear } = parseTitleYear(film.title);
     let results: TmdbSearchResult[];
     try {
-      const params: Record<string, string> = { query: searchTitle };
-      if (searchYear) params.primary_release_year = String(searchYear);
-      results = (await tmdbGet<{ results: TmdbSearchResult[] }>("/search/movie", params)).results;
-
-      // The year filter can be too strict if TMDB's primary_release_year differs
-      // from the venue's stated year (re-releases, regional dates). Retry without it.
-      if (results.length === 0 && searchYear) {
-        results = (await tmdbGet<{ results: TmdbSearchResult[] }>("/search/movie", { query: searchTitle })).results;
-      }
+      results = await searchTmdb(searchTitle, searchYear);
     } catch (err) {
       console.warn(`  TMDB search failed for "${film.title}":`, err);
       return film;
     }
 
-    if (results.length === 0) {
-      console.warn(`  No TMDB results for "${film.title}"`);
-      return film;
-    }
+    if (results.length > 0) {
+      const candidate = await findBestCandidate(results, film.runtime_minutes, searchYear);
+      tmdbId = candidate.id;
+    } else {
+      // Verbatim title didn't match — the title likely has event flair tacked
+      // on (see fallbackCandidates). Try each conservatively; take the first
+      // one that resolves unambiguously.
+      let resolved: { id: number; eventNote: string } | null = null;
+      for (const candidate of fallbackCandidates(film.title)) {
+        let fallbackResults: TmdbSearchResult[];
+        try {
+          fallbackResults = await searchTmdb(candidate.searchTitle, candidate.year);
+        } catch {
+          continue;
+        }
+        const match = await findConfidentCandidate(fallbackResults, film.runtime_minutes, candidate.year, candidate.searchTitle);
+        if (match) {
+          resolved = { id: match.id, eventNote: candidate.eventNote };
+          break;
+        }
+      }
 
-    const candidate = await findBestCandidate(results, film.runtime_minutes, searchYear);
-    tmdbId = candidate.id;
+      if (!resolved) {
+        console.warn(`  No TMDB results for "${film.title}"`);
+        return film;
+      }
+      tmdbId = resolved.id;
+      eventNote = resolved.eventNote;
+      matchConfidence = "fallback";
+    }
   }
 
   let details: TmdbMovieDetails;
@@ -176,6 +288,11 @@ export async function enrichFilm(film: Film): Promise<Film> {
     overview: details.overview || film.overview,
     poster_path: details.poster_path,
     genres: details.genres.map((g) => g.name),
+    imdb_id: details.external_ids.imdb_id,
+    match_confidence: overrideId ? "verified" : matchConfidence,
+    showtimes: eventNote
+      ? film.showtimes.map((s) => ({ ...s, event_note: eventNote }))
+      : film.showtimes,
   };
 }
 

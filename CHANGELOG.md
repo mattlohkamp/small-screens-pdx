@@ -2,6 +2,23 @@
 
 ## [Unreleased]
 
+### Added
+- Date picker replaced with 7 calendar-day cards spanning the full width, styled like tear-off calendar pages (month strip, large day-of-month, weekday); day numbers shown as ordinals ("1st", "22nd")
+- "No more showtimes today" empty state with a "View tomorrow" link when the day isn't empty, just past — distinct from a genuinely showtime-free day
+- "Hide McMenamins" and "Hide unverified" filter toggles; all toggle buttons now show a live count (e.g. "Matinee (5)", "Hide unverified (2)")
+- Results heading ("Showtimes July 2nd, 2026 (61 shown, 15 filtered out)") between the filters panel and the sort row
+- Venue map moved out of the header into a collapsed-by-default "See venues on map (N)" section with a folded-map SVG icon
+- TMDB matching now falls back to stripping event flair from venue titles ("BACKROOMS: Everything Must Go Ed. w/ Extra Footage", "UNCLE SAM (1996) ON THE FOURTH OF JULY") when the verbatim title doesn't match, using conservative disambiguation (unique result, unique year, or exact-title-with-release-date) to avoid false matches
+- `Film.match_confidence` ("verified" | "fallback") and `Showtime.event_note` — surfaced in the UI as an amber "Possible mismatch" badge and inline showtime annotation, respectively
+- "Unverified" and "Possible mismatch" badges are now links that open a pre-filled GitHub issue for reporting a bad match
+- `Film.imdb_id` fetched from TMDB — film titles link directly to the matched IMDB page instead of an IMDB search query
+- Per-run scrape logs appended to `public/data/scrape.log` (gitignored, local-only) for debugging scraper failures
+
+### Fixed
+- McMenamins venue set was missing Mission Theater (only had Baghdad + Kennedy School), undercounting the "Not McMenamins" filter
+- Hollywood Theatre scraper was surfacing non-screening WordPress posts (classes, talks, podcast-style series) as if they were showtimes — added title-based exclusions ("The World is Wrong About…" prefix, "Jim Jarmusch's America") after confirming via Hollywood's own show data that these aren't ticketed screenings
+- "Devo 250: The Beginning Was The End" at Hollywood now correctly resolves to the real 1976 Devo film via a curated TMDB override
+
 ---
 
 ## [1.0.0] — 2026-06-19

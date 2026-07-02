@@ -14,6 +14,9 @@ export interface Showtime {
   datetime: string; // ISO 8601 local datetime, e.g. "2026-06-01T19:30:00"
   format: string | null;
   ticket_url: string | null;
+  // Extra text stripped from the venue's raw title while matching to TMDB, e.g.
+  // "w/ Extra Footage" — describes what's different about this specific showing.
+  event_note?: string | null;
 }
 
 export interface Film {
@@ -26,7 +29,12 @@ export interface Film {
   overview: string | null;
   poster_path: string | null;
   genres: string[];
+  imdb_id?: string | null;
   showtimes: Showtime[];
+  // "verified": matched on the venue's title as given. "fallback": matched after
+  // stripping event flair from the title (see enrich.ts) — worth a light "possible
+  // mismatch" flag since the match wasn't as direct. Absent for unmatched films.
+  match_confidence?: "verified" | "fallback";
 }
 
 export interface Schedule {
