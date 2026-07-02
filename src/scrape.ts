@@ -12,6 +12,7 @@ import { scrapeHollywood } from "./scrapers/hollywood.js";
 import { scrapeStJohns } from "./scrapers/st-johns.js";
 import { scrapeMoreland } from "./scrapers/moreland.js";
 import { scrapeTomorrow } from "./scrapers/tomorrow.js";
+import { scrapeMission } from "./scrapers/mission.js";
 import { closeBrowser } from "./browser.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
@@ -33,6 +34,7 @@ const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; 
   "st-johns":      { fn: scrapeStJohns,         venueIds: ["st-johns"],                     label: "St. Johns Cinema" },
   moreland:        { fn: scrapeMoreland,         venueIds: ["moreland"],                     label: "Moreland Theater" },
   tomorrow:        { fn: scrapeTomorrow,         venueIds: ["tomorrow"],                     label: "Tomorrow Theater" },
+  mission:         { fn: scrapeMission,          venueIds: ["mission"],                      label: "Mission Theater" },
 };
 
 // Merge films from multiple scrapers: same title → one record, combined showtimes.
@@ -313,6 +315,16 @@ async function main() {
         lng: -122.6831,
         website: "https://tomorrowtheater.org",
         group: null,
+      },
+      {
+        id: "mission",
+        name: "Mission Theater",
+        neighborhood: "NW Portland",
+        address: "1624 NW Glisan St, Portland OR",
+        lat: 45.5255,
+        lng: -122.6933,
+        website: "https://www.mcmenamins.com/mission-theater",
+        group: "McMenamins",
       },
     ],
     films,
