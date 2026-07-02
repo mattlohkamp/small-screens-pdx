@@ -30,15 +30,38 @@ interface WPEvent {
   link: string;
 }
 
-// CF blocks Node.js native fetch (TLS fingerprint); curl passes consistently
+const MAX_ATTEMPTS = 4;
+// A real browser UA — Cloudflare's Bot Fight Mode challenges obvious bot UAs, and this
+// venue fronts its API with CF. Node's native fetch is blocked outright (TLS fingerprint),
+// so we shell out to curl, whose fingerprint CF accepts.
+const CURL_UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
+
 async function curlJson<T>(url: string): Promise<T> {
-  const { stdout } = await execFileAsync("curl", [
-    "-s", "--fail", "--max-time", "30",
-    "-H", "User-Agent: small-screens-pdx/0.1 (portland cinema aggregator)",
-    "-H", "Accept: application/json",
-    url,
-  ]);
-  return JSON.parse(stdout) as T;
+  // CF serves intermittent 403/503 challenges, especially to datacenter IPs (CI runners),
+  // and curl --fail exits 22 on those. Each attempt is a fresh CF evaluation, so retrying
+  // with backoff recovers most runs rather than dropping the whole venue on one challenge.
+  let lastErr: unknown;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      const { stdout } = await execFileAsync("curl", [
+        "-s", "--fail", "--max-time", "30",
+        "-H", `User-Agent: ${CURL_UA}`,
+        "-H", "Accept: application/json",
+        "-H", "Accept-Language: en-US,en;q=0.9",
+        url,
+      ]);
+      return JSON.parse(stdout) as T;
+    } catch (err) {
+      lastErr = err;
+      if (attempt < MAX_ATTEMPTS) {
+        const delay = attempt * 2000;
+        console.warn(`  Hollywood curl failed (attempt ${attempt}), retrying in ${delay / 1000}s...`);
+        await new Promise((r) => setTimeout(r, delay));
+      }
+    }
+  }
+  throw lastErr;
 }
 
 function today(): string {
