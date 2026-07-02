@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+---
+
+## [1.1.0] — 2026-07-02
+
 ### Added
 - Date picker replaced with 7 calendar-day cards spanning the full width, styled like tear-off calendar pages (month strip, large day-of-month, weekday); day numbers shown as ordinals ("1st", "22nd")
 - "No more showtimes today" empty state with a "View tomorrow" link when the day isn't empty, just past — distinct from a genuinely showtime-free day
