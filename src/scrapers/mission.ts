@@ -33,7 +33,13 @@ function parseMcmDate(s: string): string | null {
 function parseAutocomplete(html: string): McmEvent[] {
   // The page embeds two autocomplete blocks (mobile + desktop); parse the first
   const m = html.match(/data-uk-autocomplete="\{source:(\[.*?\])\}"/s);
-  if (!m) return [];
+  if (!m) {
+    // The page loaded but the expected event block is gone — almost always a
+    // markup change, not an empty calendar. Warn so it's diagnosable rather than
+    // silently reporting 0 films.
+    console.warn("  Mission Theater: autocomplete event block not found — page markup may have changed");
+    return [];
+  }
   try {
     // Attribute is HTML-entity-encoded
     const raw = m[1]

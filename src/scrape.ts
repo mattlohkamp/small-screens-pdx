@@ -14,6 +14,7 @@ import { scrapeMoreland } from "./scrapers/moreland.js";
 import { scrapeTomorrow } from "./scrapers/tomorrow.js";
 import { scrapeMission } from "./scrapers/mission.js";
 import { closeBrowser } from "./browser.js";
+import { withRetry } from "./fetch.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import { WINDOW_DAYS } from "./window.js";
@@ -136,7 +137,10 @@ async function run(runStart: Date, log: (msg: string) => void) {
       const { fn, label } = SCRAPERS[id];
       log(`Scraping ${label}...`);
       const t = Date.now();
-      const films = await fn();
+      // Retry the whole scraper on failure so a transient outage/rate-limit gets a
+      // few attempts with backoff — a uniform guarantee regardless of whether the
+      // scraper's internals self-retry (fetch.ts) or not (Playwright/curl paths).
+      const films = await withRetry(fn, { label });
       log(`  ${label}: ${films.length} films (${((Date.now() - t) / 1000).toFixed(1)}s)`);
       return films;
     })

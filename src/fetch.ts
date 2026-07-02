@@ -50,6 +50,31 @@ export async function fetchWithRetry(
   }
 }
 
+// Retry an arbitrary async task with the same backoff policy as fetchWithRetry.
+// Used to wrap whole scrapers (incl. Playwright/curl ones whose internals don't
+// self-retry) so a transient failure retries a few times before giving up. Each
+// attempt re-runs `fn` from scratch, so `fn` must be safe to repeat.
+export async function withRetry<T>(
+  fn: (attempt: number) => Promise<T>,
+  opts: { label?: string; attempts?: number } = {}
+): Promise<T> {
+  const { label = "task", attempts = MAX_ATTEMPTS } = opts;
+  let lastErr: unknown;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      return await fn(attempt);
+    } catch (err) {
+      lastErr = err;
+      if (attempt < attempts) {
+        const delay = attempt * 2000;
+        console.warn(`  ${label} failed (attempt ${attempt}/${attempts}), retrying in ${delay / 1000}s...`);
+        await new Promise((r) => setTimeout(r, delay));
+      }
+    }
+  }
+  throw lastErr;
+}
+
 export async function fetchText(url: string, init: RequestInit = {}, label = "fetch"): Promise<string> {
   return (await fetchWithRetry(url, init, { label })).text();
 }
