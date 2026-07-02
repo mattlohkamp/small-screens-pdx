@@ -11,6 +11,7 @@ import { scrapeCinema21 } from "./scrapers/cinema-21.js";
 import { scrapeHollywood } from "./scrapers/hollywood.js";
 import { scrapeStJohns } from "./scrapers/st-johns.js";
 import { scrapeMoreland } from "./scrapers/moreland.js";
+import { scrapeTomorrow } from "./scrapers/tomorrow.js";
 import { closeBrowser } from "./browser.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
@@ -31,6 +32,7 @@ const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; 
   hollywood:       { fn: scrapeHollywood,       venueIds: ["hollywood"],                    label: "Hollywood Theatre" },
   "st-johns":      { fn: scrapeStJohns,         venueIds: ["st-johns"],                     label: "St. Johns Cinema" },
   moreland:        { fn: scrapeMoreland,         venueIds: ["moreland"],                     label: "Moreland Theater" },
+  tomorrow:        { fn: scrapeTomorrow,         venueIds: ["tomorrow"],                     label: "Tomorrow Theater" },
 };
 
 // Merge films from multiple scrapers: same title → one record, combined showtimes.
@@ -300,6 +302,16 @@ async function main() {
         lat: 45.4752,
         lng: -122.6504,
         website: "https://morelandtheater.com",
+        group: null,
+      },
+      {
+        id: "tomorrow",
+        name: "Tomorrow Theater",
+        neighborhood: "Downtown / Pearl District",
+        address: "1219 SW Park Ave, Portland OR",
+        lat: 45.5158,
+        lng: -122.6831,
+        website: "https://tomorrowtheater.org",
         group: null,
       },
     ],
