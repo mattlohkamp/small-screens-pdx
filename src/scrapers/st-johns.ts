@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
 import { fetchText } from "../fetch.js";
+import { USER_AGENT } from "../version.js";
 import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "st-johns";
@@ -59,7 +60,7 @@ export async function scrapeStJohns(): Promise<Film[]> {
 
   const html = await fetchText(
     SESSIONS_URL,
-    { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+    { headers: { "User-Agent": USER_AGENT } },
     "St. Johns Cinema"
   );
   const $ = cheerio.load(html);

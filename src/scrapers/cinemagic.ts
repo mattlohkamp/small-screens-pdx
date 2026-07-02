@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
 import { fetchText } from "../fetch.js";
+import { USER_AGENT } from "../version.js";
 
 const BASE = "https://tickets.thecinemagictheater.com";
 const VENUE_ID = "cinemagic";
@@ -8,7 +9,7 @@ const VENUE_ID = "cinemagic";
 async function fetchHtml(url: string): Promise<string> {
   return fetchText(
     url,
-    { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+    { headers: { "User-Agent": USER_AGENT } },
     "Cinemagic"
   );
 }

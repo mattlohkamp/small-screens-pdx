@@ -15,6 +15,7 @@ import { scrapeTomorrow } from "./scrapers/tomorrow.js";
 import { scrapeMission } from "./scrapers/mission.js";
 import { closeBrowser } from "./browser.js";
 import { withRetry } from "./fetch.js";
+import { VERSION } from "./version.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import { WINDOW_DAYS } from "./window.js";
@@ -115,7 +116,7 @@ async function run(runStart: Date, log: (msg: string) => void) {
     process.exit(1);
   }
 
-  log(`=== Scrape run: ${runStart.toISOString()} ===`);
+  log(`=== Scrape run: ${runStart.toISOString()} (v${VERSION}) ===`);
   const partial = selectedIds.length < allIds.length;
   if (partial) {
     log(`Scraping: ${selectedIds.join(", ")} (partial update)`);
@@ -209,6 +210,7 @@ async function run(runStart: Date, log: (msg: string) => void) {
 
   const schedule: Schedule = {
     generated_at: new Date().toISOString(),
+    generator: VERSION,
     window: { start, end },
     venues: [
       {

@@ -3,13 +3,14 @@ import type { Page } from "playwright";
 import type { Film, Showtime } from "../types.js";
 import { fetchText } from "../fetch.js";
 import { getBrowser, closeBrowser } from "../browser.js";
+import { USER_AGENT } from "../version.js";
 import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "omsi";
 const OMSI_URL = "https://omsi.edu/exhibits/empirical-theater/";
 const TICKETS_ORIGIN = "https://tickets.omsi.edu";
 const API_BASE = `${TICKETS_ORIGIN}/cached_api`;
-const HEADERS = { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" };
+const HEADERS = { "User-Agent": USER_AGENT };
 const BROWSER_UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
 

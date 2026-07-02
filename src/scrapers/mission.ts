@@ -1,6 +1,7 @@
 import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
 import { fetchText } from "../fetch.js";
+import { USER_AGENT } from "../version.js";
 import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "mission";
@@ -75,7 +76,7 @@ export async function scrapeMission(): Promise<Film[]> {
 
   const html = await fetchText(
     PAGE_URL,
-    { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+    { headers: { "User-Agent": USER_AGENT } },
     "Mission Theater",
   );
   const $ = cheerio.load(html);

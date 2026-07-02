@@ -1,5 +1,6 @@
 import type { Film, Showtime } from "../types.js";
 import { fetchJson as fetchJsonShared } from "../fetch.js";
+import { USER_AGENT } from "../version.js";
 import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "moreland";
@@ -33,7 +34,7 @@ interface FMTSchedule {
 function fetchJson<T>(url: string): Promise<T> {
   return fetchJsonShared<T>(
     url,
-    { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+    { headers: { "User-Agent": USER_AGENT } },
     "Moreland Theater"
   );
 }

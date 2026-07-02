@@ -39,6 +39,9 @@ export interface Film {
 
 export interface Schedule {
   generated_at: string;
+  // App version that produced this data, as "x.y.z-commithash" — lets you trace
+  // any upcoming.json back to the exact scraper code that generated it.
+  generator: string;
   window: { start: string; end: string };
   venues: Venue[];
   films: Film[];

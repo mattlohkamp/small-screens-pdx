@@ -35,9 +35,8 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /small-screens-pdx
-          # Tag releases stamp the tag name (e.g. release-3); manual runs leave this
-          # empty so next.config falls back to the short GITHUB_SHA.
-          NEXT_PUBLIC_BUILD_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
+          # Leave NEXT_PUBLIC_BUILD_VERSION unset so next.config composes the
+          # canonical "x.y.z-commithash" (package.json version + short GITHUB_SHA).
 
       - name: Publish UI to gh-pages
         run: |
@@ -67,3 +66,18 @@ jobs:
             git -C gh-pages-wt commit -m "ui: release ${GITHUB_SHA::7}"
             git -C gh-pages-wt push origin gh-pages
           fi
+
+      # Name the GitHub Release "x.y.z-commithash" — the same identifier stamped
+      # into the built page and the scrape data. Only on tag pushes.
+      - name: Create GitHub Release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          VERSION="$(node -p "require('./package.json').version")-${GITHUB_SHA::7}"
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "$VERSION" \
+            --notes "Release $VERSION. See CHANGELOG.md for details." \
+            --verify-tag || \
+          gh release edit "${GITHUB_REF_NAME}" --title "$VERSION"

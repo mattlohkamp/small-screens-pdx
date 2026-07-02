@@ -1,5 +1,6 @@
 import type { Film, Showtime } from "../types.js";
 import { fetchText } from "../fetch.js";
+import { USER_AGENT } from "../version.js";
 
 const VENUE_ID = "laurelhurst";
 const BASE = "https://www.laurelhursttheater.com";
@@ -25,7 +26,7 @@ interface LaurelhurstFilm {
 async function fetchHomepage(): Promise<string> {
   return fetchText(
     BASE,
-    { headers: { "User-Agent": "small-screens-pdx/0.1 (portland cinema aggregator)" } },
+    { headers: { "User-Agent": USER_AGENT } },
     "Laurelhurst Theater"
   );
 }
