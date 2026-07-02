@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+- OMSI Empirical Theatre showtimes were frequently missing — now load reliably
+- Hollywood Theatre showtimes could silently go stale or drop out — now load reliably
+
 ---
 
 ## [1.1.0] — 2026-07-02
