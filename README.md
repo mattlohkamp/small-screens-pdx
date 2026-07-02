@@ -91,16 +91,30 @@ data/
   enrichment-cache.json  # Persisted TMDB results (gitignored)
 ```
 
-### Deployment
+### Releasing
 
-Push a `release-X.Y.Z` tag to trigger a build and deploy to GitHub Pages:
+The version is a single scheme everywhere: **`x.y.z-commithash`**. The `x.y.z`
+base lives in `package.json` (the source of truth); the `-commithash` suffix is
+derived from the git SHA at build/scrape time, so it's always accurate. It shows
+up in the `<meta name="build-version">` tag on the live site, the `generator`
+field of `upcoming.json`, the scraper `User-Agent`, and the GitHub Release title.
 
-```bash
-git tag release-1.0.0
-git push origin release-1.0.0
-```
+To cut a release:
 
-The daily scrape cron also auto-deploys when it commits a changed `upcoming.json`.
+1. **Bump `package.json`** to the new `x.y.z` (e.g. `npm version 1.2.0 --no-git-tag-version`).
+   Skipping this is how the version drifted to 0.1.0 before — don't.
+2. **Update `CHANGELOG.md`** — move `[Unreleased]` entries under the new version.
+   User-facing changes only (see the changelog's own convention).
+3. **Commit**, then **tag and push**:
+   ```bash
+   git tag release-1.2.0
+   git push origin main --tags
+   ```
+
+The tag push triggers the Deploy UI workflow: it builds, publishes to GitHub
+Pages, and creates a GitHub Release titled `1.2.0-<commithash>` matching the
+deployed build. The daily scrape cron also auto-deploys when it commits a
+changed `upcoming.json` (data only, no UI/version change).
 
 ---
 
