@@ -14,13 +14,18 @@ import { scrapeMoreland } from "./scrapers/moreland.js";
 import { scrapeTomorrow } from "./scrapers/tomorrow.js";
 import { scrapeMission } from "./scrapers/mission.js";
 import { closeBrowser } from "./browser.js";
-import { withRetry } from "./fetch.js";
+import { withRetry, withTimeout } from "./fetch.js";
 import { VERSION } from "./version.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import { WINDOW_DAYS } from "./window.js";
 import type { Schedule, Film } from "./types.js";
 import type { FailedMatch } from "./enrich.js";
+
+// Hard cap on a single scrape attempt. Longer than any healthy scraper (the
+// slowest, Cinemagic, runs ~6s; fetch calls self-abort at 45s) but short enough
+// that a wedged venue times out and retries/fails cleanly instead of hanging.
+const SCRAPER_TIMEOUT_MS = 90_000;
 
 // Registry: scraper-id → { fn, venueIds covered }
 const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; label: string }> = {
@@ -141,7 +146,9 @@ async function run(runStart: Date, log: (msg: string) => void) {
       // Retry the whole scraper on failure so a transient outage/rate-limit gets a
       // few attempts with backoff — a uniform guarantee regardless of whether the
       // scraper's internals self-retry (fetch.ts) or not (Playwright/curl paths).
-      const films = await withRetry(fn, { label });
+      // Each attempt is time-boxed so a hung venue times out (and retries, then
+      // fails cleanly) instead of stalling the whole run.
+      const films = await withRetry(() => withTimeout(fn(), SCRAPER_TIMEOUT_MS, label), { label });
       log(`  ${label}: ${films.length} films (${((Date.now() - t) / 1000).toFixed(1)}s)`);
       return films;
     })

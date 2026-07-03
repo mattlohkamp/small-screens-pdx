@@ -75,6 +75,18 @@ export async function withRetry<T>(
   throw lastErr;
 }
 
+// Bound a promise's wall-clock time. Backstop for tasks that don't honor their
+// own timeout (e.g. a Playwright wait chain), so one hung scraper can't stall the
+// whole run. The underlying work may keep running after rejection; callers clean
+// up separately (e.g. closeBrowser after all scrapers settle).
+export function withTimeout<T>(p: Promise<T>, ms: number, label = "task"): Promise<T> {
+  let timer: NodeJS.Timeout;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms / 1000}s`)), ms);
+  });
+  return Promise.race([p.finally(() => clearTimeout(timer)), timeout]);
+}
+
 export async function fetchText(url: string, init: RequestInit = {}, label = "fetch"): Promise<string> {
   return (await fetchWithRetry(url, init, { label })).text();
 }

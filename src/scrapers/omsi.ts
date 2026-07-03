@@ -66,6 +66,12 @@ function utcToLocalPacific(utc: string): string {
 // landed on the ticketing origin and fetch same-origin from inside the page.
 let _apiPage: Page | null = null;
 
+// Count HTTP-error responses (e.g. CloudFront 403 from a datacenter IP) so the
+// scraper can tell "no films because the API blocked us" from "no films because
+// nothing's scheduled". The former must throw — returning [] would let the merge
+// step wipe OMSI's last-known-good showtimes.
+let blockedRequests = 0;
+
 async function getApiPage(): Promise<Page> {
   if (_apiPage) return _apiPage;
   const browser = await getBrowser();
@@ -99,7 +105,10 @@ async function fetchApiJson<T>(url: string): Promise<T | null> {
       await new Promise((r) => setTimeout(r, delay));
       continue;
     }
-    if (result.status !== 0) console.warn(`  OMSI: HTTP ${result.status} for ${url}`);
+    if (result.status !== 0) {
+      blockedRequests++;
+      console.warn(`  OMSI: HTTP ${result.status} for ${url}`);
+    }
     return null;
   }
 }
@@ -172,6 +181,7 @@ async function fetchSessionsForDate(
 export async function scrapeOmsi(): Promise<Film[]> {
   const start = today();
   const end = addDays(start, WINDOW_DAYS - 1);
+  blockedRequests = 0;
 
   console.log("  Fetching OMSI film list...");
   const uuids = await fetchEventUUIDs();
@@ -226,6 +236,14 @@ export async function scrapeOmsi(): Promise<Film[]> {
       showtimes,
     });
     console.log(`  "${title}": ${showtimes.length} showtimes`);
+  }
+
+  // Distinguish a genuine empty schedule from a blocked one. If the API rejected
+  // us (e.g. CloudFront 403 from a datacenter IP) and we got nothing, throw so the
+  // orchestrator marks OMSI failed and preserves its last-known-good data — rather
+  // than "succeeding" with [] and wiping it.
+  if (!films.length && blockedRequests > 0) {
+    throw new Error(`OMSI blocked: ${blockedRequests} API request(s) returned an HTTP error`);
   }
 
   return films;
