@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Added
+- Rotten Tomatoes, IMDb, and Metacritic ratings via the OMDb API, keyed off the IMDb ID already resolved during TMDB enrichment. Shown as badges next to runtime (RT and Metacritic are critic scores, IMDb is audience). Requires an `OMDB_API_KEY` env var (and GitHub secret for CI) — best-effort per rating, a missing score for any of the three just doesn't show that badge; matched films with none of the three show a "Ratings unavailable" note instead.
+- "Score" sort chip: averages whichever of the three ratings are available (IMDb normalized to a 0-100 scale) and sorts descending — unrated titles (often brand-new releases OMDb hasn't caught up on) sort first rather than being penalized for lacking data.
+- Mobile layout polish (first pass): responsive breakpoints for the date-card picker, filter toggle row (scrolls instead of wrapping), and showtime rows, which previously had no mobile styling at all — another pass still planned
+- Sort chips renamed/reordered for clarity: A–Z (now default), Showtime, Runtime, Score
+- OMDb attribution added to footer alongside existing TMDB credit
+- Removed the "Small Screens PDX / Independent cinema in Portland" page header — wasn't adding anything above the filter bar
+
 ### Fixed
 - OMSI Empirical Theatre showtimes were frequently missing — now load reliably
 - Hollywood Theatre showtimes could silently go stale or drop out — now load reliably

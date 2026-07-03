@@ -7,26 +7,6 @@
   padding: 0 16px;
 }
 
-/* Header */
-.header {
-  padding: 32px 0 16px;
-  border-bottom: 1px solid var(--border);
-}
-
-.title {
-  margin: 0 0 4px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--accent);
-}
-
-.subtitle {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: 0.875rem;
-}
-
 /* Filters */
 .filters {
   position: sticky;
@@ -494,6 +474,48 @@
   color: var(--text-muted);
 }
 
+.ratingBadge {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ratingBadge:hover {
+  text-decoration: underline;
+}
+
+.rtScoreFresh {
+  color: #4caf50;
+}
+
+.rtScoreRotten {
+  color: #c0392b;
+}
+
+.imdbRating {
+  color: #f5c518; /* IMDb brand yellow */
+}
+
+.metacriticHigh {
+  color: #4caf50;
+}
+
+.metacriticMid {
+  color: #f0a500;
+}
+
+.metacriticLow {
+  color: #c0392b;
+}
+
+.ratingsUnavailable {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+  white-space: nowrap;
+}
+
 .unverifiedBadge {
   font-size: 0.68rem;
   text-transform: uppercase;
@@ -754,4 +776,87 @@
 
 .error {
   color: #e87070;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .root {
+    padding: 0 10px;
+  }
+
+  /* Shrink the 7-across date-card grid so all cards stay legible instead of
+     wrapping/truncating on narrow screens. */
+  .dateCards {
+    gap: 3px;
+  }
+
+  .dateCardMonth {
+    font-size: 0.55rem;
+    padding: 2px 0;
+    margin-bottom: 2px;
+  }
+
+  .dateCardDay {
+    font-size: 0.85rem;
+  }
+
+  .dateCardWeekday {
+    font-size: 0.58rem;
+    margin-top: 1px;
+  }
+
+  /* The sticky filter bar's toggle row previously wrapped across several
+     lines on narrow viewports, which — since .filters is position: sticky —
+     permanently ate a large chunk of the viewport. Scroll horizontally
+     instead of wrapping. */
+  .toggleRow {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -10px;
+    padding: 0 10px;
+  }
+
+  .toggleRow::-webkit-scrollbar {
+    display: none;
+  }
+
+  .toggleBtn {
+    white-space: nowrap;
+  }
+
+  .filmRow {
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .poster,
+  .posterPlaceholder {
+    width: 60px;
+    height: 90px;
+  }
+
+  .filmTitle {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  /* At the narrowest widths, a fixed-width venue label next to showtime
+     chips leaves too little room for the chips — stack instead. */
+  .venueShowtimes {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .venueNameGroup {
+    min-width: 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

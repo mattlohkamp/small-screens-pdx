@@ -32,6 +32,63 @@ function apiKey(): string {
   return key;
 }
 
+const OMDB_BASE = "https://www.omdbapi.com/";
+
+interface OmdbResponse {
+  Response: "True" | "False";
+  imdbRating?: string; // e.g. "8.4", or "N/A"
+  Metascore?: string; // e.g. "86", or "N/A"
+  Ratings?: { Source: string; Value: string }[];
+}
+
+export interface OmdbRatings {
+  rt_score: number | null; // Rotten Tomatoes tomatometer (critics), 0-100
+  imdb_rating: number | null; // IMDb (audience), 0-10
+  metacritic_score: number | null; // Metacritic (critics), 0-100
+}
+
+const EMPTY_OMDB_RATINGS: OmdbRatings = { rt_score: null, imdb_rating: null, metacritic_score: null };
+
+// OMDb aggregates ratings from three sources we can't otherwise get in one place:
+// Rotten Tomatoes' tomatometer has no public API of its own; IMDb and Metacritic
+// scores ride along in the same OMDb response at no extra cost. Keyed by IMDb ID,
+// which we already have from TMDB's external_ids. Best-effort: any failure
+// (missing key, no rating for this title, network error) just leaves all three
+// null rather than failing the enrichment.
+async function fetchOmdbRatings(imdbId: string): Promise<OmdbRatings> {
+  const key = process.env.OMDB_API_KEY;
+  if (!key) return EMPTY_OMDB_RATINGS;
+
+  const url = new URL(OMDB_BASE);
+  url.searchParams.set("i", imdbId);
+  url.searchParams.set("apikey", key);
+
+  try {
+    const res = await fetchWithRetry(
+      url.toString(),
+      { headers: { "User-Agent": USER_AGENT } },
+      { label: "OMDb", throwOnHttpError: false }
+    );
+    if (!res.ok) return EMPTY_OMDB_RATINGS;
+    const data = (await res.json()) as OmdbResponse;
+    if (data.Response !== "True") return EMPTY_OMDB_RATINGS;
+
+    const rtValue = data.Ratings?.find((r) => r.Source === "Rotten Tomatoes")?.Value;
+    const rtScore = rtValue ? parseInt(rtValue, 10) : NaN;
+
+    const imdbRating = data.imdbRating && data.imdbRating !== "N/A" ? parseFloat(data.imdbRating) : NaN;
+    const metacriticScore = data.Metascore && data.Metascore !== "N/A" ? parseInt(data.Metascore, 10) : NaN;
+
+    return {
+      rt_score: Number.isFinite(rtScore) ? rtScore : null,
+      imdb_rating: Number.isFinite(imdbRating) ? imdbRating : null,
+      metacritic_score: Number.isFinite(metacriticScore) ? metacriticScore : null,
+    };
+  } catch {
+    return EMPTY_OMDB_RATINGS;
+  }
+}
+
 async function tmdbGet<T>(path: string, params: Record<string, string> = {}): Promise<T> {
   const url = new URL(`${TMDB_BASE}${path}`);
   url.searchParams.set("api_key", apiKey());
@@ -272,6 +329,8 @@ export async function enrichFilm(film: Film): Promise<Film> {
 
   const director = details.credits.crew.find((c) => c.job === "Director")?.name ?? null;
   const year = details.release_date ? parseInt(details.release_date.slice(0, 4)) : null;
+  const imdbId = details.external_ids.imdb_id;
+  const omdbRatings = imdbId ? await fetchOmdbRatings(imdbId) : EMPTY_OMDB_RATINGS;
 
   const titleSlug = film.title
     .toLowerCase()
@@ -289,7 +348,10 @@ export async function enrichFilm(film: Film): Promise<Film> {
     overview: details.overview || film.overview,
     poster_path: details.poster_path,
     genres: details.genres.map((g) => g.name),
-    imdb_id: details.external_ids.imdb_id,
+    imdb_id: imdbId,
+    rt_score: omdbRatings.rt_score,
+    imdb_rating: omdbRatings.imdb_rating,
+    metacritic_score: omdbRatings.metacritic_score,
     match_confidence: overrideId ? "verified" : matchConfidence,
     showtimes: eventNote
       ? film.showtimes.map((s) => ({ ...s, event_note: eventNote }))

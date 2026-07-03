@@ -16,6 +16,7 @@ A GitHub Actions cron job runs daily scrapers for each venue, enriches film data
 
 - **Scraping:** Node/TypeScript, Cheerio (static HTML), Playwright (JS-rendered pages)
 - **Film metadata & posters:** TMDB API
+- **Ratings (Rotten Tomatoes, IMDb, Metacritic):** OMDb API
 - **Frontend:** Next.js (static export), React, Leaflet (venue map)
 - **Data:** Static JSON, generated daily
 - **CI/Deploy:** GitHub Actions → GitHub Pages
@@ -26,13 +27,14 @@ A GitHub Actions cron job runs daily scrapers for each venue, enriches film data
 
 - Node.js 24+
 - A free [TMDB API key](https://www.themoviedb.org/settings/api)
+- A free [OMDb API key](https://www.omdbapi.com/apikey.aspx) (for Rotten Tomatoes scores)
 
 ### Setup
 
 ```bash
 npm install
 cp .env.example .env
-# add your TMDB_API_KEY to .env
+# add your TMDB_API_KEY and OMDB_API_KEY to .env
 
 # Prevent local scrape output from showing up as git changes
 git update-index --skip-worktree public/data/upcoming.json

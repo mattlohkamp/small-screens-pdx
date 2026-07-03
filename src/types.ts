@@ -30,6 +30,9 @@ export interface Film {
   poster_path: string | null;
   genres: string[];
   imdb_id?: string | null;
+  rt_score?: number | null; // Rotten Tomatoes tomatometer (critics), 0-100, via OMDb
+  imdb_rating?: number | null; // IMDb rating (audience), 0-10, via OMDb
+  metacritic_score?: number | null; // Metacritic score (critics), 0-100, via OMDb
   showtimes: Showtime[];
   // "verified": matched on the venue's title as given. "fallback": matched after
   // stripping event flair from the title (see enrich.ts) — worth a light "possible

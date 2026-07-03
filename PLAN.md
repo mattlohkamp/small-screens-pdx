@@ -242,7 +242,10 @@ deploy workflow (on release-* tag OR push to main touching upcoming.json)
   - [ ] Cinema 21 / Hollywood Theatre — block scrapers, approach TBD (out of scope for M3)
 - [x] **M4 — Frontend v1:** What's on view with date picker, venue/genre filters, fuzzy search, compact/expanded modes, sort, Leaflet venue map, poster modal, IMDB links, ticket links. Deployed to GitHub Pages.
 - [x] **M5 — Automated pipeline:** GitHub Actions cron running daily at 5am Pacific. Scrapers run in parallel. Scrape commits `upcoming.json` → triggers auto-deploy to GitHub Pages. Release tags (`release-X.Y.Z`) also trigger deploy.
-- [ ] **M6 — Polish:** Calendar view, by-film and by-venue views, mobile layout polish, TMDB attribution, RT scores.
+- [ ] **M6 — Polish** (narrowed scope — calendar view and by-film/by-venue views dropped, already covered by existing filters):
+  - [x] TMDB attribution (already in footer)
+  - [x] Ratings — Rotten Tomatoes, IMDb, and Metacritic via OMDb API (keyed off the IMDb ID from TMDB enrichment). Badges per film, "Ratings unavailable" note when a matched film has none. Composite "Score" sort chip averages whichever ratings exist, normalizing IMDb to 0-100; unrated titles sort first rather than last.
+  - [ ] Mobile layout polish — first pass done (responsive breakpoints for date cards, filter toggle row scroll-instead-of-wrap, showtime row stacking); another pass still planned
 - [ ] **M7 — Distributed scrape architecture:** Decouple scrape from build so blocked venues (OMSI, Hollywood) can be scraped from a residential box while the rest run on CI. Per-source raw files; event-driven build. See "Distributed Scrape Architecture" below.
 
 ---

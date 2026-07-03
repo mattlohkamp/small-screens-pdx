@@ -66,6 +66,9 @@ interface Film {
   poster_path: string | null;
   genres: string[];
   imdb_id?: string | null;
+  rt_score?: number | null;
+  imdb_rating?: number | null;
+  metacritic_score?: number | null;
   showtimes: Showtime[];
   match_confidence?: "verified" | "fallback";
 }
@@ -92,6 +95,81 @@ function buildFilmPageUrl(venueId: string, film: Film, venue: Venue): string {
 function imdbUrl(film: Film): string {
   if (film.imdb_id) return `https://www.imdb.com/title/${film.imdb_id}/`;
   return `https://www.imdb.com/find?q=${encodeURIComponent(`${film.title} ${film.year ?? ""}`)}&s=tt&ttype=ft`;
+}
+
+// OMDb gives us the score but not a page slug, so link to each site's search.
+function rtSearchUrl(film: Film): string {
+  return `https://www.rottentomatoes.com/search?search=${encodeURIComponent(film.title)}`;
+}
+
+function metacriticSearchUrl(film: Film): string {
+  return `https://www.metacritic.com/search/${encodeURIComponent(film.title)}/`;
+}
+
+// Renders whichever of the three OMDb-sourced ratings (RT critics, IMDb
+// audience, Metacritic critics) are present — any or all may be missing if
+// OMDb has no entry for this title.
+function RatingsBadges({ film, className }: { film: Film; className: string }) {
+  const badges: React.ReactNode[] = [];
+
+  if (film.rt_score != null) {
+    const fresh = film.rt_score >= 60;
+    badges.push(
+      <a
+        key="rt"
+        className={`${className} ${fresh ? styles.rtScoreFresh : styles.rtScoreRotten}`}
+        href={rtSearchUrl(film)}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Rotten Tomatoes score (critics)"
+      >
+        {fresh ? "🍅" : "🤢"} {film.rt_score}%
+      </a>
+    );
+  }
+
+  if (film.imdb_rating != null) {
+    badges.push(
+      <a
+        key="imdb"
+        className={`${className} ${styles.imdbRating}`}
+        href={imdbUrl(film)}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="IMDb rating (audience)"
+      >
+        ★ {film.imdb_rating.toFixed(1)}
+      </a>
+    );
+  }
+
+  if (film.metacritic_score != null) {
+    const tier =
+      film.metacritic_score >= 61 ? styles.metacriticHigh
+      : film.metacritic_score >= 40 ? styles.metacriticMid
+      : styles.metacriticLow;
+    badges.push(
+      <a
+        key="mc"
+        className={`${className} ${tier}`}
+        href={metacriticSearchUrl(film)}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Metacritic score (critics)"
+      >
+        Ⓜ {film.metacritic_score}
+      </a>
+    );
+  }
+
+  // Matched films (a real TMDB/IMDb ID) with none of the three ratings — often
+  // just-released titles OMDb hasn't caught up on yet — get a plain note instead
+  // of silently showing nothing, so it reads as "not rated yet" not "we forgot".
+  if (badges.length === 0 && film.id != null) {
+    return <span className={styles.ratingsUnavailable}>Ratings unavailable</span>;
+  }
+
+  return <>{badges}</>;
 }
 
 function formatRuntime(minutes: number): string {
@@ -156,7 +234,19 @@ function buildDateWindow(start: string, end: string): string[] {
 }
 
 type ViewMode = "expanded" | "compact";
-type SortBy = "time" | "title" | "runtime";
+type SortBy = "time" | "title" | "runtime" | "score";
+
+// Averages whichever of the three OMDb ratings are present, normalizing IMDb's
+// 0-10 scale up to 0-100 so it doesn't get outweighed by RT/Metacritic. Null
+// when none are present — e.g. brand-new releases OMDb hasn't caught up on yet.
+function compositeScore(film: Film): number | null {
+  const parts: number[] = [];
+  if (film.rt_score != null) parts.push(film.rt_score);
+  if (film.imdb_rating != null) parts.push(film.imdb_rating * 10);
+  if (film.metacritic_score != null) parts.push(film.metacritic_score);
+  if (parts.length === 0) return null;
+  return parts.reduce((a, b) => a + b, 0) / parts.length;
+}
 
 const MATINEE_CUTOFF = "17:00"; // before 5pm
 const MCMENAMINS_IDS = new Set(["baghdad", "kennedy-school", "mission"]);
@@ -169,7 +259,7 @@ export default function WhatsOn() {
   const [selectedVenues, setSelectedVenues] = useState<Set<string>>(new Set());
   const [viewMode, setViewMode] = useState<ViewMode>("expanded");
   const [query, setQuery] = useState("");
-  const [sortBy, setSortBy] = useState<SortBy>("time");
+  const [sortBy, setSortBy] = useState<SortBy>("title");
   const [genreFilter, setGenreFilter] = useState<Set<string>>(new Set());
   const [matineeOnly, setMatineeOnly] = useState(false);
   const [shortOnly, setShortOnly] = useState(false);
@@ -369,6 +459,17 @@ export default function WhatsOn() {
         const bR = b.film.runtime_minutes ?? 0;
         return aR - bR;
       }
+      if (sortBy === "score") {
+        // Unrated films sort first — often just-released titles OMDb hasn't
+        // caught up on yet, not necessarily worse than rated ones — then
+        // descending by composite score.
+        const aScore = compositeScore(a.film);
+        const bScore = compositeScore(b.film);
+        if (aScore == null && bScore == null) return a.film.title.localeCompare(b.film.title);
+        if (aScore == null) return -1;
+        if (bScore == null) return 1;
+        return bScore - aScore;
+      }
       const aMin = a.showtimes[0].datetime;
       const bMin = b.showtimes[0].datetime;
       return aMin < bMin ? -1 : aMin > bMin ? 1 : 0;
@@ -454,11 +555,6 @@ export default function WhatsOn() {
 
   return (
     <div className={styles.root}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Small Screens PDX</h1>
-        <p className={styles.subtitle}>Independent cinema in Portland</p>
-      </header>
-
       <div className={styles.filters}>
         {/* Date picker: 7 calendar-day cards spanning the full width */}
         <div className={styles.dateCards}>
@@ -480,7 +576,7 @@ export default function WhatsOn() {
         </div>
 
         {/* Quick toggles + view mode */}
-        <div className={styles.filterRow}>
+        <div className={`${styles.filterRow} ${styles.toggleRow}`}>
           {/*
           <div className={styles.dateSelectWrapper}>
           <select
@@ -708,10 +804,10 @@ export default function WhatsOn() {
         <div className={styles.filterRow}>
           <span className={styles.filterLabel}>Sort</span>
           <div className={styles.chipGroup}>
-            <button className={`${styles.venueChip} ${sortBy === "time" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("time")}>By time</button>
             <button className={`${styles.venueChip} ${sortBy === "title" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("title")}>A–Z</button>
+            <button className={`${styles.venueChip} ${sortBy === "time" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("time")}>Showtime</button>
             <button className={`${styles.venueChip} ${sortBy === "runtime" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("runtime")}>Runtime</button>
-            <button className={`${styles.venueChip} ${styles.chipUnavailable}`} aria-disabled title="Coming soon — Rotten Tomatoes integration planned">RT Score</button>
+            <button className={`${styles.venueChip} ${sortBy === "score" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("score")} title="Averages Rotten Tomatoes, IMDb, and Metacritic (whichever are available); unrated titles sort first">Score</button>
           </div>
           <button
             className={styles.viewToggle}
@@ -775,6 +871,14 @@ export default function WhatsOn() {
             rel="noopener noreferrer"
           >
             Movie data from TMDB
+          </a>
+          {" · "}
+          <a
+            href="https://www.omdbapi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ratings from OMDb
           </a>
         </p>
       </footer>
@@ -896,6 +1000,7 @@ function FilmRow({
           {film.year && <span className={styles.filmYearCompact}>{film.year}</span>}
           {film.director && <span className={styles.filmDirectorCompact}>dir. {highlightText(film.director, matches.director)}</span>}
           {film.runtime_minutes && <span className={styles.filmYearCompact}>{formatRuntime(film.runtime_minutes)}</span>}
+          <RatingsBadges film={film} className={styles.ratingBadge} />
         </div>
         <div className={styles.showtimesCompact}>
           {[...byVenue.entries()].map(([venueId, times]) => (
@@ -977,6 +1082,7 @@ function FilmRow({
           {film.runtime_minutes && (
             <span className={styles.filmRuntime}>{formatRuntime(film.runtime_minutes)}</span>
           )}
+          <RatingsBadges film={film} className={styles.ratingBadge} />
         </div>
 
         {film.genres.length > 0 && (
