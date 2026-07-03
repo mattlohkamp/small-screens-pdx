@@ -243,11 +243,110 @@ deploy workflow (on release-* tag OR push to main touching upcoming.json)
 - [x] **M4 — Frontend v1:** What's on view with date picker, venue/genre filters, fuzzy search, compact/expanded modes, sort, Leaflet venue map, poster modal, IMDB links, ticket links. Deployed to GitHub Pages.
 - [x] **M5 — Automated pipeline:** GitHub Actions cron running daily at 5am Pacific. Scrapers run in parallel. Scrape commits `upcoming.json` → triggers auto-deploy to GitHub Pages. Release tags (`release-X.Y.Z`) also trigger deploy.
 - [ ] **M6 — Polish:** Calendar view, by-film and by-venue views, mobile layout polish, TMDB attribution, RT scores.
+- [ ] **M7 — Distributed scrape architecture:** Decouple scrape from build so blocked venues (OMSI, Hollywood) can be scraped from a residential box while the rest run on CI. Per-source raw files; event-driven build. See "Distributed Scrape Architecture" below.
+
+---
+
+## Distributed Scrape Architecture (planned — M7)
+
+### Problem
+
+OMSI and Hollywood Theatre are **hard-blocked at GitHub Actions' datacenter IP** — their sites sit behind CloudFront WAFs that reject datacenter IPs by reputation. Confirmed on CI: no in-CI client trick beats it (Playwright, curl, and browser User-Agents all 403). From a **residential IP, plain `curl` returns 200** for both — verified end-to-end (OMSI details → calendar → sessions; Hollywood WP API). So the data is gettable; the request just has to originate from a residential connection.
+
+That forces scraping to happen in **two places**: CI for the 11 working venues, and an always-on residential box (a Raspberry Pi fileserver) for OMSI + Hollywood. The current monolithic pipeline (`scrape → merge → enrich → upcoming.json` in one step) can't support two writers cleanly:
+- Both would write the same `upcoming.json`, needing fragile "preserve the venues I didn't scrape" merge logic.
+- **Silent data-loss bug:** a scraper that returns `0 films` on a block counts as success and *overwrites* good data. Failing loudly would preserve it; succeeding-empty destroys it. (Observed on CI: OMSI 403'd, returned 0 films, got wiped — and wasn't even flagged in the degraded-run summary.)
+
+### Solution: decouple scrape from build, communicate via per-source files
+
+Split the pipeline into two stages joined by committed per-source JSON files:
+
+1. **scrape** — each scraper writes `data/raw/<scraper>.json` (raw `Film[]` + provenance). No enrichment, no `upcoming.json`.
+2. **build** — reads *all* `data/raw/*.json`, merges/dedupes across venues, enriches via TMDB, writes `public/data/upcoming.json`, deploys.
+
+Because CI and the Pi write **disjoint files**, they never conflict — git merges by path. The `data/raw/*.json` files become the committed **source-of-truth state**; `upcoming.json` becomes a **derived build artifact**.
+
+### File layout
+
+```
+data/raw/
+  cinemagic.json
+  laurelhurst.json
+  mcmenamins.json        # covers baghdad, kennedy-school, mission
+  academy.json
+  living-room.json
+  clinton-street.json
+  cinema-21.json
+  st-johns.json
+  moreland.json
+  tomorrow.json
+  omsi.json              # ← written by the Pi
+  hollywood.json         # ← written by the Pi
+public/data/
+  upcoming.json          # ← built artifact, derived from raw/*
+  enrichment-cache.json
+  failed-matches.json
+```
+
+Raw file shape (one per scraper; a scraper may cover several venue_ids):
+
+```json
+{
+  "venue_ids": ["omsi"],
+  "generator": "1.1.0-<commithash>",
+  "scraped_at": "2026-07-02T12:00:00Z",
+  "films": [ { "title": "...", "year": null, "showtimes": [ ... ] } ]
+}
+```
+
+### Entry points
+
+- `npm run scrape [venues…]` — runs the selected scrapers, writes their raw files (default = all). No enrichment. Includes the reliability guards below.
+- `npm run build` — assembles all raw files → merge → enrich → `upcoming.json`. Requires `TMDB_API_KEY`.
+
+### Workflows
+
+- **CI daily scrape** (cron, 5am Pacific): `npm run scrape <11 non-blocked venues>` → commit changed `data/raw/*.json` → push. (Drops OMSI/Hollywood — they'd only 403.)
+- **Pi cron** (residential, always-on): `npm run scrape omsi hollywood` → commit `data/raw/{omsi,hollywood}.json` → push. **No TMDB key, no enrichment, no browser** (curl only).
+- **build workflow** (event-driven): triggers on push to `data/raw/**` → `npm run build` → deploy to gh-pages. Single enrichment authority; *any* raw update — CI's or the Pi's — refreshes the live site with no added latency.
+
+### What this removes / simplifies
+
+- The "which venues did this run cover, preserve the rest" merge branch in `scrape.ts` → **gone**; raw files are the state.
+- The **silent-wipe data-loss bug** → **gone**; a failed scrape simply doesn't rewrite its raw file, so the last good one stands.
+- **Staleness self-heals** — a venue whose scraper stops running keeps its last raw file; its past showtimes age out of the window naturally.
+- The **Pi needs no TMDB key and never enriches** — it only scrapes and commits raw.
+- **OMSI → curl-based** (drop Playwright), so the Pi needs no chromium (ARM). Living Room keeps Playwright — it runs on CI and was never WAF-blocked.
+
+### Reliability guards (fold into the `scrape` entry point regardless)
+
+These fix issues observed on CI and apply to every venue, independent of the split:
+
+- **Retry amplification** — the orchestrator retry (3×) currently nests over per-scraper retries (e.g. Hollywood's curl loop, 4×) = up to **12 attempts** against a permanent block, each with backoff → looks like a hang. Fix: make the **orchestrator the single retry authority**; remove per-scraper inner retry loops.
+- **Per-scraper hard timeout** (~60s via `Promise.race`) so no venue can ever run away and stall the whole job.
+- **Fail loud, not empty** — a total block **throws** (venue marked failed, raw file untouched) instead of returning `[]`.
+
+### Migration sequence (when we build it)
+
+1. Add `data/raw/`; change each scraper's runner to write its raw file. Add a temporary build that reads raw → produces `upcoming.json` so nothing breaks mid-migration.
+2. Split `scrape.ts` into `scrape` (raw only) + `build.ts` (merge/enrich/assemble). Fold in the retry/timeout/fail-loud guards.
+3. Add the event-driven build workflow on `data/raw/**`.
+4. Refactor OMSI to curl; remove Playwright from it.
+5. Update the CI daily scrape to the 11-venue list (drop omsi/hollywood).
+6. Stand up the Pi cron: clone, `.env` (no TMDB key needed), deploy key, crontab entry — staggered off the 5am CI cron.
+
+### Pi setup — info to gather when we build it
+
+- Pi model / OS / CPU arch; Node version available (or install path).
+- Git push method: deploy key (recommended, repo-scoped) vs PAT vs `gh` CLI.
+- Scheduler: `crontab` vs `systemd` timer; preferred run time (stagger vs 5am CI).
+- Confirm the Pi can reach `github.com` and the venue sites (omsi.edu, tickets.omsi.edu, hollywoodtheatre.org).
+- Where the repo clone lives on the fileserver (disk is ample).
 
 ---
 
 ## Open Questions
 
 1. ~~Any venues using Eventive or a shared ticketing platform?~~ Resolved: McMenamins Baghdad + Kennedy School use Veezi (has API). Clinton Street uses Eventive for some events.
-2. Hollywood Theatre and Cinema 21 block automated requests — scraping approach TBD (Playwright user-agent spoofing, or manual data entry as fallback).
+2. ~~Hollywood Theatre and Cinema 21 block automated requests — scraping approach TBD.~~ Resolved: Cinema 21 scrapes fine on CI. Hollywood (and OMSI) are blocked only at datacenter IPs — to be scraped from a residential Pi under the M7 distributed architecture (see above).
 3. Mission Theater — confirm no regular film screenings before dropping from scope.
