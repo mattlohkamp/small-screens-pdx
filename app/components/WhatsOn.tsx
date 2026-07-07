@@ -605,23 +605,8 @@ export default function WhatsOn() {
           })}
         </div>
 
-        {/* Quick toggles + view mode */}
+        {/* Quick toggle pills */}
         <div className={`${styles.filterRow} ${styles.toggleRow}`}>
-          {/*
-          <div className={styles.dateSelectWrapper}>
-          <select
-            className={styles.dateSelect}
-            value={selectedDate}
-            onChange={(e) => setSelectedDate(e.target.value)}
-          >
-            {dates.map((d) => (
-              <option key={d} value={d}>
-                {formatDateLabel(d, today)}
-              </option>
-            ))}
-          </select>
-          </div>
-          */}
           <button
             className={`${styles.venueChip} ${matineeOnly ? styles.venueChipActive : ""}`}
             onClick={() => setMatineeOnly((v) => !v)}

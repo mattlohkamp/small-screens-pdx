@@ -1,6 +1,6 @@
 {
   "name": "small-screens-pdx",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -20,19 +20,16 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@types/leaflet": "^1.9.21",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "cheerio": "^1.0.0",
     "dotenv": "^16.0.0",
     "fuse.js": "^7.4.2",
-    "leaflet": "^1.9.4",
     "next": "^16.2.9",
     "node-fetch": "^3.3.2",
     "playwright": "^1.60.0",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "react-leaflet": "^5.0.0"
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

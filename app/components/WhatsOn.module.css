@@ -61,68 +61,6 @@
   padding: 6px 0 2px;
 }
 
-.collapsible {
-  border-bottom: 1px solid var(--border);
-  padding: 2px 0;
-}
-
-.collapsibleToggle {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background: none;
-  border: none;
-  color: var(--text);
-  padding: 6px 0;
-  text-align: left;
-  gap: 6px;
-}
-
-.clearFilter {
-  color: var(--accent);
-  font-size: 0.75rem;
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.clearFilter:hover {
-  opacity: 1;
-}
-
-.collapsibleToggle:hover .collapsibleLabel {
-  color: var(--accent);
-}
-
-.collapsibleLabel {
-  font-size: 0.8rem;
-  font-weight: 500;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  min-width: 0;
-}
-
-.mapIcon {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-}
-
-.collapsibleSummary {
-  font-size: 0.75rem;
-  color: var(--accent);
-  font-weight: 400;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.collapsibleCaret {
-  font-size: 0.6rem;
-  color: var(--text-muted);
-  flex-shrink: 0;
-}
-
 .dateCards {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -192,65 +130,6 @@
   color: var(--accent);
 }
 
-.dateSelectWrapper {
-  flex: 1;
-  position: relative;
-}
-
-.dateSelectWrapper::after {
-  content: "▾";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  pointer-events: none;
-  font-size: 1rem;
-}
-
-.dateSelect {
-  width: 100%;
-  appearance: none;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text);
-  font-family: inherit;
-  font-size: 0.875rem;
-  padding: 6px 28px 6px 10px;
-  outline: none;
-  cursor: pointer;
-  transition: border-color 0.1s;
-}
-
-.dateSelect:hover,
-.dateSelect:focus {
-  border-color: var(--accent);
-}
-
-.toggleBtn {
-  flex-shrink: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  border-radius: var(--radius);
-  padding: 6px 11px;
-  font-size: 0.8rem;
-  transition: all 0.1s;
-}
-
-.toggleBtn:hover {
-  border-color: var(--accent);
-  color: var(--text);
-}
-
-.toggleBtnActive {
-  background: var(--accent-dim);
-  border-color: var(--accent);
-  color: var(--accent);
-  font-weight: 600;
-}
-
 .toggleCount {
   opacity: 0.65;
   font-size: 0.75em;
@@ -277,22 +156,6 @@
   flex-direction: column;
   gap: 10px;
   min-height: 0;
-}
-
-.viewToggle {
-  flex-shrink: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  border-radius: var(--radius);
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  transition: all 0.1s;
-}
-
-.viewToggle:hover {
-  border-color: var(--accent);
-  color: var(--text);
 }
 
 .searchRow {
@@ -340,13 +203,6 @@
 
 .searchClear:hover {
   color: var(--text);
-}
-
-/* kept for legacy reference, superseded by .chipGroup */
-.venueFilter {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
 }
 
 .venueChip {
