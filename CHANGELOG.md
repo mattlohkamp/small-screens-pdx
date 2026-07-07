@@ -2,6 +2,24 @@
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-07-06
+
+### Added
+- Mobile controls are now a pull-down "More options" menu: a slim yellow bar pinned at the top of the screen opens a modal-style drawer (over a dimmed, blurred backdrop) holding the date picker, filters, search, and sort. Close it via the backdrop, the Escape key, or the bar itself — which, while open, shows the live result count ("60 showtimes for Tue, Jul 7 (3 filtered out)") so you can see what your filters produce before collapsing back to the list.
+- On mobile, "See venues on map" opens a Google map of all venues (handing off to your maps app) instead of embedding the cramped map; desktop keeps the inline map.
+
+### Changed
+- Film list uses compact rows on mobile and expanded rows on desktop automatically; the manual compact/expanded toggle has been removed.
+- Venue and genre filters are always visible now (no expand/collapse), with "All venues" / "All genres" as the clear-all defaults.
+- Filter shortcuts (Matinee, < 2h, Hide past, Hide unverified) restyled as pills, consistent with the venue and genre chips.
+- "No more showtimes today" empty state is centered in the viewport.
+
+### Removed
+- "Hide McMenamins" toggle — the "Not McMenamins" venue chip already covers it.
+
+### Fixed
+- Scrape runs no longer hang after finishing (which had been consuming the full CI job timeout and could delay showtime updates); an overall run watchdog was added as a backstop.
+
 ## [1.2.0] — 2026-07-03
 
 ### Added

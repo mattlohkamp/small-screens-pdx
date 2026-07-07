@@ -393,7 +393,24 @@ async function run(runStart: Date, log: (msg: string) => void) {
   log(`=== Run finished: ${new Date().toISOString()} (${((Date.now() - runStart.getTime()) / 1000).toFixed(1)}s) ===\n`);
 }
 
-main().catch((err) => {
-  console.error(err);
+// Overall hard deadline. Even if a scraper, browser teardown, or a dangling
+// handle wedges, the process must end — otherwise a hung run burns the full
+// 6h GitHub Actions job timeout. Fires only as a last resort; healthy runs
+// (~1min) exit long before this. unref() so the watchdog itself never keeps
+// the process alive on the happy path.
+const OVERALL_DEADLINE_MS = 8 * 60_000;
+setTimeout(() => {
+  console.error(`Scrape exceeded ${OVERALL_DEADLINE_MS / 60_000}min overall deadline — forcing exit.`);
   process.exit(1);
-});
+}, OVERALL_DEADLINE_MS).unref();
+
+main()
+  // Exit explicitly on success. The scrape is a batch job: once the files are
+  // written its work is done. Lingering handles (Playwright subprocess, undici
+  // keep-alive sockets, a curl child) would otherwise keep the event loop alive
+  // and hang the process idle until the CI job timeout — the 6h "timeout" we saw.
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });

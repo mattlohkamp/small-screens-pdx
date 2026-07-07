@@ -20,6 +20,23 @@
   gap: 10px;
 }
 
+/* Mobile filter drawer — inert on desktop. Tab + backdrop are hidden and the
+   drawer wrapper is transparent to layout (display: contents) so .filters keeps
+   its sticky-header behavior above. All activate in the mobile media query. */
+.drawerBar,
+.drawerBackdrop {
+  display: none;
+}
+
+.filtersDrawer {
+  display: contents;
+}
+
+@keyframes drawerFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .filterRow {
   display: flex;
   align-items: center;
@@ -387,9 +404,19 @@
   gap: 1px;
 }
 
+/* The last row's bottom border would double up with the footer's top border. */
+.filmList > article:last-child {
+  border-bottom: none;
+}
+
 .empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 70vh;
   color: var(--text-muted);
-  padding: 48px 0;
   text-align: center;
 }
 
@@ -784,6 +811,113 @@
     padding: 0 10px;
   }
 
+  /* Dimmed backdrop behind the open drawer — makes it read as a modal over the
+     site. Tapping it closes the drawer (handled in JS). The blur is done on the
+     content itself (.rootDrawerOpen below), not via backdrop-filter, which needs
+     GPU compositing and silently no-ops when hardware acceleration is off. */
+  .drawerBackdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.5);
+    animation: drawerFadeIn 0.2s ease;
+  }
+
+  /* Blur the page content behind the drawer. filter: blur() (unlike
+     backdrop-filter) has a software-rendering path, so it works without GPU
+     acceleration. Sits below the z-99 backdrop, so it reads blurred + dimmed. */
+  .rootDrawerOpen .main,
+  .rootDrawerOpen .footer {
+    filter: blur(7px);
+  }
+
+  /* Drawer as a pull-down shade: content stacked above the yellow "FILTERS" bar
+     (its bottom edge). Closed, it's slid up so only that 16px bar peeks at the
+     top (translateY(-100% + bar)); open, it slides fully into view. Overflow
+     stays visible so the half-circle tab can hang below the bar. */
+  .filtersDrawer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--bg);
+    transform: translateY(calc(-100% + 24px)); /* closed: only the 24px bar peeks */
+    transition: transform 0.28s ease;
+  }
+
+  .filtersDrawerOpen {
+    transform: translateY(0);
+  }
+
+  /* Scrollable content area of the drawer (the bar below is not scrolled). */
+  .filters {
+    position: static;
+    background: var(--bg);
+    max-height: calc(100dvh - 48px);
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 10px;
+    border-bottom: none;
+  }
+
+  /* The drawer's yellow bottom edge: a slim full-width "MORE OPTIONS" bar. When
+     closed it's the only thing peeking at the top; tapping toggles the drawer. */
+  .drawerBar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 24px;
+    border: none;
+    background: var(--accent);
+    color: var(--bg);
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .drawerBarLabel {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  /* Open-state label: the results summary. Natural case (no wide tracking) so the
+     longer string fits; ellipsis as a safety on very narrow screens. */
+  .drawerBarCount {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100vw - 60px);
+  }
+
+  .drawerBarCaret {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* Clear the peeking bar so the first film row isn't hidden beneath it. */
+  .main {
+    padding-top: 32px;
+  }
+
+  /* The "Showtimes … (N shown, M filtered)" line is noise on mobile — hide it. */
+  .resultsHeading {
+    display: none;
+  }
+
+
+
   /* Shrink the 7-across date-card grid so all cards stay legible instead of
      wrapping/truncating on narrow screens. */
   .dateCards {
@@ -805,25 +939,20 @@
     margin-top: 1px;
   }
 
-  /* The sticky filter bar's toggle row previously wrapped across several
-     lines on narrow viewports, which — since .filters is position: sticky —
-     permanently ate a large chunk of the viewport. Scroll horizontally
-     instead of wrapping. */
+  /* In the pop-down drawer the toggles wrap onto multiple lines rather than
+     getting clipped by the viewport edge. (They used to scroll horizontally to
+     stay on one line, but that was for the old sticky header.) */
   .toggleRow {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    margin: 0 -10px;
-    padding: 0 10px;
-  }
-
-  .toggleRow::-webkit-scrollbar {
-    display: none;
+    flex-wrap: wrap;
   }
 
   .toggleBtn {
     white-space: nowrap;
+  }
+
+  /* Reclaim space: drop the "(N)" per-toggle counts on mobile. */
+  .toggleCount {
+    display: none;
   }
 
   .filmRow {

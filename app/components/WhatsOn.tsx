@@ -251,38 +251,65 @@ function compositeScore(film: Film): number | null {
 const MATINEE_CUTOFF = "17:00"; // before 5pm
 const MCMENAMINS_IDS = new Set(["baghdad", "kennedy-school", "mission"]);
 
+// Public share URL of the Google My Map with all venue pins (build it once from
+// docs/venue-map.csv). On mobile the map section links out to this — opening the
+// native Maps app — instead of embedding Leaflet in a cramped viewport. Leave
+// empty to fall back to the embedded map on mobile too.
+const VENUE_MAP_URL = "https://www.google.com/maps/d/viewer?mid=1fpRI51g5JPQZfd8rIILGMWkjFtZtlE4";
+
 export default function WhatsOn() {
   const [schedule, setSchedule] = useState<Schedule | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [posterModal, setPosterModal] = useState<{ src: string; title: string } | null>(null);
   const [selectedDate, setSelectedDate] = useState<string>("");
   const [selectedVenues, setSelectedVenues] = useState<Set<string>>(new Set());
-  const [viewMode, setViewMode] = useState<ViewMode>("expanded");
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState<SortBy>("title");
   const [genreFilter, setGenreFilter] = useState<Set<string>>(new Set());
   const [matineeOnly, setMatineeOnly] = useState(false);
   const [shortOnly, setShortOnly] = useState(false);
   const [hidePast, setHidePast] = useState(true);
-  const [hideMcmenamins, setHideMcmenamins] = useState(false);
   const [hideUnverified, setHideUnverified] = useState(false);
-  const [venuesOpen, setVenuesOpen] = useState(false);
-  const [genresOpen, setGenresOpen] = useState(false);
   const [mapOpen, setMapOpen] = useState(false);
-  const [filtersVisible, setFiltersVisible] = useState(false);
+  // Mobile only: the whole control block lives in a top drawer that overlays the
+  // film list as a modal. Closed, it retracts to a circular pull-tab; open, it
+  // slides down over a dimmed backdrop. Desktop keeps the sticky header.
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  // Tracks the mobile breakpoint so view mode can be forced by viewport (compact
+  // on mobile, expanded on desktop) rather than exposed as a toggle everywhere.
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") setPosterModal(null);
+      if (e.key === "Escape") {
+        setPosterModal(null);
+        setDrawerOpen(false);
+      }
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
   useEffect(() => {
-    const saved = localStorage.getItem("viewMode");
-    if (saved === "compact" || saved === "expanded") setViewMode(saved);
+    const mq = window.matchMedia("(max-width: 640px)");
+    const update = () => {
+      setIsMobile(mq.matches);
+      if (!mq.matches) setDrawerOpen(false); // leaving mobile: close the drawer
+    };
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
+  // Lock background scroll while the drawer is open, like a modal.
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = prev; };
+  }, [drawerOpen]);
+
+  useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data/upcoming.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
@@ -298,14 +325,6 @@ export default function WhatsOn() {
       })
       .catch((e) => setError(String(e)));
   }, []);
-
-  function toggleViewMode() {
-    setViewMode((prev) => {
-      const next = prev === "expanded" ? "compact" : "expanded";
-      localStorage.setItem("viewMode", next);
-      return next;
-    });
-  }
 
   const today = useMemo(() => {
     const d = new Date();
@@ -367,7 +386,6 @@ export default function WhatsOn() {
     matineeOnly: boolean;
     shortOnly: boolean;
     hidePast: boolean;
-    hideMcmenamins: boolean;
     hideUnverified: boolean;
   }
 
@@ -382,7 +400,6 @@ export default function WhatsOn() {
         const count = film.showtimes.filter((s) => {
           if (!s.datetime.startsWith(selectedDate)) return false;
           if (selectedVenues.size > 0 && !selectedVenues.has(s.venue_id)) return false;
-          if (flags.hideMcmenamins && MCMENAMINS_IDS.has(s.venue_id)) return false;
           if (flags.hidePast && selectedDate === today && new Date(s.datetime) < now) return false;
           if (flags.matineeOnly && s.datetime.slice(11, 16) >= MATINEE_CUTOFF) return false;
           return true;
@@ -391,7 +408,7 @@ export default function WhatsOn() {
       }, 0);
   };
 
-  const currentFlags: ToggleFlags = { matineeOnly, shortOnly, hidePast, hideMcmenamins, hideUnverified };
+  const currentFlags: ToggleFlags = { matineeOnly, shortOnly, hidePast, hideUnverified };
 
   // Count next to each toggle button: for "show only" toggles (Matinee, <2h) this is
   // how many showtimes qualify; for "hide" toggles this is how many would be removed.
@@ -405,10 +422,9 @@ export default function WhatsOn() {
       matineeOnly: matches("matineeOnly"),
       shortOnly: matches("shortOnly"),
       hidePast: removedBy("hidePast"),
-      hideMcmenamins: removedBy("hideMcmenamins"),
       hideUnverified: removedBy("hideUnverified"),
     };
-  }, [searchedFilms, selectedDate, selectedVenues, today, matineeOnly, shortOnly, hidePast, hideMcmenamins, hideUnverified]);
+  }, [searchedFilms, selectedDate, selectedVenues, today, matineeOnly, shortOnly, hidePast, hideUnverified]);
 
   const filmsOnDate = useMemo(() => {
     if (!schedule || !selectedDate) return [];
@@ -423,7 +439,6 @@ export default function WhatsOn() {
         let showtimes = film.showtimes.filter((s) => {
           if (!s.datetime.startsWith(selectedDate)) return false;
           if (selectedVenues.size > 0 && !selectedVenues.has(s.venue_id)) return false;
-          if (hideMcmenamins && MCMENAMINS_IDS.has(s.venue_id)) return false;
           if (hidePast && selectedDate === today && new Date(s.datetime) < now) return false;
           return true;
         });
@@ -474,7 +489,7 @@ export default function WhatsOn() {
       const bMin = b.showtimes[0].datetime;
       return aMin < bMin ? -1 : aMin > bMin ? 1 : 0;
     });
-  }, [schedule, selectedDate, selectedVenues, searchedFilms, matchMap, matineeOnly, shortOnly, hidePast, hideMcmenamins, hideUnverified, today, sortBy]);
+  }, [schedule, selectedDate, selectedVenues, searchedFilms, matchMap, matineeOnly, shortOnly, hidePast, hideUnverified, today, sortBy]);
 
   // Total showtimes on this date, regardless of filters, vs. how many survive them.
   const showtimeCounts = useMemo(() => {
@@ -498,7 +513,6 @@ export default function WhatsOn() {
       film.showtimes.some((s) => {
         if (!s.datetime.startsWith(selectedDate)) return false;
         if (selectedVenues.size > 0 && !selectedVenues.has(s.venue_id)) return false;
-        if (hideMcmenamins && MCMENAMINS_IDS.has(s.venue_id)) return false;
         if (matineeOnly && s.datetime.slice(11, 16) >= MATINEE_CUTOFF) return false;
         return true;
       })
@@ -548,13 +562,33 @@ export default function WhatsOn() {
   }
 
   const allSelected = selectedVenues.size === 0;
+  // View mode is dictated entirely by viewport: compact on mobile, expanded on
+  // desktop. No user-facing toggle.
+  const effectiveViewMode: ViewMode = isMobile ? "compact" : "expanded";
+  const shortSelectedDate = selectedDate
+    ? new Date(selectedDate + "T12:00:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })
+    : "";
+  const filteredOut = showtimeCounts.total - showtimeCounts.shown;
   const notMcmenaminsIds = new Set(schedule.venues.map((v) => v.id).filter((id) => !MCMENAMINS_IDS.has(id)));
   const notMcmenaminsActive =
     selectedVenues.size === notMcmenaminsIds.size &&
     [...selectedVenues].every((id) => notMcmenaminsIds.has(id));
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root} ${drawerOpen ? styles.rootDrawerOpen : ""}`}>
+      {/* Modal backdrop behind the open drawer — dims the site and closes on tap. */}
+      {drawerOpen && (
+        <div
+          className={styles.drawerBackdrop}
+          onClick={() => setDrawerOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <div
+        id="filters-drawer"
+        className={`${styles.filtersDrawer} ${drawerOpen ? styles.filtersDrawerOpen : ""}`}
+      >
       <div className={styles.filters}>
         {/* Date picker: 7 calendar-day cards spanning the full width */}
         <div className={styles.dateCards}>
@@ -593,50 +627,37 @@ export default function WhatsOn() {
           </div>
           */}
           <button
-            className={`${styles.toggleBtn} ${matineeOnly ? styles.toggleBtnActive : ""}`}
+            className={`${styles.venueChip} ${matineeOnly ? styles.venueChipActive : ""}`}
             onClick={() => setMatineeOnly((v) => !v)}
             title="Show only showtimes before 5pm"
           >
             Matinee <span className={styles.toggleCount}>({toggleCounts.matineeOnly})</span>
           </button>
           <button
-            className={`${styles.toggleBtn} ${shortOnly ? styles.toggleBtnActive : ""}`}
+            className={`${styles.venueChip} ${shortOnly ? styles.venueChipActive : ""}`}
             onClick={() => setShortOnly((v) => !v)}
             title="Show only films under 2 hours"
           >
             &lt; 2h <span className={styles.toggleCount}>({toggleCounts.shortOnly})</span>
           </button>
           <button
-            className={`${styles.toggleBtn} ${hidePast ? styles.toggleBtnActive : ""}`}
+            className={`${styles.venueChip} ${hidePast ? styles.venueChipActive : ""}`}
             onClick={() => setHidePast((v) => !v)}
             title="Hide showtimes that have already started"
           >
             Hide past <span className={styles.toggleCount}>({toggleCounts.hidePast})</span>
           </button>
           <button
-            className={`${styles.toggleBtn} ${hideMcmenamins ? styles.toggleBtnActive : ""}`}
-            onClick={() => setHideMcmenamins((v) => !v)}
-            title="Hide showtimes at McMenamins venues (Bagdad, Kennedy School, Mission)"
-          >
-            Hide McMenamins <span className={styles.toggleCount}>({toggleCounts.hideMcmenamins})</span>
-          </button>
-          <button
-            className={`${styles.toggleBtn} ${hideUnverified ? styles.toggleBtnActive : ""}`}
+            className={`${styles.venueChip} ${hideUnverified ? styles.venueChipActive : ""}`}
             onClick={() => setHideUnverified((v) => !v)}
             title="Some showtimes can't be matched to a movie database entry — they're still real screenings, just without poster art or details. Hide them here if you'd rather only see verified listings."
           >
             Hide unverified <span className={styles.toggleCount}>({toggleCounts.hideUnverified})</span>
           </button>
-          <button
-            className={`${styles.toggleBtn} ${filtersVisible ? styles.toggleBtnActive : ""} ${(query || selectedVenues.size > 0 || genreFilter.size > 0) && !filtersVisible ? styles.toggleBtnDot : ""}`}
-            onClick={() => setFiltersVisible((v) => !v)}
-            title={filtersVisible ? "Hide search and filters" : "Show search and filters"}
-          >
-            {filtersVisible ? "Hide filters" : "Show more filters"}
-          </button>
         </div>
 
-        <div className={`${styles.filtersPanel} ${filtersVisible ? styles.filtersPanelOpen : ""}`}>
+        {/* All filters shown inline — no "show more" gate. On mobile this whole
+            block lives in the pop-down drawer, so revealing everything is fine. */}
         <div className={styles.filtersPanelInner}>
         {/* Search */}
         <div className={styles.searchRow}>
@@ -654,142 +675,114 @@ export default function WhatsOn() {
           )}
         </div>
 
-        {/* Venue filter — collapsible */}
-        <div className={styles.collapsible}>
-          <button className={styles.collapsibleToggle} onClick={() => setVenuesOpen((o) => !o)}>
-            <span className={styles.collapsibleCaret}>{venuesOpen ? "▲" : "▼"}</span>
-            <span className={styles.collapsibleLabel}>
-              Venue
-              {selectedVenues.size > 0 && (
-                <>
-                  <span className={styles.collapsibleSummary}>
-                    {notMcmenaminsActive
-                      ? "Not McMenamins"
-                      : [...selectedVenues].map((id) => schedule.venues.find((v) => v.id === id)?.name).filter(Boolean).join(", ")}
-                  </span>
-                  <span
-                    className={styles.clearFilter}
-                    role="button"
-                    tabIndex={0}
-                    title="Clear venue filter"
-                    onClick={(e) => { e.stopPropagation(); setSelectedVenues(new Set()); }}
-                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); setSelectedVenues(new Set()); } }}
-                  >✕</span>
-                </>
-              )}
-            </span>
+        {/* Venue filter — always shown, no title/caret. The "All venues" chip is
+            the (selected-by-default) clear-all. */}
+        <div className={styles.chipGroup}>
+          <button
+            className={`${styles.venueChip} ${allSelected ? styles.venueChipActive : ""}`}
+            onClick={() => setSelectedVenues(new Set())}
+          >
+            All venues
           </button>
-          {venuesOpen && (
-            <div className={styles.chipGroup}>
+          <button
+            className={`${styles.venueChip} ${notMcmenaminsActive ? styles.venueChipActive : ""}`}
+            onClick={() => setSelectedVenues(new Set(notMcmenaminsIds))}
+          >
+            Not McMenamins
+          </button>
+          {schedule.venues.map((v) => {
+            const unavailable = !availableVenueIds.has(v.id);
+            return (
               <button
-                className={`${styles.venueChip} ${allSelected ? styles.venueChipActive : ""}`}
-                onClick={() => setSelectedVenues(new Set())}
+                key={v.id}
+                className={`${styles.venueChip} ${!allSelected && selectedVenues.has(v.id) ? styles.venueChipActive : ""} ${unavailable ? styles.chipUnavailable : ""}`}
+                aria-disabled={unavailable}
+                title={unavailable ? "No showtimes at this venue today" : undefined}
+                onClick={() => !unavailable && toggleVenue(v.id)}
               >
-                All
+                {v.name}
               </button>
-              <button
-                className={`${styles.venueChip} ${notMcmenaminsActive ? styles.venueChipActive : ""}`}
-                onClick={() => setSelectedVenues(new Set(notMcmenaminsIds))}
-              >
-                Not McMenamins
-              </button>
-              {schedule.venues.map((v) => {
-                const unavailable = !availableVenueIds.has(v.id);
-                return (
-                  <button
-                    key={v.id}
-                    className={`${styles.venueChip} ${!allSelected && selectedVenues.has(v.id) ? styles.venueChipActive : ""} ${unavailable ? styles.chipUnavailable : ""}`}
-                    aria-disabled={unavailable}
-                    title={unavailable ? "No showtimes at this venue today" : undefined}
-                    onClick={() => !unavailable && toggleVenue(v.id)}
-                  >
-                    {v.name}
-                  </button>
-                );
-              })}
-            </div>
-          )}
+            );
+          })}
         </div>
 
-        {/* Genre filter — collapsible */}
-        <div className={styles.collapsible}>
-          <button className={styles.collapsibleToggle} onClick={() => setGenresOpen((o) => !o)}>
-            <span className={styles.collapsibleCaret}>{genresOpen ? "▲" : "▼"}</span>
-            <span className={styles.collapsibleLabel}>
-              Genre
-              {genreFilter.size > 0 && (
-                <>
-                  <span className={styles.collapsibleSummary}>{[...genreFilter].join(", ")}</span>
-                  <span
-                    className={styles.clearFilter}
-                    role="button"
-                    tabIndex={0}
-                    title="Clear genre filter"
-                    onClick={(e) => { e.stopPropagation(); setGenreFilter(new Set()); }}
-                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); setGenreFilter(new Set()); } }}
-                  >✕</span>
-                </>
-              )}
-            </span>
+        {/* Genre filter — always shown, no title/caret. "All genres" is the
+            (selected-by-default) clear-all. */}
+        <div className={styles.chipGroup}>
+          <button
+            className={`${styles.venueChip} ${genreFilter.size === 0 ? styles.venueChipActive : ""}`}
+            onClick={() => setGenreFilter(new Set())}
+          >
+            All genres
           </button>
-          {genresOpen && (
-            <div className={styles.chipGroup}>
+          {allGenres.map((g) => {
+            const unavailable = !availableGenres.has(g);
+            return (
               <button
-                className={`${styles.venueChip} ${genreFilter.size === 0 ? styles.venueChipActive : ""}`}
-                onClick={() => setGenreFilter(new Set())}
+                key={g}
+                className={`${styles.venueChip} ${genreFilter.has(g) ? styles.venueChipActive : ""} ${unavailable ? styles.chipUnavailable : ""}`}
+                aria-disabled={unavailable}
+                title={unavailable ? "No movies in this genre currently" : undefined}
+                onClick={() => {
+                  if (unavailable) return;
+                  setGenreFilter((prev) => {
+                    const next = new Set(prev);
+                    next.has(g) ? next.delete(g) : next.add(g);
+                    return next;
+                  });
+                }}
               >
-                All
+                {g}
               </button>
-              {allGenres.map((g) => {
-                const unavailable = !availableGenres.has(g);
-                return (
-                  <button
-                    key={g}
-                    className={`${styles.venueChip} ${genreFilter.has(g) ? styles.venueChipActive : ""} ${unavailable ? styles.chipUnavailable : ""}`}
-                    aria-disabled={unavailable}
-                    title={unavailable ? "No movies in this genre currently" : undefined}
-                    onClick={() => {
-                      if (unavailable) return;
-                      setGenreFilter((prev) => {
-                        const next = new Set(prev);
-                        next.has(g) ? next.delete(g) : next.add(g);
-                        return next;
-                      });
-                    }}
-                  >
-                    {g}
-                  </button>
-                );
-              })}
-            </div>
-          )}
+            );
+          })}
         </div>
-        </div></div>
+        </div>
 
-        {/* Map — collapsible */}
-        <div className={styles.collapsible}>
-          <button className={styles.collapsibleToggle} onClick={() => setMapOpen((o) => !o)}>
-            <span className={styles.collapsibleCaret}>{mapOpen ? "▲" : "▼"}</span>
-            <span className={styles.collapsibleLabel}>
-              <svg className={styles.mapIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
-                <line x1="8" y1="2" x2="8" y2="18" />
-                <line x1="16" y1="6" x2="16" y2="22" />
-              </svg>
-              See venues on map ({schedule.venues.length})
-            </span>
-          </button>
-          {mapOpen && (
-            <VenueMap
-              venues={schedule.venues}
-              selectedVenues={selectedVenues}
-              onVenueClick={(id) => {
-                setSelectedVenues(new Set([id]));
-                setFiltersVisible(true);
-              }}
-            />
-          )}
-        </div>
+        {/* Map. On mobile, link out to the Google My Map (opens the native Maps
+            app) rather than embedding Leaflet in a tiny viewport; on desktop keep
+            the inline collapsible embed. */}
+        {isMobile && VENUE_MAP_URL ? (
+          <div className={styles.collapsible}>
+            <a
+              className={styles.collapsibleToggle}
+              href={VENUE_MAP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={styles.collapsibleCaret}>↗</span>
+              <span className={styles.collapsibleLabel}>
+                <svg className={styles.mapIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+                  <line x1="8" y1="2" x2="8" y2="18" />
+                  <line x1="16" y1="6" x2="16" y2="22" />
+                </svg>
+                Open venue map ({schedule.venues.length})
+              </span>
+            </a>
+          </div>
+        ) : (
+          <div className={styles.collapsible}>
+            <button className={styles.collapsibleToggle} onClick={() => setMapOpen((o) => !o)}>
+              <span className={styles.collapsibleCaret}>{mapOpen ? "▲" : "▼"}</span>
+              <span className={styles.collapsibleLabel}>
+                <svg className={styles.mapIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+                  <line x1="8" y1="2" x2="8" y2="18" />
+                  <line x1="16" y1="6" x2="16" y2="22" />
+                </svg>
+                See venues on map ({schedule.venues.length})
+              </span>
+            </button>
+            {mapOpen && (
+              <VenueMap
+                venues={schedule.venues}
+                selectedVenues={selectedVenues}
+                onVenueClick={(id) => setSelectedVenues(new Set([id]))}
+              />
+            )}
+          </div>
+        )}
 
         <h2 className={styles.resultsHeading}>
           Showtimes {formatFullDateLabel(selectedDate)}
@@ -809,15 +802,30 @@ export default function WhatsOn() {
             <button className={`${styles.venueChip} ${sortBy === "runtime" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("runtime")}>Runtime</button>
             <button className={`${styles.venueChip} ${sortBy === "score" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("score")} title="Averages Rotten Tomatoes, IMDb, and Metacritic (whichever are available); unrated titles sort first">Score</button>
           </div>
-          <button
-            className={styles.viewToggle}
-            style={{ marginLeft: "auto" }}
-            onClick={toggleViewMode}
-            title={viewMode === "expanded" ? "Switch to compact view" : "Switch to expanded view"}
-          >
-            {viewMode === "expanded" ? "Compact" : "Expanded"}
-          </button>
         </div>
+      </div>
+      {/* Mobile-only: the drawer's yellow bottom edge. Closed, it reads "MORE
+          OPTIONS" (tap to open the filters); open, it becomes the live results
+          summary (tap to collapse back to those results). */}
+      <button
+        className={styles.drawerBar}
+        onClick={() => setDrawerOpen((o) => !o)}
+        aria-expanded={drawerOpen}
+        aria-controls="filters-drawer"
+        aria-label={drawerOpen ? "Close options and view results" : "Show more options"}
+      >
+        {drawerOpen ? (
+          <span className={styles.drawerBarCount}>
+            {showtimeCounts.shown} {showtimeCounts.shown === 1 ? "showtime" : "showtimes"} for {shortSelectedDate}
+            {filteredOut > 0 && ` (${filteredOut} filtered out)`}
+          </span>
+        ) : (
+          <span className={styles.drawerBarLabel}>More options</span>
+        )}
+        <svg className={styles.drawerBarCaret} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          {drawerOpen ? <polyline points="6 15 12 9 18 15" /> : <polyline points="6 9 12 15 18 9" />}
+        </svg>
+      </button>
       </div>
 
 
@@ -826,13 +834,13 @@ export default function WhatsOn() {
           <div className={styles.empty}>
             {allShowtimesPassedToday && nextDate ? (
               <>
-                No more showtimes today.{" "}
+                <span>No more showtimes today.</span>
                 <button className={styles.viewTomorrowLink} onClick={() => setSelectedDate(nextDate)}>
                   View {formatDateLabel(nextDate, today).toLowerCase()}
                 </button>
               </>
             ) : (
-              "No showtimes for this date."
+              <span>No showtimes for this date.</span>
             )}
           </div>
         ) : (
@@ -843,10 +851,10 @@ export default function WhatsOn() {
                 film={film}
                 showtimes={showtimes}
                 venues={schedule.venues}
-                viewMode={viewMode}
+                viewMode={effectiveViewMode}
                 fuseMatches={matches}
-                onVenueClick={(id) => { setSelectedVenues(new Set([id])); setFiltersVisible(true); }}
-                onGenreClick={(g) => { setGenreFilter(new Set([g])); setFiltersVisible(true); }}
+                onVenueClick={(id) => setSelectedVenues(new Set([id]))}
+                onGenreClick={(g) => setGenreFilter(new Set([g]))}
                 onPosterClick={(src, title) => setPosterModal({ src, title })}
               />
             ))}
