@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+## [1.4.0] — 2026-07-06
+
+### Removed
+- The venue map — both the desktop embedded map and the mobile "See venues on map" link. It wasn't earning its space.
+
+### Fixed
+- Desktop regressions from the 1.3.0 mobile rework: search, venue, and genre filters collapse behind "Show more filters" again (they'd been left always-expanded), and the results heading now shares a single row with the sort controls, directly above the film list.
+
 ## [1.3.0] — 2026-07-06
 
 ### Added

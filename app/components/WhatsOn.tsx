@@ -1,11 +1,8 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import dynamic from "next/dynamic";
 import Fuse, { type FuseResult, type FuseResultMatch } from "fuse.js";
 import styles from "./WhatsOn.module.css";
-
-const VenueMap = dynamic(() => import("./VenueMap"), { ssr: false });
 
 type MatchIndices = ReadonlyArray<[number, number]>;
 
@@ -251,12 +248,6 @@ function compositeScore(film: Film): number | null {
 const MATINEE_CUTOFF = "17:00"; // before 5pm
 const MCMENAMINS_IDS = new Set(["baghdad", "kennedy-school", "mission"]);
 
-// Public share URL of the Google My Map with all venue pins (build it once from
-// docs/venue-map.csv). On mobile the map section links out to this — opening the
-// native Maps app — instead of embedding Leaflet in a cramped viewport. Leave
-// empty to fall back to the embedded map on mobile too.
-const VENUE_MAP_URL = "https://www.google.com/maps/d/viewer?mid=1fpRI51g5JPQZfd8rIILGMWkjFtZtlE4";
-
 export default function WhatsOn() {
   const [schedule, setSchedule] = useState<Schedule | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -270,7 +261,9 @@ export default function WhatsOn() {
   const [shortOnly, setShortOnly] = useState(false);
   const [hidePast, setHidePast] = useState(true);
   const [hideUnverified, setHideUnverified] = useState(false);
-  const [mapOpen, setMapOpen] = useState(false);
+  // Desktop only: search + venue + genre collapse behind a "Show more filters"
+  // toggle (collapsed by default). On mobile they're always shown in the drawer.
+  const [filtersVisible, setFiltersVisible] = useState(false);
   // Mobile only: the whole control block lives in a top drawer that overlays the
   // film list as a modal. Closed, it retracts to a circular pull-tab; open, it
   // slides down over a dimmed backdrop. Desktop keeps the sticky header.
@@ -291,7 +284,7 @@ export default function WhatsOn() {
   }, []);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 640px)");
+    const mq = window.matchMedia("(max-width: 570px)");
     const update = () => {
       setIsMobile(mq.matches);
       if (!mq.matches) setDrawerOpen(false); // leaving mobile: close the drawer
@@ -565,6 +558,9 @@ export default function WhatsOn() {
   // View mode is dictated entirely by viewport: compact on mobile, expanded on
   // desktop. No user-facing toggle.
   const effectiveViewMode: ViewMode = isMobile ? "compact" : "expanded";
+  // Mobile always shows the full filter set (in the drawer); desktop hides
+  // search/venue/genre behind the "Show more filters" toggle.
+  const showFilters = isMobile || filtersVisible;
   const shortSelectedDate = selectedDate
     ? new Date(selectedDate + "T12:00:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })
     : "";
@@ -654,10 +650,22 @@ export default function WhatsOn() {
           >
             Hide unverified <span className={styles.toggleCount}>({toggleCounts.hideUnverified})</span>
           </button>
+          {/* Desktop only: gate search/venue/genre behind a collapse toggle. On
+              mobile these always show in the drawer, so the toggle is pointless. */}
+          {!isMobile && (
+            <button
+              className={`${styles.venueChip} ${filtersVisible ? styles.venueChipActive : ""} ${(query || selectedVenues.size > 0 || genreFilter.size > 0) && !filtersVisible ? styles.toggleBtnDot : ""}`}
+              onClick={() => setFiltersVisible((v) => !v)}
+              title={filtersVisible ? "Hide search and filters" : "Show search and filters"}
+            >
+              {filtersVisible ? "Hide filters" : "Show more filters"}
+            </button>
+          )}
         </div>
 
-        {/* All filters shown inline — no "show more" gate. On mobile this whole
-            block lives in the pop-down drawer, so revealing everything is fine. */}
+        {/* Search + venue + genre. On mobile always shown (in the drawer); on
+            desktop collapsed behind "Show more filters" via the grid animation. */}
+        <div className={`${styles.filtersPanel} ${showFilters ? styles.filtersPanelOpen : ""}`}>
         <div className={styles.filtersPanelInner}>
         {/* Search */}
         <div className={styles.searchRow}>
@@ -738,69 +746,28 @@ export default function WhatsOn() {
           })}
         </div>
         </div>
+        </div>
 
-        {/* Map. On mobile, link out to the Google My Map (opens the native Maps
-            app) rather than embedding Leaflet in a tiny viewport; on desktop keep
-            the inline collapsible embed. */}
-        {isMobile && VENUE_MAP_URL ? (
-          <div className={styles.collapsible}>
-            <a
-              className={styles.collapsibleToggle}
-              href={VENUE_MAP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className={styles.collapsibleCaret}>↗</span>
-              <span className={styles.collapsibleLabel}>
-                <svg className={styles.mapIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
-                  <line x1="8" y1="2" x2="8" y2="18" />
-                  <line x1="16" y1="6" x2="16" y2="22" />
-                </svg>
-                Open venue map ({schedule.venues.length})
+        {/* Results heading (left) + sort (right) share one row on desktop. */}
+        <div className={styles.resultsBar}>
+          <h2 className={styles.resultsHeading}>
+            Showtimes {formatFullDateLabel(selectedDate)}
+            {showtimeCounts.total > 0 && (
+              <span className={styles.resultsCounts}>
+                {" "}({showtimeCounts.shown} shown, {showtimeCounts.total - showtimeCounts.shown} filtered out)
               </span>
-            </a>
-          </div>
-        ) : (
-          <div className={styles.collapsible}>
-            <button className={styles.collapsibleToggle} onClick={() => setMapOpen((o) => !o)}>
-              <span className={styles.collapsibleCaret}>{mapOpen ? "▲" : "▼"}</span>
-              <span className={styles.collapsibleLabel}>
-                <svg className={styles.mapIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
-                  <line x1="8" y1="2" x2="8" y2="18" />
-                  <line x1="16" y1="6" x2="16" y2="22" />
-                </svg>
-                See venues on map ({schedule.venues.length})
-              </span>
-            </button>
-            {mapOpen && (
-              <VenueMap
-                venues={schedule.venues}
-                selectedVenues={selectedVenues}
-                onVenueClick={(id) => setSelectedVenues(new Set([id]))}
-              />
             )}
-          </div>
-        )}
+          </h2>
 
-        <h2 className={styles.resultsHeading}>
-          Showtimes {formatFullDateLabel(selectedDate)}
-          {showtimeCounts.total > 0 && (
-            <span className={styles.resultsCounts}>
-              {" "}({showtimeCounts.shown} shown, {showtimeCounts.total - showtimeCounts.shown} filtered out)
-            </span>
-          )}
-        </h2>
-
-        {/* Sort */}
-        <div className={styles.filterRow}>
-          <span className={styles.filterLabel}>Sort</span>
-          <div className={styles.chipGroup}>
-            <button className={`${styles.venueChip} ${sortBy === "title" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("title")}>A–Z</button>
-            <button className={`${styles.venueChip} ${sortBy === "time" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("time")}>Showtime</button>
-            <button className={`${styles.venueChip} ${sortBy === "runtime" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("runtime")}>Runtime</button>
-            <button className={`${styles.venueChip} ${sortBy === "score" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("score")} title="Averages Rotten Tomatoes, IMDb, and Metacritic (whichever are available); unrated titles sort first">Score</button>
+          {/* Sort */}
+          <div className={styles.filterRow}>
+            <span className={styles.filterLabel}>Sort</span>
+            <div className={styles.chipGroup}>
+              <button className={`${styles.venueChip} ${sortBy === "title" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("title")}>A–Z</button>
+              <button className={`${styles.venueChip} ${sortBy === "time" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("time")}>Showtime</button>
+              <button className={`${styles.venueChip} ${sortBy === "runtime" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("runtime")}>Runtime</button>
+              <button className={`${styles.venueChip} ${sortBy === "score" ? styles.venueChipActive : ""}`} onClick={() => setSortBy("score")} title="Averages Rotten Tomatoes, IMDb, and Metacritic (whichever are available); unrated titles sort first">Score</button>
+            </div>
           </div>
         </div>
       </div>

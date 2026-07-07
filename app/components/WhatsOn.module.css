@@ -386,11 +386,24 @@
   padding: 16px 0;
 }
 
+/* Desktop: results heading (left) and sort row (right) share one line. */
+.resultsBar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .resultsHeading {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text);
   margin: 0 0 12px;
+}
+
+.resultsBar .resultsHeading {
+  margin: 0;
 }
 
 .resultsCounts {
@@ -806,7 +819,7 @@
 }
 
 /* Mobile */
-@media (max-width: 640px) {
+@media (max-width: 570px) {
   .root {
     padding: 0 10px;
   }
@@ -911,9 +924,14 @@
     padding-top: 32px;
   }
 
-  /* The "Showtimes … (N shown, M filtered)" line is noise on mobile — hide it. */
+  /* The "Showtimes … (N shown, M filtered)" line is noise on mobile — hide it.
+     With it gone, the results bar collapses to just the sort row, stacked. */
   .resultsHeading {
     display: none;
+  }
+
+  .resultsBar {
+    display: block;
   }
 
 
