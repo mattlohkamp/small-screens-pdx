@@ -59,13 +59,21 @@ function mergeFilms(filmLists: Film[][]): Film[] {
   return [...byTitle.values()];
 }
 
+// The scrape window is a span of Portland calendar days, and showtime datetimes
+// are Portland-local naive strings. Anchor "today" to Portland — NOT UTC — so an
+// evening run (already past midnight UTC) still starts the window at the current
+// Portland day and keeps its whole day, including already-passed showtimes.
+const TIMEZONE = "America/Los_Angeles";
+
 function today(): string {
-  return new Date().toISOString().slice(0, 10);
+  return new Date().toLocaleDateString("en-CA", { timeZone: TIMEZONE }); // YYYY-MM-DD
 }
 
+// Pure date-string arithmetic in UTC (midnight Z) so it never drifts with the
+// host machine's timezone; input/output are plain YYYY-MM-DD.
 function addDays(date: string, days: number): string {
-  const d = new Date(date);
-  d.setDate(d.getDate() + days);
+  const d = new Date(`${date}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + days);
   return d.toISOString().slice(0, 10);
 }
 
@@ -80,7 +88,7 @@ function loadPreviousFailures(): Set<string> {
 
 function loadExistingSchedule(): Schedule | null {
   try {
-    return JSON.parse(readFileSync("public/data/upcoming.json", "utf8")) as Schedule;
+    return JSON.parse(readFileSync("public/data/showtimes.json", "utf8")) as Schedule;
   } catch {
     return null;
   }
@@ -365,8 +373,8 @@ async function run(runStart: Date, log: (msg: string) => void) {
   };
 
   mkdirSync("public/data", { recursive: true });
-  writeFileSync("public/data/upcoming.json", JSON.stringify(schedule, null, 2));
-  log(`\nWrote public/data/upcoming.json`);
+  writeFileSync("public/data/showtimes.json", JSON.stringify(schedule, null, 2));
+  log(`\nWrote public/data/showtimes.json`);
   log(`  ${films.length} films, ${films.flatMap((f) => f.showtimes).length} showtimes`);
   log(`  Window: ${start} → ${end}`);
 

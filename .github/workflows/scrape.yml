@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/upcoming.json
+          git add public/data/showtimes.json
           if git diff --staged --quiet; then
             echo "No changes — skipping commit"
           else
@@ -63,7 +63,7 @@ jobs:
             git push --no-verify
           fi
 
-      # Deploy ONLY the data file to the live site. This touches data/upcoming.json
+      # Deploy ONLY the data file to the live site. This touches data/showtimes.json
       # on gh-pages and nothing else, so the daily scrape never ships UI changes —
       # those go out solely via the manual Deploy UI workflow.
       - name: Deploy data to gh-pages
@@ -79,9 +79,9 @@ jobs:
           git worktree add -B gh-pages gh-pages-wt origin/gh-pages
 
           mkdir -p gh-pages-wt/data
-          cp public/data/upcoming.json gh-pages-wt/data/upcoming.json
+          cp public/data/showtimes.json gh-pages-wt/data/showtimes.json
 
-          git -C gh-pages-wt add data/upcoming.json
+          git -C gh-pages-wt add data/showtimes.json
           if git -C gh-pages-wt diff --staged --quiet; then
             echo "Live data already current — nothing to deploy."
           else

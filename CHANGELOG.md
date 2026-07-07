@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [1.4.2] — 2026-07-06
+
+### Fixed
+- The current day could disappear from the schedule — the site would open on tomorrow instead of today — when the daily scrape ran in the evening. The scraper computed its 7-day window in UTC, so after 5pm Pacific it had already rolled over to "tomorrow" and trimmed out the rest of the current day. The scrape window and the site's notion of "today" are now both anchored to Portland time, so today always appears (showing the "no more showtimes today" state once the day's screenings have passed).
+
 ## [1.4.0] — 2026-07-06
 
 ### Removed

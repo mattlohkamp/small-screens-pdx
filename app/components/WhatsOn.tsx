@@ -230,6 +230,14 @@ function buildDateWindow(start: string, end: string): string[] {
   return dates;
 }
 
+// "Today" as a Portland calendar date, matching how the scraper builds the
+// window and the Portland-local showtime datetimes. Anchoring to Portland (not
+// the viewer's device timezone) keeps out-of-town viewers lined up with the data.
+const TIMEZONE = "America/Los_Angeles";
+function portlandToday(): string {
+  return new Date().toLocaleDateString("en-CA", { timeZone: TIMEZONE }); // YYYY-MM-DD
+}
+
 type ViewMode = "expanded" | "compact";
 type SortBy = "time" | "title" | "runtime" | "score";
 
@@ -303,26 +311,21 @@ export default function WhatsOn() {
   }, [drawerOpen]);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data/upcoming.json`)
+    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/data/showtimes.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json() as Promise<Schedule>;
       })
       .then((data) => {
         setSchedule(data);
-        const d = new Date();
-        const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-
+        const today = portlandToday();
         const start = data.window.start;
         setSelectedDate(today >= start ? today : start);
       })
       .catch((e) => setError(String(e)));
   }, []);
 
-  const today = useMemo(() => {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-  }, []);
+  const today = useMemo(() => portlandToday(), []);
   // Date picker offers today + the next 6 days (7 total), never past dates and
   // never beyond the scraped window. window.start can lag behind today when the
   // data is from an earlier scrape, so anchor on whichever is later.

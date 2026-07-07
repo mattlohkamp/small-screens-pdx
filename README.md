@@ -10,7 +10,7 @@ A unified showtime aggregator for Portland's independent cinemas. Each theater p
 
 ## How it works
 
-A GitHub Actions cron job runs daily scrapers for each venue, enriches film data via the [TMDB API](https://www.themoviedb.org/), and produces a single `upcoming.json` covering a rolling two-week window. That JSON is the data layer for the React frontend, which handles all filtering and searching client-side. The built site is deployed to GitHub Pages.
+A GitHub Actions cron job runs daily scrapers for each venue, enriches film data via the [TMDB API](https://www.themoviedb.org/), and produces a single `showtimes.json` covering a rolling two-week window. That JSON is the data layer for the React frontend, which handles all filtering and searching client-side. The built site is deployed to GitHub Pages.
 
 ## Tech stack
 
@@ -37,13 +37,13 @@ cp .env.example .env
 # add your TMDB_API_KEY and OMDB_API_KEY to .env
 
 # Prevent local scrape output from showing up as git changes
-git update-index --skip-worktree public/data/upcoming.json
+git update-index --skip-worktree public/data/showtimes.json
 ```
 
 ### Running the scraper
 
 ```bash
-# Scrape all venues, enrich via TMDB, write public/data/upcoming.json
+# Scrape all venues, enrich via TMDB, write public/data/showtimes.json
 npm run scrape
 
 # Scrape a single venue (partial update)
@@ -63,7 +63,7 @@ On subsequent runs, films already in the enrichment cache (`data/enrichment-cach
 npm run dev
 ```
 
-Uses whatever `public/data/upcoming.json` is on disk — either from a local scrape or pulled from the latest CI commit via `git pull`.
+Uses whatever `public/data/showtimes.json` is on disk — either from a local scrape or pulled from the latest CI commit via `git pull`.
 
 ### Project structure
 
@@ -88,7 +88,7 @@ app/
     VenueMap.tsx     # Leaflet map with venue pins
 public/
   data/
-    upcoming.json    # Generated output — tracked in git, committed by CI daily
+    showtimes.json    # Generated output — tracked in git, committed by CI daily
 data/
   enrichment-cache.json  # Persisted TMDB results (gitignored)
 ```
@@ -99,7 +99,7 @@ The version is a single scheme everywhere: **`x.y.z-commithash`**. The `x.y.z`
 base lives in `package.json` (the source of truth); the `-commithash` suffix is
 derived from the git SHA at build/scrape time, so it's always accurate. It shows
 up in the `<meta name="build-version">` tag on the live site, the `generator`
-field of `upcoming.json`, the scraper `User-Agent`, and the GitHub Release title.
+field of `showtimes.json`, the scraper `User-Agent`, and the GitHub Release title.
 
 To cut a release:
 
@@ -116,7 +116,7 @@ To cut a release:
 The tag push triggers the Deploy UI workflow: it builds, publishes to GitHub
 Pages, and creates a GitHub Release titled `1.2.0-<commithash>` matching the
 deployed build. The daily scrape cron also auto-deploys when it commits a
-changed `upcoming.json` (data only, no UI/version change).
+changed `showtimes.json` (data only, no UI/version change).
 
 ---
 
