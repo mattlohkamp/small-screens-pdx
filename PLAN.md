@@ -26,6 +26,7 @@ Portland proper only — no Vancouver WA, Beaverton, or Clackamas.
 | Kennedy School Theater | NE Portland | McMenamins | 1 | mcmenamins.com/kennedy-school-theater | **Server-rendered ✓** | **Veezi API** |
 | Mission Theater | NW Portland | McMenamins | 1 | mcmenamins.com/mission-theater | — | — |
 | OMSI Empirical Theatre | SE Portland | — | 1 | omsi.edu/exhibits/empirical-theater/ | JS-rendered (Playwright) | Eventbrite white-label (tickets.omsi.edu) |
+| Avalon Theatre | SE Portland | Wunderland Games | 1 | wunderlandgames.com/movies/avalon/ | **Server-rendered API ✓** | Webedia CMS (boxofficeapi) |
 
 > **Mission Theater note:** Primarily a live events/music venue. No regular film screenings confirmed — likely out of scope.
 
@@ -43,7 +44,9 @@ Portland proper only — no Vancouver WA, Beaverton, or Clackamas.
 
 > **McMenamins note:** Baghdad and Kennedy School both use the Veezi ticketing platform, which has a public REST API (`api.us.veezi.com`). Site token is embedded in ticket purchase URLs. One integration covers both venues.
 
-**Estimated total: ~19 screens across 10 film venues.**
+> **Avalon Theatre note:** Same Webedia/Gatsby `boxofficeapi` platform as Academy Theater, hosted at `wcms-p-101180-114050d4.netlify.app`. Theater ID `X0430`. Three endpoints: `scheduledMovies`, `schedule` (showtimes per day), `movies` (details) — identical shape to Academy's integration. No ticket URLs available (the API's `ticketing` array is empty for this venue). Scraper at `src/scrapers/avalon.ts`. `venue_id: avalon`.
+
+**Estimated total: ~20 screens across 11 film venues.**
 
 ---
 

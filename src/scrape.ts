@@ -13,6 +13,7 @@ import { scrapeStJohns } from "./scrapers/st-johns.js";
 import { scrapeMoreland } from "./scrapers/moreland.js";
 import { scrapeTomorrow } from "./scrapers/tomorrow.js";
 import { scrapeMission } from "./scrapers/mission.js";
+import { scrapeAvalon } from "./scrapers/avalon.js";
 import { closeBrowser } from "./browser.js";
 import { withRetry, withTimeout } from "./fetch.js";
 import { VERSION } from "./version.js";
@@ -42,6 +43,7 @@ const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; 
   moreland:        { fn: scrapeMoreland,         venueIds: ["moreland"],                     label: "Moreland Theater" },
   tomorrow:        { fn: scrapeTomorrow,         venueIds: ["tomorrow"],                     label: "Tomorrow Theater" },
   mission:         { fn: scrapeMission,          venueIds: ["mission"],                      label: "Mission Theater" },
+  avalon:          { fn: scrapeAvalon,            venueIds: ["avalon"],                       label: "Avalon Theatre" },
 };
 
 // Merge films from multiple scrapers: same title → one record, combined showtimes.
@@ -367,6 +369,16 @@ async function run(runStart: Date, log: (msg: string) => void) {
         lng: -122.6933,
         website: "https://www.mcmenamins.com/mission-theater",
         group: "McMenamins",
+      },
+      {
+        id: "avalon",
+        name: "Avalon Theatre",
+        neighborhood: "SE Portland / Belmont",
+        address: "3451 SE Belmont St, Portland OR",
+        lat: 45.5150,
+        lng: -122.6288,
+        website: "https://wunderlandgames.com/movies/avalon/",
+        group: "Wunderland Games",
       },
     ],
     films,
