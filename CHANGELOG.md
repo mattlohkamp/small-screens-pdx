@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [1.5.0] — 2026-07-19
+
+### Added
+- Avalon Theatre (Wunderland Games) as a scraped venue — same Webedia/Gatsby `boxofficeapi` platform as Academy Theater, different base URL and theater ID. No ticket URLs available from this venue's API.
+- Film overview (TMDB synopsis) shown in the expanded desktop film list, below the genre tags.
+- Mobile film cards now open a full-size detail view: tap a card (or its chevron) to slide the list over and reveal poster, title, year, director, runtime, genres, ratings, overview, and showtimes by venue — same by-venue listing as the desktop view, via a new shared `ShowtimesByVenue` component. Swipe transition is CSS-driven; panel height is measured live via `ResizeObserver` so it always matches whichever panel (list or detail) is actually showing.
+
+### Fixed
+- The mobile detail view could render up to ~1700px of blank space below its content when the film list itself was much taller (e.g. with "hide past" off) — the list and detail panels shared a flex row, whose height sizes to the taller sibling. Panels are now positioned independently, with height tracked per-panel instead of shared.
+
 ## [1.4.2] — 2026-07-06
 
 ### Fixed

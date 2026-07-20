@@ -242,6 +242,44 @@
   padding: 16px 0;
 }
 
+/* Mobile film-list → detail slide transition. Outer clips; track holds the
+   list and detail panels side by side at double width and translates -50%
+   to bring the detail panel into view. Harmless on desktop since detailFilm
+   never gets set there (no chevron/click handler in expanded view). */
+.slideOuter {
+  overflow: hidden;
+}
+
+.slideTrack {
+  position: relative;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.28s ease, height 0.28s ease;
+  overflow: hidden;
+}
+
+.slideTrack.slideOpen {
+  transform: translateX(-50%);
+}
+
+/* Absolutely positioned (not a flex row) so the track's height is driven
+   entirely by JS (ResizeObserver, matched to whichever panel is showing)
+   instead of stretching to fit whichever panel happens to be taller. */
+.slideList,
+.slideDetail {
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+
+.slideList {
+  left: 0;
+}
+
+.slideDetail {
+  left: 50%;
+}
+
 /* Desktop: results heading (left) and sort row (right) share one line. */
 .resultsBar {
   display: flex;
@@ -465,6 +503,65 @@
   color: var(--accent);
 }
 
+.overview {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.filmDetailFPO {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.detailBack {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.detailPoster {
+  align-self: center;
+  width: 100%;
+  max-width: 240px;
+  border-radius: 6px;
+}
+
+.detailTitle {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.detailMeta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.detailOverview {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.detailPlaceholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* Showtimes */
 .showtimesByVenue {
   display: flex;
@@ -567,8 +664,19 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 10px 0;
+  padding: 10px 28px 10px 0;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  cursor: pointer;
+}
+
+.chevronCompact {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  pointer-events: none;
 }
 
 .filmMetaCompact {

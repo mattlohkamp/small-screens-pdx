@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef, Component } from "react";
+import type { ReactNode, ErrorInfo } from "react";
 import Fuse, { type FuseResult, type FuseResultMatch } from "fuse.js";
 import styles from "./WhatsOn.module.css";
 
@@ -119,6 +120,7 @@ function RatingsBadges({ film, className }: { film: Film; className: string }) {
         target="_blank"
         rel="noopener noreferrer"
         title="Rotten Tomatoes score (critics)"
+        onClick={(e) => e.stopPropagation()}
       >
         {fresh ? "🍅" : "🤢"} {film.rt_score}%
       </a>
@@ -134,6 +136,7 @@ function RatingsBadges({ film, className }: { film: Film; className: string }) {
         target="_blank"
         rel="noopener noreferrer"
         title="IMDb rating (audience)"
+        onClick={(e) => e.stopPropagation()}
       >
         ★ {film.imdb_rating.toFixed(1)}
       </a>
@@ -153,6 +156,7 @@ function RatingsBadges({ film, className }: { film: Film; className: string }) {
         target="_blank"
         rel="noopener noreferrer"
         title="Metacritic score (critics)"
+        onClick={(e) => e.stopPropagation()}
       >
         Ⓜ {film.metacritic_score}
       </a>
@@ -279,12 +283,46 @@ export default function WhatsOn() {
   // Tracks the mobile breakpoint so view mode can be forced by viewport (compact
   // on mobile, expanded on desktop) rather than exposed as a toggle everywhere.
   const [isMobile, setIsMobile] = useState(false);
+  // Mobile only: tapping a film card slides the list over to reveal a full-size
+  // detail view for that film. Non-null = detail view open. Carries the same
+  // date-filtered showtimes the card itself was showing, so the detail view's
+  // by-venue list matches what was tapped.
+  const [detailFilm, setDetailFilm] = useState<{ film: Film; showtimes: Showtime[] } | null>(null);
+  // The list and detail panels sit side by side (translated via CSS) so the
+  // slide can be a pure transform, but that means a plain flex row would size
+  // itself to whichever panel is TALLER — leaving a block of blank space
+  // below the shorter one. Both panels are positioned absolutely instead, and
+  // ResizeObserver tracks each one's real height so the track can be given an
+  // explicit height matching only the panel currently in view.
+  // Callback refs (not useRef + []-deps effects) because these divs don't
+  // exist on first mount — they're gated behind `schedule` loading — so an
+  // effect that only fires once on mount would find `.current` still null
+  // and never attach the observer.
+  const [listEl, setListEl] = useState<HTMLDivElement | null>(null);
+  const [detailEl, setDetailEl] = useState<HTMLDivElement | null>(null);
+  const [listHeight, setListHeight] = useState(0);
+  const [detailHeight, setDetailHeight] = useState(0);
+
+  useEffect(() => {
+    if (!listEl) return;
+    const ro = new ResizeObserver((entries) => setListHeight(entries[0].contentRect.height));
+    ro.observe(listEl);
+    return () => ro.disconnect();
+  }, [listEl]);
+
+  useEffect(() => {
+    if (!detailEl) return;
+    const ro = new ResizeObserver((entries) => setDetailHeight(entries[0].contentRect.height));
+    ro.observe(detailEl);
+    return () => ro.disconnect();
+  }, [detailEl]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "Escape") {
         setPosterModal(null);
         setDrawerOpen(false);
+        setDetailFilm(null);
       }
     }
     window.addEventListener("keydown", onKeyDown);
@@ -785,36 +823,62 @@ export default function WhatsOn() {
 
 
       <main className={styles.main}>
-        {filmsOnDate.length === 0 ? (
-          <div className={styles.empty}>
-            {allShowtimesPassedToday && nextDate ? (
-              <>
-                <span>No more showtimes today.</span>
-                <button className={styles.viewTomorrowLink} onClick={() => setSelectedDate(nextDate)}>
-                  View {formatDateLabel(nextDate, today).toLowerCase()}
-                </button>
-              </>
-            ) : (
-              <span>No showtimes for this date.</span>
-            )}
+        <div className={styles.slideOuter}>
+          <div
+            className={`${styles.slideTrack} ${detailFilm ? styles.slideOpen : ""}`}
+            style={{ height: (detailFilm ? detailHeight : listHeight) || undefined }}
+          >
+            <div ref={setListEl} className={styles.slideList}>
+              {filmsOnDate.length === 0 ? (
+                <div className={styles.empty}>
+                  {allShowtimesPassedToday && nextDate ? (
+                    <>
+                      <span>No more showtimes today.</span>
+                      <button className={styles.viewTomorrowLink} onClick={() => setSelectedDate(nextDate)}>
+                        View {formatDateLabel(nextDate, today).toLowerCase()}
+                      </button>
+                    </>
+                  ) : (
+                    <span>No showtimes for this date.</span>
+                  )}
+                </div>
+              ) : (
+                <div className={styles.filmList}>
+                  {filmsOnDate.map(({ film, showtimes, matches }) => (
+                    <FilmRow
+                      key={film.id ?? film.slug}
+                      film={film}
+                      showtimes={showtimes}
+                      venues={schedule.venues}
+                      viewMode={effectiveViewMode}
+                      fuseMatches={matches}
+                      onVenueClick={(id) => setSelectedVenues(new Set([id]))}
+                      onGenreClick={(g) => setGenreFilter(new Set([g]))}
+                      onPosterClick={(src, title) => setPosterModal({ src, title })}
+                      onSelect={(f, s) => {
+                        console.log(`[detail-view] selected "${f.title}"`, { film: f, showtimes: s });
+                        setDetailFilm({ film: f, showtimes: s });
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+            <div ref={setDetailEl} className={styles.slideDetail}>
+              {detailFilm && (
+                <DetailErrorBoundary film={detailFilm.film}>
+                  <FilmDetailFPO
+                    film={detailFilm.film}
+                    showtimes={detailFilm.showtimes}
+                    venues={schedule.venues}
+                    onBack={() => setDetailFilm(null)}
+                    onVenueClick={(id) => setSelectedVenues(new Set([id]))}
+                  />
+                </DetailErrorBoundary>
+              )}
+            </div>
           </div>
-        ) : (
-          <div className={styles.filmList}>
-            {filmsOnDate.map(({ film, showtimes, matches }) => (
-              <FilmRow
-                key={film.id ?? film.slug}
-                film={film}
-                showtimes={showtimes}
-                venues={schedule.venues}
-                viewMode={effectiveViewMode}
-                fuseMatches={matches}
-                onVenueClick={(id) => setSelectedVenues(new Set([id]))}
-                onGenreClick={(g) => setGenreFilter(new Set([g]))}
-                onPosterClick={(src, title) => setPosterModal({ src, title })}
-              />
-            ))}
-          </div>
-        )}
+        </div>
       </main>
 
       <footer className={styles.footer}>
@@ -885,6 +949,7 @@ function MatchBadge({ film, className }: { film: Film; className: string }) {
         target="_blank"
         rel="noopener noreferrer"
         title="We couldn't match this listing to a movie database entry — it's still a real screening, just without poster art or details. Click to report if you recognize this film."
+        onClick={(e) => e.stopPropagation()}
       >
         Unverified
       </a>
@@ -898,6 +963,7 @@ function MatchBadge({ film, className }: { film: Film; className: string }) {
         target="_blank"
         rel="noopener noreferrer"
         title="This listing's title didn't match directly — we guessed the film after stripping off extra event wording. Click to report if this looks wrong."
+        onClick={(e) => e.stopPropagation()}
       >
         Possible mismatch
       </a>
@@ -925,6 +991,7 @@ function FilmRow({
   onVenueClick,
   onGenreClick,
   onPosterClick,
+  onSelect,
 }: {
   film: Film;
   showtimes: Showtime[];
@@ -934,6 +1001,7 @@ function FilmRow({
   onVenueClick: (venueId: string) => void;
   onGenreClick: (genre: string) => void;
   onPosterClick: (src: string, title: string) => void;
+  onSelect: (film: Film, showtimes: Showtime[]) => void;
 }) {
   const matches = useMemo(() => extractMatches(fuseMatches), [fuseMatches]);
   const venueMap = useMemo(
@@ -956,7 +1024,18 @@ function FilmRow({
 
   if (viewMode === "compact") {
     return (
-      <article className={styles.filmRowCompact}>
+      <article
+        className={styles.filmRowCompact}
+        role="button"
+        tabIndex={0}
+        onClick={() => onSelect(film, showtimes)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onSelect(film, showtimes);
+          }
+        }}
+      >
         <div className={styles.filmMetaCompact}>
           <span className={styles.filmTitleCompact}>{highlightText(film.title, matches.title)}</span>
           <MatchBadge film={film} className={styles.unverifiedBadge} />
@@ -970,7 +1049,7 @@ function FilmRow({
             <span key={venueId} className={styles.venueBlockCompact}>
               <button
                 className={styles.venueNameCompact}
-                onClick={() => onVenueClick(venueId)}
+                onClick={(e) => { e.stopPropagation(); onVenueClick(venueId); }}
                 title="View all from this venue"
               >
                 {venueMap[venueId]?.name ?? venueId}
@@ -982,6 +1061,7 @@ function FilmRow({
                   target="_blank"
                   rel="noopener noreferrer"
                   title="View on venue website"
+                  onClick={(e) => e.stopPropagation()}
                 >🎟&#xFE0E;↗</a>
               )}
               {times
@@ -993,6 +1073,7 @@ function FilmRow({
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.timeLinkCompact}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     {formatTime(s.datetime)}
                     {s.format && s.format.toUpperCase() !== "DCP" && <span className={styles.format}> (format: {s.format})</span>}
@@ -1004,6 +1085,11 @@ function FilmRow({
             </span>
           ))}
         </div>
+        <span className={styles.chevronCompact} aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </span>
       </article>
     );
   }
@@ -1063,52 +1149,172 @@ function FilmRow({
           </div>
         )}
 
-        <div className={styles.showtimesByVenue}>
-          {[...byVenue.entries()].map(([venueId, times]) => (
-            <div key={venueId} className={styles.venueShowtimes}>
-              <span className={styles.venueNameGroup}>
-                <button
-                  className={styles.venueName}
-                  onClick={() => onVenueClick(venueId)}
-                  title="View all from this venue"
-                >
-                  {venueMap[venueId]?.name ?? venueId}
-                </button>
-                {venueMap[venueId] && (
-                  <a
-                    className={styles.venueFilmLink}
-                    href={buildFilmPageUrl(venueId, film, venueMap[venueId])}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="View on venue website"
-                  >🎟&#xFE0E;↗</a>
-                )}
-              </span>
-              <div className={styles.times}>
-                {times
-                  .sort((a, b) => (a.datetime < b.datetime ? -1 : 1))
-                  .map((s) => (
-                    <a
-                      key={s.datetime}
-                      href={s.ticket_url ?? "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.timeLink}
-                    >
-                      {formatTime(s.datetime)}
-                      {s.format && s.format.toUpperCase() !== "DCP" && (
-                        <span className={styles.format}> (format: {s.format})</span>
-                      )}
-                      {s.event_note && (
-                        <span className={styles.eventNote} title={`Special showing: ${s.event_note}`}> · {s.event_note}</span>
-                      )}
-                    </a>
-                  ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        {film.overview && <p className={styles.overview}>{film.overview}</p>}
+
+        <ShowtimesByVenue film={film} showtimes={showtimes} venues={venues} onVenueClick={onVenueClick} />
       </div>
     </article>
+  );
+}
+
+// Showtimes grouped by venue, with a per-venue link out to the venue's own
+// film page and a ticket link per showtime. Shared by the expanded FilmRow
+// and the mobile detail view so both list showtimes identically.
+function ShowtimesByVenue({
+  film,
+  showtimes,
+  venues,
+  onVenueClick,
+}: {
+  film: Film;
+  showtimes: Showtime[];
+  venues: Venue[];
+  onVenueClick: (venueId: string) => void;
+}) {
+  const venueMap = useMemo(
+    () => Object.fromEntries(venues.map((v) => [v.id, v])),
+    [venues]
+  );
+
+  const byVenue = useMemo(() => {
+    const map = new Map<string, Showtime[]>();
+    for (const s of showtimes) {
+      if (!map.has(s.venue_id)) map.set(s.venue_id, []);
+      map.get(s.venue_id)!.push(s);
+    }
+    return map;
+  }, [showtimes]);
+
+  return (
+    <div className={styles.showtimesByVenue}>
+      {[...byVenue.entries()].map(([venueId, times]) => (
+        <div key={venueId} className={styles.venueShowtimes}>
+          <span className={styles.venueNameGroup}>
+            <button
+              className={styles.venueName}
+              onClick={() => onVenueClick(venueId)}
+              title="View all from this venue"
+            >
+              {venueMap[venueId]?.name ?? venueId}
+            </button>
+            {venueMap[venueId] && (
+              <a
+                className={styles.venueFilmLink}
+                href={buildFilmPageUrl(venueId, film, venueMap[venueId])}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View on venue website"
+              >🎟&#xFE0E;↗</a>
+            )}
+          </span>
+          <div className={styles.times}>
+            {times
+              .sort((a, b) => (a.datetime < b.datetime ? -1 : 1))
+              .map((s) => (
+                <a
+                  key={s.datetime}
+                  href={s.ticket_url ?? "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.timeLink}
+                >
+                  {formatTime(s.datetime)}
+                  {s.format && s.format.toUpperCase() !== "DCP" && (
+                    <span className={styles.format}> (format: {s.format})</span>
+                  )}
+                  {s.event_note && (
+                    <span className={styles.eventNote} title={`Special showing: ${s.event_note}`}> · {s.event_note}</span>
+                  )}
+                </a>
+              ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Catches render errors in the detail panel so a bad film record shows a
+// fallback instead of a blank screen, and logs enough about the film + error
+// to diagnose it (added to chase down a blank-screen report on "Oddysey").
+class DetailErrorBoundary extends Component<{ film: Film; children: ReactNode }, { error: Error | null }> {
+  state: { error: Error | null } = { error: null };
+
+  static getDerivedStateFromError(error: Error) {
+    return { error };
+  }
+
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    console.error(
+      `[detail-view] render error for "${this.props.film.title}" (id=${this.props.film.id}, slug=${this.props.film.slug})`,
+      { film: this.props.film, error, componentStack: info.componentStack }
+    );
+  }
+
+  render() {
+    if (this.state.error) {
+      return (
+        <div className={styles.filmDetailFPO}>
+          <p className={styles.detailPlaceholder}>
+            Something went wrong showing &ldquo;{this.props.film.title}&rdquo;. Check the console for details.
+          </p>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+// Placeholder full-size detail view, reached by tapping a film card on mobile.
+// FPO — layout/content TBD; for now just proves out the slide-over transition.
+function FilmDetailFPO({
+  film,
+  showtimes,
+  venues,
+  onBack,
+  onVenueClick,
+}: {
+  film: Film;
+  showtimes: Showtime[];
+  venues: Venue[];
+  onBack: () => void;
+  onVenueClick: (venueId: string) => void;
+}) {
+  const posterUrl = film.poster_path
+    ? `https://image.tmdb.org/t/p/w500${film.poster_path}`
+    : null;
+
+  return (
+    <div className={styles.filmDetailFPO}>
+      <button className={styles.detailBack} onClick={onBack}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" width="18" height="18" aria-hidden="true">
+          <polyline points="15 6 9 12 15 18" />
+        </svg>
+        Back
+      </button>
+      {posterUrl && (
+        <img className={styles.detailPoster} src={posterUrl} alt={`${film.title} poster`} />
+      )}
+
+      <div className={styles.detailMeta}>
+        <h2 className={styles.detailTitle}>{film.title}</h2>
+        <MatchBadge film={film} className={styles.unverifiedBadge} />
+        {film.year && <span className={styles.filmYearCompact}>{film.year}</span>}
+        {film.director && <span className={styles.filmDirectorCompact}>dir. {film.director}</span>}
+        {film.runtime_minutes && <span className={styles.filmYearCompact}>{formatRuntime(film.runtime_minutes)}</span>}
+        {film.genres.map((g) => (
+          <span key={g} className={styles.genre}>{g}</span>
+        ))}
+        <RatingsBadges film={film} className={styles.ratingBadge} />
+      </div>
+
+      {film.overview ? (
+        <p className={styles.detailOverview}>{film.overview}</p>
+      ) : (
+        <p className={styles.detailPlaceholder}>No description available.</p>
+      )}
+
+      <ShowtimesByVenue film={film} showtimes={showtimes} venues={venues} onVenueClick={onVenueClick} />
+    </div>
   );
 }
