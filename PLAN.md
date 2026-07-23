@@ -14,21 +14,29 @@ Portland proper only — no Vancouver WA, Beaverton, or Clackamas.
 
 | Venue | Neighborhood | Group | Screens | URL | Rendering | Ticketing |
 |---|---|---|---|---|---|---|
-| Cinema 21 | NW / Alphabet District | — | 1 | cinema21.com | SPA / unknown | Unknown |
-| Hollywood Theatre | NE Portland | — | 1 | hollywoodtheatre.org | Unknown | Unknown (blocks scrapers) |
-| Living Room Theaters | Downtown | — | 6 | livingroomtheaters.com | JS-rendered | Unknown |
+| Cinema 21 | NW / Alphabet District | — | 1 | cinema21.com | **Server-rendered API ✓** | Custom (session API) |
+| Hollywood Theatre | NE Portland | — | 1 | hollywoodtheatre.org | WordPress REST API, but **blocked in CI** (datacenter IP) | WordPress REST API |
+| Living Room Theaters | Downtown | — | 6 | livingroomtheaters.com | JS-rendered (Playwright + GraphQL) | Custom (in-house purchase flow) |
 | Laurelhurst Theater | NE Portland | — | 4 | laurelhursttheater.com | Server-rendered (partial) | Custom |
 | Academy Theater | SE / Montavilla | — | 2 | academytheaterpdx.com | JS-rendered | Webedia CMS |
-| Whitsell Auditorium (PAM CUT) | Downtown | — | 1 | portlandartmuseum.org | Server-rendered | Unknown |
 | Clinton Street Theater | SE Portland | — | 1 | cstpdx.com | **Server-rendered ✓** | Square + Eventive |
 | Cinemagic | SE Portland | — | 1 | tickets.thecinemagictheater.com | **Server-rendered ✓** | Custom subdomain |
 | Baghdad Theater | SE Portland | McMenamins | 1 | mcmenamins.com/bagdad-theater-pub | **Server-rendered ✓** | **Veezi API** |
 | Kennedy School Theater | NE Portland | McMenamins | 1 | mcmenamins.com/kennedy-school-theater | **Server-rendered ✓** | **Veezi API** |
-| Mission Theater | NW Portland | McMenamins | 1 | mcmenamins.com/mission-theater | — | — |
-| OMSI Empirical Theatre | SE Portland | — | 1 | omsi.edu/exhibits/empirical-theater/ | JS-rendered (Playwright) | Eventbrite white-label (tickets.omsi.edu) |
-| Avalon Theatre | SE Portland | Wunderland Games | 1 | wunderlandgames.com/movies/avalon/ | **Server-rendered API ✓** | Webedia CMS (boxofficeapi) |
+| Mission Theater | NW Portland | McMenamins | 1 | mcmenamins.com/mission-theater | **Server-rendered ✓** | McMenamins events page |
+| OMSI Empirical Theatre | SE Portland | — | 1 | omsi.edu/exhibits/empirical-theater/ | JS-rendered (Playwright), but **blocked in CI** (datacenter IP) | Eventbrite white-label (tickets.omsi.edu) |
+| Avalon Theatre | SE Portland / Belmont | Wunderland Games | 1 | wunderlandgames.com/movies/avalon/ | **Server-rendered API ✓** | Webedia CMS (boxofficeapi) |
+| St. Johns Twin Cinema & Pub | N Portland / St. Johns | — | 1 | saintjohnspub.net | **Server-rendered ✓** (Cheerio on Veezi widget) | **Veezi** |
+| Moreland Theater | SE Portland / Sellwood | — | 1 | morelandtheater.com | **Server-rendered API ✓** | FMT (formovietickets.com) |
+| Tomorrow Theater | Downtown / Pearl District | — | 1 | tomorrowtheater.org | **Server-rendered API ✓** | Custom WP REST API |
 
-> **Mission Theater note:** Primarily a live events/music venue. No regular film screenings confirmed — likely out of scope.
+> **Mission Theater note:** Uses the same McMenamins events page pattern as Baghdad/Kennedy School. Scraper live (`src/scrapers/mission.ts`); films confirmed (out of scope concern resolved).
+
+> **Whitsell Auditorium (PAM CUT) note:** Never scraped — dropped from scope. No entry in the current venue registry.
+
+> **Hollywood Theatre note:** Still unsolved as of 2026-07-23, and harder than OMSI's block. Cloudflare fronts the WP REST API with a **JS challenge (Turnstile)** — confirmed via the `cf-mitigated: challenge` response header — not a plain IP-reputation block. Tried, in order: (1) `curl` with a browser User-Agent — fails, curl can't execute the challenge JS at all. (2) Playwright issuing `fetch()` from inside a page via `page.evaluate` — fails, a bare `fetch()` just receives the 403 + challenge HTML as an inert body, never executing the embedded script. (3) Playwright doing a real `page.goto()` navigation to the API URL (so Chromium actually runs the challenge) — **still 403, on both a dev machine and natty's residential IP.** That last result rules out IP reputation as the variable (natty's IP already cleared OMSI's CloudFront block the same day) and points to Cloudflare fingerprinting Playwright's automation signals directly (e.g. `navigator.webdriver`, CDP protocol traces), regardless of origin. Next avenue, not yet tried: `patchright` (a Playwright/Chromium fork that patches the CDP-level tells regular "stealth" plugins miss) — real chance of working, but it's an arms race with no guarantee it stays working. Remains on the TODO list; not blocking the rest of M7, since OMSI, and the other 14 scrapers, all work.
+
+> **Cinema 21 note:** Scrapes fine from CI — the "blocks scrapers" note in earlier drafts of this doc was wrong or based on an early attempt; see `src/scrapers/cinema-21.ts`.
 
 > **OMSI Empirical Theatre note:** Mixed programming — nature docs, IMAX-style films, and real theatrical releases (e.g. *Project Hail Mary*, *Disclosure Day*). Non-film content (e.g. "World-Class Soccer 2026", category "Matches at the Museum") should be filtered out.
 >
@@ -46,7 +54,7 @@ Portland proper only — no Vancouver WA, Beaverton, or Clackamas.
 
 > **Avalon Theatre note:** Same Webedia/Gatsby `boxofficeapi` platform as Academy Theater, hosted at `wcms-p-101180-114050d4.netlify.app`. Theater ID `X0430`. Three endpoints: `scheduledMovies`, `schedule` (showtimes per day), `movies` (details) — identical shape to Academy's integration. No ticket URLs available (the API's `ticketing` array is empty for this venue). Scraper at `src/scrapers/avalon.ts`. `venue_id: avalon`.
 
-**Estimated total: ~20 screens across 11 film venues.**
+**Current total: 16 venues (14 scrapers — McMenamins covers Baghdad + Kennedy School in one, Mission separately) live in `src/scrape.ts`.**
 
 ---
 
@@ -56,12 +64,13 @@ Portland proper only — no Vancouver WA, Beaverton, or Clackamas.
 
 ### Runtime JSON structure
 
-One file covers a rolling 2-week window. Generated fresh on each scrape run.
+One file, `public/data/showtimes.json`, covers a rolling **7-day window** (today + 6 days). Generated fresh on each scrape run.
 
 ```json
 {
   "generated_at": "2026-06-01T05:00:00Z",
-  "window": { "start": "2026-06-01", "end": "2026-06-14" },
+  "generator": "1.5.0-abc1234",
+  "window": { "start": "2026-06-01", "end": "2026-06-07" },
   "venues": [
     {
       "id": "cinema-21",
@@ -85,19 +94,26 @@ One file covers a rolling 2-week window. Generated fresh on each scrape run.
       "overview": "...",
       "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
       "genres": ["Horror", "Science Fiction"],
-      "release_date": "2024-09-20",
+      "imdb_id": "tt17526714",
+      "rt_score": 89,
+      "imdb_rating": 7.3,
+      "metacritic_score": 78,
+      "match_confidence": "verified",
       "showtimes": [
         {
           "venue_id": "cinema-21",
           "datetime": "2026-06-01T19:30:00",
           "format": "35mm",
-          "ticket_url": "https://..."
+          "ticket_url": "https://...",
+          "event_note": null
         }
       ]
     }
   ]
 }
 ```
+
+Note: there is no `release_date` field — TMDB's release date isn't currently captured. The P1 "filter by new releases" idea below would need to add it.
 
 ### Key design decisions
 
@@ -176,20 +192,11 @@ TMDB API is free. Requires a free account + API key. Rate limit: 40 req/sec. Att
 
 ### Architecture
 
-**React SPA** — a single `index.html` shell + JS bundle, served statically from NFSN. On load, fetches `upcoming.json` (~300KB estimated). All filtering, sorting, and searching happens client-side. No server required.
-
-**Framework:** Next.js (static export) — `output: 'export'` produces flat files that deploy cleanly to NFSN via rsync.
+**Next.js static export** (`output: 'export'`), deployed to GitHub Pages. On load, fetches `showtimes.json`. All filtering, sorting, and searching happens client-side. No server required.
 
 ### Views
 
-**Primary (P0):**
-- **What's on** — default view, today's showtimes across all venues. Filter by date (2-week window), venue, format, and group.
-- **By film** — all venues and showtimes for a selected film.
-- **By venue** — full schedule for a selected venue.
-
-**View modes (P0):**
-- List/table view — sortable, scannable
-- Calendar/grid view — days as columns, films as rows or blocks
+A single unified `WhatsOn` view (`app/components/WhatsOn.tsx`) covers the whole product — date, venue, format, and group filters plus fuzzy search and sort replace the separate By-film/By-venue/calendar views originally planned here. See M6 below: those separate views were explicitly dropped as redundant once the filter set matured.
 
 **Later (P1+):**
 - Distance filtering (browser geolocation + venue lat/lng, client-side)
@@ -205,28 +212,26 @@ TMDB API is free. Requires a free account + API key. Rate limit: 40 req/sec. Att
 
 ## Hosting & Deployment
 
-**Host:** GitHub Pages — free static hosting, deploys via `actions/deploy-pages`. NearlyFreeSpeech.net kept as a documented alternative if needed.
-
-**Pipeline:**
+**Host:** GitHub Pages, via a custom worktree-push deploy (not `actions/deploy-pages`). Two separate workflows:
 
 ```
-GitHub Actions cron (daily, ~5am Pacific)
-  1. checkout repo
-  2. npm run scrape (all scrapers run in parallel)
+scrape.yml (cron, daily ~5am Pacific + manual dispatch)
+  1. checkout repo, install Playwright chromium
+  2. npm run scrape (all registered scrapers)
        → merge films across venues (dedup by title)
-       → enrich via TMDB API (cache + retry failures)
-       → write public/data/upcoming.json
-  3. commit upcoming.json → push to main
-       → triggers deploy workflow via paths filter
+       → enrich via TMDB + OMDb API (cache + retry failures)
+       → write public/data/showtimes.json
+  3. commit showtimes.json → push to main
+  4. push showtimes.json directly to the gh-pages branch's data/ dir
+       (data-only deploy — never ships UI/code changes)
 
-deploy workflow (on release-* tag OR push to main touching upcoming.json)
-  1. npm run build
-       → Next.js static export
-       → outputs flat HTML/CSS/JS to /out/
-  2. actions/deploy-pages → GitHub Pages
+deploy.yml (manual "Run workflow" button, OR push to a release-* tag)
+  1. npm run build → Next.js static export → /out/
+  2. force-replace gh-pages branch contents with /out/
+  3. on tag push: create a GitHub Release named "x.y.z-commithash"
 ```
 
-**Failure handling:** If any scraper throws, abort without overwriting `upcoming.json`. GitHub Pages continues serving the previous build.
+**Failure handling:** If a scraper throws, the orchestrator's retry/timeout logic keeps last-known-good showtimes for that venue rather than wiping it (see `scrape.ts`). GitHub Pages continues serving the previous build regardless.
 
 ---
 
@@ -235,124 +240,60 @@ deploy workflow (on release-* tag OR push to main touching upcoming.json)
 - [x] **M0 — Audit:** All target venues assessed. Rendering approach, ticketing platform, and scrape strategy documented per venue.
 - [x] **M1 — First scraper:** Cinemagic scraper complete. Outputs normalized JSON with titles, showtimes, and ticket URLs.
 - [x] **M2 — TMDB integration:** Enrichment working. Film records include poster, overview, canonical TMDB ID, director, genres. Enrichment cache, failure queue, and `--force` flag in place.
-- [x] **M3 — All scrapers:** Full `upcoming.json` generated locally from all venues. 51 films, 524 showtimes across 8 venues.
+- [x] **M3 — All scrapers:** `public/data/showtimes.json` generated from all venues. As of 2026-07-22: 14 scrapers covering 16 venues (Cinemagic, Clinton Street, Laurelhurst, McMenamins/Baghdad, McMenamins/Kennedy School, Academy, Living Room, OMSI*, Cinema 21, Hollywood*, St. Johns, Moreland, Tomorrow, Mission, Avalon). *Hollywood and OMSI scrapers exist and work locally but are currently blocked from CI — see M7.
   - [x] Clinton Street Theater — The Events Calendar REST API (`/wp-json/tribe/events/v1/events`). Title normalization strips CST series labels ("Church of Film", "Cult Sensation:", Rocky Horror shadowcast suffixes). HTML entities decoded via cheerio.
   - [x] Laurelhurst Theater — `var gbl_movies` JSON blob embedded in homepage HTML. `dateTimeCMP` (YYYYMMDDHHMM 24h) parsed directly. "(open caption)" variants normalized and merged. Ticket URL constructed from `rtsSaleID_pk`.
   - [x] **McMenamins (Baghdad + Kennedy School)** — Scrapes `mcmenamins.com` venue pages (server-rendered HTML). Ticket URLs use Veezi ticketing (`ticketing.uswest.veezi.com`). One scraper covers both venues via `VENUES` array in `src/scrapers/mcmenamins.ts`. OCAP variants normalized and merged. Note: Veezi back-office REST API (`api.us.veezi.com`) requires a separate account token; the public `siteToken` in purchase URLs is for the consumer ticketing widget only and does not grant API access.
+  - [x] **Mission Theater** — Same McMenamins events-page pattern, separate scraper (`src/scrapers/mission.ts`). Confirmed regular film screenings — no longer out of scope.
   - [x] **Academy Theater** — Webedia CMS REST API (`/api/gatsby-source-boxofficeapi/*`). No Playwright needed. Theater ID `X07OU`. Three endpoints: `scheduledMovies`, `schedule` (showtimes + ticket URLs per day), `movies` (details). Scraper at `src/scrapers/academy.ts`.
   - [x] **Living Room Theaters** — Playwright + GraphQL (`pdx.livingroomtheaters.com/graphql`). Portland site ID `317`, circuit ID `146`. Page load establishes session; custom headers (`site-id`, `circuit-id`, `client-type`) required for `showingsForDate` queries. Movies queried via intercepted response on page load; showings queried in parallel per date via `page.evaluate`. Ticket URLs constructed as `/purchase/{slug}?showingId={id}`. Scraper at `src/scrapers/living-room.ts`.
-  - [x] **OMSI Empirical Theatre** — Cheerio on omsi.edu to extract event UUIDs; Eventbrite white-label REST API (`tickets.omsi.edu/cached_api`) for event details, calendar (available dates), and sessions (showtimes in UTC). No Playwright needed. Non-film categories filtered via `category` field in API response. `venue_id: omsi`.
-  - [ ] Cinema 21 / Hollywood Theatre — block scrapers, approach TBD (out of scope for M3)
+  - [x] **Cinema 21** — Server-rendered session API, works fine from CI. Scraper at `src/scrapers/cinema-21.ts`.
+  - [x] **St. Johns Twin Cinema & Pub** — Cheerio on Veezi's public sessions widget (`ticketing.useast.veezi.com/sessions`). Scraper at `src/scrapers/st-johns.ts`.
+  - [x] **Moreland Theater** — FMT (formovietickets.com) JSON schedule endpoint. Scraper at `src/scrapers/moreland.ts`.
+  - [x] **Tomorrow Theater** — Custom WP REST API (`tomorrowtheater.org/wp-json/nj/v1`). Non-film live events filtered by title. Scraper at `src/scrapers/tomorrow.ts`.
+  - [x] **Avalon Theatre** — Same Webedia boxofficeapi platform as Academy. Scraper at `src/scrapers/avalon.ts`.
+  - [x] **OMSI Empirical Theatre** — Cheerio on omsi.edu to extract event UUIDs; Playwright-driven Eventbrite white-label REST API (`tickets.omsi.edu/cached_api`) for event details, calendar, and sessions (UTC). Non-film categories filtered via `category` field. `venue_id: omsi`. Works locally; **blocked from CI's datacenter IP** — see M7.
+  - [x] **Hollywood Theatre** — WordPress REST API (`hollywoodtheatre.org/wp-json/wp/v2/event`) via `curl` with a browser User-Agent (Node's native `fetch` is blocked by Cloudflare's TLS fingerprinting). Scraper at `src/scrapers/hollywood.ts`. Works locally; **blocked from CI's datacenter IP** — see M7.
 - [x] **M4 — Frontend v1:** What's on view with date picker, venue/genre filters, fuzzy search, compact/expanded modes, sort, Leaflet venue map, poster modal, IMDB links, ticket links. Deployed to GitHub Pages.
 - [x] **M5 — Automated pipeline:** GitHub Actions cron running daily at 5am Pacific. Scrapers run in parallel. Scrape commits `upcoming.json` → triggers auto-deploy to GitHub Pages. Release tags (`release-X.Y.Z`) also trigger deploy.
 - [ ] **M6 — Polish** (narrowed scope — calendar view and by-film/by-venue views dropped, already covered by existing filters):
   - [x] TMDB attribution (already in footer)
   - [x] Ratings — Rotten Tomatoes, IMDb, and Metacritic via OMDb API (keyed off the IMDb ID from TMDB enrichment). Badges per film, "Ratings unavailable" note when a matched film has none. Composite "Score" sort chip averages whichever ratings exist, normalizing IMDb to 0-100; unrated titles sort first rather than last.
   - [ ] Mobile layout polish — first pass done (responsive breakpoints for date cards, filter toggle row scroll-instead-of-wrap, showtime row stacking); another pass still planned
-- [ ] **M7 — Distributed scrape architecture:** Decouple scrape from build so blocked venues (OMSI, Hollywood) can be scraped from a residential box while the rest run on CI. Per-source raw files; event-driven build. See "Distributed Scrape Architecture" below.
+- [x] **M7 — Residential scrape fallback (live as of 2026-07-23):** OMSI scrapes from natty (a residential Pi/media server), pushed to GitHub, and picked up automatically by CI. Hollywood attempted the same way but still blocked (separate problem — see its venue-table note above). Lighter-weight than originally planned — see below for what actually shipped, and why it diverges from the original design.
 
 ---
 
-## Distributed Scrape Architecture (planned — M7)
+## Residential Scrape Fallback (M7 — implemented)
 
 ### Problem
 
-OMSI and Hollywood Theatre are **hard-blocked at GitHub Actions' datacenter IP** — their sites sit behind CloudFront WAFs that reject datacenter IPs by reputation. Confirmed on CI: no in-CI client trick beats it (Playwright, curl, and browser User-Agents all 403). From a **residential IP, plain `curl` returns 200** for both — verified end-to-end (OMSI details → calendar → sessions; Hollywood WP API). So the data is gettable; the request just has to originate from a residential connection.
+OMSI and Hollywood Theatre are blocked from GitHub Actions' datacenter IP. OMSI's CloudFront WAF rejects it by IP reputation; a residential IP clears it fine. (Hollywood turned out to be a different, harder problem — a Cloudflare JS challenge that appears to target Playwright's automation fingerprint rather than IP reputation, so it isn't solved by this fallback. See its venue-table note above.)
 
-That forces scraping to happen in **two places**: CI for the 11 working venues, and an always-on residential box (a Raspberry Pi fileserver) for OMSI + Hollywood. The current monolithic pipeline (`scrape → merge → enrich → upcoming.json` in one step) can't support two writers cleanly:
-- Both would write the same `upcoming.json`, needing fragile "preserve the venues I didn't scrape" merge logic.
-- **Silent data-loss bug:** a scraper that returns `0 films` on a block counts as success and *overwrites* good data. Failing loudly would preserve it; succeeding-empty destroys it. (Observed on CI: OMSI 403'd, returned 0 films, got wiped — and wasn't even flagged in the degraded-run summary.)
+### What actually shipped (narrower than the original plan below)
 
-### Solution: decouple scrape from build, communicate via per-source files
+The original design (further down this section, kept for history) called for splitting `scrape.ts` into a `scrape`/`build` pair joined by per-venue raw files for **every** venue. What we actually built is smaller: only the two CI-blocked venues need a Pi-sourced path, so rather than restructure the whole pipeline, `scrape.ts` gained a **per-scraper fallback**, and everything else is unchanged.
 
-Split the pipeline into two stages joined by committed per-source JSON files:
+- **`src/pi-source.ts`** — `fetchPiRaw(venueId)` does a plain HTTPS GET of `https://raw.githubusercontent.com/mattlohkamp/small-screens-pdx/pi-data/data/raw/<venueId>.json` (no git clone, no auth — the file is public). Throws if the fetch fails or the data is older than 36 hours, so a dead Pi falls through to the orchestrator's existing last-known-good preservation instead of serving stale data forever.
+- **`src/scrape.ts`** — `withPiFallback(venueId, scrapeFn)` wraps `omsi`'s and `hollywood`'s registry entries: try the real scraper first (still useful for local dev runs off a residential connection), and on failure fall back to `fetchPiRaw`. No CI-detection branching needed.
+- **Code delivery to natty is `scp`, not `git pull`.** natty never clones this repo or runs `npm ci`/`npm install` on a schedule — code updates are copied over by hand, deliberately, so a compromised repo or dependency has no automated path to execute anything on the Pi. See `pi-scraper/` in this repo: a self-contained mirror (`package.json`, `run.ts`, and copies of `src/{types,fetch,browser,version,window}.ts` + `src/scrapers/{omsi,hollywood}.ts`) that gets `scp`'d to `~/small-screens-scraper` on natty whenever the scrapers change.
+- **Data delivery is a dedicated push-only git branch (`pi-data`), not the main repo.** natty has a separate, minimal git checkout (`~/small-screens-data`) whose only remote branch is `pi-data`, authenticated via a repo-scoped GitHub deploy key (write access, this repo only — created specifically for this, not the user's personal key). natty only ever `git add`/`commit`/`push`es to it; it never fetches or pulls, so there's no path for anything committed elsewhere to reach natty automatically.
+- **`~/small-screens-scraper/cron-scrape.sh`** — runs `run.ts` (writes `data/raw/{omsi,hollywood}.json` into the `small-screens-data` checkout, skipping a file entirely on scrape failure rather than overwriting it), then commits/pushes only if something changed. Cron: `15 4 * * *` (natty and Portland share a timezone), ahead of CI's `0 12 * * *` UTC (5am Pacific) run so fresh data is always waiting.
 
-1. **scrape** — each scraper writes `data/raw/<scraper>.json` (raw `Film[]` + provenance). No enrichment, no `upcoming.json`.
-2. **build** — reads *all* `data/raw/*.json`, merges/dedupes across venues, enriches via TMDB, writes `public/data/upcoming.json`, deploys.
+### What this gets, versus the original all-venues design
 
-Because CI and the Pi write **disjoint files**, they never conflict — git merges by path. The `data/raw/*.json` files become the committed **source-of-truth state**; `upcoming.json` becomes a **derived build artifact**.
+- Solves the actual problem (OMSI's data reaching the live site) with a much smaller change — no `build.ts` split, no event-driven build workflow, no raw file for the other 14 venues.
+- Same safety property the original design wanted: a scraper failing writes nothing, so last-known-good is never overwritten — just achieved inside the existing orchestrator rather than via a file-presence convention.
+- Costs: natty needs Playwright/Chromium (not just curl, since OMSI's own bypass needs a real browser context) — a bigger install than the original "curl only" Pi design assumed. Scraper code updates require a manual `scp`, not a `git pull` — a deliberate tradeoff for security (see above), but it does mean the Pi can silently run stale scraper code if an update is forgotten.
 
-### File layout
+### Original design (superseded, kept for reference)
 
-```
-data/raw/
-  cinemagic.json
-  laurelhurst.json
-  mcmenamins.json        # covers baghdad, kennedy-school, mission
-  academy.json
-  living-room.json
-  clinton-street.json
-  cinema-21.json
-  st-johns.json
-  moreland.json
-  tomorrow.json
-  omsi.json              # ← written by the Pi
-  hollywood.json         # ← written by the Pi
-public/data/
-  upcoming.json          # ← built artifact, derived from raw/*
-  enrichment-cache.json
-  failed-matches.json
-```
-
-Raw file shape (one per scraper; a scraper may cover several venue_ids):
-
-```json
-{
-  "venue_ids": ["omsi"],
-  "generator": "1.1.0-<commithash>",
-  "scraped_at": "2026-07-02T12:00:00Z",
-  "films": [ { "title": "...", "year": null, "showtimes": [ ... ] } ]
-}
-```
-
-### Entry points
-
-- `npm run scrape [venues…]` — runs the selected scrapers, writes their raw files (default = all). No enrichment. Includes the reliability guards below.
-- `npm run build` — assembles all raw files → merge → enrich → `upcoming.json`. Requires `TMDB_API_KEY`.
-
-### Workflows
-
-- **CI daily scrape** (cron, 5am Pacific): `npm run scrape <11 non-blocked venues>` → commit changed `data/raw/*.json` → push. (Drops OMSI/Hollywood — they'd only 403.)
-- **Pi cron** (residential, always-on): `npm run scrape omsi hollywood` → commit `data/raw/{omsi,hollywood}.json` → push. **No TMDB key, no enrichment, no browser** (curl only).
-- **build workflow** (event-driven): triggers on push to `data/raw/**` → `npm run build` → deploy to gh-pages. Single enrichment authority; *any* raw update — CI's or the Pi's — refreshes the live site with no added latency.
-
-### What this removes / simplifies
-
-- The "which venues did this run cover, preserve the rest" merge branch in `scrape.ts` → **gone**; raw files are the state.
-- The **silent-wipe data-loss bug** → **gone**; a failed scrape simply doesn't rewrite its raw file, so the last good one stands.
-- **Staleness self-heals** — a venue whose scraper stops running keeps its last raw file; its past showtimes age out of the window naturally.
-- The **Pi needs no TMDB key and never enriches** — it only scrapes and commits raw.
-- **OMSI → curl-based** (drop Playwright), so the Pi needs no chromium (ARM). Living Room keeps Playwright — it runs on CI and was never WAF-blocked.
-
-### Reliability guards (fold into the `scrape` entry point regardless)
-
-These fix issues observed on CI and apply to every venue, independent of the split:
-
-- **Retry amplification** — the orchestrator retry (3×) currently nests over per-scraper retries (e.g. Hollywood's curl loop, 4×) = up to **12 attempts** against a permanent block, each with backoff → looks like a hang. Fix: make the **orchestrator the single retry authority**; remove per-scraper inner retry loops.
-- **Per-scraper hard timeout** (~60s via `Promise.race`) so no venue can ever run away and stall the whole job.
-- **Fail loud, not empty** — a total block **throws** (venue marked failed, raw file untouched) instead of returning `[]`.
-
-### Migration sequence (when we build it)
-
-1. Add `data/raw/`; change each scraper's runner to write its raw file. Add a temporary build that reads raw → produces `upcoming.json` so nothing breaks mid-migration.
-2. Split `scrape.ts` into `scrape` (raw only) + `build.ts` (merge/enrich/assemble). Fold in the retry/timeout/fail-loud guards.
-3. Add the event-driven build workflow on `data/raw/**`.
-4. Refactor OMSI to curl; remove Playwright from it.
-5. Update the CI daily scrape to the 11-venue list (drop omsi/hollywood).
-6. Stand up the Pi cron: clone, `.env` (no TMDB key needed), deploy key, crontab entry — staggered off the 5am CI cron.
-
-### Pi setup — info to gather when we build it
-
-- Pi model / OS / CPU arch; Node version available (or install path).
-- Git push method: deploy key (recommended, repo-scoped) vs PAT vs `gh` CLI.
-- Scheduler: `crontab` vs `systemd` timer; preferred run time (stagger vs 5am CI).
-- Confirm the Pi can reach `github.com` and the venue sites (omsi.edu, tickets.omsi.edu, hollywoodtheatre.org).
-- Where the repo clone lives on the fileserver (disk is ample).
+The original plan was a full `data/raw/<scraper>.json` per venue (all 16, not just the 2 blocked ones) with a dedicated `build.ts` merge/enrich step, triggered by an event-driven workflow on `data/raw/**` pushes. That's more infrastructure than the actual problem (2 blocked venues) needed, so it wasn't built. Worth revisiting only if more venues end up needing residential scraping, or if the fallback-per-scraper approach starts feeling cramped.
 
 ---
 
 ## Open Questions
 
-1. ~~Any venues using Eventive or a shared ticketing platform?~~ Resolved: McMenamins Baghdad + Kennedy School use Veezi (has API). Clinton Street uses Eventive for some events.
-2. ~~Hollywood Theatre and Cinema 21 block automated requests — scraping approach TBD.~~ Resolved: Cinema 21 scrapes fine on CI. Hollywood (and OMSI) are blocked only at datacenter IPs — to be scraped from a residential Pi under the M7 distributed architecture (see above).
-3. Mission Theater — confirm no regular film screenings before dropping from scope.
+1. ~~Any venues using Eventive or a shared ticketing platform?~~ Resolved: McMenamins Baghdad + Kennedy School use Veezi (has API). St. Johns also uses Veezi. Clinton Street uses Eventive for some events.
+2. ~~Hollywood Theatre and Cinema 21 block automated requests — scraping approach TBD.~~ Partially resolved: Cinema 21 scrapes fine on CI. OMSI is confirmed working from natty (the residential Pi from M7) as of 2026-07-23. Hollywood is not — see the note above; it's a Cloudflare Turnstile challenge that appears to target Playwright's automation fingerprint specifically, not IP reputation, so the M7 "just run it from a residential IP" fix doesn't clear it on its own. Still open.
+3. ~~Mission Theater — confirm no regular film screenings before dropping from scope.~~ Resolved: scraper built and confirmed working (`src/scrapers/mission.ts`); in scope.

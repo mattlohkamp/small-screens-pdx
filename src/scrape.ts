@@ -20,6 +20,7 @@ import { VERSION } from "./version.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import { WINDOW_DAYS } from "./window.js";
+import { fetchPiRaw } from "./pi-source.js";
 import type { Schedule, Film } from "./types.js";
 import type { FailedMatch } from "./enrich.js";
 
@@ -27,6 +28,22 @@ import type { FailedMatch } from "./enrich.js";
 // slowest, Cinemagic, runs ~6s; fetch calls self-abort at 45s) but short enough
 // that a wedged venue times out and retries/fails cleanly instead of hanging.
 const SCRAPER_TIMEOUT_MS = 90_000;
+
+// OMSI and Hollywood are blocked from CI's datacenter IP (see PLAN.md's M7 section).
+// natty, a residential Pi, scrapes them directly and pushes raw output to the `pi-data`
+// branch. Try the real scraper first (works fine outside CI, e.g. for local dev runs);
+// on failure, fall back to natty's most recent push before giving up to the
+// orchestrator's own last-known-good preservation below.
+function withPiFallback(venueId: string, scrape: () => Promise<Film[]>): () => Promise<Film[]> {
+  return async () => {
+    try {
+      return await scrape();
+    } catch (err) {
+      console.warn(`  ${venueId} direct scrape failed, falling back to natty's pi-data raw file:`, err);
+      return fetchPiRaw(venueId);
+    }
+  };
+}
 
 // Registry: scraper-id → { fn, venueIds covered }
 const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; label: string }> = {
@@ -36,9 +53,9 @@ const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; 
   mcmenamins:      { fn: scrapeMcmenamins,      venueIds: ["baghdad", "kennedy-school"],    label: "McMenamins (Baghdad + Kennedy School)" },
   academy:         { fn: scrapeAcademy,         venueIds: ["academy"],                      label: "Academy Theater" },
   "living-room":   { fn: scrapeLivingRoom,      venueIds: ["living-room"],                  label: "Living Room Theaters" },
-  omsi:            { fn: scrapeOmsi,            venueIds: ["omsi"],                         label: "OMSI Empirical Theatre" },
+  omsi:            { fn: withPiFallback("omsi", scrapeOmsi),            venueIds: ["omsi"],       label: "OMSI Empirical Theatre" },
   "cinema-21":     { fn: scrapeCinema21,        venueIds: ["cinema-21"],                    label: "Cinema 21" },
-  hollywood:       { fn: scrapeHollywood,       venueIds: ["hollywood"],                    label: "Hollywood Theatre" },
+  hollywood:       { fn: withPiFallback("hollywood", scrapeHollywood),  venueIds: ["hollywood"],  label: "Hollywood Theatre" },
   "st-johns":      { fn: scrapeStJohns,         venueIds: ["st-johns"],                     label: "St. Johns Cinema" },
   moreland:        { fn: scrapeMoreland,         venueIds: ["moreland"],                     label: "Moreland Theater" },
   tomorrow:        { fn: scrapeTomorrow,         venueIds: ["tomorrow"],                     label: "Tomorrow Theater" },

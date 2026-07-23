@@ -1,0 +1,13 @@
+{
+  "name": "small-screens-pi-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "playwright": "^1.60.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0"
+  }
+}
