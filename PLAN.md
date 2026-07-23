@@ -252,7 +252,7 @@ deploy.yml (manual "Run workflow" button, OR push to a release-* tag)
   - [x] **Moreland Theater** — FMT (formovietickets.com) JSON schedule endpoint. Scraper at `src/scrapers/moreland.ts`.
   - [x] **Tomorrow Theater** — Custom WP REST API (`tomorrowtheater.org/wp-json/nj/v1`). Non-film live events filtered by title. Scraper at `src/scrapers/tomorrow.ts`.
   - [x] **Avalon Theatre** — Same Webedia boxofficeapi platform as Academy. Scraper at `src/scrapers/avalon.ts`.
-  - [x] **OMSI Empirical Theatre** — Cheerio on omsi.edu to extract event UUIDs; Playwright-driven Eventbrite white-label REST API (`tickets.omsi.edu/cached_api`) for event details, calendar, and sessions (UTC). Non-film categories filtered via `category` field. `venue_id: omsi`. Works locally; **blocked from CI's datacenter IP** — see M7.
+  - [x] **OMSI Empirical Theatre** — Cheerio on omsi.edu to extract event UUIDs; Playwright-driven Eventbrite white-label REST API (`tickets.omsi.edu/cached_api`) for event details, calendar, and sessions (UTC). Non-film categories filtered via `category` field. `venue_id: omsi`. Direct scrape is still blocked from CI's datacenter IP, but as of 2026-07-23 the M7 residential fallback (natty) closes that gap — confirmed live in production: CI's run fell back to natty's data and `public/data/showtimes.json` shipped 28 real OMSI showtimes for the first time.
   - [x] **Hollywood Theatre** — WordPress REST API (`hollywoodtheatre.org/wp-json/wp/v2/event`) via `curl` with a browser User-Agent (Node's native `fetch` is blocked by Cloudflare's TLS fingerprinting). Scraper at `src/scrapers/hollywood.ts`. Works locally; **blocked from CI's datacenter IP** — see M7.
 - [x] **M4 — Frontend v1:** What's on view with date picker, venue/genre filters, fuzzy search, compact/expanded modes, sort, Leaflet venue map, poster modal, IMDB links, ticket links. Deployed to GitHub Pages.
 - [x] **M5 — Automated pipeline:** GitHub Actions cron running daily at 5am Pacific. Scrapers run in parallel. Scrape commits `upcoming.json` → triggers auto-deploy to GitHub Pages. Release tags (`release-X.Y.Z`) also trigger deploy.
@@ -260,7 +260,7 @@ deploy.yml (manual "Run workflow" button, OR push to a release-* tag)
   - [x] TMDB attribution (already in footer)
   - [x] Ratings — Rotten Tomatoes, IMDb, and Metacritic via OMDb API (keyed off the IMDb ID from TMDB enrichment). Badges per film, "Ratings unavailable" note when a matched film has none. Composite "Score" sort chip averages whichever ratings exist, normalizing IMDb to 0-100; unrated titles sort first rather than last.
   - [ ] Mobile layout polish — first pass done (responsive breakpoints for date cards, filter toggle row scroll-instead-of-wrap, showtime row stacking); another pass still planned
-- [x] **M7 — Residential scrape fallback (live as of 2026-07-23):** OMSI scrapes from natty (a residential Pi/media server), pushed to GitHub, and picked up automatically by CI. Hollywood attempted the same way but still blocked (separate problem — see its venue-table note above). Lighter-weight than originally planned — see below for what actually shipped, and why it diverges from the original design.
+- [x] **M7 — Residential scrape fallback (confirmed live in production 2026-07-23):** OMSI scrapes from natty (a residential Pi/media server) on a 4:15am Pacific cron, pushes to the `pi-data` branch, and CI's 5am scrape falls back to it automatically. First real end-to-end run: CI's direct OMSI attempt failed as expected (`OMSI blocked: 7 API request(s)...`), the fallback picked up natty's 6 films, and the committed `showtimes.json` carried 28 real OMSI showtimes — live on the site. Hollywood attempted the same way but still blocked (separate problem — see its venue-table note above and "Next steps" below). Lighter-weight than originally planned — see below for what actually shipped, and why it diverges from the original design.
 
 ---
 
@@ -286,6 +286,17 @@ The original design (further down this section, kept for history) called for spl
 - Same safety property the original design wanted: a scraper failing writes nothing, so last-known-good is never overwritten — just achieved inside the existing orchestrator rather than via a file-presence convention.
 - Costs: natty needs Playwright/Chromium (not just curl, since OMSI's own bypass needs a real browser context) — a bigger install than the original "curl only" Pi design assumed. Scraper code updates require a manual `scp`, not a `git pull` — a deliberate tradeoff for security (see above), but it does mean the Pi can silently run stale scraper code if an update is forgotten.
 
+### Next steps: Hollywood Theatre
+
+Confirmed as of 2026-07-23, tried in this order, all failed:
+1. `curl` with a browser User-Agent — can't execute JS at all, so it can never solve a Turnstile challenge.
+2. Playwright issuing `fetch()` from inside a page via `page.evaluate` — the fetch just receives the 403 + challenge HTML as an inert body; nothing executes the embedded challenge script.
+3. Playwright doing a real `page.goto()` navigation to the API URL — Chromium actually runs the challenge this time, but still 403s, identically on both a dev machine and on natty's residential IP.
+
+That last result is the important one: it rules out IP reputation as the variable (natty's same IP cleared OMSI's block that same day) and points at Cloudflare fingerprinting Playwright's automation signals directly (e.g. `navigator.webdriver`, CDP protocol traces) rather than anything about where the request comes from.
+
+Not yet tried: **`patchright`** — a Playwright/Chromium fork built specifically to patch the CDP-level tells that regular JS-only "stealth" plugins miss. Real chance of clearing this, since the block appears to be automation-fingerprint-based rather than IP-based. Worth one bounded attempt; if it also fails, the honest call is to stop chasing this specific venue rather than escalate further into a detection arms race that Cloudflare can just as easily re-close.
+
 ### Original design (superseded, kept for reference)
 
 The original plan was a full `data/raw/<scraper>.json` per venue (all 16, not just the 2 blocked ones) with a dedicated `build.ts` merge/enrich step, triggered by an event-driven workflow on `data/raw/**` pushes. That's more infrastructure than the actual problem (2 blocked venues) needed, so it wasn't built. Worth revisiting only if more venues end up needing residential scraping, or if the fallback-per-scraper approach starts feeling cramped.
@@ -295,5 +306,5 @@ The original plan was a full `data/raw/<scraper>.json` per venue (all 16, not ju
 ## Open Questions
 
 1. ~~Any venues using Eventive or a shared ticketing platform?~~ Resolved: McMenamins Baghdad + Kennedy School use Veezi (has API). St. Johns also uses Veezi. Clinton Street uses Eventive for some events.
-2. ~~Hollywood Theatre and Cinema 21 block automated requests — scraping approach TBD.~~ Partially resolved: Cinema 21 scrapes fine on CI. OMSI is confirmed working from natty (the residential Pi from M7) as of 2026-07-23. Hollywood is not — see the note above; it's a Cloudflare Turnstile challenge that appears to target Playwright's automation fingerprint specifically, not IP reputation, so the M7 "just run it from a residential IP" fix doesn't clear it on its own. Still open.
+2. ~~Hollywood Theatre and Cinema 21 block automated requests — scraping approach TBD.~~ Mostly resolved: Cinema 21 scrapes fine on CI. OMSI is confirmed live in production via natty (the residential Pi from M7) as of 2026-07-23. Hollywood remains genuinely open — see "Next steps: Hollywood Theatre" above for the full diagnostic trail and `patchright` as the next thing to try.
 3. ~~Mission Theater — confirm no regular film screenings before dropping from scope.~~ Resolved: scraper built and confirmed working (`src/scrapers/mission.ts`); in scope.
