@@ -2,7 +2,7 @@
   "venue_ids": [
     "omsi"
   ],
-  "scraped_at": "2026-08-19T11:15:49.018Z",
+  "scraped_at": "2026-08-20T11:15:38.383Z",
   "films": [
     {
       "id": null,
@@ -15,12 +15,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-08-19T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-08-20T14:30:00",
@@ -56,6 +50,12 @@
           "datetime": "2026-08-25T14:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-08-26T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
         }
       ]
     },
@@ -70,12 +70,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-08-19T11:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-08-20T11:00:00",
@@ -115,12 +109,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-08-19T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-08-20T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
@@ -144,18 +132,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-08-19T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019d0355-ace2-b9e2-119f-fb6bf72bd048"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-08-19T16:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019d0355-ace2-b9e2-119f-fb6bf72bd048"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-08-20T14:30:00",
@@ -225,6 +201,18 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-08-25T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019d0355-ace2-b9e2-119f-fb6bf72bd048"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-08-26T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019d0355-ace2-b9e2-119f-fb6bf72bd048"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-08-26T16:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019d0355-ace2-b9e2-119f-fb6bf72bd048"
         }
