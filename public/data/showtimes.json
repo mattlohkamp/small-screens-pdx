@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-21T12:51:17.034Z",
-  "generator": "1.5.0-b7334b8",
+  "generated_at": "2026-08-22T12:41:10.478Z",
+  "generator": "1.5.0-77479e6",
   "window": {
-    "start": "2026-08-21",
-    "end": "2026-08-27"
+    "start": "2026-08-22",
+    "end": "2026-08-28"
   },
   "venues": [
     {
@@ -159,6 +159,46 @@
   ],
   "films": [
     {
+      "id": 392,
+      "slug": "chocolat-2000",
+      "title": "Chocolat",
+      "year": 2000,
+      "director": "Lasse Hallström",
+      "runtime_minutes": 121,
+      "overview": "In the winter of 1959, a single mother and her young daughter arrive in a rural French town, where they open an unusual chocolate shop that disrupts the moral fiber of the strictly Catholic townsfolk and mayor.",
+      "poster_path": "/lnwPvyj8UR7MetG2pQ92453IIoR.jpg",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-08-22T16:20:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/chocolat/3679194"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-08-23T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/chocolat/3679195"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-08-25T16:20:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/chocolat/3679210"
+        }
+      ],
+      "imdb_id": "tt0241303",
+      "rt_score": 63,
+      "imdb_rating": 7.2,
+      "metacritic_score": 64,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1620313,
       "slug": "the-samurai-and-the-prisoner-2026",
       "title": "The Samurai and the Prisoner",
@@ -173,12 +213,6 @@
         "Mystery"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-08-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-samurai-and-the-prisoner/3681097"
-        },
         {
           "venue_id": "cinemagic",
           "datetime": "2026-08-22T19:00:00",
@@ -196,18 +230,6 @@
           "datetime": "2026-08-27T19:00:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-samurai-and-the-prisoner/3681098"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T16:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-samurai-and-the-prisoner?showingId=3736820"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T20:35:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-samurai-and-the-prisoner?showingId=3736819"
         },
         {
           "venue_id": "living-room",
@@ -253,12 +275,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-08-21T15:35",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30692?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-08-22T12:30",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30702?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -286,6 +302,34 @@
       "rt_score": null,
       "imdb_rating": null,
       "metacritic_score": null,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 274,
+      "slug": "silence-of-the-lambs-1991",
+      "title": "Silence of the Lambs",
+      "year": 1991,
+      "director": "Jonathan Demme",
+      "runtime_minutes": 119,
+      "overview": "Clarice Starling is a top student at the FBI's training academy.  Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism.  Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.",
+      "poster_path": "/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg",
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-08-28T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/silence-of-the-lambs/3681189"
+        }
+      ],
+      "imdb_id": "tt0102926",
+      "rt_score": 95,
+      "imdb_rating": 8.6,
+      "metacritic_score": 86,
       "match_confidence": "verified"
     },
     {
@@ -357,43 +401,32 @@
       "match_confidence": "verified"
     },
     {
-      "id": 392,
-      "slug": "chocolat-2000",
-      "title": "Chocolat",
-      "year": 2000,
-      "director": "Lasse Hallström",
-      "runtime_minutes": 121,
-      "overview": "In the winter of 1959, a single mother and her young daughter arrive in a rural French town, where they open an unusual chocolate shop that disrupts the moral fiber of the strictly Catholic townsfolk and mayor.",
-      "poster_path": "/lnwPvyj8UR7MetG2pQ92453IIoR.jpg",
+      "id": 7304,
+      "slug": "running-scared-2006",
+      "title": "Running Scared",
+      "year": 2006,
+      "director": "Wayne Kramer",
+      "runtime_minutes": 122,
+      "overview": "A low-ranking thug is entrusted by his boss to dispose of a gun that killed corrupt cops, but things spiral out of control when the gun ends up in wrong hands.",
+      "poster_path": "/f2LU6M8wFmt6G1fzv9JFWbIkRd9.jpg",
       "genres": [
-        "Comedy",
+        "Action",
+        "Crime",
         "Drama",
-        "Romance"
+        "Thriller"
       ],
       "showtimes": [
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-08-22T16:20:00",
+          "datetime": "2026-08-28T21:30:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/chocolat/3679194"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-08-23T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/chocolat/3679195"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-08-25T16:20:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/chocolat/3679210"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/running-scared/3681187"
         }
       ],
-      "imdb_id": "tt0241303",
-      "rt_score": 63,
-      "imdb_rating": 7.2,
-      "metacritic_score": 64,
+      "imdb_id": "tt0404390",
+      "rt_score": 41,
+      "imdb_rating": 7.3,
+      "metacritic_score": 41,
       "match_confidence": "verified"
     },
     {
@@ -431,7 +464,7 @@
         }
       ],
       "imdb_id": "tt0320691",
-      "rt_score": 30,
+      "rt_score": 31,
       "imdb_rating": 7,
       "metacritic_score": 42,
       "match_confidence": "verified"
@@ -463,60 +496,6 @@
       "rt_score": 93,
       "imdb_rating": 7.9,
       "metacritic_score": 83,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 1381564,
-      "slug": "poca-pon-2026",
-      "title": "Poca Pon",
-      "year": 2026,
-      "director": "Shinichi Otsuka",
-      "runtime_minutes": 94,
-      "overview": "Inspired by a bizarre murder case, this is the story of a family and the voice \"POCA PON\" — a voice that sometimes heals people, and sometimes destroys them.",
-      "poster_path": "/zBhqVoNrhFYHf2sJ9C1C6HpdE6k.jpg",
-      "genres": [
-        "Drama",
-        "Mystery",
-        "Thriller"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-08-21T18:00:00",
-          "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/poca-pon-friday-august-21st-at-6-00-pm/NLUFTGCX5S4IJRNKX4X4ACCZ"
-        }
-      ],
-      "imdb_id": "tt38589495",
-      "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 121072,
-      "slug": "the-warped-forest-2011",
-      "title": "The Warped Forest",
-      "year": 2011,
-      "director": "Shunichiro Miki",
-      "runtime_minutes": 82,
-      "overview": "Settle into your chair and be transported to a place both familiar and alien; where a giant shop-girl can barely fit in her store, there's a weird green pod in every bedroom, and terrifying wood nymphs provide a heartbroken woman with the anatomically correct fruit everyone seems to covet. In the end we are left, like Alice, with the Red King's conundrum: are we dreaming them or are they dreaming us?",
-      "poster_path": "/52QqDmcX96S4VysCTdGhPe5P90E.jpg",
-      "genres": [
-        "Comedy"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-08-21T21:00:00",
-          "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/the-warped-forest-friday-august-21st-at-9-00-pm/2DW7IZ24KLQLOKGCXNB5M42M"
-        }
-      ],
-      "imdb_id": "tt2215676",
-      "rt_score": null,
-      "imdb_rating": 6.3,
-      "metacritic_score": null,
       "match_confidence": "verified"
     },
     {
@@ -812,6 +791,61 @@
       "match_confidence": "verified"
     },
     {
+      "id": 20506,
+      "slug": "the-eel-1997",
+      "title": "The Eel",
+      "year": 1997,
+      "director": "Shōhei Imamura",
+      "runtime_minutes": 117,
+      "overview": "A businessman kills his adulterous wife and is sent to prison. After his release, he opens a barbershop and meets new people, talking  to almost no one except for an eel he befriended while in prison.",
+      "poster_path": "/3TEzcwdF3DPeO8uSPmCfBBUhgNp.jpg",
+      "genres": [
+        "Drama",
+        "Crime"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-08-28T18:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/the-eel-friday-august-28th-at-6-00-pm/OKKWXQQGCUN56ENHV5PHAOEB"
+        }
+      ],
+      "imdb_id": "tt0120408",
+      "rt_score": 83,
+      "imdb_rating": 7.3,
+      "metacritic_score": 81,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 33431,
+      "slug": "a-snake-of-june-2003",
+      "title": "A Snake of June",
+      "year": 2003,
+      "director": "Shinya Tsukamoto",
+      "runtime_minutes": 77,
+      "overview": "Rinko, a woman in a sexless marriage, is blackmailed by a stalker with intimate photos, forcing her into a series of erotic acts that disrupt her mundane life.",
+      "poster_path": "/v8HRcVaZS5IV3InYxnAWIzzVqwc.jpg",
+      "genres": [
+        "Romance",
+        "Drama",
+        "Thriller"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-08-28T21:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/a-snake-of-june-friday-august-28th-at-9-00-pm/DD42P6Q4EFGRJWGTCZEECCPX"
+        }
+      ],
+      "imdb_id": "tt0330904",
+      "rt_score": 56,
+      "imdb_rating": 6.8,
+      "metacritic_score": null,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1204680,
       "slug": "coyote-vs-acme-2026",
       "title": "Coyote vs Acme",
@@ -823,8 +857,7 @@
       "genres": [
         "Comedy",
         "Adventure",
-        "Family",
-        "Animation"
+        "Family"
       ],
       "showtimes": [
         {
@@ -884,6 +917,30 @@
           "datetime": "2026-08-27T19:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101295?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
+        },
+        {
+          "venue_id": "baghdad",
+          "datetime": "2026-08-28T12:30:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101296?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
+        },
+        {
+          "venue_id": "baghdad",
+          "datetime": "2026-08-28T15:30:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101303?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
+        },
+        {
+          "venue_id": "baghdad",
+          "datetime": "2026-08-28T19:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101310?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
+        },
+        {
+          "venue_id": "baghdad",
+          "datetime": "2026-08-28T22:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101317?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         }
       ],
       "imdb_id": "tt21285562",
@@ -907,24 +964,6 @@
         "Romance"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T16:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45242"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45243"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T21:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45244"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-08-22T13:00:00",
@@ -1014,30 +1053,6 @@
           "datetime": "2026-08-26T19:00:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45324"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T12:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013549000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T15:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013550000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T18:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013551000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T21:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013552000007"
         },
         {
           "venue_id": "academy",
@@ -1142,34 +1157,28 @@
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013567000007"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/teenage-sex-and-death-at-camp-miasma?showingId=3736830"
+          "venue_id": "academy",
+          "datetime": "2026-08-27T12:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013570000007"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T13:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/teenage-sex-and-death-at-camp-miasma?showingId=3736829"
+          "venue_id": "academy",
+          "datetime": "2026-08-27T15:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013571000007"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T16:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/teenage-sex-and-death-at-camp-miasma?showingId=3736828"
+          "venue_id": "academy",
+          "datetime": "2026-08-27T18:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013572000007"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/teenage-sex-and-death-at-camp-miasma?showingId=3593709"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T21:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/teenage-sex-and-death-at-camp-miasma?showingId=3593710"
+          "venue_id": "academy",
+          "datetime": "2026-08-27T21:15:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013573000007"
         },
         {
           "venue_id": "living-room",
@@ -1323,24 +1332,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-08-21T16:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30691?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-08-21T19:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30689?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-08-21T21:50",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30690?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-08-22T14:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30695?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -1431,18 +1422,6 @@
         },
         {
           "venue_id": "st-johns",
-          "datetime": "2026-08-21T16:20",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19151?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-08-21T19:20",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19154?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
           "datetime": "2026-08-22T13:30",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19171?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
@@ -1524,6 +1503,18 @@
           "datetime": "2026-08-27T19:20",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19259?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-08-28T16:20",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19261?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-08-28T19:20",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19263?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         }
       ],
       "imdb_id": "tt35298123",
@@ -1546,24 +1537,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45238"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45239"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T21:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45240"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-08-22T12:30:00",
@@ -1653,24 +1626,6 @@
           "datetime": "2026-08-26T18:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45326"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-08-21T16:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30618?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-08-21T19:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30614?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-08-21T21:30",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30615?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
           "venue_id": "cinema-21",
@@ -1770,18 +1725,6 @@
         },
         {
           "venue_id": "st-johns",
-          "datetime": "2026-08-21T16:00",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19240?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-08-21T19:00",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19245?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
           "datetime": "2026-08-22T13:15",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19254?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
@@ -1865,14 +1808,20 @@
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19258?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         },
         {
-          "venue_id": "moreland",
-          "datetime": "2026-08-25T19:00:00",
+          "venue_id": "st-johns",
+          "datetime": "2026-08-28T16:00",
           "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19260?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-08-28T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19262?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-08-25T16:45:00",
+          "datetime": "2026-08-23T19:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1896,6 +1845,12 @@
         },
         {
           "venue_id": "moreland",
+          "datetime": "2026-08-25T16:45:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
           "datetime": "2026-08-23T14:30:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
@@ -1908,7 +1863,7 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-08-23T19:00:00",
+          "datetime": "2026-08-25T19:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1941,18 +1896,6 @@
           "datetime": "2026-08-27T19:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-08-21T16:45:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-08-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
         }
       ],
       "imdb_id": "tt33095251",
@@ -1976,24 +1919,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T16:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45234"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45235"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T21:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45236"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-08-22T12:45:00",
@@ -2074,24 +1999,6 @@
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-08-21T12:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-end-of-oak-street?showingId=3736818"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T17:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-end-of-oak-street?showingId=3736816"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T19:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-end-of-oak-street?showingId=3736815"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-08-22T12:45:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-end-of-oak-street?showingId=3770832"
@@ -2101,6 +2008,12 @@
           "datetime": "2026-08-22T15:00:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-end-of-oak-street?showingId=3770836"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-08-22T17:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-end-of-oak-street?showingId=3770841"
         },
         {
           "venue_id": "living-room",
@@ -2236,9 +2149,9 @@
         }
       ],
       "imdb_id": "tt27165187",
-      "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
+      "rt_score": 86,
+      "imdb_rating": 6.6,
+      "metacritic_score": 69,
       "match_confidence": "verified"
     },
     {
@@ -2256,24 +2169,6 @@
         "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45246"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T18:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45247"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-08-21T21:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45248"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-08-22T12:15:00",
@@ -2354,24 +2249,6 @@
         },
         {
           "venue_id": "baghdad",
-          "datetime": "2026-08-21T11:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101276?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-08-21T15:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101282?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-08-21T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101288?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
           "datetime": "2026-08-22T11:30:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101277?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
@@ -2435,30 +2312,6 @@
           "datetime": "2026-08-26T19:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101293?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T12:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013639000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T15:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013640000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T18:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013641000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T21:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013642000005"
         },
         {
           "venue_id": "academy",
@@ -2563,22 +2416,34 @@
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013657000005"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T15:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spider-man-brand-new-day?showingId=3736813"
+          "venue_id": "academy",
+          "datetime": "2026-08-27T12:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013660000005"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-08-27T15:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013661000005"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-08-27T18:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013662000005"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-08-27T21:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013663000005"
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-08-21T18:45:00",
+          "datetime": "2026-08-22T12:00:00",
           "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spider-man-brand-new-day?showingId=3736811"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T21:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spider-man-brand-new-day?showingId=3736810"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spider-man-brand-new-day?showingId=3770828"
         },
         {
           "venue_id": "living-room",
@@ -2737,18 +2602,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-08-21T12:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101136?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-08-21T21:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101141?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-08-22T21:30:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101142?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -2780,8 +2633,8 @@
       ],
       "imdb_id": "tt26657236",
       "rt_score": null,
-      "imdb_rating": 7,
-      "metacritic_score": 77,
+      "imdb_rating": 6.8,
+      "metacritic_score": 76,
       "match_confidence": "verified"
     },
     {
@@ -2800,12 +2653,6 @@
         "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-08-21T15:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101137?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
         {
           "venue_id": "kennedy-school",
           "datetime": "2026-08-22T15:30:00",
@@ -2838,7 +2685,7 @@
         }
       ],
       "imdb_id": "tt27419466",
-      "rt_score": 31,
+      "rt_score": 32,
       "imdb_rating": null,
       "metacritic_score": null,
       "match_confidence": "verified"
@@ -2858,12 +2705,6 @@
         "Science Fiction"
       ],
       "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-08-21T18:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101139?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
         {
           "venue_id": "kennedy-school",
           "datetime": "2026-08-22T12:30:00",
@@ -2929,12 +2770,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-08-21T19:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013436000006"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-08-22T16:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013441000006"
@@ -2968,6 +2803,18 @@
           "datetime": "2026-08-26T19:30:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013455000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-08-27T13:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013458000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-08-27T21:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013459000006"
         }
       ],
       "imdb_id": "tt0114137",
@@ -2990,12 +2837,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T13:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013439000006"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-08-22T19:00:00",
@@ -3031,6 +2872,12 @@
           "datetime": "2026-08-26T13:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013454000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-08-27T16:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013460000006"
         }
       ],
       "imdb_id": "tt0108388",
@@ -3052,18 +2899,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T16:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013437000006"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-08-21T21:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013438000006"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-08-22T13:00:00",
@@ -3093,6 +2928,12 @@
           "datetime": "2026-08-26T16:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013456000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-08-27T19:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013457000006"
         }
       ],
       "imdb_id": "tt0097940",
@@ -3114,12 +2955,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T12:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/catvideofest-2026?showingId=3736831"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-08-22T12:10:00",
@@ -3170,36 +3005,12 @@
       "year": 2026,
       "director": "Jon Lucas",
       "runtime_minutes": 97,
-      "overview": "Four lifelong friends realize that somewhere between careers, relationships, families, and everyday responsibilities, they’ve forgotten how to take care of themselves—and each other. Burned out and overdue for a break, the women escape to a luxury spa retreat for an unforgettable weekend dedicated to fun, laughter, and a lot of really bad decisions.",
+      "overview": "Three friends go on a spa weekend that descends into chaos when their trainwreck friend joins, leading to hilarious consequences.",
       "poster_path": "/i3I19SbOyz6AIl0cSYdyVJRucMr.jpg",
       "genres": [
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T12:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spa-weekend?showingId=3736827"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T15:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spa-weekend?showingId=3778579"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T19:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spa-weekend?showingId=3736824"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T21:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spa-weekend?showingId=3736823"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-08-22T12:30:00",
@@ -3217,6 +3028,12 @@
           "datetime": "2026-08-22T17:00:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spa-weekend?showingId=3770840"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-08-22T19:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/spa-weekend?showingId=3770845"
         },
         {
           "venue_id": "living-room",
@@ -3368,33 +3185,27 @@
       "showtimes": [
         {
           "venue_id": "living-room",
-          "datetime": "2026-08-21T11:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3736809"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T15:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3736808"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T21:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3736806"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-08-22T11:50:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3770827"
         },
         {
           "venue_id": "living-room",
+          "datetime": "2026-08-22T15:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3770838"
+        },
+        {
+          "venue_id": "living-room",
           "datetime": "2026-08-22T18:15:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3770842"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-08-22T21:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3770847"
         },
         {
           "venue_id": "living-room",
@@ -3476,12 +3287,6 @@
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-08-21T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-08-22T21:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
@@ -3538,18 +3343,6 @@
         "Science Fiction"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T14:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-wrong-girls?showingId=3736821"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-08-21T18:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-wrong-girls?showingId=3736822"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-08-22T14:00:00",
@@ -3649,12 +3442,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-08-21T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-08-24T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
@@ -3674,6 +3461,12 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-08-27T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-08-28T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
         }
@@ -3697,18 +3490,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-08-21T11:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-08-21T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-08-22T11:00:00",
@@ -3744,6 +3525,18 @@
           "datetime": "2026-08-27T11:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-08-28T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-08-28T15:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         }
       ],
       "imdb_id": "tt42702648",
@@ -3767,18 +3560,6 @@
         "Romance"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-08-21T18:45",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30693?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-08-21T21:40",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30694?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
         {
           "venue_id": "cinema-21",
           "datetime": "2026-08-22T16:00",
@@ -3908,33 +3689,6 @@
       ]
     },
     {
-      "id": 1548,
-      "slug": "ghost-world-2001",
-      "title": "Ghost World",
-      "year": 2001,
-      "director": "Terry Zwigoff",
-      "runtime_minutes": 111,
-      "overview": "Two quirky, cynical teenaged girls try to figure out what to do with their lives after high school graduation. After they play a prank on an eccentric, middle aged record collector, one of them befriends him, which causes a rift in the girls’ friendship.",
-      "poster_path": "/uwKqnUPE4dSM0kKuMW0vXpURh2T.jpg",
-      "genres": [
-        "Comedy",
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-08-21T22:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        }
-      ],
-      "imdb_id": "tt0162346",
-      "rt_score": 93,
-      "imdb_rating": 7.3,
-      "metacritic_score": 90,
-      "match_confidence": "verified"
-    },
-    {
       "id": 20726,
       "slug": "little-giants-1994",
       "title": "Little Giants",
@@ -4013,32 +3767,6 @@
       ]
     },
     {
-      "id": 13193,
-      "slug": "saved-2004",
-      "title": "Saved!",
-      "year": 2004,
-      "director": "Brian Dannelly",
-      "runtime_minutes": 92,
-      "overview": "Mary is a good Christian girl who goes to a good Christian high school where she has good Christian friends and a perfect Christian boyfriend. Her life seems perfect, until the day that she finds out that her boyfriend may be gay — and that she’s pregnant.",
-      "poster_path": "/nmf2tFTcRJZVEQ9e3mgLH5gAQYs.jpg",
-      "genres": [
-        "Comedy"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "tomorrow",
-          "datetime": "2026-08-21T19:00",
-          "format": null,
-          "ticket_url": "https://tomorrowtheater.org/showtimes/saved-movie-bingo-w-violet-hex-8-21-26-700-pm/"
-        }
-      ],
-      "imdb_id": "tt0332375",
-      "rt_score": 61,
-      "imdb_rating": 6.7,
-      "metacritic_score": 62,
-      "match_confidence": "verified"
-    },
-    {
       "id": null,
       "slug": "dances-of-significance",
       "title": "Dances of Significance",
@@ -4056,6 +3784,33 @@
           "ticket_url": "https://tomorrowtheater.org/showtimes/dances-of-significance-8-27-26-700-pm/"
         }
       ]
+    },
+    {
+      "id": 14412,
+      "slug": "body-heat-1981",
+      "title": "Body Heat",
+      "year": 1981,
+      "director": "Lawrence Kasdan",
+      "runtime_minutes": 113,
+      "overview": "During an extreme heatwave, a beautiful Florida woman and a seedy lawyer engage in an affair while plotting the murder of her rich husband.",
+      "poster_path": "/5LipPcaW1J9IjAP7TOTesw8OcMS.jpg",
+      "genres": [
+        "Thriller",
+        "Crime"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "tomorrow",
+          "datetime": "2026-08-28T19:00",
+          "format": null,
+          "ticket_url": "https://tomorrowtheater.org/showtimes/body-heat-8-28-26-700-pm/"
+        }
+      ],
+      "imdb_id": "tt0082089",
+      "rt_score": 96,
+      "imdb_rating": 7.4,
+      "metacritic_score": 77,
+      "match_confidence": "verified"
     },
     {
       "id": 476,
@@ -4101,42 +3856,6 @@
         "Fantasy"
       ],
       "showtimes": [
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-08-21T11:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-08-21T13:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-08-21T15:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-08-21T17:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-08-21T19:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-08-21T21:05:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
         {
           "venue_id": "avalon",
           "datetime": "2026-08-22T11:15:00",
@@ -4290,6 +4009,36 @@
         {
           "venue_id": "avalon",
           "datetime": "2026-08-26T19:15:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-08-27T11:15:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-08-27T13:15:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-08-27T15:15:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-08-27T17:15:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-08-27T19:15:00",
           "format": "DCP",
           "ticket_url": null
         }
