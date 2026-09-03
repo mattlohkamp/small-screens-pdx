@@ -2,7 +2,7 @@
   "venue_ids": [
     "omsi"
   ],
-  "scraped_at": "2026-09-02T11:16:05.219Z",
+  "scraped_at": "2026-09-03T11:15:51.036Z",
   "films": [
     {
       "id": null,
@@ -15,18 +15,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T17:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019ffd46-0013-67aa-1ce9-fc12cfecd5e4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T19:15:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019ffd46-0013-67aa-1ce9-fc12cfecd5e4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-09-03T17:00:00",
@@ -98,6 +86,147 @@
           "datetime": "2026-09-08T19:15:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019ffd46-0013-67aa-1ce9-fc12cfecd5e4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-09T17:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019ffd46-0013-67aa-1ce9-fc12cfecd5e4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-09T19:15:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019ffd46-0013-67aa-1ce9-fc12cfecd5e4"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "sea-monsters-a-prehistoric-adventure",
+      "title": "Sea Monsters: A Prehistoric Adventure",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-03T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-04T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-04T17:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-05T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-06T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "elephants-giants-of-the-desert",
+      "title": "Elephants: Giants of the Desert",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-03T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-04T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-05T10:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-05T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-06T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "t-rex",
+      "title": "T. REX",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-03T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-04T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-05T10:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-05T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-06T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
         }
       ]
     },
@@ -112,18 +241,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T11:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T15:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-09-03T11:00:00",
@@ -187,18 +304,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-02T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T16:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-09-03T12:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
@@ -254,18 +359,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-02T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T16:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-09-03T12:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
@@ -305,153 +398,6 @@
           "datetime": "2026-09-06T12:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "sea-monsters-a-prehistoric-adventure",
-      "title": "Sea Monsters: A Prehistoric Adventure",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-03T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-04T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-04T17:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-05T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-06T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "elephants-giants-of-the-desert",
-      "title": "Elephants: Giants of the Desert",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-03T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-04T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-05T10:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-05T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-06T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "t-rex",
-      "title": "T. REX",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-02T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-03T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-04T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-05T10:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-05T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-06T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
         }
       ]
     }
