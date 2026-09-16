@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-15T16:28:21.797Z",
-  "generator": "1.5.0-5ea4e41",
+  "generated_at": "2026-09-16T16:19:34.410Z",
+  "generator": "1.5.0-c485f21",
   "window": {
-    "start": "2026-09-15",
-    "end": "2026-09-21"
+    "start": "2026-09-16",
+    "end": "2026-09-22"
   },
   "venues": [
     {
@@ -159,35 +159,6 @@
   ],
   "films": [
     {
-      "id": 10315,
-      "slug": "fantastic-mr-fox-2009",
-      "title": "Fantastic Mr. Fox",
-      "year": 2009,
-      "director": "Wes Anderson",
-      "runtime_minutes": 87,
-      "overview": "The Fantastic Mr. Fox, bored with his current life, plans a heist against the three local farmers. The farmers, tired of sharing their chickens with the sly fox, seek revenge against him and his family.",
-      "poster_path": "/bOVr292mwn3jxr1e0NmUPM1rcjo.jpg",
-      "genres": [
-        "Adventure",
-        "Animation",
-        "Comedy",
-        "Family"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-09-15T17:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/fantastic-mr-fox/3878974"
-        }
-      ],
-      "imdb_id": "tt0432283",
-      "rt_score": 93,
-      "imdb_rating": 7.9,
-      "metacritic_score": 83,
-      "match_confidence": "verified"
-    },
-    {
       "id": 913290,
       "slug": "barbarian-2022",
       "title": "barbarian",
@@ -202,12 +173,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-09-15T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/barbarian/3733216"
-        },
         {
           "venue_id": "cinemagic",
           "datetime": "2026-09-16T16:40:00",
@@ -260,12 +225,13 @@
       "title": "Resident Evil",
       "year": 2026,
       "director": "Zach Cregger",
-      "runtime_minutes": 93,
+      "runtime_minutes": 90,
       "overview": "Medical courier Bryan unwittingly finds himself fighting for survival as one fateful, horrifying night collapses around him in chaos.",
       "poster_path": "/i7UyjfPio0VFHB9rBUZSFyhOoM8.jpg",
       "genres": [
         "Horror",
-        "Thriller"
+        "Thriller",
+        "Science Fiction"
       ],
       "showtimes": [
         {
@@ -341,6 +307,24 @@
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3725640"
         },
         {
+          "venue_id": "cinemagic",
+          "datetime": "2026-09-22T16:50:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3725638"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-09-22T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3725637"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-09-22T21:10:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3725643"
+        },
+        {
           "venue_id": "laurelhurst",
           "datetime": "2026-09-17T16:10:00",
           "format": null,
@@ -351,6 +335,90 @@
           "datetime": "2026-09-17T19:15:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45644"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T16:10:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45660"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T19:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45661"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T21:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45662"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T13:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45675"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T16:10:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45676"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T19:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45677"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T21:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45678"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T13:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45691"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T16:10:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45692"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T19:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45693"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-21T16:10:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45708"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-21T19:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45709"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-22T16:10:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45717"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-22T19:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45718"
         },
         {
           "venue_id": "academy",
@@ -431,6 +499,24 @@
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013906000007"
         },
         {
+          "venue_id": "academy",
+          "datetime": "2026-09-21T12:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013916000007"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-21T16:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013917000007"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-21T19:15:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013918000007"
+        },
+        {
           "venue_id": "omsi",
           "datetime": "2026-09-19T17:00:00",
           "format": null,
@@ -457,6 +543,18 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-09-20T17:45:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a03a54-7b87-e6b5-0df7-b4fe6977d5b7"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-22T18:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a03a54-7b87-e6b5-0df7-b4fe6977d5b7"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-22T19:45:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/01a03a54-7b87-e6b5-0df7-b4fe6977d5b7"
         },
@@ -531,39 +629,24 @@
           "datetime": "2026-09-21T19:20",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19370?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-09-22T16:45",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19373?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-09-22T19:20",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19374?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         }
       ],
       "imdb_id": "tt35538033",
       "rt_score": null,
       "imdb_rating": null,
       "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 330483,
-      "slug": "the-choice-2016",
-      "title": "The Choice",
-      "year": 2016,
-      "director": "Ross Katz",
-      "runtime_minutes": 111,
-      "overview": "Travis and Gabby first meet as neighbors in a small coastal town and wind up in a relationship that is tested by life's most defining events.",
-      "poster_path": "/6MF3cdAasnF17SG9bmeamQ066iJ.jpg",
-      "genres": [
-        "Drama",
-        "Romance"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-09-15T19:00:00",
-          "format": null,
-          "ticket_url": "https://www.mobilize.us/nextuporegon/event/989299/"
-        }
-      ],
-      "imdb_id": "tt3797868",
-      "rt_score": 11,
-      "imdb_rating": 6.5,
-      "metacritic_score": 26,
       "match_confidence": "verified"
     },
     {
@@ -738,6 +821,32 @@
       ]
     },
     {
+      "id": 1219620,
+      "slug": "all-that-s-left-of-you-2025",
+      "title": "All That’s Left of You",
+      "year": 2025,
+      "director": "Cherien Dabis",
+      "runtime_minutes": 146,
+      "overview": "After a Palestinian teen gets swept up into a West Bank protest, his mother recounts the family story of hope, courage and relentless struggle that led to this fateful moment.",
+      "poster_path": "/fqMHedzcFA9rOnlWPuazaKMzV0H.jpg",
+      "genres": [
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-09-22T19:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/all-that-s-left-of-you-tuesday-september-22nd-at-7-00-pm/NOL7KX3U5JYVFUMMHNJ6DYYR"
+        }
+      ],
+      "imdb_id": "tt29344894",
+      "rt_score": 100,
+      "imdb_rating": null,
+      "metacritic_score": null,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1302904,
       "slug": "practical-magic-2-2026",
       "title": "Practical Magic 2",
@@ -754,18 +863,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-09-15T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45619"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-15T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45620"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-09-17T15:30:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45635"
@@ -778,6 +875,90 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T15:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45656"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T18:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45657"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T21:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45658"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T12:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45671"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T15:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45672"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T18:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45673"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T21:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45674"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T12:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45687"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T15:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45688"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T18:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45689"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-21T15:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45704"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-21T18:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45705"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-22T15:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45715"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-22T18:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45716"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-09-16T15:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45639"
@@ -787,12 +968,6 @@
           "datetime": "2026-09-16T18:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45640"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-09-15T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101572?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         },
         {
           "venue_id": "baghdad",
@@ -904,33 +1079,15 @@
         },
         {
           "venue_id": "baghdad",
-          "datetime": "2026-09-15T12:00:00",
-          "format": "OC",
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101558?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
+          "datetime": "2026-09-22T19:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101593?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         },
         {
           "venue_id": "baghdad",
-          "datetime": "2026-09-15T15:15:00",
+          "datetime": "2026-09-22T15:15:00",
           "format": "OC",
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101565?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-15T12:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013872000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-15T15:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013873000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-15T19:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013874000006"
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101587?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         },
         {
           "venue_id": "academy",
@@ -1041,28 +1198,22 @@
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013894000005"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3900647"
+          "venue_id": "academy",
+          "datetime": "2026-09-21T12:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013913000005"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T14:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3900648"
+          "venue_id": "academy",
+          "datetime": "2026-09-21T16:15:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013914000005"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T16:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3900661"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3900666"
+          "venue_id": "academy",
+          "datetime": "2026-09-21T19:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013915000005"
         },
         {
           "venue_id": "living-room",
@@ -1113,16 +1264,136 @@
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3896165"
         },
         {
-          "venue_id": "st-johns",
-          "datetime": "2026-09-15T16:00",
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T12:00:00",
           "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19341?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3920311"
         },
         {
-          "venue_id": "st-johns",
-          "datetime": "2026-09-15T19:00",
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T14:40:00",
           "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19342?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3920314"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T16:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3920317"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T19:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3920320"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T21:50:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3920323"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T12:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953658"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T14:40:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953664"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T16:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953668"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T19:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953673"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T21:50:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953679"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T12:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953682"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T14:40:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953688"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T16:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953692"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T19:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953696"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T12:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953704"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T14:40:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953710"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T16:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953714"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T19:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953720"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T12:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953725"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T14:40:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953731"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T16:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953735"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T19:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953741"
         },
         {
           "venue_id": "st-johns",
@@ -1209,20 +1480,20 @@
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19368?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         },
         {
-          "venue_id": "moreland",
-          "datetime": "2026-09-18T16:20:00",
+          "venue_id": "st-johns",
+          "datetime": "2026-09-22T16:00",
           "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19371?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-09-22T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19372?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         },
         {
           "venue_id": "moreland",
           "datetime": "2026-09-18T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-09-19T16:20:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1264,19 +1535,31 @@
         },
         {
           "venue_id": "moreland",
+          "datetime": "2026-09-22T16:20:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-09-22T19:00:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-09-18T16:20:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-09-19T16:20:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
           "datetime": "2026-09-17T16:20:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-09-15T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-09-15T16:20:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1322,18 +1605,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-09-15T15:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45613"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-15T18:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45614"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-09-17T15:15:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45629"
@@ -1346,6 +1617,90 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T15:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45648"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T18:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45649"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T21:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45650"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T12:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45663"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T15:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45664"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T18:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45665"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T21:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45666"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T12:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45679"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T15:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45680"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T18:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45681"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-21T15:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45696"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-21T18:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45697"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-22T15:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45711"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-22T18:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45712"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-09-16T15:15:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45646"
@@ -1355,24 +1710,6 @@
           "datetime": "2026-09-16T18:15:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45645"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T12:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3900654"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T15:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3900659"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T18:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3900664"
         },
         {
           "venue_id": "living-room",
@@ -1405,16 +1742,94 @@
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3896176"
         },
         {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-15T15:30",
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T12:20:00",
           "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30740?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3920336"
         },
         {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-15T19:00",
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T15:25:00",
           "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30736?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3920334"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T20:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3920335"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T12:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953660"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T15:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953666"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T20:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953675"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T12:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953684"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T15:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953690"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T18:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953698"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T12:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953706"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T15:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953712"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T18:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953719"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T12:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953727"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T15:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953733"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T18:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953740"
         },
         {
           "venue_id": "cinema-21",
@@ -1499,6 +1914,18 @@
           "datetime": "2026-09-21T18:45",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30979?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-22T15:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30982?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-22T18:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30980?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt27369017",
@@ -1524,18 +1951,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-09-15T16:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45617"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-15T19:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45618"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-09-17T15:45:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45633"
@@ -1548,6 +1963,90 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T15:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45652"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T18:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45653"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-18T21:40:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45654"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T12:40:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45667"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T15:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45668"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T18:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45669"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-19T21:40:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45670"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T12:40:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45683"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T15:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45684"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-20T18:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45685"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-21T15:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45700"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-21T18:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45701"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-22T15:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45713"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-22T18:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45714"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-09-16T16:00:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45641"
@@ -1557,24 +2056,6 @@
           "datetime": "2026-09-16T19:00:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45642"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-15T12:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013869000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-15T16:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013870000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-15T19:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013871000005"
         },
         {
           "venue_id": "academy",
@@ -1621,24 +2102,12 @@
       "director": "Matt Johnson",
       "runtime_minutes": 107,
       "overview": "A 19-year-old Anthony Bourdain travels to Provincetown and stumbles into the chaotic world of a restaurant kitchen, setting off a summer that will shape the course of his life.",
-      "poster_path": "/3WN0JWwRI7oGH7Ni2R6poVWej05.jpg",
+      "poster_path": "/uwZF5guNR5EnXkjIVTk4UPTVGiS.jpg",
       "genres": [
         "Drama",
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-15T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45615"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-15T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45616"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-09-16T15:45:00",
@@ -1650,18 +2119,6 @@
           "datetime": "2026-09-16T18:45:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45638"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-15T16:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30912?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-15T18:45",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30910?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
           "venue_id": "cinema-21",
@@ -1758,11 +2215,23 @@
           "datetime": "2026-09-21T19:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30985?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-22T16:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30984?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-22T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30986?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt33095251",
       "rt_score": 93,
-      "imdb_rating": 7.7,
+      "imdb_rating": 7.6,
       "metacritic_score": 75,
       "match_confidence": "verified"
     },
@@ -1794,30 +2263,6 @@
           "datetime": "2026-09-17T16:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101855?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-09-15T13:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-09-15T15:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-09-15T17:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-09-15T19:15:00",
-          "format": "DCP",
-          "ticket_url": null
         },
         {
           "venue_id": "avalon",
@@ -1882,7 +2327,7 @@
       "director": "Thomas Kail",
       "runtime_minutes": 115,
       "overview": "Teenage Moana answers the Ocean's call and, for the first time, voyages beyond the reef of her island of Motunui with infamous demigod Maui on an unforgettable journey to restore prosperity to her people.",
-      "poster_path": "/s20ZqOKFqGVWOUtDz9XurwwBoF1.jpg",
+      "poster_path": "/gaet1xQ2nxrG0V1Ep9T20ZMNEIC.jpg",
       "genres": [
         "Family",
         "Fantasy",
@@ -1911,7 +2356,7 @@
       "director": "Cal Brunker",
       "runtime_minutes": 88,
       "overview": "The Paw Patrol lands on a mysterious dinosaur island after a storm, where they meet Rex, a stranded pup. When Humdinger's reckless mining triggers a volcano, the team faces their biggest rescue mission yet to save the island.",
-      "poster_path": "/frAFeNZWw1Jb3ZSoFsOT4J0qqxB.jpg",
+      "poster_path": "/qnin56Syy5rbG7KCaxWY7SPuy6p.jpg",
       "genres": [
         "Animation",
         "Adventure",
@@ -1994,6 +2439,12 @@
           "datetime": "2026-09-21T13:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101942?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-09-22T19:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101956?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
         }
       ],
       "imdb_id": "tt21285562",
@@ -2031,12 +2482,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-09-15T19:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30913?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-09-20T12:30",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30977?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -2046,6 +2491,12 @@
           "datetime": "2026-09-21T19:15",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30987?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-22T15:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30990?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt14173636",
@@ -2099,6 +2550,12 @@
           "datetime": "2026-09-21T19:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101958?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-09-22T16:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101953?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
         }
       ],
       "imdb_id": "tt29355505",
@@ -2121,12 +2578,6 @@
         "Horror"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-15T13:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013754000006"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-09-16T16:00:00",
@@ -2169,12 +2620,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-09-15T19:30:00",
-          "format": "Dubbed",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013179000007"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-09-16T13:00:00",
           "format": "Subtitled",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013756000006"
@@ -2207,12 +2652,6 @@
         "Mystery"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-15T16:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013753000006"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-09-16T19:30:00",
@@ -2270,6 +2709,12 @@
           "datetime": "2026-09-20T19:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013772000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-21T16:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013774000006"
         }
       ],
       "imdb_id": "tt0067309",
@@ -2316,6 +2761,12 @@
           "datetime": "2026-09-20T13:00:00",
           "format": "Dubbed",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013769000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-21T19:00:00",
+          "format": "Subtitled",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013773000006"
         }
       ],
       "imdb_id": "tt0876563",
@@ -2356,6 +2807,12 @@
           "datetime": "2026-09-20T16:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013770000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-21T13:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013775000006"
         }
       ],
       "imdb_id": "tt0115798",
@@ -2379,30 +2836,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/by-any-means?showingId=3900651"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T14:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/by-any-means?showingId=3900656"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T17:25:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/by-any-means?showingId=3900649"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T19:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/by-any-means?showingId=3900650"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-16T11:45:00",
@@ -2467,18 +2900,6 @@
       "showtimes": [
         {
           "venue_id": "living-room",
-          "datetime": "2026-09-15T14:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3900657"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T19:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3900667"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-09-16T14:30:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3900678"
@@ -2500,6 +2921,78 @@
           "datetime": "2026-09-17T19:40:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3896182"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T17:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3920332"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T19:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3920331"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T21:35:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3920330"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T17:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953670"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T19:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953674"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T21:35:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953677"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T17:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953694"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T19:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953697"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T17:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953716"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T19:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953722"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T17:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953737"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T19:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953743"
         }
       ],
       "imdb_id": "tt32298494",
@@ -2525,12 +3018,6 @@
       "showtimes": [
         {
           "venue_id": "living-room",
-          "datetime": "2026-09-15T16:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3900662"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-09-16T16:50:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3900683"
@@ -2540,6 +3027,66 @@
           "datetime": "2026-09-17T16:50:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3896179"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953604"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3920337"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953659"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953663"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953683"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953687"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953705"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953709"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953726"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953730"
         }
       ],
       "imdb_id": "tt30327451",
@@ -2563,24 +3110,6 @@
         "Fantasy"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T12:35:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3900655"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T14:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3900658"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T18:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3900663"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-16T12:35:00",
@@ -2616,6 +3145,102 @@
           "datetime": "2026-09-17T18:15:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3896181"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T12:35:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3920313"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T14:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3920315"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T18:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3920318"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T21:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3920321"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T12:35:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953661"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T14:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953665"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T18:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953671"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T21:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953676"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T14:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953689"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T18:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953695"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T12:35:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953707"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T14:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953711"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T18:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953717"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T12:35:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953728"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T14:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953732"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T18:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953738"
         }
       ],
       "imdb_id": "tt33764258",
@@ -2637,12 +3262,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T12:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-salt-path?showingId=3900653"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-16T12:10:00",
@@ -2679,24 +3298,6 @@
       "showtimes": [
         {
           "venue_id": "living-room",
-          "datetime": "2026-09-15T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3900652"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T16:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3900660"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-15T18:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3900665"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-09-16T12:00:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3900673"
@@ -2730,6 +3331,48 @@
           "datetime": "2026-09-17T18:45:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3896164"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T16:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3920316"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-18T18:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3920319"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T16:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3953667"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-19T18:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3953672"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-20T16:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3953691"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-21T16:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3953713"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-22T16:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3953734"
         }
       ],
       "imdb_id": "tt36983905",
@@ -2753,18 +3396,6 @@
         "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-15T16:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a0408f-714c-8c19-3cdc-551e94c4bd4d"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-15T18:45:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a0408f-714c-8c19-3cdc-551e94c4bd4d"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-09-16T15:00:00",
@@ -2843,18 +3474,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-15T11:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-15T15:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-09-16T11:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
@@ -2923,12 +3542,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-15T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-09-16T12:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
@@ -2989,12 +3602,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-15T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-09-16T12:30:00",
@@ -3059,12 +3666,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-15T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-09-16T13:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
@@ -3115,12 +3716,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-15T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-09-16T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
@@ -3169,12 +3764,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-15T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-09-16T14:30:00",
@@ -3229,12 +3818,6 @@
       "showtimes": [
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-09-15T16:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30914?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-09-16T15:40",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30919?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -3268,6 +3851,12 @@
           "datetime": "2026-09-21T15:45",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30988?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-22T19:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30989?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt35298123",
@@ -3357,18 +3946,6 @@
         "Family"
       ],
       "showtimes": [
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-09-15T16:30",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19343?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-09-15T19:20",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19344?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
         {
           "venue_id": "st-johns",
           "datetime": "2026-09-16T16:30",
