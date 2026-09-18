@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-17T16:26:26.934Z",
-  "generator": "1.5.0-5edd3db",
+  "generated_at": "2026-09-18T15:59:19.720Z",
+  "generator": "1.5.0-d27e897",
   "window": {
-    "start": "2026-09-17",
-    "end": "2026-09-23"
+    "start": "2026-09-18",
+    "end": "2026-09-24"
   },
   "venues": [
     {
@@ -159,52 +159,20 @@
   ],
   "films": [
     {
-      "id": 1078605,
-      "slug": "weapons-2025",
-      "title": "Weapons",
-      "year": 2025,
-      "director": "Zach Cregger",
-      "runtime_minutes": 129,
-      "overview": "When all but one child from the same class mysteriously vanish on the same night at exactly the same time, a community is left questioning who or what is behind their disappearance.",
-      "poster_path": "/cpf7vsRZ0MYRQcnLWteD5jK9ymT.jpg",
-      "genres": [
-        "Horror",
-        "Mystery"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-09-17T16:15:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/weapons/3733217"
-        }
-      ],
-      "imdb_id": "tt26581740",
-      "rt_score": 93,
-      "imdb_rating": 7.4,
-      "metacritic_score": 81,
-      "match_confidence": "verified"
-    },
-    {
       "id": 1423191,
       "slug": "resident-evil-2026",
       "title": "Resident Evil",
       "year": 2026,
       "director": "Zach Cregger",
-      "runtime_minutes": 90,
-      "overview": "Medical courier Bryan unwittingly finds himself fighting for survival as one fateful, horrifying night collapses around him in chaos.",
+      "runtime_minutes": 94,
+      "overview": "A hapless medical courier fights for his life amid an outbreak of a deadly mutagenic virus in an isolated mountain town.",
       "poster_path": "/i7UyjfPio0VFHB9rBUZSFyhOoM8.jpg",
       "genres": [
         "Horror",
-        "Science Fiction"
+        "Science Fiction",
+        "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-09-17T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3824292"
-        },
         {
           "venue_id": "cinemagic",
           "datetime": "2026-09-18T19:00:00",
@@ -308,16 +276,22 @@
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3725642"
         },
         {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-17T16:10:00",
+          "venue_id": "cinemagic",
+          "datetime": "2026-09-24T16:50:00",
           "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45643"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3725634"
         },
         {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-17T19:15:00",
+          "venue_id": "cinemagic",
+          "datetime": "2026-09-24T19:00:00",
           "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45644"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3725633"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-09-24T21:10:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/resident-evil/3725641"
         },
         {
           "venue_id": "laurelhurst",
@@ -405,6 +379,18 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-09-24T16:10:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45733"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-24T19:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45734"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-09-23T16:10:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45739"
@@ -414,18 +400,6 @@
           "datetime": "2026-09-23T19:00:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45740"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T19:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013885000006"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T22:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013886000007"
         },
         {
           "venue_id": "academy",
@@ -530,6 +504,24 @@
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013919000007"
         },
         {
+          "venue_id": "academy",
+          "datetime": "2026-09-23T12:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013924000007"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-23T16:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013923000007"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-23T19:15:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013922000007"
+        },
+        {
           "venue_id": "omsi",
           "datetime": "2026-09-19T17:00:00",
           "format": null,
@@ -578,16 +570,10 @@
           "ticket_url": "https://tickets.omsi.edu/events/01a03a54-7b87-e6b5-0df7-b4fe6977d5b7"
         },
         {
-          "venue_id": "st-johns",
-          "datetime": "2026-09-17T16:45",
+          "venue_id": "omsi",
+          "datetime": "2026-09-24T21:30:00",
           "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19357?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-09-17T19:20",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19358?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+          "ticket_url": "https://tickets.omsi.edu/events/01a03a54-7b87-e6b5-0df7-b4fe6977d5b7"
         },
         {
           "venue_id": "st-johns",
@@ -672,42 +658,24 @@
           "datetime": "2026-09-23T18:20",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19378?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-09-24T16:45",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19384?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-09-24T19:20",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19385?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         }
       ],
       "imdb_id": "tt35538033",
       "rt_score": null,
       "imdb_rating": null,
       "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 810,
-      "slug": "shrek-the-third-2007",
-      "title": "Shrek the Third",
-      "year": 2007,
-      "director": "Chris Miller",
-      "runtime_minutes": 93,
-      "overview": "After the King of Far Far Away dies, Shrek and Fiona are to succede. However, Shrek wants to return to his cozy swamp and live in peace and quiet, so when he finds out there is another heir to the throne, he and Donkey set off to bring him back to rule the kingdom.",
-      "poster_path": "/n4SexGGQzI26E269tfpa80MZaGV.jpg",
-      "genres": [
-        "Fantasy",
-        "Adventure",
-        "Animation",
-        "Comedy",
-        "Family"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-09-17T19:00:00",
-          "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/shrek-the-third-thursday-september-17th-at-7-00-pm/HZ7THWU62EHQFK3FVVP5EWKC"
-        }
-      ],
-      "imdb_id": "tt0413267",
-      "rt_score": 41,
-      "imdb_rating": 6.1,
-      "metacritic_score": 58,
       "match_confidence": "verified"
     },
     {
@@ -880,6 +848,88 @@
       "match_confidence": "verified"
     },
     {
+      "id": 417859,
+      "slug": "puss-in-boots-2011",
+      "title": "Puss in Boots",
+      "year": 2011,
+      "director": "Chris Miller",
+      "runtime_minutes": 90,
+      "overview": "Long before he even met Shrek, the notorious fighter, lover and outlaw Puss in Boots becomes a hero when he sets off on an adventure with the tough and street smart Kitty Softpaws and the mastermind Humpty Dumpty to save his town. This is the true story of The Cat, The Myth, The Legend... The Boots.",
+      "poster_path": "/7a5Jzjr9TmffGy76y1SZhn3sCiz.jpg",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Animation",
+        "Comedy",
+        "Family"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-09-24T19:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/puss-in-boots-thursday-september-24th-at-7-00-pm/G4LODQJYQZ4VDCIVKUCQUJZO"
+        }
+      ],
+      "imdb_id": "tt0448694",
+      "rt_score": 85,
+      "imdb_rating": 6.6,
+      "metacritic_score": 65,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 1375441,
+      "slug": "primetime-2026",
+      "title": "Primetime",
+      "year": 2026,
+      "director": "Lance Oppenheim",
+      "runtime_minutes": 110,
+      "overview": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history.",
+      "poster_path": "/lmrulvLbmaejTix1YaMxo1oGhH1.jpg",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-24T16:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45743"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-24T18:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45744"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-24T19:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30868?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-09-24T16:15",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19383?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-09-24T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19382?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        }
+      ],
+      "imdb_id": "tt34206385",
+      "rt_score": 95,
+      "imdb_rating": 8.7,
+      "metacritic_score": 75,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1302904,
       "slug": "practical-magic-2-2026",
       "title": "Practical Magic 2",
@@ -894,18 +944,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-17T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45635"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-17T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45636"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-09-18T15:30:00",
@@ -992,6 +1030,18 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-09-24T15:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45731"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-24T18:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45732"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-09-23T15:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45737"
@@ -1001,24 +1051,6 @@
           "datetime": "2026-09-23T18:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45738"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-09-17T12:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101560?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-09-17T15:15:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101567?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-09-17T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101574?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         },
         {
           "venue_id": "baghdad",
@@ -1124,30 +1156,6 @@
         },
         {
           "venue_id": "academy",
-          "datetime": "2026-09-17T12:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013887000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T15:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013888000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T18:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013883000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T21:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013884000005"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-09-18T12:45:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013889000005"
@@ -1249,28 +1257,22 @@
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013925000005"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3896168"
+          "venue_id": "academy",
+          "datetime": "2026-09-23T12:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013930000005"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T14:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3896174"
+          "venue_id": "academy",
+          "datetime": "2026-09-23T16:15:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013929000005"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T16:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3896178"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3896165"
+          "venue_id": "academy",
+          "datetime": "2026-09-23T19:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013928000005"
         },
         {
           "venue_id": "living-room",
@@ -1429,16 +1431,28 @@
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953762"
         },
         {
-          "venue_id": "st-johns",
-          "datetime": "2026-09-17T16:00",
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T12:00:00",
           "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19355?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953767"
         },
         {
-          "venue_id": "st-johns",
-          "datetime": "2026-09-17T19:00",
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T14:40:00",
           "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19356?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953773"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T16:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953777"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T19:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=3953782"
         },
         {
           "venue_id": "st-johns",
@@ -1526,12 +1540,6 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-09-18T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
           "datetime": "2026-09-22T19:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
@@ -1551,6 +1559,24 @@
         {
           "venue_id": "moreland",
           "datetime": "2026-09-19T13:40:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-09-23T19:00:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-09-18T19:00:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-09-18T16:20:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1589,30 +1615,6 @@
           "datetime": "2026-09-23T16:20:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-09-23T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-09-18T16:20:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-09-17T16:20:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-09-17T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
         }
       ],
       "imdb_id": "tt32588798",
@@ -1636,18 +1638,6 @@
         "Action"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-17T15:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45629"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-17T18:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45630"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-09-18T15:15:00",
@@ -1743,18 +1733,6 @@
           "datetime": "2026-09-23T18:15:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45736"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T12:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3896170"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T15:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3896176"
         },
         {
           "venue_id": "living-room",
@@ -1865,16 +1843,16 @@
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953761"
         },
         {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-17T15:30",
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T12:20:00",
           "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30742?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953769"
         },
         {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-17T19:00",
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T15:25:00",
           "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30738?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/hope?showingId=3953775"
         },
         {
           "venue_id": "cinema-21",
@@ -1959,6 +1937,12 @@
           "datetime": "2026-09-23T18:45",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30993?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-24T15:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30996?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt27369017",
@@ -1982,18 +1966,6 @@
         "Family"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-17T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45633"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-09-17T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45634"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-09-18T15:45:00",
@@ -2080,6 +2052,18 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-09-24T15:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45729"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-09-24T18:45:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45730"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-09-23T15:45:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45741"
@@ -2089,107 +2073,12 @@
           "datetime": "2026-09-23T18:45:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45742"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T12:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013881000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T16:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013882000005"
         }
       ],
       "imdb_id": "tt1756855",
       "rt_score": 96,
       "imdb_rating": 7.6,
       "metacritic_score": 77,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 1315772,
-      "slug": "minions-monsters-2026",
-      "title": "Minions & Monsters",
-      "year": 2026,
-      "director": "Pierre Coffin",
-      "runtime_minutes": 90,
-      "overview": "This is the rambunctious, ridiculous and totally true story of how the Minions conquered Hollywood, became movie stars, lost everything, unleashed monsters onto the world and then banded together to try and save the planet from the mayhem they had just created.",
-      "poster_path": "/4LwvU9SZc8QQzW1X1FAPhNbXnEU.jpg",
-      "genres": [
-        "Adventure",
-        "Animation",
-        "Comedy",
-        "Family",
-        "Fantasy"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-09-17T16:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101855?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-09-17T13:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-09-17T15:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-09-17T17:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-09-17T19:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        }
-      ],
-      "imdb_id": "tt32890033",
-      "rt_score": 89,
-      "imdb_rating": 6.3,
-      "metacritic_score": 70,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 1108427,
-      "slug": "moana-2026",
-      "title": "Moana",
-      "year": 2026,
-      "director": "Thomas Kail",
-      "runtime_minutes": 115,
-      "overview": "Teenage Moana answers the Ocean's call and, for the first time, voyages beyond the reef of her island of Motunui with infamous demigod Maui on an unforgettable journey to restore prosperity to her people.",
-      "poster_path": "/gaet1xQ2nxrG0V1Ep9T20ZMNEIC.jpg",
-      "genres": [
-        "Family",
-        "Fantasy",
-        "Comedy",
-        "Adventure"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-09-17T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101864?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        }
-      ],
-      "imdb_id": "tt27419466",
-      "rt_score": 32,
-      "imdb_rating": 5.8,
-      "metacritic_score": 42,
       "match_confidence": "verified"
     },
     {
@@ -2251,7 +2140,8 @@
       "poster_path": "/A7i16oDi03qrKep5pBfuTWNUTb.jpg",
       "genres": [
         "Science Fiction",
-        "Thriller"
+        "Thriller",
+        "Adventure"
       ],
       "showtimes": [
         {
@@ -2301,52 +2191,6 @@
       "rt_score": 40,
       "imdb_rating": 6.5,
       "metacritic_score": 49,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 950028,
-      "slug": "the-invite-2026",
-      "title": "The Invite",
-      "year": 2026,
-      "director": "Olivia Wilde",
-      "runtime_minutes": 107,
-      "overview": "Joe and Angela's marriage is on thin ice. When they invite their enigmatic upstairs neighbors for a dinner party, the night spirals into unexpected places. Have they reignited the spark or lit the match that burns it all down?",
-      "poster_path": "/b7Dr8Chzse8VagexAporUu2RtLx.jpg",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Romance"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-09-17T13:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/101850?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-20T12:30",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30977?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-21T19:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30987?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-22T15:45",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30990?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        }
-      ],
-      "imdb_id": "tt14173636",
-      "rt_score": 96,
-      "imdb_rating": 7.5,
-      "metacritic_score": 82,
       "match_confidence": "verified"
     },
     {
@@ -2415,95 +2259,6 @@
       "match_confidence": "verified"
     },
     {
-      "id": 9538,
-      "slug": "scanners-1981",
-      "title": "Scanners",
-      "year": 1981,
-      "director": "David Cronenberg",
-      "runtime_minutes": 103,
-      "overview": "A scientist trains a man with an advanced telepathic ability called 'scanning' to stop a dangerous Scanner with extraordinary psychic powers from waging war against non-Scanners.",
-      "poster_path": "/VTqLdveNXxGsIAZL5I4RliTTt7.jpg",
-      "genres": [
-        "Science Fiction",
-        "Horror"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T16:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013758000006"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T22:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013759000006"
-        }
-      ],
-      "imdb_id": "tt0081455",
-      "rt_score": 69,
-      "imdb_rating": 6.7,
-      "metacritic_score": 60,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 4935,
-      "slug": "howl-s-moving-castle-2004",
-      "title": "Howl's Moving Castle",
-      "year": 2004,
-      "director": "Hayao Miyazaki",
-      "runtime_minutes": 119,
-      "overview": "Sophie, a young milliner, is turned into an elderly woman by a witch who enters her shop and curses her. She encounters a wizard named Howl and gets caught up in his resistance to fighting for the king.",
-      "poster_path": "/13kOl2v0nD2OLbVSHnHk8GUFEhO.jpg",
-      "genres": [
-        "Fantasy",
-        "Animation",
-        "Adventure"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T19:00:00",
-          "format": "Subtitled",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013180000007"
-        }
-      ],
-      "imdb_id": "tt0347149",
-      "rt_score": 88,
-      "imdb_rating": 8.2,
-      "metacritic_score": 82,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 14919,
-      "slug": "batman-mask-of-the-phantasm-1993",
-      "title": "Batman: Mask of the Phantasm",
-      "year": 1993,
-      "director": "Bruce Timm",
-      "runtime_minutes": 76,
-      "overview": "Andrea Beaumont leaves her father to return to Gotham, rekindling an old romance with Bruce Wayne. At the same time, a mysterious figure begins to hunt down Gotham's criminals, wrongly implicating Batman in the murders. Now on the run from the law, Batman must find and stop the culprit, while also navigating his relationship with Andrea.",
-      "poster_path": "/hT4ehUteagUrhUOHAtmYiY7mp5l.jpg",
-      "genres": [
-        "Animation",
-        "Crime",
-        "Mystery"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-09-17T13:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013760000006"
-        }
-      ],
-      "imdb_id": "tt0106364",
-      "rt_score": 83,
-      "imdb_rating": 7.8,
-      "metacritic_score": 65,
-      "match_confidence": "verified"
-    },
-    {
       "id": 466,
       "slug": "klute-1971",
       "title": "Klute",
@@ -2553,6 +2308,12 @@
           "datetime": "2026-09-22T16:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013776000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-23T13:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013779000006"
         }
       ],
       "imdb_id": "tt0067309",
@@ -2611,6 +2372,12 @@
           "datetime": "2026-09-22T13:00:00",
           "format": "Dubbed",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013777000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-23T19:00:00",
+          "format": "Subtitled",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013781000006"
         }
       ],
       "imdb_id": "tt0876563",
@@ -2663,52 +2430,18 @@
           "datetime": "2026-09-22T19:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013778000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-09-23T16:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013780000006"
         }
       ],
       "imdb_id": "tt0115798",
       "rt_score": 56,
       "imdb_rating": 6.1,
       "metacritic_score": 56,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 1380417,
-      "slug": "by-any-means-2026",
-      "title": "By Any Means",
-      "year": 2026,
-      "director": "Elegance Bratton",
-      "runtime_minutes": 107,
-      "overview": "In 1960s Mississippi, a young Black FBI agent is forced to partner with a notorious mafia hitman to investigate a wave of brutal civil rights murders.",
-      "poster_path": "/f4hdIed8vh10O8TkQ1CkHS8MQ3G.jpg",
-      "genres": [
-        "History",
-        "Crime",
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/by-any-means?showingId=3896166"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T14:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/by-any-means?showingId=3896172"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T17:25:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/by-any-means?showingId=3896180"
-        }
-      ],
-      "imdb_id": "tt34379051",
-      "rt_score": 55,
-      "imdb_rating": null,
-      "metacritic_score": null,
       "match_confidence": "verified"
     },
     {
@@ -2724,18 +2457,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T14:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3896173"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T19:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3896182"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-18T17:25:00",
@@ -2819,6 +2540,18 @@
           "datetime": "2026-09-23T19:30:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953764"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T17:25:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953779"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T19:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=3953783"
         }
       ],
       "imdb_id": "tt32298494",
@@ -2842,12 +2575,6 @@
         "Science Fiction"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T19:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-blue-trail?showingId=3896187"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-18T11:45:00",
@@ -2967,6 +2694,24 @@
           "datetime": "2026-09-23T18:30:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-blue-trail?showingId=3953760"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T11:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-blue-trail?showingId=3953765"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T14:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-blue-trail?showingId=3953771"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T18:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-blue-trail?showingId=3953780"
         }
       ],
       "imdb_id": "tt35340614",
@@ -2990,12 +2735,6 @@
         "Music"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T16:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3896179"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-18T12:15:00",
@@ -3067,6 +2806,18 @@
           "datetime": "2026-09-23T14:20:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953751"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953768"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-marching-band?showingId=3953772"
         }
       ],
       "imdb_id": "tt30327451",
@@ -3090,24 +2841,6 @@
         "Fantasy"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T12:35:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3896171"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T14:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3896175"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T18:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3896181"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-18T12:35:00",
@@ -3221,38 +2954,24 @@
           "datetime": "2026-09-23T18:15:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953759"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T12:35:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953770"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T14:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-odyssey?showingId=3953774"
         }
       ],
       "imdb_id": "tt33764258",
       "rt_score": 93,
       "imdb_rating": 8.4,
       "metacritic_score": 88,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 1127625,
-      "slug": "the-salt-path-2025",
-      "title": "The Salt Path",
-      "year": 2025,
-      "director": "Marianne Elliott",
-      "runtime_minutes": 115,
-      "overview": "The profound story of husband and wife Raynor and Moth Winn, who embark on a 630-mile trek after being forcibly removed from their home. Hoping that in nature they will find solace and a sense of acceptance, they walk through the beautiful but rugged coastlines of South West England - a journey that is exhilarating, challenging, and liberating in equal measure. THE SALT PATH is a powerful portrayal of home, and how it can be lost and rediscovered in the most unexpected ways.",
-      "poster_path": "/yBtmFkjzPzd6KvNgoJwwsm1nyXL.jpg",
-      "genres": [
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T12:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-salt-path?showingId=3896169"
-        }
-      ],
-      "imdb_id": "tt27766440",
-      "rt_score": 85,
-      "imdb_rating": 6.6,
-      "metacritic_score": 49,
       "match_confidence": "verified"
     },
     {
@@ -3270,24 +2989,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3896167"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T16:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3896177"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T18:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3896164"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-18T16:00:00",
@@ -3335,6 +3036,12 @@
           "datetime": "2026-09-23T16:00:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3953755"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T16:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-uprising?showingId=3953776"
         }
       ],
       "imdb_id": "tt36983905",
@@ -3358,12 +3065,6 @@
         "Crime"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-09-17T18:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-weight?showingId=3867920"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-09-18T11:50:00",
@@ -3483,40 +3184,24 @@
           "datetime": "2026-09-23T19:15:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-weight?showingId=3953763"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T11:50:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-weight?showingId=3953766"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-09-24T16:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-weight?showingId=3953778"
         }
       ],
       "imdb_id": "tt10794054",
       "rt_score": null,
       "imdb_rating": null,
       "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 969681,
-      "slug": "spider-man-brand-new-day-2026",
-      "title": "Spider-Man: Brand New Day",
-      "year": 2026,
-      "director": "Destin Daniel Cretton",
-      "runtime_minutes": 145,
-      "overview": "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see.",
-      "poster_path": "/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
-      "genres": [
-        "Science Fiction",
-        "Action",
-        "Adventure"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-17T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a0408f-714c-8c19-3cdc-551e94c4bd4d"
-        }
-      ],
-      "imdb_id": "tt22084616",
-      "rt_score": 89,
-      "imdb_rating": 8.1,
-      "metacritic_score": 66,
       "match_confidence": "verified"
     },
     {
@@ -3560,6 +3245,12 @@
           "datetime": "2026-09-23T19:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019ffc10-0075-0490-2043-6f104831c727"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-24T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019ffc10-0075-0490-2043-6f104831c727"
         }
       ]
     },
@@ -3576,12 +3267,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-17T11:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-09-18T11:00:00",
@@ -3640,12 +3325,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-17T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-09-18T12:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
@@ -3696,12 +3375,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-17T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-09-18T12:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
@@ -3750,12 +3423,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-17T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-09-18T13:00:00",
@@ -3870,26 +3537,60 @@
       "match_confidence": "verified"
     },
     {
+      "id": 950028,
+      "slug": "the-invite-2026",
+      "title": "The Invite",
+      "year": 2026,
+      "director": "Olivia Wilde",
+      "runtime_minutes": 107,
+      "overview": "Joe and Angela's marriage is on thin ice. When they invite their enigmatic upstairs neighbors for a dinner party, the night spirals into unexpected places. Have they reignited the spark or lit the match that burns it all down?",
+      "poster_path": "/b7Dr8Chzse8VagexAporUu2RtLx.jpg",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-20T12:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30977?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-21T19:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30987?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-22T15:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30990?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        }
+      ],
+      "imdb_id": "tt14173636",
+      "rt_score": 96,
+      "imdb_rating": 7.5,
+      "metacritic_score": 82,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1240889,
       "slug": "teenage-sex-and-death-at-camp-miasma-2026",
       "title": "Teenage Sex and Death at Camp Miasma",
       "year": 2026,
       "director": "Jane Schoenbrun",
       "runtime_minutes": 112,
-      "overview": "Handed the reins to resurrect a dying slasher franchise, an enthusiastic young director visits the original film's reclusive star, only to be dragged into a blood-soaked world of obsession, desire, and delirium.",
-      "poster_path": "/nLsFnXifieSTqSeWxjXSS8RvaUZ.jpg",
+      "overview": "After years of slapdash sequels, the Camp Miasma franchise is handed over to an enthusiastic young director for resurrection. But when she visits the original’s star, a now-reclusive actress shrouded in mystery, the two women fall into a blood-soaked world of desire, fear, and delirium.",
+      "poster_path": "/rGzlBlz9A7seUUTZp5k68A4IDvm.jpg",
       "genres": [
         "Comedy",
         "Horror",
         "Romance"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-17T15:40",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30920?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
         {
           "venue_id": "cinema-21",
           "datetime": "2026-09-18T15:40",
@@ -3925,6 +3626,12 @@
           "datetime": "2026-09-23T15:45",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30991?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-24T15:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30997?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt35298123",
@@ -3947,18 +3654,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-17T16:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30918?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-09-17T19:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30916?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
         {
           "venue_id": "cinema-21",
           "datetime": "2026-09-18T16:00",
@@ -4054,12 +3749,46 @@
           "datetime": "2026-09-23T19:15",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30995?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-24T16:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30998?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt33095251",
       "rt_score": 93,
       "imdb_rating": 7.6,
       "metacritic_score": 75,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 1596249,
+      "slug": "ha-chan-shake-your-booty-2026",
+      "title": "Ha-Chan, Shake Your Booty!",
+      "year": 2026,
+      "director": "Josef Kubota Wladyka",
+      "runtime_minutes": 122,
+      "overview": "Haru and Luis love competing in Tokyo’s ballroom dance scene, but after tragedy strikes, Haru withdraws into isolation. When friends coax her back to the studio, she develops an infatuation with the new instructor. She must face what comes next as sparks fly.",
+      "poster_path": "/w98RWv9o05OhXYfTvauDrotRZ13.jpg",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-24T18:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30956?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        }
+      ],
+      "imdb_id": "tt39149197",
+      "rt_score": 94,
+      "imdb_rating": 7.8,
+      "metacritic_score": 77,
       "match_confidence": "verified"
     },
     {
@@ -4127,6 +3856,32 @@
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30743?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ]
+    },
+    {
+      "id": 1732640,
+      "slug": "peaking-psychedelics-and-the-pursuit-of-happiness-2026",
+      "title": "Peaking: Psychedelics and the Pursuit of Happiness",
+      "year": 2026,
+      "director": "Jordan Kronick",
+      "runtime_minutes": 95,
+      "overview": "“Peaking: Psychedelics and the Pursuit of Happiness” is a feature documentary that explores all the major psychedelics, not just by explaining how they work medicinally, but by taking viewers inside dosing rooms for extremely rare looks at the remarkable power, emotion, and speed of psychedelic healing in action: from pro athletes repairing brain damage from concussions, to combat veterans finding relief from suicidal despair, to a woman breaking free from opioid addiction, to survivors of the Nova Music Festival massacre who say being on psychedelics during the attack shielded them from developing mental trauma.",
+      "poster_path": "/a9Rk6gbzKtBVGWDUKQ55KHZeL9K.jpg",
+      "genres": [
+        "Documentary"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-09-24T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30921?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        }
+      ],
+      "imdb_id": null,
+      "rt_score": null,
+      "imdb_rating": null,
+      "metacritic_score": null,
+      "match_confidence": "verified"
     },
     {
       "id": 1620477,
@@ -4327,32 +4082,29 @@
       "match_confidence": "verified"
     },
     {
-      "id": 1415,
-      "slug": "party-monster-2003",
-      "title": "Party Monster",
-      "year": 2003,
-      "director": "Fenton Bailey",
-      "runtime_minutes": 98,
-      "overview": "The New York club scene of the 80s and 90s was a world like no other. Into this candy-colored, mirror ball playground stepped Michael Alig, a wannabe from nowhere special. Under the watchful eye of veteran club kid James St. James, Alig quickly rose to the top... and there was no place to go but down.",
-      "poster_path": "/4DVWGtV1OA3W8kZxiimdNsepS6O.jpg",
+      "id": 11906,
+      "slug": "suspiria-1977-1977",
+      "title": "Suspiria (1977)",
+      "year": 1977,
+      "director": "Dario Argento",
+      "runtime_minutes": 99,
+      "overview": "An American newcomer to a prestigious German ballet academy comes to realize that the school is a front for something sinister amid a series of grisly murders.",
+      "poster_path": "/sEcvc9h1X3hYZdFgtiiKMm6RB3f.jpg",
       "genres": [
-        "Comedy",
-        "Drama",
-        "Crime",
-        "Thriller"
+        "Horror"
       ],
       "showtimes": [
         {
           "venue_id": "tomorrow",
-          "datetime": "2026-09-17T19:00",
+          "datetime": "2026-09-24T19:00",
           "format": null,
-          "ticket_url": "https://tomorrowtheater.org/showtimes/party-monster-movie-bingo-w-violet-hex-9-17-26-700-pm/"
+          "ticket_url": "https://tomorrowtheater.org/showtimes/suspiria-1977-x-wild-soul-9-24-26-700-pm/"
         }
       ],
-      "imdb_id": "tt0320244",
-      "rt_score": 29,
-      "imdb_rating": 6.2,
-      "metacritic_score": 36,
+      "imdb_id": "tt0076786",
+      "rt_score": 94,
+      "imdb_rating": 7.3,
+      "metacritic_score": 79,
       "match_confidence": "verified"
     },
     {
@@ -4507,6 +4259,30 @@
         {
           "venue_id": "avalon",
           "datetime": "2026-09-22T19:00:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-09-23T13:30:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-09-23T15:20:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-09-23T17:10:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-09-23T19:00:00",
           "format": "DCP",
           "ticket_url": null
         }
