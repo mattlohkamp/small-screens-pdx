@@ -2,33 +2,8 @@
   "venue_ids": [
     "omsi"
   ],
-  "scraped_at": "2026-09-18T11:15:51.255Z",
+  "scraped_at": "2026-09-19T11:15:38.168Z",
   "films": [
-    {
-      "id": null,
-      "slug": "resident-evil-opening-night-event",
-      "title": "Resident Evil - Opening Night Event",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-18T18:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a04a10-6fd9-5c2a-c27a-6cb0177f8d70"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-18T20:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a04a10-6fd9-5c2a-c27a-6cb0177f8d70"
-        }
-      ]
-    },
     {
       "id": null,
       "slug": "resident-evil",
@@ -93,6 +68,18 @@
           "datetime": "2026-09-24T21:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/01a03a54-7b87-e6b5-0df7-b4fe6977d5b7"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-25T18:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a03a54-7b87-e6b5-0df7-b4fe6977d5b7"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-25T19:45:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a03a54-7b87-e6b5-0df7-b4fe6977d5b7"
         }
       ]
     },
@@ -123,8 +110,8 @@
     },
     {
       "id": null,
-      "slug": "running-wild-return-to-the-river",
-      "title": "Running Wild: Return to the River",
+      "slug": "shark-kingdom",
+      "title": "Shark Kingdom",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -134,16 +121,162 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-18T11:00:00",
+          "datetime": "2026-09-19T12:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-18T15:00:00",
+          "datetime": "2026-09-19T16:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
         },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-20T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-22T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-22T16:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-23T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-23T16:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-24T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-24T16:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-25T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-25T16:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "space-the-new-frontier",
+      "title": "Space: The New Frontier",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-19T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-19T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-20T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-22T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-22T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-23T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-23T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-24T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-24T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-25T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-25T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "running-wild-return-to-the-river",
+      "title": "Running Wild: Return to the River",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
         {
           "venue_id": "omsi",
           "datetime": "2026-09-19T11:00:00",
@@ -167,123 +300,48 @@
           "datetime": "2026-09-20T15:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "shark-kingdom",
-      "title": "Shark Kingdom",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-18T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-18T16:00:00",
+          "datetime": "2026-09-22T11:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-19T12:00:00",
+          "datetime": "2026-09-22T15:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-19T16:00:00",
+          "datetime": "2026-09-23T11:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-20T12:00:00",
+          "datetime": "2026-09-23T15:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "space-the-new-frontier",
-      "title": "Space: The New Frontier",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-18T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-18T16:30:00",
+          "datetime": "2026-09-24T15:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-19T12:30:00",
+          "datetime": "2026-09-25T11:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-19T16:30:00",
+          "datetime": "2026-09-25T15:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-20T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "sea-monsters-a-prehistoric-adventure",
-      "title": "Sea Monsters: A Prehistoric Adventure",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-18T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-19T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-20T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0199a729-181a-d5a4-1bde-e24d3ac7af46"
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         }
       ]
     },
@@ -298,12 +356,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-09-18T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-09-19T10:00:00",
@@ -321,13 +373,37 @@
           "datetime": "2026-09-20T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-22T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-23T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-24T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-25T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
         }
       ]
     },
     {
       "id": null,
-      "slug": "t-rex",
-      "title": "T. REX",
+      "slug": "laser-movie-magic",
+      "title": "Laser Movie Magic",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -337,27 +413,39 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-18T14:30:00",
+          "datetime": "2026-09-19T16:30:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+          "ticket_url": "https://tickets.omsi.edu/events/d810989c-943c-6418-a872-fd333ce426b2"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-19T10:30:00",
+          "datetime": "2026-09-20T16:30:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+          "ticket_url": "https://tickets.omsi.edu/events/d810989c-943c-6418-a872-fd333ce426b2"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-19T14:30:00",
+          "datetime": "2026-09-22T16:30:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+          "ticket_url": "https://tickets.omsi.edu/events/d810989c-943c-6418-a872-fd333ce426b2"
         },
         {
           "venue_id": "omsi",
-          "datetime": "2026-09-20T14:30:00",
+          "datetime": "2026-09-23T16:30:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+          "ticket_url": "https://tickets.omsi.edu/events/d810989c-943c-6418-a872-fd333ce426b2"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-24T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/d810989c-943c-6418-a872-fd333ce426b2"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-09-25T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/d810989c-943c-6418-a872-fd333ce426b2"
         }
       ]
     }
