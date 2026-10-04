@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-03T15:51:58.581Z",
-  "generator": "1.5.0-fbeae83",
+  "generated_at": "2026-10-04T16:35:00.095Z",
+  "generator": "1.5.0-252fa41",
   "window": {
-    "start": "2026-10-03",
-    "end": "2026-10-09"
+    "start": "2026-10-04",
+    "end": "2026-10-10"
   },
   "venues": [
     {
@@ -159,82 +159,42 @@
   ],
   "films": [
     {
-      "id": 310131,
-      "slug": "the-witch-2016",
-      "title": "The Witch",
-      "year": 2016,
-      "director": "Robert Eggers",
-      "runtime_minutes": 92,
-      "overview": "In 1630, a farmer relocates his family to a remote plot of land on the edge of a forest where strange, unsettling things happen. With suspicion and paranoia mounting, each family member's faith, loyalty and love are tested in shocking ways.",
-      "poster_path": "/zap5hpFCWSvdWSuPGAQyjUv2wAC.jpg",
+      "id": 229,
+      "slug": "bride-of-frankenstein-1935",
+      "title": "Bride of Frankenstein",
+      "year": 1935,
+      "director": "James Whale",
+      "runtime_minutes": 75,
+      "overview": "Dr. Frankenstein and his monster both turn out to be alive after being attacked by an angry mob. The now-chastened scientist attempts to escape his past, but a former mentor forces him to assist with the creation of a new creature.",
+      "poster_path": "/5241zUwe7rC17MNc2QpCBKKdp1N.jpg",
       "genres": [
         "Horror",
-        "Fantasy",
-        "Mystery"
+        "Science Fiction"
       ],
       "showtimes": [
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-10-03T19:00:00",
+          "datetime": "2026-10-04T14:50:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-witch/3774996"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/bride-of-frankenstein/3774999"
         },
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-10-05T21:50:00",
+          "datetime": "2026-10-05T17:10:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-witch/3775004"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/bride-of-frankenstein/3775016"
         },
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-10-08T19:00:00",
+          "datetime": "2026-10-08T17:10:00",
           "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-witch/3775001"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/bride-of-frankenstein/3775007"
         }
       ],
-      "imdb_id": "tt4263482",
-      "rt_score": 91,
-      "imdb_rating": 7,
-      "metacritic_score": 84,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 393519,
-      "slug": "raw-2017",
-      "title": "Raw",
-      "year": 2017,
-      "director": "Julia Ducournau",
-      "runtime_minutes": 99,
-      "overview": "Stringent vegetarian Justine encounters a decadent, merciless, and dangerously seductive world during her first week at veterinary school. Desperate to fit in, she strays from her principles and eats raw meat for the first time. She soon experiences terrible and unexpected consequences as her true self begins to emerge.",
-      "poster_path": "/kc8jT1MAiKM0iwdjAwC5lQrTNry.jpg",
-      "genres": [
-        "Horror",
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-10-03T21:10:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/raw-2/3774997"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-10-06T21:10:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/raw-2/3775005"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-10-07T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/raw-2/3775000"
-        }
-      ],
-      "imdb_id": "tt4954522",
-      "rt_score": 92,
-      "imdb_rating": 6.9,
-      "metacritic_score": 81,
+      "imdb_id": "tt0026138",
+      "rt_score": 98,
+      "imdb_rating": 7.8,
+      "metacritic_score": 95,
       "match_confidence": "verified"
     },
     {
@@ -273,34 +233,6 @@
       "rt_score": 95,
       "imdb_rating": 8,
       "metacritic_score": 83,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 16296,
-      "slug": "killer-klowns-from-outer-space-1988",
-      "title": "Killer Klowns from Outer Space",
-      "year": 1988,
-      "director": "Stephen Chiodo",
-      "runtime_minutes": 86,
-      "overview": "Aliens disguised as clowns crash land on Earth in a rural town to capture unsuspecting victims in cotton candy cocoons for later consumption.",
-      "poster_path": "/lHdAk5T42ofyi3NTjmrdyR7xPmY.jpg",
-      "genres": [
-        "Comedy",
-        "Horror",
-        "Science Fiction"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-10-09T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/killer-klowns-from-outer-space/3775109"
-        }
-      ],
-      "imdb_id": "tt0095444",
-      "rt_score": 79,
-      "imdb_rating": 6.2,
-      "metacritic_score": 43,
       "match_confidence": "verified"
     },
     {
@@ -344,6 +276,122 @@
       "match_confidence": "verified"
     },
     {
+      "id": 9426,
+      "slug": "the-fly-1986",
+      "title": "The Fly",
+      "year": 1986,
+      "director": "David Cronenberg",
+      "runtime_minutes": 96,
+      "overview": "When brilliant, eccentric scientist Seth Brundle makes a huge technological breakthrough in teleportation, he decides to test it on himself. Unbeknownst to him, a common housefly manages to get inside the device and the two become one.",
+      "poster_path": "/8gZWMhJHRvaXdXsNhERtqNHYpH3.jpg",
+      "genres": [
+        "Horror",
+        "Science Fiction"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-10-06T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-fly/3775002"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-10-07T21:10:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-fly/3775006"
+        }
+      ],
+      "imdb_id": "tt0091064",
+      "rt_score": 82,
+      "imdb_rating": 7.6,
+      "metacritic_score": 81,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 10781,
+      "slug": "the-texas-chainsaw-massacre-2006",
+      "title": "The Texas Chainsaw Massacre",
+      "year": 2006,
+      "director": "Jonathan Liebesman",
+      "runtime_minutes": 91,
+      "overview": "Chrissie and her friends set out on a road trip for a final fling before one is shipped off to Vietnam. Along the way, bikers harass the foursome and cause an accident that throws Chrissie from the vehicle. The lawman who arrives on the scene kills one of the bikers and brings Chrissie's friends to the Hewitt homestead, where young Leatherface is learning the tools of terror.",
+      "poster_path": "/hTBueN0Ru3R7brwtONenDyEMNYe.jpg",
+      "genres": [
+        "Horror",
+        "Thriller"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-10-10T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-texas-chainsaw-massacre/3775110"
+        }
+      ],
+      "imdb_id": "tt0420294",
+      "rt_score": 16,
+      "imdb_rating": 5.8,
+      "metacritic_score": 30,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 16296,
+      "slug": "killer-klowns-from-outer-space-1988",
+      "title": "Killer Klowns from Outer Space",
+      "year": 1988,
+      "director": "Stephen Chiodo",
+      "runtime_minutes": 86,
+      "overview": "Aliens disguised as clowns crash land on Earth in a rural town to capture unsuspecting victims in cotton candy cocoons for later consumption.",
+      "poster_path": "/lHdAk5T42ofyi3NTjmrdyR7xPmY.jpg",
+      "genres": [
+        "Comedy",
+        "Horror",
+        "Science Fiction"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-10-09T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/killer-klowns-from-outer-space/3775109"
+        }
+      ],
+      "imdb_id": "tt0095444",
+      "rt_score": 79,
+      "imdb_rating": 6.2,
+      "metacritic_score": 43,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 814,
+      "slug": "an-american-werewolf-in-london-1981",
+      "title": "An American Werewolf in London",
+      "year": 1981,
+      "director": "John Landis",
+      "runtime_minutes": 97,
+      "overview": "American tourists David and Jack are savagely attacked by an unidentified animal while hiking on the Yorkshire Moors. After retiring to the home of a beautiful nurse to recuperate, David soon begins experiencing disturbing changes to his body and mind.",
+      "poster_path": "/hVEqUASJmCQaolkKFEySCHZ8uKG.jpg",
+      "genres": [
+        "Comedy",
+        "Horror",
+        "Fantasy"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-10-10T16:50:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/an-american-werewolf-in-london/3775111"
+        }
+      ],
+      "imdb_id": "tt0082010",
+      "rt_score": 80,
+      "imdb_rating": 7.5,
+      "metacritic_score": 55,
+      "match_confidence": "verified"
+    },
+    {
       "id": 27764,
       "slug": "slumber-party-massacre-ii-1987",
       "title": "Slumber Party Massacre II",
@@ -371,45 +419,6 @@
       "match_confidence": "verified"
     },
     {
-      "id": 229,
-      "slug": "bride-of-frankenstein-1935",
-      "title": "Bride of Frankenstein",
-      "year": 1935,
-      "director": "James Whale",
-      "runtime_minutes": 75,
-      "overview": "Dr. Frankenstein and his monster both turn out to be alive after being attacked by an angry mob. The now-chastened scientist attempts to escape his past, but a former mentor forces him to assist with the creation of a new creature.",
-      "poster_path": "/5241zUwe7rC17MNc2QpCBKKdp1N.jpg",
-      "genres": [
-        "Horror",
-        "Science Fiction"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-10-04T14:50:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/bride-of-frankenstein/3774999"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-10-05T17:10:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/bride-of-frankenstein/3775016"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-10-08T17:10:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/bride-of-frankenstein/3775007"
-        }
-      ],
-      "imdb_id": "tt0026138",
-      "rt_score": 98,
-      "imdb_rating": 7.8,
-      "metacritic_score": 95,
-      "match_confidence": "verified"
-    },
-    {
       "id": 10787,
       "slug": "the-invisible-man-1933",
       "title": "The Invisible Man",
@@ -423,12 +432,6 @@
         "Science Fiction"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T16:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014110000006"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-10-04T19:30:00",
@@ -467,50 +470,30 @@
       "match_confidence": "verified"
     },
     {
-      "id": null,
-      "slug": "a-night-of-animation-with-jesse-moynihan-and-dash-shaw",
-      "title": "A Night of Animation with Jesse Moynihan and Dash Shaw",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-10-03T19:00:00",
-          "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/a-night-of-animation-with-jesse-moynihan-and-dash-shaw-saturday-october-3rd-at-7-00-pm/OXVGYEJTGE72E2ZTNDPI4Z7J"
-        }
-      ]
-    },
-    {
-      "id": 36685,
-      "slug": "the-rocky-horror-picture-show-1975",
-      "title": "The Rocky Horror Picture Show",
-      "year": 1975,
-      "director": "Jim Sharman",
-      "runtime_minutes": 100,
-      "overview": "After getting a flat tire in the middle of nowhere, newly engaged couple Brad and Janet encounter the eerie mansion of the flamboyant, seductive Dr Frank-N-Furter and a variety of eccentric characters. Through elaborate dance and rock music, the mad scientist unveils his latest creation: a perfect, muscular man.",
-      "poster_path": "/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
+      "id": 13310,
+      "slug": "let-the-right-one-in-2008",
+      "title": "Let the Right One In",
+      "year": 2008,
+      "director": "Tomas Alfredson",
+      "runtime_minutes": 115,
+      "overview": "When Oskar, a sensitive, bullied 12-year-old boy, meets his new neighbor, the mysterious and moody Eli, they strike up a friendship. Initially reserved with each other, Oskar and Eli slowly form a close bond, but it soon becomes apparent that she is no ordinary young girl.",
+      "poster_path": "/7IG4WjaAOVDlLvLUkh513HSwhW8.jpg",
       "genres": [
-        "Comedy",
-        "Science Fiction",
-        "Horror"
+        "Horror",
+        "Drama"
       ],
       "showtimes": [
         {
-          "venue_id": "clinton-street",
-          "datetime": "2026-10-03T22:30:00",
+          "venue_id": "cinemagic",
+          "datetime": "2026-10-10T21:00:00",
           "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/the-rocky-horror-picture-show-with-the-clinton-street-cabaret-saturday-october-3rd-at-10-30-pm/AQWIKAVSPF3FH7J23ULCMLUN"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/let-the-right-one-in/3824093"
         }
       ],
-      "imdb_id": "tt0073629",
-      "rt_score": 82,
-      "imdb_rating": 7.4,
-      "metacritic_score": 65,
+      "imdb_id": "tt1139797",
+      "rt_score": 98,
+      "imdb_rating": 7.8,
+      "metacritic_score": 82,
       "match_confidence": "verified"
     },
     {
@@ -669,6 +652,62 @@
       ]
     },
     {
+      "id": 10776,
+      "slug": "the-little-shop-of-horrors-1986-with-rogue-apostles-1986",
+      "title": "The Little Shop of Horrors (1986) with Rogue Apostles",
+      "year": 1986,
+      "director": "Frank Oz",
+      "runtime_minutes": 94,
+      "overview": "Seymour Krelborn is a nerdy orphan working at Mushnik's, a flower shop in urban Skid Row. He harbors a crush on fellow co-worker, Audrey Fulquard, and is berated by Mr. Mushnik daily. One day, Seymour finds a very mysterious unidentified plant which he calls Audrey II. The plant seems to have a craving for blood and soon begins to sing for its supper.",
+      "poster_path": "/iKkbN17OmFosaW6asCNZTTsyvpu.jpg",
+      "genres": [
+        "Horror",
+        "Comedy"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-10-10T19:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/the-little-shop-of-horrors-1986-with-rogue-apostles-saturday-october-10th-at-7-00-pm/ESAL4MJCNUK5IZT4TZV5T4TI",
+          "event_note": "with Rogue Apostles"
+        }
+      ],
+      "imdb_id": "tt0091419",
+      "rt_score": 91,
+      "imdb_rating": 7.1,
+      "metacritic_score": 81,
+      "match_confidence": "fallback"
+    },
+    {
+      "id": 36685,
+      "slug": "the-rocky-horror-picture-show-1975",
+      "title": "The Rocky Horror Picture Show",
+      "year": 1975,
+      "director": "Jim Sharman",
+      "runtime_minutes": 100,
+      "overview": "After getting a flat tire in the middle of nowhere, newly engaged couple Brad and Janet encounter the eerie mansion of the flamboyant, seductive Dr Frank-N-Furter and a variety of eccentric characters. Through elaborate dance and rock music, the mad scientist unveils his latest creation: a perfect, muscular man.",
+      "poster_path": "/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg",
+      "genres": [
+        "Comedy",
+        "Science Fiction",
+        "Horror"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-10-10T23:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/the-rocky-horror-picture-show-with-sinophelia-saturday-october-10th-at-11-00-pm/SNHNAAKTC4SN5WN6WNREDLZH"
+        }
+      ],
+      "imdb_id": "tt0073629",
+      "rt_score": 82,
+      "imdb_rating": 7.4,
+      "metacritic_score": 65,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1400837,
       "slug": "other-mommy-2026",
       "title": "Other Mommy",
@@ -704,6 +743,24 @@
           "datetime": "2026-10-09T18:45",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19481?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-10-10T13:30",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19506?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-10-10T16:20",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19502?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-10-10T18:45",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19501?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         }
       ],
       "imdb_id": "tt36586020",
@@ -726,30 +783,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T12:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45882"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45883"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45884"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T21:20:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45885"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-10-04T12:15:00",
@@ -815,30 +848,6 @@
           "datetime": "2026-10-07T18:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45951"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T12:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013996000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T15:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013997000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T18:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013998000007"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T21:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/013999000005"
         },
         {
           "venue_id": "academy",
@@ -937,34 +946,28 @@
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014024000005"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/digger?showingId=4036194"
+          "venue_id": "academy",
+          "datetime": "2026-10-09T12:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014028000007"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T14:35:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/digger?showingId=4036199"
+          "venue_id": "academy",
+          "datetime": "2026-10-09T15:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014029000007"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T17:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/digger?showingId=4036203"
+          "venue_id": "academy",
+          "datetime": "2026-10-09T18:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014030000007"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/digger?showingId=3867916"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T21:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/digger?showingId=3867917"
+          "venue_id": "academy",
+          "datetime": "2026-10-09T21:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014031000005"
         },
         {
           "venue_id": "living-room",
@@ -1073,12 +1076,6 @@
           "datetime": "2026-10-08T14:35:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/digger?showingId=4036360"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-08T17:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/digger?showingId=4036366"
         }
       ],
       "imdb_id": "tt31450459",
@@ -1101,30 +1098,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T12:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45878"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T16:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45879"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T19:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45880"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T21:40:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45881"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-10-04T12:45:00",
@@ -1193,30 +1166,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-10-03T13:30",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31097?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T16:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31096?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T19:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31092?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T21:30",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31093?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-10-04T13:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31103?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -1280,24 +1229,6 @@
           "datetime": "2026-10-08T18:45",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31133?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-10-03T13:30",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19536?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-10-03T16:15",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19514?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-10-03T19:00",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19516?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         },
         {
           "venue_id": "st-johns",
@@ -1377,30 +1308,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T13:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45886"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T16:10:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45887"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T19:10:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45888"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T21:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45889"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-10-04T13:00:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45902"
@@ -1464,30 +1371,6 @@
           "datetime": "2026-10-07T19:10:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45953"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T12:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014221000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T16:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014222000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T19:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014223000005"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T21:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014224000007"
         },
         {
           "venue_id": "academy",
@@ -1587,24 +1470,6 @@
         },
         {
           "venue_id": "st-johns",
-          "datetime": "2026-10-03T14:00",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19537?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-10-03T16:45",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19515?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-10-03T19:20",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19517?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
           "datetime": "2026-10-04T14:00",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19542?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
@@ -1681,30 +1546,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T12:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45874"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T15:20:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45875"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T18:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45876"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-10-03T21:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45877"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-10-04T12:30:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45890"
@@ -1762,36 +1603,6 @@
           "datetime": "2026-10-07T18:15:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=45947"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T11:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=4036193"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T14:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=4036198"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T16:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=4036216"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T19:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=4036205"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T21:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=4036209"
         },
         {
           "venue_id": "living-room",
@@ -1891,12 +1702,6 @@
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-10-08T14:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=4036359"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-10-08T16:20:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/practical-magic-2?showingId=4036363"
@@ -1922,30 +1727,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-10-03T12:45:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102462?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-10-03T15:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102468?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-10-03T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102474?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-10-03T22:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102480?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
         {
           "venue_id": "baghdad",
           "datetime": "2026-10-04T12:45:00",
@@ -2017,36 +1798,6 @@
           "datetime": "2026-10-06T15:30:00",
           "format": "OC",
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102471?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/verity?showingId=4036212"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T14:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/verity?showingId=4036214"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T16:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/verity?showingId=4036215"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T18:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/verity?showingId=3867914"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T21:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/verity?showingId=3867915"
         },
         {
           "venue_id": "living-room",
@@ -2158,33 +1909,9 @@
         },
         {
           "venue_id": "living-room",
-          "datetime": "2026-10-08T16:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/verity?showingId=4036362"
-        },
-        {
-          "venue_id": "living-room",
           "datetime": "2026-10-08T19:15:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/verity?showingId=4036368"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-10-03T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-10-03T14:10:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-10-03T16:35:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
         },
         {
           "venue_id": "moreland",
@@ -2218,12 +1945,6 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-10-08T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
           "datetime": "2026-10-04T14:10:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
@@ -2237,6 +1958,12 @@
         {
           "venue_id": "moreland",
           "datetime": "2026-10-04T19:00:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-10-08T19:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -2276,18 +2003,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-10-03T13:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102448?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-10-03T18:45:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102445?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-10-04T16:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102450?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -2309,18 +2024,6 @@
           "datetime": "2026-10-08T17:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102455?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T12:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31124?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T14:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31136?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
           "venue_id": "cinema-21",
@@ -2382,12 +2085,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-10-03T21:30:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102447?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-10-04T19:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102452?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -2435,12 +2132,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-10-03T16:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102442?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-10-04T13:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/102449?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -2471,18 +2162,6 @@
         "Horror"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T13:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014108000006"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-10-03T21:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014109000006"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-10-04T16:30:00",
@@ -2536,12 +2215,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-10-03T19:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014111000006"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-10-04T13:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014112000006"
@@ -2584,6 +2257,96 @@
       "match_confidence": "verified"
     },
     {
+      "id": 31417,
+      "slug": "eyes-without-a-face-1960",
+      "title": "Eyes Without a Face",
+      "year": 1960,
+      "director": "Georges Franju",
+      "runtime_minutes": 84,
+      "overview": "Dr. Génessier is riddled with guilt after an accident that he caused disfigures the face of his daughter, the once beautiful Christiane, who outsiders believe is dead. Dr. Génessier, along with accomplice and laboratory assistant Louise, kidnaps young women and brings them to the Génessier mansion. After rendering his victims unconscious, Dr. Génessier removes their faces and attempts to graft them on to Christiane's.",
+      "poster_path": "/8y7Z9Gvcq52uOlJlUWyn2epGGRd.jpg",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Thriller"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "academy",
+          "datetime": "2026-10-09T13:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014128000006"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-10-09T21:15:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014129000006"
+        }
+      ],
+      "imdb_id": "tt0053459",
+      "rt_score": 97,
+      "imdb_rating": 7.6,
+      "metacritic_score": 90,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 9637,
+      "slug": "scooby-doo-2002",
+      "title": "Scooby-Doo",
+      "year": 2002,
+      "director": "Raja Gosnell",
+      "runtime_minutes": 87,
+      "overview": "When the Mystery Inc. gang is invited to Spooky Island, a popular amusement park, they soon discover that the attractions aren't the only things that are spooky. Strange things are happening, and it's up to Scooby, Shaggy, Fred, Daphne, and Velma to uncover the truth behind the mysterious happenings.",
+      "poster_path": "/mTAiBJGg8mqEfnYHHbi37ZoRSZm.jpg",
+      "genres": [
+        "Mystery",
+        "Adventure",
+        "Comedy"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "academy",
+          "datetime": "2026-10-09T16:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014130000006"
+        }
+      ],
+      "imdb_id": "tt0267913",
+      "rt_score": 32,
+      "imdb_rating": 5.4,
+      "metacritic_score": 35,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 18196,
+      "slug": "the-sentinel-1977",
+      "title": "The Sentinel",
+      "year": 1977,
+      "director": "Michael Winner",
+      "runtime_minutes": 92,
+      "overview": "As a young girl, Alison Parker attempted suicide after being traumatized by her father's sexual exploits. Now an elite fashion model, she moves to a Brooklyn Heights apartment building where she encounters a number of bizarre, eccentric tenants and attempts to uncover the building's sinister secret.",
+      "poster_path": "/zoLuOdAD63prJP0o3Z0zRaAfwXE.jpg",
+      "genres": [
+        "Horror",
+        "Mystery",
+        "Fantasy"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "academy",
+          "datetime": "2026-10-09T19:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/startticketing/862660/014131000006"
+        }
+      ],
+      "imdb_id": "tt0076683",
+      "rt_score": 45,
+      "imdb_rating": 6.3,
+      "metacritic_score": 19,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1596249,
       "slug": "ha-chan-shake-your-booty-2026",
       "title": "Ha-Chan, Shake Your Booty!",
@@ -2598,12 +2361,6 @@
         "Romance"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T21:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/ha-chan-shake-your-booty?showingId=4036296"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-10-04T17:00:00",
@@ -2643,42 +2400,12 @@
       "director": "David Ayer",
       "runtime_minutes": 101,
       "overview": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements.",
-      "poster_path": "/mYqiF90igComG2L2qm8SwFbaMwn.jpg",
+      "poster_path": "/1ApfSA8JTqeha3GTFEY8syV4auq.jpg",
       "genres": [
         "Adventure",
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/heart-of-the-beast?showingId=4036211"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T13:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/heart-of-the-beast?showingId=4036213"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T17:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/heart-of-the-beast?showingId=4036204"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T19:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/heart-of-the-beast?showingId=4036207"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T22:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/heart-of-the-beast?showingId=4036210"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-10-04T11:45:00",
@@ -2789,6 +2516,86 @@
       "match_confidence": "verified"
     },
     {
+      "id": 1285895,
+      "slug": "late-fame-2026",
+      "title": "Late Fame",
+      "year": 2026,
+      "director": "Kent Jones",
+      "runtime_minutes": 97,
+      "overview": "At the very end of the 1970’s, post office worker Ed Saxberger wrote a book of poetry that nobody cared about. After an eager and flattering fan appears on his doorstep, Saxberger is beckoned into a coterie of young admirers who anoint him a rediscovered genius. The group of downtown bohemians is led by their “tragic heroine,” Gloria. Intoxicated by the attention, and Gloria’s alluring presence, Saxberger gradually reckons with the authenticity of his newfound poetic circle.",
+      "poster_path": "/bcyXE0p4XmZUlcxvTDbvdG9lgsN.jpg",
+      "genres": [
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-04T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036251"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-04T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036253"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-05T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036275"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-05T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036277"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-06T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036307"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-06T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036311"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-07T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036331"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-07T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036335"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-08T12:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036354"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-10-08T14:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/late-fame?showingId=4036358"
+        }
+      ],
+      "imdb_id": "tt32298494",
+      "rt_score": 93,
+      "imdb_rating": 6.9,
+      "metacritic_score": 77,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1554956,
       "slug": "the-incomer-2026",
       "title": "The Incomer",
@@ -2802,30 +2609,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-incomer?showingId=4036298"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T16:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-incomer?showingId=4036297"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T18:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-incomer?showingId=3993939"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T21:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-incomer?showingId=3993940"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-10-04T12:30:00",
@@ -2912,38 +2695,6 @@
       "match_confidence": "verified"
     },
     {
-      "id": 1630504,
-      "slug": "the-last-picture-shows-2026",
-      "title": "The Last Picture Shows",
-      "year": 2026,
-      "director": "Rustin Thompson",
-      "runtime_minutes": 78,
-      "overview": "Ten states. 10,825 miles. 123 theaters. In his latest feature The Last Picture Shows, filmmaker Rustin Thompson journeys into the American West on a search for traces of what was once a center of small-town life: the movie theater. On the trip, he finds long abandoned and forgotten cinemas; movie houses that have fallen into disrepair; theaters recently closed, theaters struggling to hold on, and theaters that—thanks to their thoughtful caretakers—are not only surviving but thriving. Between the stops along the way, Rustin poetically intersperses excerpts from Peter Bogdanovich’s 1971 classic film The Last Picture Show, as well as reflections on past and present hardships facing the film exhibition industry. The Last Picture Shows reminds viewers that even in vast cinema deserts, there are oases of community and gathering that remain, where the movie house continues to be a place of wonder, contemplation, and connection.",
-      "poster_path": "/vDUVpaizLCF7cSch0hj6Qssyrnc.jpg",
-      "genres": [
-        "Documentary"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T16:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-last-picture-shows?showingId=3993942"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-07T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-last-picture-shows?showingId=3993943"
-        }
-      ],
-      "imdb_id": "tt43596241",
-      "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
       "id": 1433583,
       "slug": "the-weight-2026",
       "title": "The Weight",
@@ -2958,18 +2709,6 @@
         "Crime"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T14:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-weight?showingId=4036299"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-10-03T19:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-weight?showingId=4036295"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-10-04T14:40:00",
@@ -3042,12 +2781,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-10-03T18:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-10-06T15:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
@@ -3075,6 +2808,18 @@
           "datetime": "2026-10-09T18:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-10T15:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-10T18:15:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
         }
       ],
       "imdb_id": "tt33764258",
@@ -3098,12 +2843,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-10-03T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-10-06T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
@@ -3117,6 +2856,12 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-10-08T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-10T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
         }
@@ -3142,12 +2887,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-10-03T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-10-04T14:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
@@ -3167,6 +2906,12 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-10-08T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-10T14:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
         }
@@ -3190,24 +2935,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-03T11:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-03T15:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-03T17:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-10-04T11:00:00",
@@ -3255,6 +2982,18 @@
           "datetime": "2026-10-09T17:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-10T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-10T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         }
       ],
       "imdb_id": "tt42702648",
@@ -3276,18 +3015,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-03T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-03T16:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-10-04T12:00:00",
@@ -3317,6 +3044,12 @@
           "datetime": "2026-10-08T16:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-10T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
         }
       ],
       "imdb_id": "tt22077760",
@@ -3338,18 +3071,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-03T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-03T16:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-10-04T12:30:00",
@@ -3385,6 +3106,12 @@
           "datetime": "2026-10-09T16:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-10T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
         }
       ],
       "imdb_id": "tt32140915",
@@ -3408,12 +3135,6 @@
         "Romance"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T20:45",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31100?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
         {
           "venue_id": "cinema-21",
           "datetime": "2026-10-04T18:45",
@@ -3446,30 +3167,32 @@
       "match_confidence": "verified"
     },
     {
-      "id": 229,
-      "slug": "the-bride-of-frankenstein-1935",
-      "title": "The Bride of Frankenstein",
-      "year": 1935,
-      "director": "James Whale",
-      "runtime_minutes": 75,
-      "overview": "Dr. Frankenstein and his monster both turn out to be alive after being attacked by an angry mob. The now-chastened scientist attempts to escape his past, but a former mentor forces him to assist with the creation of a new creature.",
-      "poster_path": "/5241zUwe7rC17MNc2QpCBKKdp1N.jpg",
+      "id": 11618,
+      "slug": "the-haunting-1999",
+      "title": "The Haunting",
+      "year": 1999,
+      "director": "Jan de Bont",
+      "runtime_minutes": 113,
+      "overview": "Dr. David Marrow invites three distinct individuals to the eerie and isolated Hill House to be subjects for a sleep disorder study. The unfortunate guests discover that Marrow is far more interested in the sinister mansion itself — and they soon see the true nature of its horror.",
+      "poster_path": "/xwLldS5JnB4441iS50ha9ZrkaA8.jpg",
       "genres": [
         "Horror",
-        "Science Fiction"
+        "Thriller",
+        "Fantasy",
+        "Mystery"
       ],
       "showtimes": [
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-10-03T11:00",
+          "datetime": "2026-10-10T11:00",
           "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30570?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/30571?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
-      "imdb_id": "tt0026138",
-      "rt_score": 98,
-      "imdb_rating": 7.8,
-      "metacritic_score": 95,
+      "imdb_id": "tt0171363",
+      "rt_score": 17,
+      "imdb_rating": 5.1,
+      "metacritic_score": 42,
       "match_confidence": "verified"
     },
     {
@@ -3512,30 +3235,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T13:45",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31095?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T16:30",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31094?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T19:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31091?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-10-03T21:45",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31072?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
         {
           "venue_id": "cinema-21",
           "datetime": "2026-10-04T16:30",
@@ -3633,6 +3332,24 @@
           "datetime": "2026-10-09T19:15",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31021?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-10-10T14:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31024?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-10-10T16:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31025?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-10-10T19:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31026?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt44766123",
@@ -3685,19 +3402,13 @@
       "showtimes": [
         {
           "venue_id": "moreland",
-          "datetime": "2026-10-04T12:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
           "datetime": "2026-10-06T21:30:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-10-03T12:00:00",
+          "datetime": "2026-10-04T12:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         }
@@ -3736,6 +3447,34 @@
       "match_confidence": "verified"
     },
     {
+      "id": 11024,
+      "slug": "scooby-doo-2-monsters-unleashed-2004",
+      "title": "Scooby-doo 2: Monsters Unleashed",
+      "year": 2004,
+      "director": "Raja Gosnell",
+      "runtime_minutes": 93,
+      "overview": "A masked villain wreaks mayhem on the city of Coolsville with a monster machine that creates real-life versions of Mystery Inc.'s former foes like The 10,000 Volt Ghost, The Cotton Candy Glob, The Skelemen and The Pterodactyl Ghost. Fred, Daphne, Shaggy, Velma and Scooby-Doo launch an investigation into the monster outbreak that leaves Shaggy and Scooby questioning their roles in Mystery Inc. Eager to prove their detective skills, the ever-ravenous duo comes up with a secret plan to solve the mystery all by themselves. Can the gang unravel their most challenging case?",
+      "poster_path": "/5BrXCJrs22bR5KR6mLHluYo6y4m.jpg",
+      "genres": [
+        "Mystery",
+        "Adventure",
+        "Comedy"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-10-10T12:00:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        }
+      ],
+      "imdb_id": "tt0331632",
+      "rt_score": 22,
+      "imdb_rating": 5.3,
+      "metacritic_score": 34,
+      "match_confidence": "verified"
+    },
+    {
       "id": null,
       "slug": "a-night-with-lindsay-straube",
       "title": "A Night with Lindsay Straube",
@@ -3753,6 +3492,34 @@
           "ticket_url": "https://tomorrowtheater.org/showtimes/a-night-with-lindsay-straube-hosted-by-grand-gesture-books-10-7-26-600-pm/"
         }
       ]
+    },
+    {
+      "id": 10166,
+      "slug": "the-witches-1990",
+      "title": "The Witches",
+      "year": 1990,
+      "director": "Nicolas Roeg",
+      "runtime_minutes": 91,
+      "overview": "While staying at a hotel in England with his grandmother, Helga, a young boy named Luke inadvertently spies on a convention of witches. The Grand High Witch reveals a plan to turn all children into mice via a magical formula. When they discover the eavesdropper, the witches test the formula on him. Now, with the help of Helga and hotel manager Mr Stringer, Luke the mouse must fight back against the witches.",
+      "poster_path": "/mPYBjVkeHakkPGY7WaKyyNU4RWm.jpg",
+      "genres": [
+        "Fantasy",
+        "Family",
+        "Horror"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "tomorrow",
+          "datetime": "2026-10-10T15:00",
+          "format": null,
+          "ticket_url": "https://tomorrowtheater.org/showtimes/the-witches-10-10-26-300-pm/"
+        }
+      ],
+      "imdb_id": "tt0100944",
+      "rt_score": 94,
+      "imdb_rating": 6.8,
+      "metacritic_score": 78,
+      "match_confidence": "verified"
     },
     {
       "id": null,
@@ -3794,25 +3561,6 @@
     },
     {
       "id": null,
-      "slug": "10-years-of-portland-dance-film-festival-festival-picks",
-      "title": "10 Years of Portland Dance Film Festival – Festival Picks",
-      "year": null,
-      "director": null,
-      "runtime_minutes": 78,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "tomorrow",
-          "datetime": "2026-10-03T19:00",
-          "format": null,
-          "ticket_url": "https://tomorrowtheater.org/showtimes/10-years-of-portland-dance-film-festival-festival-picks-10-3-26-700-pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "in-search-of-portland-short-films-from-the-1930s-present-spotlighting-the-central-city",
       "title": "In Search of Portland: Short Films from the 1930s-Present Spotlighting the Central City",
       "year": null,
@@ -3829,6 +3577,35 @@
           "ticket_url": "https://tomorrowtheater.org/showtimes/in-search-of-portland-short-films-from-the-1930s-present-spotlighting-the-central-city-10-8-26-700-pm/"
         }
       ]
+    },
+    {
+      "id": 825751,
+      "slug": "little-shop-of-horrors-1987",
+      "title": "Little Shop of Horrors",
+      "year": 1987,
+      "director": "Victor Valentine",
+      "runtime_minutes": 96,
+      "overview": "The 1987 Japan English Touring cast of Little Shop of Horrors, filmed at Theatre Apple (シアターアプル) in Tokyo during its October 1 - October 28, 1987 run at the theater. The meek floral assistant Seymour Krelborn stumbles across a new breed of plant he names \"Audrey II\" - after his coworker crush. This foul-mouthed, R&B-singing carnivore promises unending fame and fortune to the down and out Krelborn as long as he keeps feeding it, BLOOD.",
+      "poster_path": "/eip2OjcxYpStWxmp3HoEjqlOlAD.jpg",
+      "genres": [
+        "Music",
+        "Comedy",
+        "Horror",
+        "TV Movie"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "tomorrow",
+          "datetime": "2026-10-10T20:00",
+          "format": null,
+          "ticket_url": "https://tomorrowtheater.org/showtimes/little-shop-of-horrors-benefit-for-wildwood-sanctuary-10-10-26-800-pm/"
+        }
+      ],
+      "imdb_id": "tt29763408",
+      "rt_score": null,
+      "imdb_rating": null,
+      "metacritic_score": null,
+      "match_confidence": "verified"
     },
     {
       "id": 415,
@@ -3859,33 +3636,6 @@
       "match_confidence": "verified"
     },
     {
-      "id": 10625,
-      "slug": "mean-girls-2004",
-      "title": "Mean Girls",
-      "year": 2004,
-      "director": "Mark Waters",
-      "runtime_minutes": 97,
-      "overview": "Cady Heron is a hit with The Plastics, the A-list girl clique at her new school, until she makes the mistake of falling for Aaron Samuels, the ex-boyfriend of alpha Plastic Regina George.",
-      "poster_path": "/2ZkuQXvVhh45uSvkBej4S7Ix1NJ.jpg",
-      "genres": [
-        "Drama",
-        "Comedy"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "tomorrow",
-          "datetime": "2026-10-03T16:00",
-          "format": null,
-          "ticket_url": "https://tomorrowtheater.org/showtimes/mean-girls-10-3-26-400-pm/"
-        }
-      ],
-      "imdb_id": "tt0377092",
-      "rt_score": 84,
-      "imdb_rating": 7.1,
-      "metacritic_score": 66,
-      "match_confidence": "verified"
-    },
-    {
       "id": 1465063,
       "slug": "forgotten-island-2026",
       "title": "Forgotten Island",
@@ -3898,40 +3648,9 @@
         "Animation",
         "Adventure",
         "Fantasy",
-        "Comedy",
-        "Family"
+        "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-10-03T11:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-10-03T13:45:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-10-03T16:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-10-03T18:45:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-10-03T21:00:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
         {
           "venue_id": "avalon",
           "datetime": "2026-10-04T13:45:00",
