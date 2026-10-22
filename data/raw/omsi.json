@@ -2,27 +2,8 @@
   "venue_ids": [
     "omsi"
   ],
-  "scraped_at": "2026-10-21T11:15:44.166Z",
+  "scraped_at": "2026-10-22T11:15:39.183Z",
   "films": [
-    {
-      "id": null,
-      "slug": "the-odyssey",
-      "title": "The Odyssey",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-21T15:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e8a20-5581-0138-2803-13d220766597"
-        }
-      ]
-    },
     {
       "id": null,
       "slug": "wildwood",
@@ -45,6 +26,12 @@
           "datetime": "2026-10-27T18:45:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/01a04a32-5e8e-d57f-9203-ae603b12c27c"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-28T15:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a04a32-5e8e-d57f-9203-ae603b12c27c"
         }
       ]
     },
@@ -59,18 +46,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-21T11:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-21T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-10-22T11:00:00",
@@ -136,6 +111,24 @@
           "datetime": "2026-10-27T15:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-28T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-28T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-10-28T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         }
       ]
     },
@@ -150,12 +143,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-21T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-10-22T14:00:00",
@@ -173,25 +160,12 @@
           "datetime": "2026-10-27T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "educated-guess-morbid-curiosity",
-      "title": "Educated Guess: Morbid Curiosity",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
+        },
         {
           "venue_id": "omsi",
-          "datetime": "2026-10-21T18:30:00",
+          "datetime": "2026-10-28T14:00:00",
           "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a05a26-46af-78ad-cf1d-c424bc92d2a6"
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
         }
       ]
     }
