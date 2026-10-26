@@ -18,7 +18,8 @@ function shortCommit(): string {
   // CI exposes the SHA without a git checkout dir; fall back to git, then "dev".
   if (process.env.GITHUB_SHA) return process.env.GITHUB_SHA.slice(0, 7);
   try {
-    return execSync("git rev-parse --short HEAD").toString().trim();
+    // stderr ignored: outside a checkout (natty's scp'd copy) git would log "fatal: not a git repository"
+    return execSync("git rev-parse --short HEAD", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim();
   } catch {
     return "dev";
   }

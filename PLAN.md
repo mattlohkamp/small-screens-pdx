@@ -295,7 +295,7 @@ Confirmed as of 2026-07-23, tried in this order, all failed:
 
 That last result is the important one: it rules out IP reputation as the variable (natty's same IP cleared OMSI's block that same day) and points at Cloudflare fingerprinting Playwright's automation signals directly (e.g. `navigator.webdriver`, CDP protocol traces) rather than anything about where the request comes from.
 
-Not yet tried: **`patchright`** — a Playwright/Chromium fork built specifically to patch the CDP-level tells that regular JS-only "stealth" plugins miss. Real chance of clearing this, since the block appears to be automation-fingerprint-based rather than IP-based. Worth one bounded attempt; if it also fails, the honest call is to stop chasing this specific venue rather than escalate further into a detection arms race that Cloudflare can just as easily re-close.
+~~Not yet tried: `patchright`~~ **Resolved 2026-10-25 with `patchright`, headful.** Tested on natty: stock Playwright headless was blocked (0/1), and so was patchright headless (0/1), because headless Chromium advertises `HeadlessChrome` in its UA. Patchright headful (persistent context, no custom UA or viewport) cleared it 3/3 with fresh profiles. natty has no display, so `cron-scrape.sh` now runs `xvfb-run -a npx tsx run.ts`. Only Hollywood uses patchright; OMSI stays on stock Playwright. Also fixed: month fetches ran via `Promise.all` on one shared page (concurrent `page.goto`s abort each other), now sequential. First run: 13 films / 28 showtimes. Hollywood data had been stale since 2026-08-29. It's still an arms race; if Cloudflare closes this again, the call from above stands: stop chasing this venue.
 
 ### Original design (superseded, kept for reference)
 

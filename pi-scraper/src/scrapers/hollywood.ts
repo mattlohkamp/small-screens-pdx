@@ -1,6 +1,8 @@
-import type { Page } from "playwright";
+import { chromium, type BrowserContext, type Page } from "patchright";
+import { mkdtempSync, rmSync } from "fs";
+import { tmpdir } from "os";
+import { join } from "path";
 import type { Film, Showtime } from "../types.js";
-import { getBrowser, closeBrowser } from "../browser.js";
 import { WINDOW_DAYS } from "../window.js";
 
 const VENUE_ID = "hollywood";
@@ -28,9 +30,6 @@ interface WPEvent {
   link: string;
 }
 
-const BROWSER_UA =
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
-
 const MAX_API_ATTEMPTS = 3;
 
 // Cloudflare fronts this venue's API with a JS challenge (Turnstile) — confirmed via
@@ -42,14 +41,33 @@ const MAX_API_ATTEMPTS = 3;
 // to the API URL itself; Chromium runs whatever Cloudflare returns, and once the
 // challenge clears, the page settles on the raw JSON (Chrome's built-in JSON viewer
 // renders it as plain text in the body), which we read back out.
+//
+// Stock Playwright never clears the challenge, even from natty's residential IP:
+// Cloudflare fingerprints its automation tells. patchright (a Playwright fork that
+// patches the CDP-level tells) clears it, but only headful: headless Chromium
+// advertises "HeadlessChrome" in its UA and stays blocked. Verified on natty
+// 2026-10-25: stock headless 0/1, patchright headless 0/1, patchright headful 3/3.
+// On natty there's no display, so cron runs this under `xvfb-run`. Per patchright's
+// guidance: persistent context, no custom UA/viewport (a Windows UA on Linux Chromium
+// is itself a mismatch tell). Fresh profile each run so no state carries over.
+let _ctx: BrowserContext | null = null;
+let _profileDir: string | null = null;
 let _apiPage: Page | null = null;
 
 async function getApiPage(): Promise<Page> {
   if (_apiPage) return _apiPage;
-  const browser = await getBrowser();
-  const ctx = await browser.newContext({ userAgent: BROWSER_UA });
-  _apiPage = await ctx.newPage();
+  _profileDir = mkdtempSync(join(tmpdir(), "hollywood-profile-"));
+  _ctx = await chromium.launchPersistentContext(_profileDir, { headless: false, viewport: null });
+  _apiPage = _ctx.pages()[0] ?? (await _ctx.newPage());
   return _apiPage;
+}
+
+async function closeApiContext(): Promise<void> {
+  await _ctx?.close();
+  if (_profileDir) rmSync(_profileDir, { recursive: true, force: true });
+  _ctx = null;
+  _profileDir = null;
+  _apiPage = null;
 }
 
 async function fetchApiJson<T>(url: string): Promise<T> {
@@ -185,7 +203,14 @@ export async function scrapeHollywood(): Promise<Film[]> {
   const end = addDays(start, WINDOW_DAYS - 1);
   const months = windowMonths(start, end);
 
-  const allEvents = (await Promise.all(months.map(fetchEventsForMonth))).flat();
+  // Sequential, not Promise.all: every request is a navigation on the one shared
+  // page, and two concurrent page.goto calls on the same page abort each other.
+  const allEvents: WPEvent[] = [];
+  try {
+    for (const month of months) allEvents.push(...(await fetchEventsForMonth(month)));
+  } finally {
+    await closeApiContext();
+  }
 
   const filmMap = new Map<string, { title: string; year: number | null; showtimes: Showtime[] }>();
 
@@ -240,5 +265,4 @@ export async function scrapeHollywood(): Promise<Film[]> {
 if (process.argv[1].includes("hollywood")) {
   const films = await scrapeHollywood();
   console.log(JSON.stringify(films, null, 2));
-  await closeBrowser(); // release the shared browser so the process exits
 }
