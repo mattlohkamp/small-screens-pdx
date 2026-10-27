@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-10-26T11:15:20.068Z",
+  "scraped_at": "2026-10-27T11:15:20.255Z",
   "films": [
     {
       "id": null,
@@ -101,25 +101,6 @@
     },
     {
       "id": null,
-      "slug": "rrr",
-      "title": "Rrr",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-26T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/rrr-2026-10-26-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "wildwood-digital",
       "title": "WILDWOOD (Digital)",
       "year": null,
@@ -129,12 +110,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-26T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-26-600pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-10-27T19:00",
@@ -175,37 +150,6 @@
     },
     {
       "id": null,
-      "slug": "wildwood",
-      "title": "Wildwood",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-26T15:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-26-300pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-30T15:15",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-30-300pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-31T14:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-31-200pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "re-animator-at-ross-hollywood-chapel-funeral-home",
       "title": "RE-ANIMATOR at Ross Hollywood Chapel Funeral Home",
       "year": null,
@@ -225,31 +169,6 @@
     },
     {
       "id": null,
-      "slug": "severin-presents-butcher-baker-nightmare-maker",
-      "title": "Severin Presents – BUTCHER, BAKER, NIGHTMARE MAKER",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-26T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/severin-presents-butcher-baker-nightmare-maker-2026-10-26-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-26T20:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/severin-presents-butcher-baker-nightmare-maker-2026-10-26-800pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "halloween-with-chucky-don-mancini",
       "title": "Halloween With Chucky & Don Mancini",
       "year": null,
@@ -264,6 +183,31 @@
           "datetime": "2026-10-31T18:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/halloween-with-chucky-don-mancini-2026-10-31-600pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "wildwood",
+      "title": "Wildwood",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-10-30T15:15",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-30-300pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-10-31T14:00",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-31-200pm/"
         }
       ]
     },
@@ -309,12 +253,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-26T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-devils-digital-2026-10-26-630pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-10-27T18:30",
