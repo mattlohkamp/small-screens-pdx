@@ -2,65 +2,8 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-10-27T11:15:20.255Z",
+  "scraped_at": "2026-10-28T11:15:20.111Z",
   "films": [
-    {
-      "id": null,
-      "slug": "a-poet-un-poeta",
-      "title": "A POET (Un poeta)",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-28T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/a-poet-un-poeta-2026-10-28-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "dawn-of-the-dead",
-      "title": "Dawn Of The Dead",
-      "year": 2004,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-28T19:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/dawn-of-the-dead-2004-in-35mm-2026-10-28-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "rec",
-      "title": "Rec",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-30T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/rec-2026-10-30-730pm/"
-        }
-      ]
-    },
     {
       "id": null,
       "slug": "all-the-colors-of-the-dark",
@@ -82,9 +25,9 @@
     },
     {
       "id": null,
-      "slug": "mark-of-the-devil",
-      "title": "Mark Of The Devil",
-      "year": null,
+      "slug": "dawn-of-the-dead",
+      "title": "Dawn Of The Dead",
+      "year": 2004,
       "director": null,
       "runtime_minutes": null,
       "overview": null,
@@ -93,77 +36,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-10-27T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/mark-of-the-devil-2026-10-27-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "wildwood-digital",
-      "title": "WILDWOOD (Digital)",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-27T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-27-700pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-28T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-28-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-29T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-29-700pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-30T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-30-700pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-31T16:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-31-400pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-31T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-31-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "re-animator-at-ross-hollywood-chapel-funeral-home",
-      "title": "RE-ANIMATOR at Ross Hollywood Chapel Funeral Home",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-10-30T20:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/re-animator-at-ross-hollywood-chapel-funeral-home-2026-10-30-800pm/"
+          "datetime": "2026-10-28T19:00",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/dawn-of-the-dead-2004-in-35mm-2026-10-28-700pm/"
         }
       ]
     },
@@ -188,8 +63,8 @@
     },
     {
       "id": null,
-      "slug": "wildwood",
-      "title": "Wildwood",
+      "slug": "a-poet-un-poeta",
+      "title": "A POET (Un poeta)",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -199,15 +74,72 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-10-30T15:15",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-30-300pm/"
+          "datetime": "2026-10-28T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/a-poet-un-poeta-2026-10-28-730pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "re-animator-at-ross-hollywood-chapel-funeral-home",
+      "title": "RE-ANIMATOR at Ross Hollywood Chapel Funeral Home",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-10-30T20:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/re-animator-at-ross-hollywood-chapel-funeral-home-2026-10-30-800pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "rec",
+      "title": "Rec",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-10-30T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/rec-2026-10-30-730pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "the-devils-digital",
+      "title": "THE DEVILS (Digital)",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-10-28T21:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/the-devils-digital-2026-10-28-930pm/"
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-10-31T14:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-31-200pm/"
+          "datetime": "2026-10-29T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/the-devils-digital-2026-10-29-630pm/"
         }
       ]
     },
@@ -244,8 +176,8 @@
     },
     {
       "id": null,
-      "slug": "the-devils-digital",
-      "title": "THE DEVILS (Digital)",
+      "slug": "wildwood-digital",
+      "title": "WILDWOOD (Digital)",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -255,27 +187,58 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-10-27T18:30",
+          "datetime": "2026-10-28T18:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-devils-digital-2026-10-27-630pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-28-600pm/"
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-10-27T21:30",
+          "datetime": "2026-10-29T19:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-devils-digital-2026-10-27-930pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-29-700pm/"
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-10-28T21:30",
+          "datetime": "2026-10-30T19:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-devils-digital-2026-10-28-930pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-30-700pm/"
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-10-29T18:30",
+          "datetime": "2026-10-31T16:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-devils-digital-2026-10-29-630pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-31-400pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-10-31T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-10-31-700pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "wildwood",
+      "title": "Wildwood",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-10-30T15:15",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-30-315pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-10-31T14:00",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-in-35mm-2026-10-31-200pm/"
         }
       ]
     }
