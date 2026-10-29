@@ -2,7 +2,7 @@
   "venue_ids": [
     "omsi"
   ],
-  "scraped_at": "2026-10-28T11:15:31.707Z",
+  "scraped_at": "2026-10-29T11:15:32.587Z",
   "films": [
     {
       "id": null,
@@ -15,12 +15,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-28T15:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a04a32-5e8e-d57f-9203-ae603b12c27c"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-10-31T14:00:00",
@@ -50,6 +44,18 @@
           "datetime": "2026-11-03T18:45:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/01a04a32-5e8e-d57f-9203-ae603b12c27c"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-04T16:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a04a32-5e8e-d57f-9203-ae603b12c27c"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-04T18:45:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a04a32-5e8e-d57f-9203-ae603b12c27c"
         }
       ]
     },
@@ -64,24 +70,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-28T11:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-28T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-28T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-10-29T11:00:00",
@@ -149,12 +137,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-10-28T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-10-29T14:00:00",
