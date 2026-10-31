@@ -15,7 +15,9 @@ concurrency:
 
 jobs:
   scrape:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moved to 26.04 (Oct 2026) and Playwright has no
+    # browser builds for it yet, so `playwright install` fails outright.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
