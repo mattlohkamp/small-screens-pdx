@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-01T12:15:25.982Z",
+  "scraped_at": "2026-11-02T12:15:23.274Z",
   "films": [
     {
       "id": null,
@@ -107,25 +107,6 @@
     },
     {
       "id": null,
-      "slug": "interspecies-communication-with-jim-nollman-and-rankin-renwick",
-      "title": "INTERSPECIES COMMUNICATION with Jim Nollman and Rankin Renwick",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-01T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/interspecies-communication-with-jim-nollman-and-rankin-renwick-2026-11-01-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "la-bola-negra-digital",
       "title": "LA BOLA NEGRA (Digital)",
       "year": null,
@@ -146,6 +127,12 @@
           "datetime": "2026-11-06T21:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-06-930pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-08T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-08-600pm/"
         }
       ]
     },
@@ -277,25 +264,6 @@
     },
     {
       "id": null,
-      "slug": "cronos",
-      "title": "Cronos",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-01T15:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/cronos-2026-11-01-300pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "radiance-presents-agitator",
       "title": "Radiance Presents – AGITATOR",
       "year": null,
@@ -315,8 +283,8 @@
     },
     {
       "id": null,
-      "slug": "the-only-living-pickpocket-in-new-york",
-      "title": "The Only Living Pickpocket In New York",
+      "slug": "tenebre-with-claudio-simonetti-s-goblin",
+      "title": "TENEBRE with Claudio Simonetti’s GOBLIN",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -326,22 +294,23 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-01T15:30",
+          "datetime": "2026-11-08T20:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-01-330pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-01T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-01-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-01T20:45",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-01-845pm/"
-        },
+          "ticket_url": "https://hollywoodtheatre.org/event/tenebre-with-claudio-simonettis-goblin-2026-11-08-800pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "the-only-living-pickpocket-in-new-york",
+      "title": "The Only Living Pickpocket In New York",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-02T18:30",
@@ -419,6 +388,12 @@
           "datetime": "2026-11-07T21:05",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-07-905pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-08T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-08-630pm/"
         }
       ]
     },
@@ -433,18 +408,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-01T16:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-11-01-400pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-01T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-11-01-730pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-02T19:00",
