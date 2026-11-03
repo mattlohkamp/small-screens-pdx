@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-02T12:15:23.274Z",
+  "scraped_at": "2026-11-03T12:15:38.574Z",
   "films": [
     {
       "id": null,
@@ -88,25 +88,6 @@
     },
     {
       "id": null,
-      "slug": "gorgo",
-      "title": "Gorgo",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-02T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/gorgo-2026-11-02-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "la-bola-negra-digital",
       "title": "LA BOLA NEGRA (Digital)",
       "year": null,
@@ -164,6 +145,37 @@
           "datetime": "2026-11-07T21:30",
           "format": "35mm",
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-in-35mm-2026-11-07-930pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-09T18:00",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-in-35mm-2026-11-09-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-09T21:30",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-in-35mm-2026-11-09-930pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "mississippi-triangle",
+      "title": "Mississippi Triangle",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-09T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/mississippi-triangle-2026-11-09-730pm/"
         }
       ]
     },
@@ -226,6 +238,31 @@
     },
     {
       "id": null,
+      "slug": "music-box-films-presents-by-design",
+      "title": "Music Box Films Presents – BY DESIGN",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-09T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/music-box-films-presents-by-design-2026-11-09-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-09T20:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/music-box-films-presents-by-design-2026-11-09-800pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
       "slug": "mystics-in-bali",
       "title": "Mystics In Bali",
       "year": null,
@@ -264,25 +301,6 @@
     },
     {
       "id": null,
-      "slug": "radiance-presents-agitator",
-      "title": "Radiance Presents – AGITATOR",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-02T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/radiance-presents-agitator-2026-11-02-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "tenebre-with-claudio-simonetti-s-goblin",
       "title": "TENEBRE with Claudio Simonetti’s GOBLIN",
       "year": null,
@@ -311,18 +329,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-02T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-02-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-02T20:45",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-02-845pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-03T18:30",
@@ -394,6 +400,18 @@
           "datetime": "2026-11-08T18:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-08-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-09T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-09-700pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-09T21:05",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-09-905pm/"
         }
       ]
     },
@@ -408,12 +426,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-02T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-11-02-700pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-03T19:00",
