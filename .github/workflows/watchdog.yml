@@ -1,0 +1,79 @@
+name: Scrape watchdog
+
+# GitHub can delay scheduled runs by hours or skip them outright (both morning
+# scrapes on 2026-11-04 never started). The scrape's own health alerts only fire
+# from runs that start, so a skipped run is silent. This hourly check looks at
+# how old the committed data is; if it's overdue and no scrape is already
+# queued or running, it starts one and sends a push saying so.
+#
+# Normal gap between scheduled scrapes is at most 10h (20:37 → 02:37 → 12:37 UTC),
+# so 12h means at least one run went missing.
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write # to start scrape.yml
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check data age and start a scrape if overdue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_SERVER: ${{ vars.NTFY_SERVER }}
+          MAX_AGE_HOURS: 12
+          # Don't stack a new run on one started this recently (scheduled,
+          # manual, or our own previous dispatch); a scrape takes a few minutes.
+          RECENT_RUN_MINUTES: 90
+        run: |
+          set -euo pipefail
+
+          generated_at=$(gh api "repos/${REPO}/contents/public/data/showtimes.json?ref=main" \
+            -H "Accept: application/vnd.github.raw" | jq -r .generated_at)
+          age_h=$(( ( $(date -u +%s) - $(date -u -d "$generated_at" +%s) ) / 3600 ))
+          echo "showtimes.json generated_at=${generated_at} (${age_h}h old)"
+          if [ "$age_h" -lt "$MAX_AGE_HOURS" ]; then
+            echo "Fresh enough — nothing to do."
+            exit 0
+          fi
+
+          latest=$(gh run list -R "$REPO" --workflow scrape.yml --limit 1 --json status,conclusion,createdAt)
+          status=$(echo "$latest" | jq -r '.[0].status // "none"')
+          conclusion=$(echo "$latest" | jq -r '.[0].conclusion // empty')
+          created=$(echo "$latest" | jq -r '.[0].createdAt // empty')
+          since_min=999999
+          if [ -n "$created" ]; then
+            since_min=$(( ( $(date -u +%s) - $(date -u -d "$created" +%s) ) / 60 ))
+          fi
+          echo "Latest scrape run: status=${status}, started ${since_min}m ago"
+          if [ "$status" != "completed" ] || [ "$since_min" -lt "$RECENT_RUN_MINUTES" ]; then
+            echo "A scrape is running or just ran — leaving it be."
+            exit 0
+          fi
+          # A failed run already sent its own urgent push; re-running it hourly
+          # would just repeat that. The next scheduled run will try again.
+          if [ "$conclusion" = "failure" ]; then
+            echo "Latest scrape failed (already alerted) — not retrying from here."
+            exit 0
+          fi
+
+          gh workflow run scrape.yml -R "$REPO" --ref main
+          echo "Started a scrape run."
+
+          if [ -z "${NTFY_TOPIC:-}" ]; then echo "NTFY_TOPIC not set — skipping push"; exit 0; fi
+          STAMP="$(TZ=America/Los_Angeles date '+%a, %b %-d, %-I:%M %p %Z')"
+          curl -sS --max-time 15 \
+            -H "Title: small screens warning: scheduled scrape overdue" \
+            -H "Priority: 3" \
+            -H "Tags: hourglass,film_projector" \
+            -H "Click: ${{ github.server_url }}/${REPO}/actions/workflows/scrape.yml" \
+            -d "${STAMP}
+          Site data is ${age_h}h old, so GitHub skipped or delayed a scheduled scrape. Started one manually." \
+            "${NTFY_SERVER:-https://ntfy.sh}/${NTFY_TOPIC}"
