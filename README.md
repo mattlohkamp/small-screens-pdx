@@ -103,8 +103,10 @@ history, and pushes a phone notification via [ntfy](https://ntfy.sh) when:
   **empty week** — occasional-screening venues like Mission never trip this,
 - the whole scrape job fails,
 
-and again when each problem clears. One push per run with changes; silent
-otherwise. Thresholds live at the top of `src/health.ts`.
+and again when each problem clears. Severity maps to ntfy priority: whole run
+failed = 5 (urgent), scraper failing = 4 (high), unexpectedly empty = 3
+(default), resolved = 2 (low). One push per severity per run with changes;
+silent otherwise. Thresholds and tiers live in `src/health.ts`.
 
 Setup: install the ntfy app, subscribe to a hard-to-guess topic name, and add
 it as the `NTFY_TOPIC` repo secret (Settings → Secrets and variables →

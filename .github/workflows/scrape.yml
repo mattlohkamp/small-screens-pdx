@@ -112,7 +112,9 @@ jobs:
 
       # Whole-run failure (crash, every scraper down, commit/deploy error): the
       # per-venue health check in scrape.ts never got to run or report, so push
-      # directly. GitHub's own failure email still goes out too.
+      # directly, at urgent (5) priority: nothing on the site is updating.
+      # (Per-venue tiers in health.ts: failing 4, empty 3, recovered 2.)
+      # GitHub's own failure email still goes out too.
       - name: Push alert on failed run
         if: failure()
         env:
@@ -122,9 +124,9 @@ jobs:
         run: |
           if [ -z "${NTFY_TOPIC}" ]; then echo "NTFY_TOPIC not set — skipping"; exit 0; fi
           curl -sS --max-time 15 \
-            -H "Title: small screens: scrape run FAILED" \
-            -H "Priority: high" \
-            -H "Tags: rotating_light,film_projector" \
+            -H "Title: small screens URGENT: scrape run FAILED" \
+            -H "Priority: 5" \
+            -H "Tags: skull,film_projector" \
             -H "Click: ${RUN_URL}" \
             -d "The scheduled scrape job failed outright, so no venues were updated. Tap for the run log." \
             "${NTFY_SERVER:-https://ntfy.sh}/${NTFY_TOPIC}"

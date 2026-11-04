@@ -158,18 +158,50 @@ export function evaluateHealth(
   return { state, events };
 }
 
-// One push per run that has changes; silent otherwise. Never throws — a
-// notification problem must not fail the scrape.
+// Push severity tiers, mapped to ntfy priorities (1 min … 5 urgent). The
+// phone app vibrates/pops over differently per priority, and each can be
+// tuned in the app. Whole-run failure (priority 5) is sent from the workflow's
+// failure step in scrape.yml, since this code never runs in that case.
+interface Tier {
+  match: (e: HealthEvent) => boolean;
+  priority: 2 | 3 | 4;
+  tags: string; // ntfy emoji shortcodes; first one shows beside the title
+  title: (n: number) => string;
+}
+
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+const TIERS: Tier[] = [
+  {
+    // Alert: a scraper is actually broken (errors / can't reach its data).
+    match: (e) => e.kind === "failing" && e.change === "started",
+    priority: 4,
+    tags: "rotating_light,film_projector",
+    title: (n) => `small screens ALERT: ${plural(n, "scraper")} failing`,
+  },
+  {
+    // Warning: scraper runs, but a usually-busy venue came back empty.
+    match: (e) => e.kind === "empty" && e.change === "started",
+    priority: 3,
+    tags: "warning,film_projector",
+    title: (n) => `small screens warning: ${plural(n, "venue")} unexpectedly empty`,
+  },
+  {
+    // Recovery: quiet good news.
+    match: (e) => e.change === "recovered",
+    priority: 2,
+    tags: "white_check_mark,film_projector",
+    title: (n) => `small screens: ${plural(n, "issue")} resolved`,
+  },
+];
+
+// One push per severity tier that has changes this run; silent otherwise.
+// Never throws — a notification problem must not fail the scrape.
 export async function notifyHealth(events: HealthEvent[], log: (msg: string) => void): Promise<void> {
   if (events.length === 0) return;
 
-  const started = events.filter((e) => e.change === "started");
-  const recovered = events.filter((e) => e.change === "recovered");
-  const lines = [
-    ...started.map((e) => `⚠ ${e.label}: ${e.detail}`),
-    ...recovered.map((e) => `✓ ${e.label}: ${e.detail}`),
-  ];
-  for (const line of lines) log(`  health: ${line}`);
+  const line = (e: HealthEvent) => `${e.change === "recovered" ? "✓" : "⚠"} ${e.label}: ${e.detail}`;
+  for (const e of events) log(`  health: ${line(e)}`);
 
   const topic = process.env.NTFY_TOPIC;
   if (!topic) {
@@ -180,24 +212,26 @@ export async function notifyHealth(events: HealthEvent[], log: (msg: string) => 
   const { GITHUB_SERVER_URL, GITHUB_REPOSITORY, GITHUB_RUN_ID } = process.env;
   const runUrl = GITHUB_RUN_ID ? `${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}` : null;
 
-  try {
-    const res = await fetch(`${server}/${encodeURIComponent(topic)}`, {
-      method: "POST",
-      headers: {
-        // HTTP headers must be ASCII/Latin-1, so keep the title plain.
-        Title: started.length
-          ? `small screens: ${started.length} scraper problem${started.length === 1 ? "" : "s"}`
-          : "small screens: scrapers recovered",
-        Priority: started.length ? "high" : "default",
-        Tags: started.length ? "warning,film_projector" : "white_check_mark,film_projector",
-        ...(runUrl ? { Click: runUrl } : {}),
-      },
-      body: lines.join("\n"),
-      signal: AbortSignal.timeout(15_000),
-    });
-    if (!res.ok) log(`  health: ntfy responded HTTP ${res.status}`);
-    else log(`  health: sent push notification (${events.length} change${events.length === 1 ? "" : "s"})`);
-  } catch (err) {
-    log(`  health: failed to send push notification: ${err}`);
+  for (const tier of TIERS) {
+    const tierEvents = events.filter(tier.match);
+    if (tierEvents.length === 0) continue;
+    try {
+      const res = await fetch(`${server}/${encodeURIComponent(topic)}`, {
+        method: "POST",
+        headers: {
+          // HTTP headers must be ASCII/Latin-1, so keep the title plain.
+          Title: tier.title(tierEvents.length),
+          Priority: String(tier.priority),
+          Tags: tier.tags,
+          ...(runUrl ? { Click: runUrl } : {}),
+        },
+        body: tierEvents.map(line).join("\n"),
+        signal: AbortSignal.timeout(15_000),
+      });
+      if (!res.ok) log(`  health: ntfy responded HTTP ${res.status} (priority ${tier.priority})`);
+      else log(`  health: sent priority-${tier.priority} push (${plural(tierEvents.length, "change")})`);
+    } catch (err) {
+      log(`  health: failed to send priority-${tier.priority} push: ${err}`);
+    }
   }
 }
