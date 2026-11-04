@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [1.6.0] — 2026-11-03
+
+### Added
+- "Browse by movie" picker under the date cards (desktop and mobile drawer): lists every film showing this week, A–Z with showtime counts. Picking one opens a single-film focus view with the week's showtimes grouped by theater (A–Z), then by day. Ignores the date/venue/genre/search filters but respects "Hide past". Reuses the slide-over detail view, so it works on desktop too.
+
+### Changed
+- The desktop "Show more filters" toggle is now an underlined text link ("Show more filters…" / "Hide extended filters…") instead of a chip, so it reads as disclosure rather than another filter.
+
+### Fixed
+- Cinemagic showtimes had been missing since 2026-10-27, when the theater moved its ticketing to the INDY platform and its film pages became a client-rendered SPA. The scraper now queries INDY's GraphQL API directly (plain HTTP, no browser), which also yields director, runtime, synopsis, and release year. It now warns when a whole week comes back empty instead of failing silently.
+
 ## [1.5.0] — 2026-07-19
 
 ### Added
