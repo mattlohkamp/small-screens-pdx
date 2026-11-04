@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-03T12:15:38.574Z",
+  "scraped_at": "2026-11-04T12:15:39.648Z",
   "films": [
     {
       "id": null,
@@ -69,8 +69,8 @@
     },
     {
       "id": null,
-      "slug": "fatal-termination",
-      "title": "Fatal Termination",
+      "slug": "eastern-condors",
+      "title": "Eastern Condors",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -80,9 +80,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-03T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/fatal-termination-2026-11-03-730pm/"
+          "datetime": "2026-11-10T19:30",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/eastern-condors-in-35mm-2026-11-10-730pm/"
         }
       ]
     },
@@ -114,6 +114,18 @@
           "datetime": "2026-11-08T18:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-08-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-10T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-10-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-10T21:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-10-930pm/"
         }
       ]
     },
@@ -181,8 +193,8 @@
     },
     {
       "id": null,
-      "slug": "after-hours",
-      "title": "After Hours",
+      "slug": "the-discreet-charm-of-the-bourgeoisie",
+      "title": "The Discreet Charm of the Bourgeoisie",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -192,9 +204,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-03T18:30",
+          "datetime": "2026-11-10T18:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/after-hours-2026-11-03-630pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/the-discreet-charm-of-the-bourgeoisie-2026-11-10-630pm/"
         }
       ]
     },
@@ -331,18 +343,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-03T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-03-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-03T20:45",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-03-845pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-04T18:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-04-630pm/"
@@ -412,6 +412,12 @@
           "datetime": "2026-11-09T21:05",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-09-905pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-10T20:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-10-830pm/"
         }
       ]
     },
@@ -426,12 +432,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-03T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-11-03-700pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-04T20:45",
