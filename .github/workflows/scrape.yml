@@ -2,7 +2,18 @@ name: Scrape
 
 on:
   schedule:
-    - cron: "0 12 * * *" # 5am Pacific (PDT = UTC-7)
+    # Three runs a day so listings a venue posts during the day reach the site
+    # within hours, not the next morning. Times are UTC, so Pacific shifts an
+    # hour with DST:  02:37 → 6:37pm PST / 7:37pm PDT
+    #                 12:37 → 4:37am PST / 5:37am PDT
+    #                 20:37 → 12:37pm PST / 1:37pm PDT
+    # Off the top of the hour on purpose: GitHub's scheduler is most congested
+    # at :00, and our old "0 12" run routinely started 3–6 hours late.
+    # natty's residential scrape (OMSI/Hollywood → pi-data branch) runs at
+    # 4:15/12:15/18:15 local, ahead of each of these in both PST and PDT.
+    # Ordering only affects freshness: pi-source.ts takes natty's latest push
+    # up to 36h old either way.
+    - cron: "37 2,12,20 * * *"
   workflow_dispatch: # allow manual trigger from Actions tab
 
 permissions:
@@ -56,17 +67,18 @@ jobs:
             echo "No changes — skipping commit"
           else
             if [ "${{ github.event_name }}" = "schedule" ]; then
-              KIND="daily"
+              KIND="scheduled"
             else
               KIND="manual"
             fi
-            git commit -m "chore: ${KIND} scrape $(date -u +%Y-%m-%d)"
+            # Several runs a day now, so include the time to tell them apart.
+            git commit -m "chore: ${KIND} scrape $(date -u +%Y-%m-%dT%H:%MZ)"
             git pull --rebase origin main
             git push --no-verify
           fi
 
       # Deploy ONLY the data file to the live site. This touches data/showtimes.json
-      # on gh-pages and nothing else, so the daily scrape never ships UI changes —
+      # on gh-pages and nothing else, so the scheduled scrape never ships UI changes —
       # those go out solely via the manual Deploy UI workflow.
       - name: Deploy data to gh-pages
         run: |
@@ -87,6 +99,6 @@ jobs:
           if git -C gh-pages-wt diff --staged --quiet; then
             echo "Live data already current — nothing to deploy."
           else
-            git -C gh-pages-wt commit -m "data: scrape $(date -u +%Y-%m-%d)"
+            git -C gh-pages-wt commit -m "data: scrape $(date -u +%Y-%m-%dT%H:%MZ)"
             git -C gh-pages-wt push origin gh-pages
           fi

@@ -10,7 +10,7 @@ A unified showtime aggregator for Portland's independent cinemas. Each theater p
 
 ## How it works
 
-A GitHub Actions cron job runs daily scrapers for each venue, enriches film data via the [TMDB API](https://www.themoviedb.org/), and produces a single `showtimes.json` covering a rolling two-week window. That JSON is the data layer for the React frontend, which handles all filtering and searching client-side. The built site is deployed to GitHub Pages.
+A GitHub Actions cron job runs the scrapers three times a day for each venue, enriches film data via the [TMDB API](https://www.themoviedb.org/), and produces a single `showtimes.json` covering a rolling two-week window. That JSON is the data layer for the React frontend, which handles all filtering and searching client-side. The built site is deployed to GitHub Pages.
 
 ## Tech stack
 
@@ -115,7 +115,7 @@ To cut a release:
 
 The tag push triggers the Deploy UI workflow: it builds, publishes to GitHub
 Pages, and creates a GitHub Release titled `1.2.0-<commithash>` matching the
-deployed build. The daily scrape cron also auto-deploys when it commits a
+deployed build. The scheduled scrape also auto-deploys when it commits a
 changed `showtimes.json` (data only, no UI/version change).
 
 ---

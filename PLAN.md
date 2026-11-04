@@ -215,7 +215,7 @@ A single unified `WhatsOn` view (`app/components/WhatsOn.tsx`) covers the whole 
 **Host:** GitHub Pages, via a custom worktree-push deploy (not `actions/deploy-pages`). Two separate workflows:
 
 ```
-scrape.yml (cron, daily ~5am Pacific + manual dispatch)
+scrape.yml (cron, 3x daily ~5am/1pm/7pm Pacific + manual dispatch)
   1. checkout repo, install Playwright chromium
   2. npm run scrape (all registered scrapers)
        → merge films across venues (dedup by title)
@@ -278,7 +278,7 @@ The original design (further down this section, kept for history) called for spl
 - **`src/scrape.ts`** — `withPiFallback(venueId, scrapeFn)` wraps `omsi`'s and `hollywood`'s registry entries: try the real scraper first (still useful for local dev runs off a residential connection), and on failure fall back to `fetchPiRaw`. No CI-detection branching needed.
 - **Code delivery to natty is `scp`, not `git pull`.** natty never clones this repo or runs `npm ci`/`npm install` on a schedule — code updates are copied over by hand, deliberately, so a compromised repo or dependency has no automated path to execute anything on the Pi. See `pi-scraper/` in this repo: a self-contained mirror (`package.json`, `run.ts`, and copies of `src/{types,fetch,browser,version,window}.ts` + `src/scrapers/{omsi,hollywood}.ts`) that gets `scp`'d to `~/small-screens-scraper` on natty whenever the scrapers change.
 - **Data delivery is a dedicated push-only git branch (`pi-data`), not the main repo.** natty has a separate, minimal git checkout (`~/small-screens-data`) whose only remote branch is `pi-data`, authenticated via a repo-scoped GitHub deploy key (write access, this repo only — created specifically for this, not the user's personal key). natty only ever `git add`/`commit`/`push`es to it; it never fetches or pulls, so there's no path for anything committed elsewhere to reach natty automatically.
-- **`~/small-screens-scraper/cron-scrape.sh`** — runs `run.ts` (writes `data/raw/{omsi,hollywood}.json` into the `small-screens-data` checkout, skipping a file entirely on scrape failure rather than overwriting it), then commits/pushes only if something changed. Cron: `15 4 * * *` (natty and Portland share a timezone), ahead of CI's `0 12 * * *` UTC (5am Pacific) run so fresh data is always waiting.
+- **`~/small-screens-scraper/cron-scrape.sh`** — runs `run.ts` (writes `data/raw/{omsi,hollywood}.json` into the `small-screens-data` checkout, skipping a file entirely on scrape failure rather than overwriting it), then commits/pushes only if something changed. Cron: `15 4,12,18 * * *` local (natty and Portland share a timezone), ahead of each of CI's `37 2,12,20 * * *` UTC runs in both PST and PDT (changed 2026-11-03 from once daily; the old `15 4` vs `0 12` UTC pairing put CI first during PST). Ordering only affects freshness — `pi-source.ts` accepts natty data up to 36h old.
 
 ### What this gets, versus the original all-venues design
 
