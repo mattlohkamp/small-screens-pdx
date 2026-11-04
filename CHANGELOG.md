@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Added
+- Scrape health alerts: per-venue history in `state/venue-health.json` plus ntfy phone pushes when a scraper fails 2 runs in a row, a usually-busy venue returns an empty week, or the whole scrape job fails (and when each clears). Scrapes now run 3x daily, off the top of the hour.
+
 ## [1.6.0] — 2026-11-03
 
 ### Added

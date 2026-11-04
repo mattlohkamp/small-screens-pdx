@@ -19,6 +19,7 @@ import { withRetry, withTimeout } from "./fetch.js";
 import { VERSION } from "./version.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
+import { evaluateHealth, HEALTH_PATH, loadHealth, notifyHealth, saveHealth, type VenueRunResult } from "./health.js";
 import { WINDOW_DAYS } from "./window.js";
 import { fetchPiRaw } from "./pi-source.js";
 import type { Schedule, Film } from "./types.js";
@@ -184,11 +185,14 @@ async function run(runStart: Date, log: (msg: string) => void) {
 
   const freshFilmLists: Film[][] = [];
   const failedScrapers: string[] = [];
+  const failureReasons = new Map<string, string>();
   settled.forEach((result, i) => {
     if (result.status === "fulfilled") {
       freshFilmLists.push(result.value);
     } else {
       failedScrapers.push(selectedIds[i]);
+      const reason = result.reason instanceof Error ? result.reason.message : String(result.reason);
+      failureReasons.set(selectedIds[i], reason.split("\n")[0].slice(0, 200));
       console.error(`✗ ${SCRAPERS[selectedIds[i]].label} failed:`, result.reason);
       log(`✗ ${SCRAPERS[selectedIds[i]].label} failed: ${result.reason}`);
     }
@@ -413,6 +417,30 @@ async function run(runStart: Date, log: (msg: string) => void) {
     console.warn(`   Preserved last-known-good showtimes for those venues.`);
     log(`\n⚠  Degraded run: ${failedScrapers.length} scraper(s) failed (${labels}).`);
     log(`   Preserved last-known-good showtimes for those venues.`);
+  }
+
+  // Per-venue health tracking + push alerts (see health.ts). Full runs only —
+  // a partial run says nothing about the venues it skipped. Runs in CI, or
+  // locally with --health; otherwise local dev runs would rewrite the committed
+  // state file with whatever a dev machine happened to see.
+  const trackHealth = !partial && (process.env.GITHUB_ACTIONS === "true" || process.argv.includes("--health"));
+  if (trackHealth) {
+    const counts = new Map<string, number>();
+    for (const f of films) for (const s of f.showtimes) counts.set(s.venue_id, (counts.get(s.venue_id) ?? 0) + 1);
+    const venueName = new Map(schedule.venues.map((v) => [v.id, v.name]));
+    const results: VenueRunResult[] = allIds.flatMap((id) =>
+      SCRAPERS[id].venueIds.map((venueId) => ({
+        venueId,
+        label: venueName.get(venueId) ?? venueId,
+        status: failedScrapers.includes(id) ? ("failed" as const) : ("ok" as const),
+        showtimes: counts.get(venueId) ?? 0,
+        error: failureReasons.get(id),
+      }))
+    );
+    const { state, events } = evaluateHealth(loadHealth(), results, start);
+    saveHealth(state);
+    log(`\nHealth: ${events.length ? `${events.length} change(s)` : "no changes"} (state in ${HEALTH_PATH})`);
+    await notifyHealth(events, log);
   }
 
   if (failures.length > 0) {

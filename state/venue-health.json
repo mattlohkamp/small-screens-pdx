@@ -1,0 +1,980 @@
+{
+  "version": 1,
+  "venues": {
+    "cinemagic": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 17,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 16,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 14,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 12,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 12,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 13,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 0,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "clinton-street": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 8,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 8,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 9,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 9,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 10,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 9,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 9,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 10,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 10,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 9,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 7,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 8,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 8,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 10,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "laurelhurst": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 63,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 69,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 64,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 64,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 53,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 38,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 27,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 65,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 65,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 65,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 69,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 58,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 43,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 32,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "baghdad": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 23,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 20,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 19,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 19,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 19,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 19,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 12,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 8,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "kennedy-school": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 17,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 13,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 9,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 6,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 17,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 17,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 17,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 17,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 13,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 9,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "academy": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 63,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 63,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 63,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 60,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 60,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 56,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 54,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 62,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 62,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 62,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 59,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 59,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 60,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 63,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "living-room": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 63,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 75,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 113,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 155,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 132,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 107,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 89,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 69,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 124,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 152,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 132,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 132,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 104,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 87,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "omsi": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 19,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 39,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 40,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 44,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 44,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 27,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 25,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 39,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 41,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 38,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "cinema-21": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 31,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 55,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 55,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 54,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 52,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 47,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 52,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 52,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 52,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 51,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 43,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 46,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 40,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 51,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "hollywood": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 28,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 22,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 14,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 11,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 6,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 41,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 37,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "st-johns": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 27,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 33,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 26,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 28,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 25,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 32,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "moreland": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 22,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 22,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 22,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 22,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 19,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 16,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 13,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 11,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 21,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 17,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 20,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 7,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "tomorrow": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 5,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 5,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 5,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 5,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 5,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 5,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 7,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 7,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 7,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 7,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 6,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 7,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 7,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 7,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "mission": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 0,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 0,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    },
+    "avalon": {
+      "days": {
+        "2026-10-20": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-10-21": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-10-22": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-10-23": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-10-24": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-10-25": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-10-26": {
+          "showtimes": 12,
+          "status": "ok"
+        },
+        "2026-10-27": {
+          "showtimes": 9,
+          "status": "ok"
+        },
+        "2026-10-28": {
+          "showtimes": 6,
+          "status": "ok"
+        },
+        "2026-10-29": {
+          "showtimes": 3,
+          "status": "ok"
+        },
+        "2026-10-30": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-10-31": {
+          "showtimes": 18,
+          "status": "ok"
+        },
+        "2026-11-01": {
+          "showtimes": 15,
+          "status": "ok"
+        },
+        "2026-11-02": {
+          "showtimes": 12,
+          "status": "ok"
+        }
+      },
+      "consecutive_failures": 0,
+      "alerting": {
+        "failing": false,
+        "empty": false
+      }
+    }
+  }
+}

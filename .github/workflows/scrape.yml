@@ -57,12 +57,19 @@ jobs:
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
+          # Per-venue health alerts (src/health.ts) push here. NTFY_TOPIC is a
+          # secret because anyone who knows an ntfy.sh topic can read it.
+          # NTFY_SERVER is optional (defaults to https://ntfy.sh).
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_SERVER: ${{ vars.NTFY_SERVER }}
 
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/showtimes.json
+          # venue-health.json is the rolling per-venue history that decides
+          # whether an empty week is unusual; it must persist between runs.
+          git add public/data/showtimes.json state/venue-health.json
           if git diff --staged --quiet; then
             echo "No changes — skipping commit"
           else
@@ -102,3 +109,22 @@ jobs:
             git -C gh-pages-wt commit -m "data: scrape $(date -u +%Y-%m-%dT%H:%MZ)"
             git -C gh-pages-wt push origin gh-pages
           fi
+
+      # Whole-run failure (crash, every scraper down, commit/deploy error): the
+      # per-venue health check in scrape.ts never got to run or report, so push
+      # directly. GitHub's own failure email still goes out too.
+      - name: Push alert on failed run
+        if: failure()
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          NTFY_SERVER: ${{ vars.NTFY_SERVER }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "${NTFY_TOPIC}" ]; then echo "NTFY_TOPIC not set — skipping"; exit 0; fi
+          curl -sS --max-time 15 \
+            -H "Title: small screens: scrape run FAILED" \
+            -H "Priority: high" \
+            -H "Tags: rotating_light,film_projector" \
+            -H "Click: ${RUN_URL}" \
+            -d "The scheduled scrape job failed outright, so no venues were updated. Tap for the run log." \
+            "${NTFY_SERVER:-https://ntfy.sh}/${NTFY_TOPIC}"

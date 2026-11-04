@@ -93,6 +93,24 @@ data/
   enrichment-cache.json  # Persisted TMDB results (gitignored)
 ```
 
+### Scrape health alerts
+
+Each CI scrape updates `state/venue-health.json`, a rolling 14-day per-venue
+history, and pushes a phone notification via [ntfy](https://ntfy.sh) when:
+
+- a venue's scraper **fails 2 runs in a row** (it already retries 3× per run),
+- a venue that had showtimes on **≥10 of the last 14 days** comes back with an
+  **empty week** — occasional-screening venues like Mission never trip this,
+- the whole scrape job fails,
+
+and again when each problem clears. One push per run with changes; silent
+otherwise. Thresholds live at the top of `src/health.ts`.
+
+Setup: install the ntfy app, subscribe to a hard-to-guess topic name, and add
+it as the `NTFY_TOPIC` repo secret (Settings → Secrets and variables →
+Actions). Optional `NTFY_SERVER` repo variable for a self-hosted server.
+Local runs don't touch the health state unless you pass `--health`.
+
 ### Releasing
 
 The version is a single scheme everywhere: **`x.y.z-commithash`**. The `x.y.z`
