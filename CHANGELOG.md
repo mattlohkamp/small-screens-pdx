@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [1.6.1] — 2026-11-04
+
+### Fixed
+- The 1.6.0 UI release never deployed: the root `tsconfig.json` type-checked `pi-scraper/` (a separate package with its own `node_modules`), so the CI build failed on its `patchright` import. `pi-scraper` is now excluded. UI builds had been broken this way since 2026-10-25.
+
 ### Added
 - Scrape health alerts: per-venue history in `state/venue-health.json` plus ntfy phone pushes when a scraper fails 2 runs in a row, a usually-busy venue returns an empty week, or the whole scrape job fails (and when each clears). Scrapes now run 3x daily, off the top of the hour.
 
