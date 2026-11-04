@@ -31,6 +31,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Latest main, not the commit that triggered the run. A run queued
+          # behind another (concurrency group) otherwise checks out a SHA from
+          # before that run's data commit, regenerates the same files from a
+          # stale base, and conflicts on push (happened 2026-11-04 20:04Z).
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
@@ -82,7 +88,25 @@ jobs:
             fi
             # Several runs a day now, so include the time to tell them apart.
             git commit -m "chore: ${KIND} scrape $(date -u +%Y-%m-%dT%H:%MZ)"
-            git pull --rebase origin main
+            # If another writer landed generated files in the meantime, this
+            # run's copies win: they're whole files built from a scrape that
+            # just finished, so a line-level merge of two JSON snapshots would
+            # only produce a mix of both. Any other conflict still fails loudly.
+            GENERATED="public/data/showtimes.json state/venue-health.json state/feed-state.json"
+            if ! git pull --rebase origin main; then
+              conflicted=$(git diff --name-only --diff-filter=U)
+              for f in $conflicted; do
+                case " $GENERATED " in
+                  *" $f "*) ;;
+                  *) echo "Conflict in non-generated file $f — giving up."; git rebase --abort; exit 1 ;;
+                esac
+              done
+              echo "Conflict in generated files ($conflicted) — keeping this run's versions."
+              # During a rebase, "theirs" is the commit being replayed: this run's.
+              git checkout --theirs -- $conflicted
+              git add $conflicted
+              GIT_EDITOR=true git rebase --continue
+            fi
             git push --no-verify
           fi
 
