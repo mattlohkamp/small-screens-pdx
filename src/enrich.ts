@@ -2,6 +2,7 @@ import "dotenv/config";
 import type { Film } from "./types.js";
 import { fetchWithRetry } from "./fetch.js";
 import { USER_AGENT } from "./version.js";
+import { fromCacheEntry, toCacheEntry, type EnrichmentCache } from "./cache.js";
 
 const TMDB_BASE = "https://api.themoviedb.org/3";
 
@@ -375,7 +376,7 @@ export interface EnrichResult {
 export interface EnrichOptions {
   retryTitles?: Set<string>;
   force?: boolean;
-  cache?: Record<string, Film>;
+  cache?: EnrichmentCache;
 }
 
 export async function enrichFilms(films: Film[], opts: EnrichOptions = {}): Promise<EnrichResult> {
@@ -393,7 +394,7 @@ export async function enrichFilms(films: Film[], opts: EnrichOptions = {}): Prom
     const shouldSkip = !force && cached && !retryTitles.has(film.title);
 
     if (shouldSkip) {
-      enriched.push({ ...cached, showtimes: film.showtimes });
+      enriched.push(fromCacheEntry(cached, film.showtimes));
       console.log(`  Cached:   ${film.title}`);
       continue;
     }
@@ -411,7 +412,7 @@ export async function enrichFilms(films: Film[], opts: EnrichOptions = {}): Prom
         reason: "No TMDB match found — add to TMDB_ID_OVERRIDES in src/enrich.ts",
       });
     } else {
-      cache[film.title] = result;
+      cache[film.title] = toCacheEntry(result);
     }
   }
 
