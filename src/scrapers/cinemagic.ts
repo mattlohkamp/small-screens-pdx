@@ -1,140 +1,134 @@
-import * as cheerio from "cheerio";
 import type { Film, Showtime } from "../types.js";
-import { fetchText } from "../fetch.js";
+import { fetchJson } from "../fetch.js";
 import { USER_AGENT } from "../version.js";
+import { WINDOW_DAYS } from "../window.js";
 
+// Cinemagic moved to the INDY ticketing platform (~2026-10-27). Its film pages
+// are now a client-rendered SPA, so we query the same GraphQL API the SPA uses.
+// Unlike Living Room (also INDY), this endpoint accepts plain HTTP requests as
+// long as the site/circuit headers are present — no browser session needed.
 const BASE = "https://tickets.thecinemagictheater.com";
+const GQL = `${BASE}/graphql`;
+const SITE_ID = "40";
+const CIRCUIT_ID = "39";
 const VENUE_ID = "cinemagic";
 
-async function fetchHtml(url: string): Promise<string> {
-  return fetchText(
-    url,
-    { headers: { "User-Agent": USER_AGENT } },
+interface CMMovie {
+  id: string;
+  name: string;
+  urlSlug: string;
+  duration: number | null; // minutes
+  directedBy: string | null;
+  releaseDate: string | null; // "YYYY-MM-DD"
+  synopsis: string | null;
+}
+
+interface CMShowing {
+  id: string;
+  time: string; // UTC ISO
+  published: boolean | null;
+  movie: CMMovie | null;
+}
+
+interface GqlResponse {
+  data?: { showingsForDate?: { data: CMShowing[] } };
+  errors?: Array<{ message: string }>;
+  error?: { message: string };
+}
+
+const SHOWINGS_FOR_DATE_QUERY = `query ($date: String, $siteIds: [ID]) {
+  showingsForDate(date: $date, siteIds: $siteIds) {
+    data {
+      id time published
+      movie { id name urlSlug duration directedBy releaseDate synopsis }
+    }
+  }
+}`;
+
+// UTC ISO → local Pacific datetime string ("YYYY-MM-DDTHH:MM:SS")
+function utcToLocalPacific(utc: string): string {
+  return new Date(utc).toLocaleString("sv-SE", { timeZone: "America/Los_Angeles" }).replace(" ", "T");
+}
+
+// Calendar dates (Pacific) covering the scrape window, starting today.
+function windowDates(): string[] {
+  const now = Date.now();
+  return Array.from({ length: WINDOW_DAYS }, (_, i) =>
+    new Date(now + i * 86_400_000).toLocaleDateString("sv-SE", { timeZone: "America/Los_Angeles" })
+  );
+}
+
+async function fetchShowings(date: string): Promise<CMShowing[]> {
+  const res = await fetchJson<GqlResponse>(
+    GQL,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "User-Agent": USER_AGENT,
+        "site-id": SITE_ID,
+        "circuit-id": CIRCUIT_ID,
+        "client-type": "consumer",
+      },
+      body: JSON.stringify({ query: SHOWINGS_FOR_DATE_QUERY, variables: { date, siteIds: [SITE_ID] } }),
+    },
     "Cinemagic"
   );
-}
-
-// Parse ISO 8601 duration like "PT3H49M" or "PT1H45M" → minutes
-function parseDuration(iso: string): number | null {
-  const m = iso.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
-  if (!m) return null;
-  return (parseInt(m[1] ?? "0") * 60) + parseInt(m[2] ?? "0");
-}
-
-// Normalise a showtime link's text + URL to a Showtime record.
-// The link text from the film page is like "May 31, 2:00 pm"
-function parseShowtime(dateText: string, href: string): Showtime | null {
-  // Expected formats: "May 31, 2:00 pm" or "June 1, 7:00 PM"
-  const match = dateText.match(
-    /(\w+ \d+),\s*(\d+):(\d+)\s*(am|pm)/i
-  );
-  if (!match) return null;
-
-  const [, monthDay, hourStr, minStr, ampm] = match;
-  const year = new Date().getFullYear();
-  const date = new Date(`${monthDay} ${year}`);
-  if (isNaN(date.getTime())) return null;
-
-  let hour = parseInt(hourStr);
-  const min = parseInt(minStr);
-  if (ampm.toLowerCase() === "pm" && hour !== 12) hour += 12;
-  if (ampm.toLowerCase() === "am" && hour === 12) hour = 0;
-
-  const pad = (n: number) => String(n).padStart(2, "0");
-  const datetime = `${year}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(hour)}:${pad(min)}:00`;
-
-  return {
-    venue_id: VENUE_ID,
-    datetime,
-    format: null,
-    ticket_url: href.startsWith("http") ? href : `${BASE}${href}`,
-  };
-}
-
-async function scrapeFilmPage(slug: string): Promise<Partial<Film> & { showtimes: Showtime[] }> {
-  const url = `${BASE}/movie/${slug}`;
-  const html = await fetchHtml(url);
-  const $ = cheerio.load(html);
-
-  // Metadata — the site embeds JSON-LD or microdata; fall back to visible text
-  let title = $("h1").first().text().trim();
-  let director: string | null = null;
-  let runtime_minutes: number | null = null;
-  let overview: string | null = null;
-  let year: number | null = null;
-  let genres: string[] = [];
-
-  // JSON-LD structured data (if present)
-  $('script[type="application/ld+json"]').each((_, el) => {
-    try {
-      const data = JSON.parse($(el).html() ?? "");
-      if (data["@type"] === "Movie" || data.name) {
-        if (data.name && !title) title = data.name;
-        if (data.director?.name) director = data.director.name;
-        if (data.duration) runtime_minutes = parseDuration(data.duration);
-        if (data.description) overview = cheerio.load(data.description).text().trim();
-        if (data.datePublished) year = parseInt(data.datePublished.slice(0, 4));
-        if (data.genre) {
-          genres = Array.isArray(data.genre) ? data.genre : [data.genre];
-        }
-      }
-    } catch {
-      // not valid JSON-LD, skip
-    }
-  });
-
-  // Showtimes: links to /checkout/showing/...
-  const showtimes: Showtime[] = [];
-  $('a[href*="/checkout/showing/"]').each((_, el) => {
-    const text = $(el).text().trim();
-    const href = $(el).attr("href") ?? "";
-    const st = parseShowtime(text, href);
-    if (st) showtimes.push(st);
-  });
-
-  const slug_clean = slug.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-  const filmSlug = year ? `${slug_clean}-${year}` : slug_clean;
-
-  return { title, director, runtime_minutes, overview, year, genres, showtimes, slug: filmSlug };
+  // INDY reports some failures (e.g. missing site ID) as HTTP 200 + an error body.
+  const err = res.errors?.[0]?.message ?? res.error?.message;
+  if (err) throw new Error(`Cinemagic GraphQL error for ${date}: ${err}`);
+  return res.data?.showingsForDate?.data ?? [];
 }
 
 export async function scrapeCinemagic(): Promise<Film[]> {
-  const html = await fetchHtml(`${BASE}/now-showing/`);
-  const $ = cheerio.load(html);
+  const dates = windowDates();
+  const perDate = await Promise.all(dates.map(fetchShowings));
 
-  // Collect film slugs from now-showing page
-  const slugs = new Set<string>();
-  $('a[href*="/movie/"]').each((_, el) => {
-    const href = $(el).attr("href") ?? "";
-    const m = href.match(/\/movie\/([^/?#]+)/);
-    if (m) slugs.add(m[1]);
-  });
+  const films = new Map<string, Film>();
+  for (const s of perDate.flat()) {
+    if (!s.movie || s.published === false) continue;
+    const m = s.movie;
+    const year = m.releaseDate ? parseInt(m.releaseDate.slice(0, 4)) || null : null;
 
-  console.log(`Found ${slugs.size} films on now-showing page`);
-
-  const films: Film[] = [];
-  for (const slug of slugs) {
-    console.log(`  Scraping: ${slug}`);
-    try {
-      const data = await scrapeFilmPage(slug);
-      films.push({
+    let film = films.get(m.id);
+    if (!film) {
+      const base = (m.urlSlug || m.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      // Some INDY slugs already carry the year ("evil-dead-2013") — don't double it.
+      const slug = !year || base.endsWith(`-${year}`) ? base : `${base}-${year}`;
+      film = {
         id: null,
-        slug: data.slug ?? slug,
-        title: data.title ?? slug,
-        year: data.year ?? null,
-        director: data.director ?? null,
-        runtime_minutes: data.runtime_minutes ?? null,
-        overview: data.overview ?? null,
+        slug,
+        title: m.name,
+        year,
+        director: m.directedBy ?? null,
+        runtime_minutes: m.duration ?? null,
+        overview: m.synopsis ?? null,
         poster_path: null,
-        genres: data.genres ?? [],
-        showtimes: data.showtimes,
-      });
-    } catch (err) {
-      console.error(`  Error scraping ${slug}:`, err);
+        genres: [],
+        showtimes: [],
+      };
+      films.set(m.id, film);
     }
+
+    const showtime: Showtime = {
+      venue_id: VENUE_ID,
+      datetime: utcToLocalPacific(s.time),
+      format: null,
+      ticket_url: `${BASE}/checkout/showing/${m.urlSlug}/${s.id}/`,
+    };
+    film.showtimes.push(showtime);
   }
 
-  return films;
+  const result = [...films.values()];
+  const total = result.reduce((n, f) => n + f.showtimes.length, 0);
+  if (total === 0) {
+    // A full week with nothing scheduled is unusual for Cinemagic — more likely
+    // the API/site changed again. Warn so it doesn't fail silently like before.
+    console.warn(`  Cinemagic: 0 showings for ${dates[0]}..${dates[dates.length - 1]} — API may have changed`);
+  } else {
+    console.log(`  ${total} showings across ${result.length} films`);
+  }
+  return result;
 }
 
 // Run directly: tsx src/scrapers/cinemagic.ts
