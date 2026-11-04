@@ -123,10 +123,14 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           if [ -z "${NTFY_TOPIC}" ]; then echo "NTFY_TOPIC not set — skipping"; exit 0; fi
+          # Exact Pacific time up front: the ntfy app only shows "yesterday"-style
+          # relative times. Same format as health.ts, e.g. "Wed, Nov 4, 10:42 AM PST".
+          STAMP="$(TZ=America/Los_Angeles date '+%a, %b %-d, %-I:%M %p %Z')"
           curl -sS --max-time 15 \
             -H "Title: small screens URGENT: scrape run FAILED" \
             -H "Priority: 5" \
             -H "Tags: skull,film_projector" \
             -H "Click: ${RUN_URL}" \
-            -d "The scheduled scrape job failed outright, so no venues were updated. Tap for the run log." \
+            -d "${STAMP}
+          The scheduled scrape job failed outright, so no venues were updated. Tap for the run log." \
             "${NTFY_SERVER:-https://ntfy.sh}/${NTFY_TOPIC}"

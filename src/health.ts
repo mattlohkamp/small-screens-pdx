@@ -212,6 +212,14 @@ export async function notifyHealth(events: HealthEvent[], log: (msg: string) => 
   const { GITHUB_SERVER_URL, GITHUB_REPOSITORY, GITHUB_RUN_ID } = process.env;
   const runUrl = GITHUB_RUN_ID ? `${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}` : null;
 
+  // The ntfy app only shows relative arrival times ("yesterday"), so stamp
+  // each push with the exact Pacific time, e.g. "Wed, Nov 4, 10:42 AM PST".
+  const stamp = new Date().toLocaleString("en-US", {
+    timeZone: "America/Los_Angeles",
+    weekday: "short", month: "short", day: "numeric",
+    hour: "numeric", minute: "2-digit", timeZoneName: "short",
+  });
+
   for (const tier of TIERS) {
     const tierEvents = events.filter(tier.match);
     if (tierEvents.length === 0) continue;
@@ -225,7 +233,7 @@ export async function notifyHealth(events: HealthEvent[], log: (msg: string) => 
           Tags: tier.tags,
           ...(runUrl ? { Click: runUrl } : {}),
         },
-        body: tierEvents.map(line).join("\n"),
+        body: [stamp, ...tierEvents.map(line)].join("\n"),
         signal: AbortSignal.timeout(15_000),
       });
       if (!res.ok) log(`  health: ntfy responded HTTP ${res.status} (priority ${tier.priority})`);
