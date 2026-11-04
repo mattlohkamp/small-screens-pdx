@@ -42,6 +42,8 @@ interface VenueHealth {
 export interface HealthState {
   version: 1;
   venues: Record<string, VenueHealth>;
+  // Whether we're currently alerting that the pi-scraper host runs stale code.
+  pi_code?: { alerting: boolean };
 }
 
 export interface VenueRunResult {
@@ -55,7 +57,7 @@ export interface VenueRunResult {
 export interface HealthEvent {
   venueId: string;
   label: string;
-  kind: "failing" | "empty";
+  kind: "failing" | "empty" | "stale_code";
   change: "started" | "recovered";
   detail: string;
 }
@@ -158,6 +160,35 @@ export function evaluateHealth(
   return { state, events };
 }
 
+// The pi-scraper host gets code by hand (scp), so it can silently keep running an
+// old copy. Each raw file it pushes carries a hash of the code that wrote it;
+// compare with the hash of pi-scraper/ in this checkout. `observed` holds the
+// hashes from this run's pi-data reads (null = file predates hashing). No reads
+// this run (e.g. pi-data unreachable) means no evidence, so nothing changes.
+// Mutates `state.pi_code`; returns the start/clear event, if any.
+export function evaluatePiCode(
+  state: HealthState,
+  observed: (string | null)[],
+  expected: string,
+): HealthEvent[] {
+  if (observed.length === 0) return [];
+  const wasAlerting = state.pi_code?.alerting ?? false;
+  const stale = observed.some((h) => h !== expected);
+  state.pi_code = { alerting: stale };
+  const base = { venueId: "pi-scraper", label: "pi-scraper host", kind: "stale_code" as const };
+  if (stale && !wasAlerting) {
+    const seen = [...new Set(observed.map((h) => h ?? "none"))].join(", ");
+    return [{
+      ...base, change: "started",
+      detail: `running code ${seen}, repo has ${expected}. Copy pi-scraper/ over and run npm ci there.`,
+    }];
+  }
+  if (!stale && wasAlerting) {
+    return [{ ...base, change: "recovered", detail: `running current code (${expected})` }];
+  }
+  return [];
+}
+
 // Push severity tiers, mapped to ntfy priorities (1 min … 5 urgent). The
 // phone app vibrates/pops over differently per priority, and each can be
 // tuned in the app. Whole-run failure (priority 5) is sent from the workflow's
@@ -185,6 +216,13 @@ const TIERS: Tier[] = [
     priority: 3,
     tags: "warning,film_projector",
     title: (n) => `small screens warning: ${plural(n, "venue")} unexpectedly empty`,
+  },
+  {
+    // Warning: the pi-scraper host is running an out-of-date copy of pi-scraper/.
+    match: (e) => e.kind === "stale_code" && e.change === "started",
+    priority: 3,
+    tags: "wrench,film_projector",
+    title: () => "small screens warning: pi-scraper host running old code",
   },
   {
     // Recovery: quiet good news.

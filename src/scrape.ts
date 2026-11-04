@@ -8,7 +8,6 @@ import { scrapeAcademy } from "./scrapers/academy.js";
 import { scrapeLivingRoom } from "./scrapers/living-room.js";
 import { scrapeOmsi } from "./scrapers/omsi.js";
 import { scrapeCinema21 } from "./scrapers/cinema-21.js";
-import { scrapeHollywood } from "./scrapers/hollywood.js";
 import { scrapeStJohns } from "./scrapers/st-johns.js";
 import { scrapeMoreland } from "./scrapers/moreland.js";
 import { scrapeTomorrow } from "./scrapers/tomorrow.js";
@@ -19,9 +18,9 @@ import { withRetry, withTimeout } from "./fetch.js";
 import { VERSION } from "./version.js";
 import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
-import { evaluateHealth, HEALTH_PATH, loadHealth, notifyHealth, saveHealth, type VenueRunResult } from "./health.js";
+import { evaluateHealth, evaluatePiCode, HEALTH_PATH, loadHealth, notifyHealth, saveHealth, type VenueRunResult } from "./health.js";
 import { WINDOW_DAYS } from "./window.js";
-import { fetchPiRaw } from "./pi-source.js";
+import { EXPECTED_PI_CODE_HASH, fetchPiRaw, piCodeHashes } from "./pi-source.js";
 import type { Schedule, Film } from "./types.js";
 import type { FailedMatch } from "./enrich.js";
 
@@ -30,12 +29,17 @@ import type { FailedMatch } from "./enrich.js";
 // that a wedged venue times out and retries/fails cleanly instead of hanging.
 const SCRAPER_TIMEOUT_MS = 90_000;
 
-// OMSI and Hollywood are blocked from CI's datacenter IP (see PLAN.md's M7 section).
-// The pi-scraper host, on a residential connection, scrapes them directly and pushes raw output to the `pi-data`
-// branch. Try the real scraper first (works fine outside CI, e.g. for local dev runs);
-// on failure, fall back to the pi-scraper host's most recent push before giving up to the
-// orchestrator's own last-known-good preservation below.
+// OMSI and Hollywood are blocked from CI's datacenter IP (see PLAN.md, "Residential
+// scraping"). The pi-scraper host, on a residential connection, scrapes them and
+// pushes raw output to the `pi-data` branch.
+//
+// OMSI: in CI, read pi-data straight away — the direct scrape can't get past the IP
+// block there, so trying it first only burned retries and time. Locally, try the
+// direct scrape first (it works from a residential connection) and fall back to
+// pi-data. If pi-data also fails, the orchestrator keeps last-known-good showtimes.
+const IN_CI = process.env.GITHUB_ACTIONS === "true";
 function withPiFallback(venueId: string, scrape: () => Promise<Film[]>): () => Promise<Film[]> {
+  if (IN_CI) return () => fetchPiRaw(venueId);
   return async () => {
     try {
       return await scrape();
@@ -45,6 +49,9 @@ function withPiFallback(venueId: string, scrape: () => Promise<Film[]>): () => P
     }
   };
 }
+// Hollywood: pi-data only, everywhere. Its scraper (pi-scraper/src/scrapers/hollywood.ts)
+// needs headful patchright under a display to clear Cloudflare, so it lives in
+// pi-scraper alone; there is no copy here.
 
 // Registry: scraper-id → { fn, venueIds covered }
 const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; label: string }> = {
@@ -56,7 +63,7 @@ const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; 
   "living-room":   { fn: scrapeLivingRoom,      venueIds: ["living-room"],                  label: "Living Room Theaters" },
   omsi:            { fn: withPiFallback("omsi", scrapeOmsi),            venueIds: ["omsi"],       label: "OMSI Empirical Theatre" },
   "cinema-21":     { fn: scrapeCinema21,        venueIds: ["cinema-21"],                    label: "Cinema 21" },
-  hollywood:       { fn: withPiFallback("hollywood", scrapeHollywood),  venueIds: ["hollywood"],  label: "Hollywood Theatre" },
+  hollywood:       { fn: () => fetchPiRaw("hollywood"),                 venueIds: ["hollywood"],  label: "Hollywood Theatre" },
   "st-johns":      { fn: scrapeStJohns,         venueIds: ["st-johns"],                     label: "St. Johns Cinema" },
   moreland:        { fn: scrapeMoreland,         venueIds: ["moreland"],                     label: "Moreland Theater" },
   tomorrow:        { fn: scrapeTomorrow,         venueIds: ["tomorrow"],                     label: "Tomorrow Theater" },
@@ -438,6 +445,7 @@ async function run(runStart: Date, log: (msg: string) => void) {
       }))
     );
     const { state, events } = evaluateHealth(loadHealth(), results, start);
+    events.push(...evaluatePiCode(state, [...piCodeHashes.values()], EXPECTED_PI_CODE_HASH));
     saveHealth(state);
     log(`\nHealth: ${events.length ? `${events.length} change(s)` : "no changes"} (state in ${HEALTH_PATH})`);
     await notifyHealth(events, log);
