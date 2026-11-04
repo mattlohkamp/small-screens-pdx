@@ -85,7 +85,7 @@ npm run scrape:force
 npm run scrape -- --feeds
 ```
 
-Hollywood always comes from the `pi-data` branch, and so does OMSI in CI. Locally, OMSI tries a direct scrape first.
+(Hollywood always comes from the `pi-data` branch, and so does OMSI in CI. Locally, OMSI tries a direct scrape first.)
 
 ### Updating pi-scraper
 
