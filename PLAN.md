@@ -150,7 +150,9 @@ Unmatched films are written to `public/data/failed-matches.json`; manual fixes g
 OMSI and Hollywood can't be scraped from GitHub Actions. A separate machine on a residential connection runs `pi-scraper/` and pushes raw output to the `pi-data` branch; CI reads it as a fallback.
 
 - **`src/pi-source.ts`** — `fetchPiRaw(venueId)` does a plain HTTPS GET of `data/raw/<venueId>.json` from the `pi-data` branch on raw.githubusercontent.com (no clone, no auth). Throws if the file is missing or older than 36 hours, so a dead host falls through to last-known-good instead of serving stale data forever.
-- **`withPiFallback()`** in `src/scrape.ts` wraps the `omsi` and `hollywood` entries: try the direct scraper first (works for local dev on a residential connection), fall back to `fetchPiRaw` on failure.
+- **OMSI** goes through `withPiFallback()` in `src/scrape.ts`. In CI it reads pi-data directly, since the direct scrape can't get through there. Locally it tries the direct scrape first and falls back to pi-data.
+- **Hollywood** always reads pi-data. Its only scraper is `pi-scraper/src/scrapers/hollywood.ts` (headful patchright). The old stock-Playwright copy in `src/` couldn't pass Cloudflare anywhere and was removed.
+- **Keeping the copies honest:** `npm run pi:sync` copies the shared `src/` files into `pi-scraper/src/`, and `npm run pi:check` (pre-push) fails if they differ. Each raw file the host writes carries `code_hash`, a fingerprint of the host's `pi-scraper/` code (`pi-scraper/src/code-hash.ts`). CI compares it with the repo's copy and sends a priority-3 push while they differ.
 - **Code delivery is `scp`, not `git pull`.** The host never clones this repo or installs dependencies on a schedule, so a compromised repo or dependency has no automated path to run anything there. `pi-scraper/` is a self-contained mirror (own `package.json` + lockfile, `run.ts`, copies of the shared `src/` modules and the two scrapers) that's copied over by hand when the scrapers change.
 - **Data delivery is push-only.** The host has a minimal checkout whose only remote branch is `pi-data`, authenticated with a repo-scoped deploy key. It only ever commits and pushes; it never fetches.
 - **Schedule:** host cron `15 4,12,18 * * *` Pacific, ahead of each CI run in both PST and PDT. Order only affects freshness.
@@ -182,7 +184,7 @@ Separate by-film / by-venue / calendar views were planned originally and dropped
 ```
 scrape.yml  (cron "37 2,12,20 * * *" UTC + manual dispatch)
             = ~6:37pm / 4:37am / 12:37pm PST (an hour later in PDT)
-  1. checkout, npm ci, Playwright Chromium (cached); runner pinned to ubuntu-24.04
+  1. checkout, npm ci, Playwright Chromium (cached, --with-deps)
   2. npm run scrape  → scrape, merge, enrich, write showtimes.json, update health + ntfy
   3. commit showtimes.json + state/venue-health.json → push to main
   4. copy showtimes.json into gh-pages data/ (data-only deploy — never ships UI)
@@ -191,11 +193,15 @@ scrape.yml  (cron "37 2,12,20 * * *" UTC + manual dispatch)
 deploy.yml  (push of a release-* tag, or manual dispatch)
   1. npm run build → static export → force-replace gh-pages contents
   2. on tag push: GitHub Release titled "x.y.z-commithash"
+
+watchdog.yml  (cron "17 * * * *" + manual dispatch)
+  if showtimes.json is >12h old, no scrape is running or started in the last
+  90 min, and the latest scrape didn't fail → start scrape.yml + priority-3 push
 ```
 
-The cron runs off the top of the hour on purpose: GitHub's scheduler is most congested at :00, and the old `0 12` run routinely started 3–6 hours late. Scheduled runs can still be delayed or skipped entirely (both 2026-11-04 morning runs never started); health alerting doesn't catch that yet.
+The cron runs off the top of the hour on purpose: GitHub's scheduler is most congested at :00, and the old `0 12` run routinely started 3–6 hours late. Scheduled runs can still be delayed or skipped entirely (both 2026-11-04 morning runs never started), which is what the watchdog is for. It won't retry after a failed scrape, because that failure already sent an urgent push.
 
-The runner is pinned to `ubuntu-24.04` because `ubuntu-latest` moved to 26.04 in October 2026 and Playwright had no browser builds for it.
+The scrape ran pinned to `ubuntu-24.04` from 2026-10-30 to 2026-11-04 because `ubuntu-latest` moved to 26.04 and Playwright 1.60's installer rejected it. Upgrading to Playwright 1.64 (26.04 support since 1.61) let it go back to `ubuntu-latest`.
 
 ### Scrape health alerts
 
@@ -206,9 +212,11 @@ The runner is pinned to `ubuntu-24.04` because `ubuntu-latest` moved to 26.04 in
 | Whole scrape job failed (sent from `scrape.yml`) | 5 urgent |
 | A venue's scraper failed 2 runs in a row (each run already retries) | 4 high |
 | A venue with showtimes on ≥10 of the last 14 days returns an empty week | 3 default |
+| The pi-scraper host is running stale code (`code_hash` mismatch) | 3 default |
+| Data overdue: a scheduled scrape was skipped (sent from `watchdog.yml`) | 3 default |
 | A problem resolved | 2 low |
 
-One push per tier per run, silent otherwise. Each push body starts with the exact Pacific time, because the ntfy app only shows relative times. Occasional-screening venues (e.g. Mission) never trip the empty-week alert.
+One push per alert type per run, silent otherwise. Each push body starts with the exact Pacific time, because the ntfy app only shows relative times. Occasional-screening venues (e.g. Mission) never trip the empty-week alert.
 
 ---
 
@@ -246,16 +254,20 @@ One push per tier per run, silent otherwise. Each push body starts with the exac
 | 2026-11-03 | Scrape 3x daily at :37 | Fresher listings; avoid GitHub's :00 congestion. |
 | 2026-11-03 | Per-venue health + ntfy, tiered by priority | Cinemagic was silently empty for a week before anyone noticed. |
 | 2026-11-04 | Keep the residential host anonymous in the repo | It's a personal machine; docs say "pi-scraper host". |
+| 2026-11-04 | Hourly watchdog that starts an overdue scrape | GitHub skipped both morning runs on 2026-11-04 and nothing noticed. |
+| 2026-11-04 | CI reads OMSI/Hollywood from pi-data without trying direct; Hollywood scraper lives only in pi-scraper | The direct attempts could never succeed in CI and only burned retries. |
+| 2026-11-04 | `pi:sync`/`pi:check` plus a code hash in pi-data | The hand-`scp` model meant the host could silently run stale code. |
 
 ---
 
 ## Remaining work
 
 **Reliability**
-- [ ] **Detect skipped scheduled runs.** Health alerts only fire from runs that start. If GitHub skips the cron (as on 2026-11-04), nothing alerts. Options: alert when `generated_at` gets too old (e.g. from the pi-scraper host or an external check), or a lightweight watchdog workflow.
-- [ ] **Stop wasting CI time on Hollywood's direct scrape.** `src/scrapers/hollywood.ts` is the stock-Playwright version, which can't pass Cloudflare anywhere; CI retries it before falling back. Either go straight to `fetchPiRaw` in CI, or retire the CI copy.
-- [ ] **pi-scraper drift.** Its copies of the shared modules and scrapers are synced to `src/` by hand, then to the host by hand. Some check (a diff script, or a version stamp in the raw output) would catch a stale host.
-- [ ] Watch the `ubuntu-24.04` pin; move back to `ubuntu-latest` once Playwright supports 26.04.
+- [x] Detect skipped scheduled runs: `watchdog.yml` (2026-11-04).
+- [x] Stop CI from trying direct OMSI/Hollywood scrapes; remove the dead `src/` Hollywood copy (2026-11-04).
+- [x] pi-scraper drift: `pi:sync`/`pi:check`, plus a `code_hash` stale-host alert (2026-11-04).
+- [x] Back to `ubuntu-latest` on Playwright 1.64 (2026-11-04).
+- [ ] Once a few runs pass on 26.04, see whether `--with-deps` can come back off the Playwright install (~12s per run).
 
 **Product (P1+)**
 - [ ] Another mobile layout pass (M6).

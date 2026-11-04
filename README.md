@@ -80,6 +80,14 @@ npm run scrape:living-room
 npm run scrape:force
 ```
 
+Hollywood always comes from the `pi-data` branch, and so does OMSI in CI. Locally, OMSI tries a direct scrape first.
+
+### Updating pi-scraper
+
+`pi-scraper/` keeps its own copies of a few `src/` files (`types`, `fetch`, `browser`, `version`, `window`, `scrapers/omsi`). After changing any of them, run `npm run pi:sync` and commit. The pre-push hook runs `npm run pi:check` and blocks the push if the copies have drifted.
+
+Whenever `pi-scraper/` changes, copy it to the residential host and run `npm ci` there. Every file the host pushes is stamped with a hash of its code. If that doesn't match `pi-scraper/` in the repo, the next CI scrape sends a "pi-scraper host running old code" push. The push clears once the host catches up.
+
 On subsequent runs, films already in the enrichment cache (`data/enrichment-cache.json`) are skipped — only new films and previous TMDB failures are re-queried. If any films couldn't be matched, a `public/data/failed-matches.json` is written with details; add the correct TMDB ID to `TMDB_ID_OVERRIDES` in [src/enrich.ts](src/enrich.ts) and re-run.
 
 ### Running the frontend
@@ -110,16 +118,19 @@ src/
     cinema-21.ts     # Cinema 21 (site JSON API)
     cinemagic.ts     # The Cinemagic Theater (INDY GraphQL API)
     clinton-street.ts# Clinton Street Theater (Events Calendar REST API)
-    hollywood.ts     # Hollywood Theatre (blocked from CI — see pi-scraper)
     laurelhurst.ts   # Laurelhurst Theater (embedded JSON blob)
     living-room.ts   # Living Room Theaters (Playwright + INDY GraphQL)
     mcmenamins.ts    # Bagdad + Kennedy School (server-rendered HTML)
     mission.ts       # Mission Theater (McMenamins events page)
     moreland.ts      # Moreland Theater (formovietickets JSON schedule)
-    omsi.ts          # OMSI Empirical Theatre (blocked from CI — see pi-scraper)
+    omsi.ts          # OMSI Empirical Theatre (local dev only; CI reads pi-data)
     st-johns.ts      # St. Johns Twin Cinema (Veezi sessions page)
     tomorrow.ts      # Tomorrow Theater (WordPress REST API)
-pi-scraper/          # Separate package run: Hollywood + OMSI → pi-data branch
+pi-scraper/          # Separate package for the residential host: Hollywood + OMSI → pi-data branch
+  src/scrapers/hollywood.ts  # Hollywood's only scraper (headful patchright)
+  src/code-hash.ts   # Fingerprint stamped into pi-data, checked by CI
+scripts/
+  pi-sync.ts         # Keep pi-scraper's copies of shared src/ files in sync
 app/
   components/
     WhatsOn.tsx      # Main client component — filtering, search, film list
@@ -141,11 +152,16 @@ history, and pushes a phone notification via [ntfy](https://ntfy.sh) when:
 - a venue that had showtimes on **≥10 of the last 14 days** comes back with an
   **empty week** — occasional-screening venues like Mission never trip this,
 - the whole scrape job fails,
+- the pi-scraper host is running an older copy of `pi-scraper/` than the repo,
 
 and again when each problem clears. Severity maps to ntfy priority: whole run
-failed = 5 (urgent), scraper failing = 4 (high), unexpectedly empty = 3
-(default), resolved = 2 (low). One push per severity per run with changes;
-silent otherwise. Thresholds and tiers live in `src/health.ts`.
+failed = 5 (urgent), scraper failing = 4 (high), unexpectedly empty or stale
+pi-scraper code = 3 (default), resolved = 2 (low). One push per alert type per
+run with changes; silent otherwise. Thresholds and tiers live in `src/health.ts`.
+
+A separate hourly workflow (`watchdog.yml`) covers runs GitHub delays or skips.
+If the committed data is more than 12h old and no scrape is running, it starts
+one and sends a priority 3 push.
 
 Setup: install the ntfy app, subscribe to a hard-to-guess topic name, and add
 it as the `NTFY_TOPIC` repo secret (Settings → Secrets and variables →
