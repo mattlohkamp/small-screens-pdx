@@ -26,9 +26,9 @@ concurrency:
 
 jobs:
   scrape:
-    # Pinned: ubuntu-latest moved to 26.04 (Oct 2026) and Playwright has no
-    # browser builds for it yet, so `playwright install` fails outright.
-    runs-on: ubuntu-24.04
+    # ubuntu-latest is 26.04 since Oct 2026; Playwright supports it from 1.61.
+    # (Pinned to 24.04 while we were on 1.60, whose installer rejected 26.04.)
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -46,11 +46,11 @@ jobs:
           key: playwright-chromium-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install Playwright browser
-        # Browser binary comes from the cache above. The runner image already
-        # ships Chromium's system libraries, so we skip --with-deps — its apt
-        # step only added fonts we don't need for headless scraping and cost
-        # ~12s every run. Re-add --with-deps if a browser launch ever fails.
-        run: npx playwright install chromium
+        # Browser binary comes from the cache above. --with-deps apt-installs
+        # Chromium's system libraries (~12s). The 24.04 image shipped them so
+        # we used to skip it; kept on for 26.04 until a run proves it's not
+        # needed there.
+        run: npx playwright install --with-deps chromium
 
       - name: Scrape
         run: npm run scrape
