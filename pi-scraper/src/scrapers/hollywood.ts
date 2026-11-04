@@ -42,12 +42,12 @@ const MAX_API_ATTEMPTS = 3;
 // challenge clears, the page settles on the raw JSON (Chrome's built-in JSON viewer
 // renders it as plain text in the body), which we read back out.
 //
-// Stock Playwright never clears the challenge, even from natty's residential IP:
+// Stock Playwright never clears the challenge, even from the pi-scraper host's residential IP:
 // Cloudflare fingerprints its automation tells. patchright (a Playwright fork that
 // patches the CDP-level tells) clears it, but only headful: headless Chromium
-// advertises "HeadlessChrome" in its UA and stays blocked. Verified on natty
+// advertises "HeadlessChrome" in its UA and stays blocked. Verified on the pi-scraper host
 // 2026-10-25: stock headless 0/1, patchright headless 0/1, patchright headful 3/3.
-// On natty there's no display, so cron runs this under `xvfb-run`. Per patchright's
+// On the pi-scraper host there's no display, so cron runs this under `xvfb-run`. Per patchright's
 // guidance: persistent context, no custom UA/viewport (a Windows UA on Linux Chromium
 // is itself a mismatch tell). Fresh profile each run so no state carries over.
 let _ctx: BrowserContext | null = null;

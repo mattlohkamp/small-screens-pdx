@@ -31,16 +31,16 @@ import type { FailedMatch } from "./enrich.js";
 const SCRAPER_TIMEOUT_MS = 90_000;
 
 // OMSI and Hollywood are blocked from CI's datacenter IP (see PLAN.md's M7 section).
-// natty, a residential Pi, scrapes them directly and pushes raw output to the `pi-data`
+// The pi-scraper host, on a residential connection, scrapes them directly and pushes raw output to the `pi-data`
 // branch. Try the real scraper first (works fine outside CI, e.g. for local dev runs);
-// on failure, fall back to natty's most recent push before giving up to the
+// on failure, fall back to the pi-scraper host's most recent push before giving up to the
 // orchestrator's own last-known-good preservation below.
 function withPiFallback(venueId: string, scrape: () => Promise<Film[]>): () => Promise<Film[]> {
   return async () => {
     try {
       return await scrape();
     } catch (err) {
-      console.warn(`  ${venueId} direct scrape failed, falling back to natty's pi-data raw file:`, err);
+      console.warn(`  ${venueId} direct scrape failed, falling back to the pi-scraper host's pi-data raw file:`, err);
       return fetchPiRaw(venueId);
     }
   };

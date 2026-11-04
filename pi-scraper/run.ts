@@ -1,4 +1,4 @@
-// Entry point for natty (residential Pi/media server). Runs only the two
+// Entry point for the pi-scraper host (a machine on a residential connection). Runs only the two
 // scrapers that GitHub Actions' datacenter IP gets blocked on, and writes
 // each venue's raw output to the sibling push-only data checkout
 // (../small-screens-data, on the pi-data branch) — never touches the main

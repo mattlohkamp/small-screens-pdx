@@ -1,5 +1,5 @@
-// Reads a venue's raw scrape output from the `pi-data` branch — natty (a residential
-// Pi/media server) pushes there directly for venues CI's datacenter IP gets blocked on
+// Reads a venue's raw scrape output from the `pi-data` branch — the pi-scraper host (a machine on a
+// residential connection) pushes there directly for venues CI's datacenter IP gets blocked on
 // (see PLAN.md's M7 section). This is a plain HTTPS GET of one committed file; CI never
 // clones or pulls that branch's history, only fetches this one JSON blob.
 import { fetchJson } from "./fetch.js";
@@ -7,7 +7,7 @@ import type { Film } from "./types.js";
 
 const RAW_BASE = "https://raw.githubusercontent.com/mattlohkamp/small-screens-pdx/pi-data/data/raw";
 
-// natty's cron runs daily; give it slack for a missed/late run before we stop trusting
+// The pi-scraper host's cron runs three times a day; give it slack for a missed/late run before we stop trusting
 // its data and fall through to the orchestrator's own last-known-good preservation.
 const MAX_AGE_HOURS = 36;
 

@@ -9,9 +9,9 @@ on:
     #                 20:37 → 12:37pm PST / 1:37pm PDT
     # Off the top of the hour on purpose: GitHub's scheduler is most congested
     # at :00, and our old "0 12" run routinely started 3–6 hours late.
-    # natty's residential scrape (OMSI/Hollywood → pi-data branch) runs at
+    # The pi-scraper host's residential scrape (OMSI/Hollywood → pi-data branch) runs at
     # 4:15/12:15/18:15 local, ahead of each of these in both PST and PDT.
-    # Ordering only affects freshness: pi-source.ts takes natty's latest push
+    # Ordering only affects freshness: pi-source.ts takes the pi-scraper host's latest push
     # up to 36h old either way.
     - cron: "37 2,12,20 * * *"
   workflow_dispatch: # allow manual trigger from Actions tab

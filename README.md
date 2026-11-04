@@ -6,19 +6,44 @@ A unified showtime aggregator for Portland's independent cinemas. Each theater p
 
 ## What it covers
 
-8 venues currently scraped: Living Room Theaters, Laurelhurst Theater, Academy Theater, Clinton Street Theater, Cinemagic, OMSI Empirical Theatre, and the McMenamins theaters (Baghdad, Kennedy School). Cinema 21 and Hollywood Theatre block automated requests — approach TBD.
+15 venues with working scrapers:
+
+- Academy Theater
+- Avalon Theatre
+- Bagdad Theater & Pub (McMenamins)
+- The Cinemagic Theater
+- Cinema 21
+- Clinton Street Theater
+- Hollywood Theatre*
+- Kennedy School Theater (McMenamins)
+- Laurelhurst Theater
+- Living Room Theaters
+- Mission Theater\*\*
+- Moreland Theater
+- OMSI Empirical Theatre*
+- St. Johns Twin Cinema & Pub
+- Tomorrow Theater
+
+\* Hollywood and OMSI block GitHub Actions' datacenter IPs, so a residential
+machine (running [`pi-scraper/`](pi-scraper/)) scrapes them and pushes
+raw output to the `pi-data` branch; CI falls back to that when its own direct
+scrape fails.
+
+\*\* Mission Theater is mainly a live-show venue and screens films only a few
+times a year, so it's usually empty here.
 
 ## How it works
 
-A GitHub Actions cron job runs the scrapers three times a day for each venue, enriches film data via the [TMDB API](https://www.themoviedb.org/), and produces a single `showtimes.json` covering a rolling two-week window. That JSON is the data layer for the React frontend, which handles all filtering and searching client-side. The built site is deployed to GitHub Pages.
+A GitHub Actions cron job runs every venue's scraper three times a day, enriches film data via the [TMDB API](https://www.themoviedb.org/) and [OMDb](https://www.omdbapi.com/), and produces a single `showtimes.json` covering a rolling 7-day window. That JSON is the data layer for the React frontend, which handles all filtering and searching client-side. The built site is deployed to GitHub Pages.
 
 ## Tech stack
 
 - **Scraping:** Node/TypeScript, Cheerio (static HTML), Playwright (JS-rendered pages)
 - **Film metadata & posters:** TMDB API
 - **Ratings (Rotten Tomatoes, IMDb, Metacritic):** OMDb API
-- **Frontend:** Next.js (static export), React, Leaflet (venue map)
-- **Data:** Static JSON, generated daily
+- **Frontend:** Next.js (static export), React
+- **Data:** Static JSON, regenerated three times a day
+- **Alerts:** ntfy push notifications on scraper health
 - **CI/Deploy:** GitHub Actions → GitHub Pages
 
 ## Development
@@ -70,25 +95,39 @@ Uses whatever `public/data/showtimes.json` is on disk — either from a local sc
 ```
 src/
   scrape.ts          # Entry point — orchestrates scraping, merging, enrichment
-  enrich.ts          # TMDB enrichment, caching, failure tracking
+  enrich.ts          # TMDB/OMDb enrichment, caching, failure tracking
   cache.ts           # Enrichment cache read/write
+  health.ts          # Per-venue health history + ntfy alerts
+  pi-source.ts       # Fallback: read the pi-scraper host's latest raw output from pi-data
+  fetch.ts           # Shared fetch with timeouts and retries
+  window.ts          # Rolling showtime window length
   browser.ts         # Shared Playwright browser singleton
+  version.ts         # x.y.z-commithash version string
   types.ts           # Shared TypeScript types
   scrapers/
-    cinemagic.ts     # The Cinemagic Theater
-    clinton-street.ts# Clinton Street Theater (Events Calendar REST API)
-    laurelhurst.ts   # Laurelhurst Theater (embedded JSON blob)
-    mcmenamins.ts    # Baghdad + Kennedy School (Veezi ticketing, server-rendered HTML)
     academy.ts       # Academy Theater (Webedia CMS REST API)
-    living-room.ts   # Living Room Theaters (Playwright + GraphQL)
-    omsi.ts          # OMSI Empirical Theatre (Cheerio + Eventbrite white-label API)
+    avalon.ts        # Avalon Theatre (Webedia CMS REST API)
+    cinema-21.ts     # Cinema 21 (site JSON API)
+    cinemagic.ts     # The Cinemagic Theater (INDY GraphQL API)
+    clinton-street.ts# Clinton Street Theater (Events Calendar REST API)
+    hollywood.ts     # Hollywood Theatre (blocked from CI — see pi-scraper)
+    laurelhurst.ts   # Laurelhurst Theater (embedded JSON blob)
+    living-room.ts   # Living Room Theaters (Playwright + INDY GraphQL)
+    mcmenamins.ts    # Bagdad + Kennedy School (server-rendered HTML)
+    mission.ts       # Mission Theater (McMenamins events page)
+    moreland.ts      # Moreland Theater (formovietickets JSON schedule)
+    omsi.ts          # OMSI Empirical Theatre (blocked from CI — see pi-scraper)
+    st-johns.ts      # St. Johns Twin Cinema (Veezi sessions page)
+    tomorrow.ts      # Tomorrow Theater (WordPress REST API)
+pi-scraper/          # Separate package run: Hollywood + OMSI → pi-data branch
 app/
   components/
     WhatsOn.tsx      # Main client component — filtering, search, film list
-    VenueMap.tsx     # Leaflet map with venue pins
 public/
   data/
-    showtimes.json    # Generated output — tracked in git, committed by CI daily
+    showtimes.json    # Generated output — tracked in git, committed by each CI scrape
+state/
+  venue-health.json   # Rolling per-venue scrape history — committed by CI
 data/
   enrichment-cache.json  # Persisted TMDB results (gitignored)
 ```
