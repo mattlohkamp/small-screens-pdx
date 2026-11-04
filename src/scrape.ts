@@ -20,6 +20,7 @@ import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import { evaluateHealth, evaluatePiCode, HEALTH_PATH, loadHealth, notifyHealth, saveHealth, type VenueRunResult } from "./health.js";
 import { WINDOW_DAYS } from "./window.js";
+import { mergeByTmdbId, mergeFilms } from "./merge.js";
 import { FEED_STATE_PATH, FEEDS_DIR, loadFeedState, saveFeedState, updateFeedState, writeFeeds } from "./feeds.js";
 import { EXPECTED_PI_CODE_HASH, fetchPiRaw, piCodeHashes } from "./pi-source.js";
 import type { Schedule, Film } from "./types.js";
@@ -71,21 +72,6 @@ const SCRAPERS: Record<string, { fn: () => Promise<Film[]>; venueIds: string[]; 
   mission:         { fn: scrapeMission,          venueIds: ["mission"],                      label: "Mission Theater" },
   avalon:          { fn: scrapeAvalon,            venueIds: ["avalon"],                       label: "Avalon Theatre" },
 };
-
-// Merge films from multiple scrapers: same title → one record, combined showtimes.
-function mergeFilms(filmLists: Film[][]): Film[] {
-  const byTitle = new Map<string, Film>();
-  for (const film of filmLists.flat()) {
-    const key = film.title.toLowerCase();
-    const existing = byTitle.get(key);
-    if (existing) {
-      existing.showtimes = [...existing.showtimes, ...film.showtimes];
-    } else {
-      byTitle.set(key, { ...film, showtimes: [...film.showtimes] });
-    }
-  }
-  return [...byTitle.values()];
-}
 
 // The scrape window is a span of Portland calendar days, and showtime datetimes
 // are Portland-local naive strings. Anchor "today" to Portland — NOT UTC — so an
@@ -246,11 +232,15 @@ async function run(runStart: Date, log: (msg: string) => void) {
 
   log("Enriching via TMDB...");
   // Enrichment only adds metadata; it leaves showtimes (already windowed) intact.
-  const { films, failures } = await enrichFilms(windowedFilms, {
+  const { films: enrichedFilms, failures } = await enrichFilms(windowedFilms, {
     force,
     retryTitles,
     cache,
   });
+  const films = mergeByTmdbId(enrichedFilms);
+  if (films.length < enrichedFilms.length) {
+    log(`  Merged ${enrichedFilms.length - films.length} film(s) whose titles resolved to the same TMDB match`);
+  }
 
   saveCache(cache);
 

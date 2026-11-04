@@ -111,6 +111,7 @@ src/
   enrich.ts          # TMDB/OMDb enrichment, caching, failure tracking
   cache.ts           # Enrichment cache read/write
   health.ts          # Per-venue health history + ntfy alerts
+  merge.ts           # Cross-venue film merging (format suffixes, same-TMDB-id dupes)
   feeds.ts           # iCal calendars (all + per venue) and RSS of newly showing films
   pi-source.ts       # Fallback: read the pi-scraper host's latest raw output from pi-data
   fetch.ts           # Shared fetch with timeouts and retries

@@ -5,6 +5,9 @@
 ### Added
 - Subscribe from the footer: a calendar of every showtime (all venues), a calendar per venue, and an RSS feed of films as they first appear on any schedule. Calendars refresh with each scrape. The RSS feed is advertised in the page head so feed readers find it from the site URL.
 
+### Fixed
+- Duplicate film entries. A projection format in a venue's title ("WILDWOOD (Digital)", "The Evil Dead (35mm)", "… on 16mm") split one film into two listings and usually kept it from matching TMDB; the format now moves onto the showtime instead. Listings that resolve to the same film under different titles ("Godzilla Minus Zero" and "Godzilla Minus Zero - Opening Night Event") are combined, with the event noted on its showtimes. ALL-CAPS venue titles give way to normal casing when both appear.
+
 ## [1.6.1] — 2026-11-04
 
 ### Fixed
