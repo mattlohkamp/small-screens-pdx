@@ -287,7 +287,11 @@ export default function WhatsOn() {
   // detail view for that film. Non-null = detail view open. Carries the same
   // date-filtered showtimes the card itself was showing, so the detail view's
   // by-venue list matches what was tapped.
-  const [detailFilm, setDetailFilm] = useState<{ film: Film; showtimes: Showtime[] } | null>(null);
+  // `weekView` marks a detail opened from the "Browse by movie" picker: it
+  // carries the film's showtimes for the whole week (not just the selected
+  // date), and the detail groups them by venue then day. Unlike tapping a
+  // card, the picker works on desktop too.
+  const [detailFilm, setDetailFilm] = useState<{ film: Film; showtimes: Showtime[]; weekView?: boolean } | null>(null);
   // The list and detail panels sit side by side (translated via CSS) so the
   // slide can be a pure transform, but that means a plain flex row would size
   // itself to whichever panel is TALLER — leaving a block of blank space
@@ -575,6 +579,46 @@ export default function WhatsOn() {
     );
   }, [schedule, selectedDate]);
 
+  // Every film with a showtime anywhere in the 7-day window, for the "Browse by
+  // movie" picker. Ignores the date/venue/genre/search filters on purpose — the
+  // point is to see a title's whole week — but respects "Hide past", since
+  // already-started showings can't be bought. Duplicate records for the same
+  // film (same TMDB id, different venue slugs) merge as in filmsOnDate.
+  const weekFilms = useMemo(() => {
+    if (!schedule) return [];
+    const inWindow = new Set(dates);
+    const now = new Date();
+    const byKey = new Map<string, { key: string; film: Film; showtimes: Showtime[] }>();
+    for (const film of schedule.films) {
+      const showtimes = film.showtimes.filter(
+        (s) => inWindow.has(s.datetime.slice(0, 10)) && !(hidePast && new Date(s.datetime) < now)
+      );
+      if (showtimes.length === 0) continue;
+      const key = String(film.id ?? film.slug);
+      const existing = byKey.get(key);
+      if (!existing) {
+        byKey.set(key, { key, film, showtimes: [...showtimes] });
+      } else {
+        existing.showtimes.push(...showtimes);
+        if (existing.film.match_confidence === "fallback" && film.match_confidence === "verified") {
+          existing.film = film;
+        }
+      }
+    }
+    return [...byKey.values()].sort((a, b) => a.film.title.localeCompare(b.film.title));
+  }, [schedule, dates, hidePast]);
+
+  function browseFilm(key: string) {
+    const entry = weekFilms.find((w) => w.key === key);
+    if (!entry) {
+      setDetailFilm(null);
+      return;
+    }
+    setDetailFilm({ film: entry.film, showtimes: entry.showtimes, weekView: true });
+    setDrawerOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   const allGenres = useMemo(
     () => (schedule ? [...new Set(schedule.films.flatMap((f) => f.genres))].sort() : []),
     [schedule]
@@ -646,6 +690,24 @@ export default function WhatsOn() {
           })}
         </div>
 
+        {/* Browse by movie: jump straight to one title's showtimes for the week */}
+        <div className={styles.browseRow}>
+          <label className={styles.filterLabel} htmlFor="browse-by-movie">Browse by movie</label>
+          <select
+            id="browse-by-movie"
+            className={styles.browseSelect}
+            value={detailFilm?.weekView ? String(detailFilm.film.id ?? detailFilm.film.slug) : ""}
+            onChange={(e) => browseFilm(e.target.value)}
+          >
+            <option value="">All films this week ({weekFilms.length})</option>
+            {weekFilms.map(({ key, film, showtimes }) => (
+              <option key={key} value={key}>
+                {film.title}{film.year ? ` (${film.year})` : ""} · {showtimes.length} {showtimes.length === 1 ? "showtime" : "showtimes"}
+              </option>
+            ))}
+          </select>
+        </div>
+
         {/* Quick toggle pills */}
         <div className={`${styles.filterRow} ${styles.toggleRow}`}>
           <button
@@ -680,11 +742,12 @@ export default function WhatsOn() {
               mobile these always show in the drawer, so the toggle is pointless. */}
           {!isMobile && (
             <button
-              className={`${styles.venueChip} ${filtersVisible ? styles.venueChipActive : ""} ${(query || selectedVenues.size > 0 || genreFilter.size > 0) && !filtersVisible ? styles.toggleBtnDot : ""}`}
+              className={`${styles.filtersLink} ${(query || selectedVenues.size > 0 || genreFilter.size > 0) && !filtersVisible ? styles.toggleBtnDot : ""}`}
               onClick={() => setFiltersVisible((v) => !v)}
+              aria-expanded={filtersVisible}
               title={filtersVisible ? "Hide search and filters" : "Show search and filters"}
             >
-              {filtersVisible ? "Hide filters" : "Show more filters"}
+              {filtersVisible ? "Hide extended filters…" : "Show more filters…"}
             </button>
           )}
         </div>
@@ -871,6 +934,8 @@ export default function WhatsOn() {
                     film={detailFilm.film}
                     showtimes={detailFilm.showtimes}
                     venues={schedule.venues}
+                    weekView={detailFilm.weekView}
+                    today={today}
                     onBack={() => setDetailFilm(null)}
                     onVenueClick={(id) => setSelectedVenues(new Set([id]))}
                   />
@@ -1165,11 +1230,16 @@ function ShowtimesByVenue({
   showtimes,
   venues,
   onVenueClick,
+  groupByDay = false,
+  today = "",
 }: {
   film: Film;
   showtimes: Showtime[];
   venues: Venue[];
   onVenueClick: (venueId: string) => void;
+  // Week view: venues sorted A–Z, each venue's times split into one row per day.
+  groupByDay?: boolean;
+  today?: string;
 }) {
   const venueMap = useMemo(
     () => Object.fromEntries(venues.map((v) => [v.id, v])),
@@ -1182,13 +1252,57 @@ function ShowtimesByVenue({
       if (!map.has(s.venue_id)) map.set(s.venue_id, []);
       map.get(s.venue_id)!.push(s);
     }
+    for (const times of map.values()) times.sort((a, b) => (a.datetime < b.datetime ? -1 : 1));
     return map;
   }, [showtimes]);
 
+  const venueEntries = [...byVenue.entries()];
+  if (groupByDay) {
+    const name = (id: string) => venueMap[id]?.name ?? id;
+    venueEntries.sort(([a], [b]) => name(a).localeCompare(name(b)));
+  }
+
+  const renderTime = (s: Showtime) => (
+    <a
+      key={s.datetime}
+      href={s.ticket_url ?? "#"}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.timeLink}
+    >
+      {formatTime(s.datetime)}
+      {s.format && s.format.toUpperCase() !== "DCP" && (
+        <span className={styles.format}> (format: {s.format})</span>
+      )}
+      {s.event_note && (
+        <span className={styles.eventNote} title={`Special showing: ${s.event_note}`}> · {s.event_note}</span>
+      )}
+    </a>
+  );
+
+  const renderDays = (times: Showtime[]) => {
+    const byDay = new Map<string, Showtime[]>();
+    for (const s of times) {
+      const day = s.datetime.slice(0, 10);
+      if (!byDay.has(day)) byDay.set(day, []);
+      byDay.get(day)!.push(s);
+    }
+    return (
+      <div className={styles.venueDays}>
+        {[...byDay.entries()].map(([day, dayTimes]) => (
+          <div key={day} className={styles.dayRow}>
+            <span className={styles.dayLabel}>{formatDateLabel(day, today)}</span>
+            <div className={styles.times}>{dayTimes.map(renderTime)}</div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className={styles.showtimesByVenue}>
-      {[...byVenue.entries()].map(([venueId, times]) => (
-        <div key={venueId} className={styles.venueShowtimes}>
+      {venueEntries.map(([venueId, times]) => (
+        <div key={venueId} className={`${styles.venueShowtimes} ${groupByDay ? styles.venueShowtimesWeek : ""}`}>
           <span className={styles.venueNameGroup}>
             <button
               className={styles.venueName}
@@ -1207,27 +1321,7 @@ function ShowtimesByVenue({
               >🎟&#xFE0E;↗</a>
             )}
           </span>
-          <div className={styles.times}>
-            {times
-              .sort((a, b) => (a.datetime < b.datetime ? -1 : 1))
-              .map((s) => (
-                <a
-                  key={s.datetime}
-                  href={s.ticket_url ?? "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.timeLink}
-                >
-                  {formatTime(s.datetime)}
-                  {s.format && s.format.toUpperCase() !== "DCP" && (
-                    <span className={styles.format}> (format: {s.format})</span>
-                  )}
-                  {s.event_note && (
-                    <span className={styles.eventNote} title={`Special showing: ${s.event_note}`}> · {s.event_note}</span>
-                  )}
-                </a>
-              ))}
-          </div>
+          {groupByDay ? renderDays(times) : <div className={styles.times}>{times.map(renderTime)}</div>}
         </div>
       ))}
     </div>
@@ -1271,12 +1365,16 @@ function FilmDetailFPO({
   film,
   showtimes,
   venues,
+  weekView = false,
+  today,
   onBack,
   onVenueClick,
 }: {
   film: Film;
   showtimes: Showtime[];
   venues: Venue[];
+  weekView?: boolean;
+  today: string;
   onBack: () => void;
   onVenueClick: (venueId: string) => void;
 }) {
@@ -1290,7 +1388,7 @@ function FilmDetailFPO({
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" width="18" height="18" aria-hidden="true">
           <polyline points="15 6 9 12 15 18" />
         </svg>
-        Back
+        {weekView ? "Back to listings" : "Back"}
       </button>
       {posterUrl && (
         <img className={styles.detailPoster} src={posterUrl} alt={`${film.title} poster`} />
@@ -1314,7 +1412,19 @@ function FilmDetailFPO({
         <p className={styles.detailPlaceholder}>No description available.</p>
       )}
 
-      <ShowtimesByVenue film={film} showtimes={showtimes} venues={venues} onVenueClick={onVenueClick} />
+      {weekView && (
+        <h3 className={styles.detailSectionHeading}>
+          All showtimes this week · {showtimes.length}
+        </h3>
+      )}
+      <ShowtimesByVenue
+        film={film}
+        showtimes={showtimes}
+        venues={venues}
+        onVenueClick={onVenueClick}
+        groupByDay={weekView}
+        today={today}
+      />
     </div>
   );
 }

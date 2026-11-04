@@ -135,6 +135,106 @@
   font-size: 0.75em;
 }
 
+/* "Browse by movie" picker row, under the date cards */
+.browseRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.browseSelect {
+  flex: 1;
+  min-width: 0;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.browseSelect:hover,
+.browseSelect:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Week view in the detail panel: venue name on its own line, then a row per day.
+   Compound selector so it outranks the base .venueShowtimes rule defined later. */
+.venueShowtimes.venueShowtimesWeek {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+
+.venueDays {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.dayRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.dayLabel {
+  flex: 0 0 150px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.detailSectionHeading {
+  margin: 4px 0 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+@media (max-width: 570px) {
+  .dayLabel {
+    flex-basis: 110px;
+  }
+}
+
+/* Desktop "Show more filters…" toggle — a text link, not a chip, so it reads as
+   disclosure rather than another filter. */
+.filtersLink {
+  background: none;
+  border: none;
+  padding: 3px 4px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.filtersLink:hover {
+  color: var(--accent);
+}
+
+/* inline-block stops the underline from running under the active-filter dot */
+.filtersLink.toggleBtnDot::after {
+  display: inline-block;
+  white-space: pre;
+}
+
+.filtersLink:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 .toggleBtnDot::after {
   content: " •";
   color: var(--accent);
