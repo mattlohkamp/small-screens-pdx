@@ -15,6 +15,9 @@ tsconfig.tsbuildinfo
 public/data/failed-matches.json
 public/data/scrape.log
 
+# Calendar/RSS feeds: built by CI, published to gh-pages only (see scrape.yml)
+public/feeds/
+
 # Environment variables
 .env
 

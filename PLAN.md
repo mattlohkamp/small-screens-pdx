@@ -109,7 +109,7 @@ There is no `release_date` field — TMDB's release date isn't captured yet. The
 - **Match confidence:** `"verified"` for a direct TMDB match, `"fallback"` when the title only matched after stripping event flair ("… w/ Extra Footage", "… ON THE FOURTH OF JULY"). Fallback matches use conservative disambiguation and show a "Possible mismatch" badge.
 - **Poster images:** Hotlinked from TMDB's CDN. No local image storage.
 - **Deduplication:** Films are merged case-insensitively by title across scrapers before enrichment, so TMDB is called once per unique film per run.
-- **Enrichment cache:** Successful lookups are cached in `data/enrichment-cache.json` (gitignored) and reused; only new films and previous failures hit the API.
+- **Enrichment cache:** local dev only. Successful lookups go in `data/enrichment-cache.json` (gitignored) and expire after 7 days. CI never persists it, so every production run enriches from scratch (~73 films, part of a ~30s scrape) and can't serve stale TMDB/OMDb data. That's why TMDB `/movie/changes` invalidation was dropped.
 - **Time zones:** Showtime datetimes are local Pacific with no offset. The scrape window and the site's "today" are both anchored to Portland time (an evening UTC rollover used to drop the current day — fixed in 1.4.2).
 
 ---
@@ -129,6 +129,7 @@ One scraper per venue (McMenamins excepted). Preference order for a data source:
 2. A scraper that still fails keeps its venue's last-known-good showtimes instead of wiping them.
 3. Merge films across venues, enrich via TMDB (+ OMDb ratings), write `showtimes.json` and `failed-matches.json`.
 4. Update `state/venue-health.json` and send ntfy alerts on changes (CI runs, or locally with `--health`).
+5. Build the feeds (`src/feeds.ts`) into `public/feeds/` and update `state/feed-state.json` (CI runs, or locally with `--feeds`).
 
 `npm run scrape <id…>` does a partial run that patches only those venues.
 
@@ -172,6 +173,7 @@ A single `WhatsOn` view (`app/components/WhatsOn.tsx`) covers the product:
 - RT / IMDb / Metacritic badges, posters, overview, IMDb links, ticket links, format and event-note annotations
 - "Browse by movie" picker: every film this week, opening a single-film view grouped by theater, then day
 - Mobile: pull-down options drawer, compact cards, slide-over film detail view
+- Footer subscribe links: all-venues calendar, per-venue calendars (`webcal://`, so calendar apps subscribe rather than import), and the RSS feed; RSS is also advertised in the page head
 
 Separate by-film / by-venue / calendar views were planned originally and dropped — the filter set covers them. The Leaflet venue map shipped in M4 and was removed in 1.4.0 (it wasn't earning its space).
 
@@ -186,12 +188,13 @@ scrape.yml  (cron "37 2,12,20 * * *" UTC + manual dispatch)
             = ~6:37pm / 4:37am / 12:37pm PST (an hour later in PDT)
   1. checkout, npm ci, Playwright Chromium (cached, --with-deps)
   2. npm run scrape  → scrape, merge, enrich, write showtimes.json, update health + ntfy
-  3. commit showtimes.json + state/venue-health.json → push to main
-  4. copy showtimes.json into gh-pages data/ (data-only deploy — never ships UI)
+  3. commit showtimes.json + state/{venue-health,feed-state}.json → push to main
+  4. copy showtimes.json into gh-pages data/ and public/feeds/ into gh-pages feeds/
+     (data-only deploy — never ships UI)
   5. on any failure: urgent ntfy push with a link to the run
 
 deploy.yml  (push of a release-* tag, or manual dispatch)
-  1. npm run build → static export → force-replace gh-pages contents
+  1. npm run build → static export → replace gh-pages contents, except feeds/
   2. on tag push: GitHub Release titled "x.y.z-commithash"
 
 watchdog.yml  (cron "17 * * * *" + manual dispatch)
@@ -274,7 +277,7 @@ One push per alert type per run, silent otherwise. Each push body starts with th
 - [ ] Filter by format (35mm, 70mm, …) — data is captured, no filter yet.
 - [ ] Filter by new releases / first run — needs `release_date` from TMDB.
 - [ ] Distance filtering (geolocation + venue lat/lng).
-- [ ] Enrichment cache invalidation via TMDB's `/movie/changes`.
-- [ ] iCal / RSS feed.
+- [x] ~~Enrichment cache invalidation via TMDB's `/movie/changes`~~: not needed, since CI never uses the cache. Local cache now has a 7-day TTL instead (2026-11-04).
+- [x] iCal / RSS feeds (2026-11-04).
 - [ ] Alerts for specific films or directors.
 - [ ] Historical archive browsing.

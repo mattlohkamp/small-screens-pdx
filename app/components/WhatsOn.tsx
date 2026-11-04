@@ -173,6 +173,46 @@ function RatingsBadges({ film, className }: { film: Film; className: string }) {
   return <>{badges}</>;
 }
 
+// Calendar (.ics) and RSS feeds, built by each CI scrape into /feeds/ (src/feeds.ts).
+// Calendar links use webcal:// so Apple Calendar / Outlook subscribe (and keep
+// refreshing) instead of importing a one-off copy. Google Calendar ignores
+// webcal links; the tooltip tells people to paste the https URL there.
+function SubscribeLinks({ venues }: { venues: Venue[] }) {
+  const base = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/feeds/`;
+  // Footer renders only after the client fetch, so window is always defined here.
+  const host = window.location.host;
+  const webcal = (file: string) => `webcal://${host}${base}${file}`;
+  const https = (file: string) => `https://${host}${base}${file}`;
+  const calTitle = (file: string) =>
+    `Subscribe in your calendar app. For Google Calendar: Other calendars → From URL → ${https(file)}`;
+  const sorted = [...venues].sort((a, b) => a.name.localeCompare(b.name));
+  return (
+    <div className={styles.subscribe}>
+      Subscribe:{" "}
+      <a href={webcal("all.ics")} title={calTitle("all.ics")}>
+        Calendar (all venues)
+      </a>
+      {" · "}
+      <a href={`${base}new.xml`} title="RSS feed of films as they first appear on any schedule">
+        RSS: newly showing
+      </a>
+      {" · "}
+      <details className={styles.subscribeVenues}>
+        <summary>Calendar by venue</summary>
+        <ul>
+          {sorted.map((v) => (
+            <li key={v.id}>
+              <a href={webcal(`${v.id}.ics`)} title={calTitle(`${v.id}.ics`)}>
+                {v.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </div>
+  );
+}
+
 function formatRuntime(minutes: number): string {
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
@@ -973,6 +1013,7 @@ export default function WhatsOn() {
             Ratings from OMDb
           </a>
         </p>
+        <SubscribeLinks venues={schedule.venues} />
       </footer>
 
       {posterModal && (

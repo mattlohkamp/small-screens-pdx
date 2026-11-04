@@ -4,6 +4,8 @@ A unified showtime aggregator for Portland's independent cinemas. Each theater p
 
 **Live site:** https://mattlohkamp.github.io/small-screens-pdx/
 
+**Subscribe:** [calendar of every showtime](https://mattlohkamp.github.io/small-screens-pdx/feeds/all.ics), one calendar per venue (`feeds/<venue-id>.ics`, linked from the site footer), or [RSS of newly showing films](https://mattlohkamp.github.io/small-screens-pdx/feeds/new.xml).
+
 ## What it covers
 
 15 venues with working scrapers:
@@ -78,6 +80,9 @@ npm run scrape:living-room
 
 # Force re-enrich all films (bypasses cache)
 npm run scrape:force
+
+# Also build the calendar/RSS feeds into public/feeds/ (CI always does)
+npm run scrape -- --feeds
 ```
 
 Hollywood always comes from the `pi-data` branch, and so does OMSI in CI. Locally, OMSI tries a direct scrape first.
@@ -106,6 +111,7 @@ src/
   enrich.ts          # TMDB/OMDb enrichment, caching, failure tracking
   cache.ts           # Enrichment cache read/write
   health.ts          # Per-venue health history + ntfy alerts
+  feeds.ts           # iCal calendars (all + per venue) and RSS of newly showing films
   pi-source.ts       # Fallback: read the pi-scraper host's latest raw output from pi-data
   fetch.ts           # Shared fetch with timeouts and retries
   window.ts          # Rolling showtime window length
@@ -139,8 +145,9 @@ public/
     showtimes.json    # Generated output — tracked in git, committed by each CI scrape
 state/
   venue-health.json   # Rolling per-venue scrape history — committed by CI
+  feed-state.json     # When each film first appeared (drives RSS) — committed by CI
 data/
-  enrichment-cache.json  # Persisted TMDB results (gitignored)
+  enrichment-cache.json  # Local-only TMDB/OMDb cache, 7-day TTL (gitignored; CI never uses it)
 ```
 
 ### Scrape health alerts

@@ -69,7 +69,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # venue-health.json is the rolling per-venue history that decides
           # whether an empty week is unusual; it must persist between runs.
-          git add public/data/showtimes.json state/venue-health.json
+          # feed-state.json records when each film first appeared (for RSS).
+          # The feeds themselves (public/feeds/) only go to gh-pages, below.
+          git add public/data/showtimes.json state/venue-health.json state/feed-state.json
           if git diff --staged --quiet; then
             echo "No changes — skipping commit"
           else
@@ -102,7 +104,13 @@ jobs:
           mkdir -p gh-pages-wt/data
           cp public/data/showtimes.json gh-pages-wt/data/showtimes.json
 
-          git -C gh-pages-wt add data/showtimes.json
+          # Calendar/RSS feeds: replace the whole dir so a venue that drops out
+          # of the registry loses its .ics too. Not committed to main (~1MB per
+          # run of mostly repeated text); deploy.yml leaves this dir in place.
+          rm -rf gh-pages-wt/feeds
+          cp -r public/feeds gh-pages-wt/feeds
+
+          git -C gh-pages-wt add data/showtimes.json feeds
           if git -C gh-pages-wt diff --staged --quiet; then
             echo "Live data already current — nothing to deploy."
           else

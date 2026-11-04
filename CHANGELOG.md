@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Added
+- Subscribe from the footer: a calendar of every showtime (all venues), a calendar per venue, and an RSS feed of films as they first appear on any schedule. Calendars refresh with each scrape. The RSS feed is advertised in the page head so feed readers find it from the site URL.
+
 ## [1.6.1] — 2026-11-04
 
 ### Fixed

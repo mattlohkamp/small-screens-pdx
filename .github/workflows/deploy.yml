@@ -56,7 +56,9 @@ jobs:
           # Full UI replace: drop everything tracked, lay down the fresh build.
           # This also ships the data file that was current in main at build time;
           # subsequent daily data deploys keep it up to date.
-          find gh-pages-wt -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          # feeds/ (calendar + RSS) only ever comes from the scrape's data
+          # deploy, so it's kept as-is rather than wiped until the next scrape.
+          find gh-pages-wt -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'feeds' -exec rm -rf {} +
           cp -r out/. gh-pages-wt/
 
           git -C gh-pages-wt add -A

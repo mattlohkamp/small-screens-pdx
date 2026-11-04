@@ -20,6 +20,7 @@ import { enrichFilms } from "./enrich.js";
 import { loadCache, saveCache } from "./cache.js";
 import { evaluateHealth, evaluatePiCode, HEALTH_PATH, loadHealth, notifyHealth, saveHealth, type VenueRunResult } from "./health.js";
 import { WINDOW_DAYS } from "./window.js";
+import { FEED_STATE_PATH, FEEDS_DIR, loadFeedState, saveFeedState, updateFeedState, writeFeeds } from "./feeds.js";
 import { EXPECTED_PI_CODE_HASH, fetchPiRaw, piCodeHashes } from "./pi-source.js";
 import type { Schedule, Film } from "./types.js";
 import type { FailedMatch } from "./enrich.js";
@@ -449,6 +450,16 @@ async function run(runStart: Date, log: (msg: string) => void) {
     saveHealth(state);
     log(`\nHealth: ${events.length ? `${events.length} change(s)` : "no changes"} (state in ${HEALTH_PATH})`);
     await notifyHealth(events, log);
+  }
+
+  // Calendar + RSS feeds (see feeds.ts). Like health, they update committed files
+  // (public/feeds/, state/feed-state.json), so only CI writes them by default;
+  // pass --feeds to build them locally.
+  if (IN_CI || process.argv.includes("--feeds")) {
+    const feedState = updateFeedState(loadFeedState(), films, schedule.generated_at);
+    saveFeedState(feedState);
+    const written = writeFeeds(schedule, feedState);
+    log(`\nFeeds: wrote ${written.length} files to ${FEEDS_DIR}/ (state in ${FEED_STATE_PATH})`);
   }
 
   if (failures.length > 0) {

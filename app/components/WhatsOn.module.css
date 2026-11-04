@@ -759,6 +759,37 @@
   margin: 0;
 }
 
+.subscribe {
+  flex-basis: 100%;
+}
+
+.subscribeVenues {
+  display: inline;
+}
+
+.subscribeVenues summary {
+  display: inline;
+  cursor: pointer;
+  text-decoration: underline;
+  list-style: none;
+}
+
+.subscribeVenues summary::-webkit-details-marker {
+  display: none;
+}
+
+.subscribeVenues ul {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+  columns: 3 12em;
+  column-gap: 16px;
+}
+
+.subscribeVenues li {
+  padding: 2px 0;
+}
+
 /* Compact view */
 .filmRowCompact {
   display: flex;
