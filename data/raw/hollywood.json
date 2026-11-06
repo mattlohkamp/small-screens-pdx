@@ -2,28 +2,9 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-05T20:15:17.405Z",
+  "scraped_at": "2026-11-06T02:15:16.330Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
-    {
-      "id": null,
-      "slug": "author-talk-with-jane-schoenbrun-i-saw-the-tv-glow",
-      "title": "Author Talk with Jane Schoenbrun + I SAW THE TV GLOW",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-05T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/author-talk-with-jane-schoenbrun-i-saw-the-tv-glow-2026-11-05-730pm/"
-        }
-      ]
-    },
     {
       "id": null,
       "slug": "begotten",
@@ -65,6 +46,25 @@
           "datetime": "2026-11-06T19:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/best-in-show-2026-11-06-730pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "chariots-of-fire",
+      "title": "Chariots Of Fire",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-12T19:30",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/chariots-of-fire-in-35mm-2026-11-12-730pm/"
         }
       ]
     },
@@ -139,6 +139,18 @@
           "datetime": "2026-11-11T21:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-11-930pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-12T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-12-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-12T21:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-12-930pm/"
         }
       ]
     },
@@ -225,8 +237,8 @@
     },
     {
       "id": null,
-      "slug": "touchy-feely-an-evening-with-marcelo-tes-n",
-      "title": "Touchy-Feely: An Evening with Marcelo Tesón",
+      "slug": "the-story-of-adele-h",
+      "title": "The Story of Adele H",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -236,9 +248,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-05T18:30",
+          "datetime": "2026-11-12T18:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/touchy-feely-an-evening-with-marcelo-teson-2026-11-05-630pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/the-story-of-adele-h-2026-11-12-630pm/"
         }
       ]
     },
@@ -318,18 +330,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-05T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-05-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-05T20:45",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-05-845pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-06T19:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-06-700pm/"
@@ -399,25 +399,18 @@
           "datetime": "2026-11-11T21:05",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-11-905pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "wildwood-digital",
-      "title": "WILDWOOD (Digital)",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
+        },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-05T19:00",
+          "datetime": "2026-11-12T21:05",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-11-05-700pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-12-905pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-12T19:00",
+          "format": "Open Captions",
+          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-with-open-captions-2026-11-12-700pm/"
         }
       ]
     }
