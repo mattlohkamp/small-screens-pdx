@@ -10,24 +10,6 @@ X-WR-TIMEZONE:America/Los_Angeles
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:cinemagic-20261106T220000-howling-iii-the-marsupials-1987@small-screens
- -pdx
-DTSTAMP:20261104T202843Z
-DTSTART:20261107T060000Z
-DTEND:20261107T073800Z
-SUMMARY:Howling III: The Marsupials (1987)
-LOCATION:The Cinemagic Theater\, 2021 SE Hawthorne Blvd\, Portland OR
-GEO:45.5122;-122.6366
-DESCRIPTION:Dir. Philippe Mora · 98 min\n\nA strange race of human-like ma
- rsupials appear suddenly in Australia\, and a sociologist who studies thes
- e creatures falls in love with a female one. Is this a dangerous combinati
- on?\n\nTickets: https://tickets.thecinemagictheater.com/checkout/showing/h
- owling-iii-the-marsupials/4000868/\n\nMore showtimes: https://mattlohkamp.
- github.io/small-screens-pdx/
-URL:https://tickets.thecinemagictheater.com/checkout/showing/howling-iii-th
- e-marsupials/4000868/
-END:VEVENT
-BEGIN:VEVENT
 UID:cinemagic-20261107T190000-art-deco-detective-aka-hard-business-1994@sma
  ll-screens-pdx
 DTSTAMP:20261104T202843Z
@@ -244,5 +226,39 @@ DESCRIPTION:Dir. Claire Denis · 93 min\n\nForeign Legion officer Galoup re
  .io/small-screens-pdx/
 URL:https://tickets.thecinemagictheater.com/checkout/showing/beau-travail/4
  040140/
+END:VEVENT
+BEGIN:VEVENT
+UID:cinemagic-20261113T190000-10-things-i-hate-about-you-1999@small-screens
+ -pdx
+DTSTAMP:20261107T091444Z
+DTSTART:20261114T030000Z
+DTEND:20261114T043700Z
+SUMMARY:10 Things I Hate About You (1999)
+LOCATION:The Cinemagic Theater\, 2021 SE Hawthorne Blvd\, Portland OR
+GEO:45.5122;-122.6366
+DESCRIPTION:Dir. Gil Junger · 97 min\n\nAfter discovering his high school 
+ crush can't date until her brash older sister does\, a lovesick teen enlis
+ ts a bad-boy classmate to woo her.\n\nTickets: https://tickets.thecinemagi
+ ctheater.com/checkout/showing/10-things-i-hate-about-you/4139953/\n\nMore 
+ showtimes: https://mattlohkamp.github.io/small-screens-pdx/
+URL:https://tickets.thecinemagictheater.com/checkout/showing/10-things-i-ha
+ te-about-you/4139953/
+END:VEVENT
+BEGIN:VEVENT
+UID:cinemagic-20261113T211500-tammy-the-trex-1994@small-screens-pdx
+DTSTAMP:20261107T091444Z
+DTSTART:20261114T051500Z
+DTEND:20261114T064600Z
+SUMMARY:Tammy & the Trex (1994)
+LOCATION:The Cinemagic Theater\, 2021 SE Hawthorne Blvd\, Portland OR
+GEO:45.5122;-122.6366
+DESCRIPTION:Dir. Stewart Raffill · 91 min\n\nAn evil scientist implants th
+ e brain of a murdered high school student into an animatronic Tyrannosauru
+ s\, who later wreaks vengeance on the bullies who killed him\, and is reun
+ ited with his sweetheart.\n\nTickets: https://tickets.thecinemagictheater.
+ com/checkout/showing/tammy-the-trex/4130705/\n\nMore showtimes: https://ma
+ ttlohkamp.github.io/small-screens-pdx/
+URL:https://tickets.thecinemagictheater.com/checkout/showing/tammy-the-trex
+ /4130705/
 END:VEVENT
 END:VCALENDAR
