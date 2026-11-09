@@ -10,35 +10,6 @@ X-WR-TIMEZONE:America/Los_Angeles
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:tomorrow-20261108T1530-the-princess-bride-crafternoon@small-screens-pdx
-DTSTAMP:20261104T202843Z
-DTSTART:20261108T233000Z
-DTEND:20261109T010900Z
-SUMMARY:The Princess Bride Crafternoon
-LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
-GEO:45.5158;-122.6831
-DESCRIPTION:99 min\n\nTickets: https://tomorrowtheater.org/showtimes/the-pr
- incess-bride-crafternoon-x-ritual-dyes-11-8-26-330-pm/\n\nMore showtimes: 
- https://mattlohkamp.github.io/small-screens-pdx/
-URL:https://tomorrowtheater.org/showtimes/the-princess-bride-crafternoon-x-
- ritual-dyes-11-8-26-330-pm/
-END:VEVENT
-BEGIN:VEVENT
-UID:tomorrow-20261108T1900-james-spooner-book-release-afro-punk@small-scree
- ns-pdx
-DTSTAMP:20261104T202843Z
-DTSTART:20261109T030000Z
-DTEND:20261109T055000Z
-SUMMARY:James Spooner Book Release + Afro-Punk
-LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
-GEO:45.5158;-122.6831
-DESCRIPTION:170 min\n\nTickets: https://tomorrowtheater.org/showtimes/james
- -spooner-book-release-afro-punk-11-8-26-700-pm/\n\nMore showtimes: https:/
- /mattlohkamp.github.io/small-screens-pdx/
-URL:https://tomorrowtheater.org/showtimes/james-spooner-book-release-afro-p
- unk-11-8-26-700-pm/
-END:VEVENT
-BEGIN:VEVENT
 UID:tomorrow-20261110T1845-memorie-olfattive@small-screens-pdx
 DTSTAMP:20261104T202843Z
 DTSTART:20261111T024500Z
@@ -78,13 +49,13 @@ DTEND:20261113T041600Z
 SUMMARY:No Sex Last Night: Sophie Calle Night (1996)
 LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
 GEO:45.5158;-122.6831
-DESCRIPTION:Dir. Sophie Calle · 76 min\n\nSpecial showing: Sophie Calle Ni
- ght\n\nArmed with camcorders\, French artist Sophie Calle and American pho
- tographer Greg Shephard head West across the United States in his Cadillac
-  convertible to produce and document a narrative of their journey and rela
- tionship.\n\nTickets: https://tomorrowtheater.org/showtimes/no-sex-last-ni
- ght-sophie-calle-night-x-nationale-11-12-26-700-pm/\n\nMore showtimes: htt
- ps://mattlohkamp.github.io/small-screens-pdx/
+DESCRIPTION:Dir. Greg Shephard · 76 min\n\nSpecial showing: Sophie Calle N
+ ight\n\nArmed with camcorders\, French artist Sophie Calle and American ph
+ otographer Greg Shephard head West across the United States in his Cadilla
+ c convertible to produce and document a narrative of their journey and rel
+ ationship.\n\nTickets: https://tomorrowtheater.org/showtimes/no-sex-last-n
+ ight-sophie-calle-night-x-nationale-11-12-26-700-pm/\n\nMore showtimes: ht
+ tps://mattlohkamp.github.io/small-screens-pdx/
 URL:https://tomorrowtheater.org/showtimes/no-sex-last-night-sophie-calle-ni
  ght-x-nationale-11-12-26-700-pm/
 END:VEVENT
@@ -135,5 +106,38 @@ DESCRIPTION:Dir. Douglas Keeve · 73 min\n\nFormat: 4K DCP\n\nIsaac Mizrahi
  thub.io/small-screens-pdx/
 URL:https://tomorrowtheater.org/showtimes/unzipped-4k-restoration-11-14-26-
  700-pm/
+END:VEVENT
+BEGIN:VEVENT
+UID:tomorrow-20261115T1600-unseen-invisible-wounds-invincible-spirit@small-
+ screens-pdx
+DTSTAMP:20261109T101852Z
+DTSTART:20261116T000000Z
+DTEND:20261116T014500Z
+SUMMARY:Unseen: Invisible Wounds\, Invincible Spirit
+LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
+GEO:45.5158;-122.6831
+DESCRIPTION:105 min\n\nTickets: https://tomorrowtheater.org/showtimes/unsee
+ n-invisible-wounds-invincible-spirit-11-15-26-400-pm/\n\nMore showtimes: h
+ ttps://mattlohkamp.github.io/small-screens-pdx/
+URL:https://tomorrowtheater.org/showtimes/unseen-invisible-wounds-invincibl
+ e-spirit-11-15-26-400-pm/
+END:VEVENT
+BEGIN:VEVENT
+UID:tomorrow-20261115T1900-tampopo-1985@small-screens-pdx
+DTSTAMP:20261109T101852Z
+DTSTART:20261116T030000Z
+DTEND:20261116T045500Z
+SUMMARY:Tampopo (1985)
+LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
+GEO:45.5158;-122.6831
+DESCRIPTION:Dir. Jūzō Itami · 115 min\n\nIn this humorous paean to the j
+ oys of food\, a pair of truck drivers happen onto a decrepit roadside shop
+  selling ramen noodles. The widowed owner\, Tampopo\, begs them to help he
+ r turn her establishment into a paragon of the "art of noodle-soup making"
+ . Interspersed are satirical vignettes about the importance of food to dif
+ ferent aspects of human life.\n\nTickets: https://tomorrowtheater.org/show
+ times/tampopo-11-15-26-700-pm/\n\nMore showtimes: https://mattlohkamp.gith
+ ub.io/small-screens-pdx/
+URL:https://tomorrowtheater.org/showtimes/tampopo-11-15-26-700-pm/
 END:VEVENT
 END:VCALENDAR
