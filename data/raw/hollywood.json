@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-08T20:15:17.011Z",
+  "scraped_at": "2026-11-09T02:15:16.371Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -45,6 +45,25 @@
     },
     {
       "id": null,
+      "slug": "diebuster",
+      "title": "Diebuster",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-15T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/diebuster-2026-11-15-700pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
       "slug": "eastern-condors",
       "title": "Eastern Condors",
       "year": null,
@@ -78,6 +97,12 @@
           "datetime": "2026-11-14T15:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/kikis-delivery-service-2026-11-14-300pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-15T15:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/kikis-delivery-service-2026-11-15-300pm/"
         }
       ]
     },
@@ -92,12 +117,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-08T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-08-600pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-10T18:00",
@@ -151,6 +170,12 @@
           "datetime": "2026-11-14T18:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-14-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-15T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-15-600pm/"
         }
       ]
     },
@@ -301,8 +326,8 @@
     },
     {
       "id": null,
-      "slug": "tenebre-with-claudio-simonetti-s-goblin",
-      "title": "TENEBRE with Claudio Simonetti’s GOBLIN",
+      "slug": "the-goonies",
+      "title": "The Goonies",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -312,9 +337,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-08T20:00",
+          "datetime": "2026-11-15T14:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/tenebre-with-claudio-simonettis-goblin-2026-11-08-800pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/the-goonies-2026-11-15-200pm/"
         }
       ]
     },
@@ -329,12 +354,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-08T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-08-630pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-09T19:00",
@@ -419,6 +438,24 @@
           "datetime": "2026-11-14T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-14-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-15T14:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-15-230pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-15T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-15-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-15T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-15-915pm/"
         }
       ]
     }
