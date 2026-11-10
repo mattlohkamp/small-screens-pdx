@@ -2,9 +2,28 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-09T20:15:19.323Z",
+  "scraped_at": "2026-11-10T02:15:21.571Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
+    {
+      "id": null,
+      "slug": "addams-family-values",
+      "title": "Addams Family Values",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-16T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/addams-family-values-2026-11-16-730pm/"
+        }
+      ]
+    },
     {
       "id": null,
       "slug": "chariots-of-fire",
@@ -176,50 +195,12 @@
           "datetime": "2026-11-15T18:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-15-600pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "la-bola-negra",
-      "title": "La Bola Negra",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-09T18:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-in-35mm-2026-11-09-600pm/"
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-09T21:30",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-in-35mm-2026-11-09-930pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "mississippi-triangle",
-      "title": "Mississippi Triangle",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-09T19:30",
+          "datetime": "2026-11-16T21:35",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/mississippi-triangle-2026-11-09-730pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-16-935pm/"
         }
       ]
     },
@@ -263,8 +244,8 @@
     },
     {
       "id": null,
-      "slug": "music-box-films-presents-by-design",
-      "title": "Music Box Films Presents – BY DESIGN",
+      "slug": "paper-tiger",
+      "title": "Paper Tiger",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -274,15 +255,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-09T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/music-box-films-presents-by-design-2026-11-09-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-09T20:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/music-box-films-presents-by-design-2026-11-09-800pm/"
+          "datetime": "2026-11-16T19:00",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-16-700pm/"
         }
       ]
     },
@@ -356,18 +331,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-09T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-09-700pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-09T21:05",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-09-905pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-10T20:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-10-830pm/"
@@ -395,6 +358,31 @@
           "datetime": "2026-11-12T19:00",
           "format": "Open Captions",
           "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-with-open-captions-2026-11-12-700pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "vinegar-syndrome-presents-the-stendhal-syndrome",
+      "title": "Vinegar Syndrome Presents – THE STENDHAL SYNDROME",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-16T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/vinegar-syndrome-presents-the-stendhal-syndrome-2026-11-16-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-16T20:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/vinegar-syndrome-presents-the-stendhal-syndrome-2026-11-16-830pm/"
         }
       ]
     },
@@ -456,6 +444,18 @@
           "datetime": "2026-11-15T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-15-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-16T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-16-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-16T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-16-915pm/"
         }
       ]
     }

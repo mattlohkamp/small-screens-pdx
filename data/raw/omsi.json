@@ -2,7 +2,7 @@
   "venue_ids": [
     "omsi"
   ],
-  "scraped_at": "2026-11-09T20:15:33.669Z",
+  "scraped_at": "2026-11-10T02:15:35.560Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -16,18 +16,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-09T16:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-09T18:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-11-10T16:00:00",
@@ -103,6 +91,18 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-11-15T18:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-16T16:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-16T18:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
         }
