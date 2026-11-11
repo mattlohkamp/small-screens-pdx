@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-10T20:15:21.433Z",
+  "scraped_at": "2026-11-11T02:15:19.214Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -83,25 +83,6 @@
     },
     {
       "id": null,
-      "slug": "eastern-condors",
-      "title": "Eastern Condors",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-10T19:30",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/eastern-condors-in-35mm-2026-11-10-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "kiki-s-delivery-service",
       "title": "Kiki's Delivery Service",
       "year": null,
@@ -136,18 +117,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-10T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-10-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-10T21:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-10-930pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-11T18:00",
@@ -201,13 +170,19 @@
           "datetime": "2026-11-16T21:35",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-16-935pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-17T21:35",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-17-935pm/"
         }
       ]
     },
     {
       "id": null,
-      "slug": "the-discreet-charm-of-the-bourgeoisie",
-      "title": "The Discreet Charm of the Bourgeoisie",
+      "slug": "the-queer-magical-girl-adolescence-of-utena",
+      "title": "The Queer Magical Girl: Adolescence of Utena",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -217,9 +192,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-10T18:30",
+          "datetime": "2026-11-17T18:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-discreet-charm-of-the-bourgeoisie-2026-11-10-630pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/the-queer-magical-girl-adolescence-of-utena-2026-11-17-630pm/"
         }
       ]
     },
@@ -258,6 +233,12 @@
           "datetime": "2026-11-16T19:00",
           "format": "35mm",
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-16-700pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-17T19:00",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-17-700pm/"
         }
       ]
     },
@@ -301,6 +282,25 @@
     },
     {
       "id": null,
+      "slug": "supersonic-man",
+      "title": "Supersonic Man",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-17T19:30",
+          "format": "16mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/supersonic-man-in-16mm-2026-11-17-730pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
       "slug": "the-goonies",
       "title": "The Goonies",
       "year": null,
@@ -329,12 +329,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-10T20:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-10-830pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-11T19:00",
@@ -456,6 +450,18 @@
           "datetime": "2026-11-16T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-16-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-17T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-17-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-17T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-17-915pm/"
         }
       ]
     }
