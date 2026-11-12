@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-11T20:15:18.442Z",
+  "scraped_at": "2026-11-12T02:15:18.008Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -119,18 +119,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-11T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-11-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-11T21:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-11-930pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-12T18:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-12-600pm/"
@@ -176,6 +164,12 @@
           "datetime": "2026-11-17T21:35",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-17-935pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-18T21:35",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-18-935pm/"
         }
       ]
     },
@@ -244,8 +238,8 @@
     },
     {
       "id": null,
-      "slug": "you-broke-my-heart-me-rompiste-el-coraz-n",
-      "title": "YOU BROKE MY HEART (Me rompiste el corazón)",
+      "slug": "flies-moscas",
+      "title": "FLIES (Moscas)",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -255,9 +249,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-11T19:30",
+          "datetime": "2026-11-18T19:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/you-broke-my-heart-me-rompiste-el-corazon-2026-11-11-730pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/flies-moscas-2026-11-18-730pm/"
         }
       ]
     },
@@ -301,6 +295,25 @@
     },
     {
       "id": null,
+      "slug": "the-first-wives-club",
+      "title": "The First Wives Club",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-18T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/the-first-wives-club-2026-11-18-700pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
       "slug": "the-goonies",
       "title": "The Goonies",
       "year": null,
@@ -329,18 +342,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-11T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-11-700pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-11T21:05",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-11-905pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-12T21:05",
@@ -462,6 +463,18 @@
           "datetime": "2026-11-17T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-17-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-18T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-18-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-18T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-18-915pm/"
         }
       ]
     }
