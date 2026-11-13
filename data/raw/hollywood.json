@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-12T20:15:19.354Z",
+  "scraped_at": "2026-11-13T02:15:17.379Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -21,25 +21,6 @@
           "datetime": "2026-11-16T19:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/addams-family-values-2026-11-16-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "chariots-of-fire",
-      "title": "Chariots Of Fire",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-12T19:30",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/chariots-of-fire-in-35mm-2026-11-12-730pm/"
         }
       ]
     },
@@ -119,18 +100,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-12T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-12-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-12T21:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-12-930pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-13T18:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-13-600pm/"
@@ -194,25 +163,6 @@
     },
     {
       "id": null,
-      "slug": "the-story-of-adele-h",
-      "title": "The Story of Adele H",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-12T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-story-of-adele-h-2026-11-12-630pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "paper-tiger",
       "title": "Paper Tiger",
       "year": null,
@@ -222,6 +172,12 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-19T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-19-700pm/"
+        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-16T19:00",
@@ -333,31 +289,6 @@
     },
     {
       "id": null,
-      "slug": "the-only-living-pickpocket-in-new-york",
-      "title": "The Only Living Pickpocket In New York",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-12T21:05",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-2026-11-12-905pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-12T19:00",
-          "format": "Open Captions",
-          "ticket_url": "https://hollywoodtheatre.org/event/the-only-living-pickpocket-in-new-york-with-open-captions-2026-11-12-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "vinegar-syndrome-presents-the-stendhal-syndrome",
       "title": "Vinegar Syndrome Presents – THE STENDHAL SYNDROME",
       "year": null,
@@ -378,6 +309,25 @@
           "datetime": "2026-11-16T20:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/vinegar-syndrome-presents-the-stendhal-syndrome-2026-11-16-830pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "visual-music-by-mary-ellen-bute-10-films",
+      "title": "VISUAL MUSIC BY MARY ELLEN BUTE: 10 Films",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-19T19:30",
+          "format": "16mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/visual-music-by-mary-ellen-bute-10-films-in-16mm-2026-11-19-730pm/"
         }
       ]
     },
@@ -475,6 +425,18 @@
           "datetime": "2026-11-18T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-18-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-19T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-19-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-19T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-19-915pm/"
         }
       ]
     }
