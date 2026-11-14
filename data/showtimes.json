@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T01:01:11.249Z",
-  "generator": "1.7.0-ac39142",
+  "generated_at": "2026-11-14T09:24:35.786Z",
+  "generator": "1.7.0-0a834ba",
   "window": {
-    "start": "2026-11-13",
-    "end": "2026-11-19"
+    "start": "2026-11-14",
+    "end": "2026-11-20"
   },
   "venues": [
     {
@@ -158,68 +158,6 @@
     }
   ],
   "films": [
-    {
-      "id": 4951,
-      "slug": "10-things-i-hate-about-you-1999",
-      "title": "10 Things I Hate About You",
-      "year": 1999,
-      "director": "Gil Junger",
-      "runtime_minutes": 97,
-      "overview": "After discovering his high school crush can't date until her brash older sister does, a lovesick teen enlists a bad-boy classmate to woo her.",
-      "poster_path": "/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
-      "genres": [
-        "Comedy",
-        "Romance",
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-13T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/10-things-i-hate-about-you/4139953/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-17T16:45:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/10-things-i-hate-about-you/4139951/"
-        }
-      ],
-      "imdb_id": "tt0147800",
-      "rt_score": 72,
-      "imdb_rating": 7.4,
-      "metacritic_score": 70,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 55563,
-      "slug": "tammy-the-trex-1994",
-      "title": "Tammy & the Trex",
-      "year": 1994,
-      "director": "Stewart Raffill",
-      "runtime_minutes": 91,
-      "overview": "An evil scientist implants the brain of a murdered high school student into an animatronic Tyrannosaurus, who later wreaks vengeance on the bullies who killed him, and is reunited with his sweetheart.",
-      "poster_path": "/uT3W8PIO0NUZqaSxsgNVKoDij1e.jpg",
-      "genres": [
-        "Science Fiction",
-        "Comedy",
-        "Horror"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-13T21:15:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/tammy-the-trex/4130705/"
-        }
-      ],
-      "imdb_id": "tt0111361",
-      "rt_score": 43,
-      "imdb_rating": 5.4,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
     {
       "id": 284,
       "slug": "the-apartment-1960",
@@ -402,6 +340,34 @@
       "match_confidence": "verified"
     },
     {
+      "id": 4951,
+      "slug": "10-things-i-hate-about-you-1999",
+      "title": "10 Things I Hate About You",
+      "year": 1999,
+      "director": "Gil Junger",
+      "runtime_minutes": 97,
+      "overview": "After discovering his high school crush can't date until her brash older sister does, a lovesick teen enlists a bad-boy classmate to woo her.",
+      "poster_path": "/ujERk3aKABXU3NDXOAxEQYTHe9A.jpg",
+      "genres": [
+        "Comedy",
+        "Romance",
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-17T16:45:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/10-things-i-hate-about-you/4139951/"
+        }
+      ],
+      "imdb_id": "tt0147800",
+      "rt_score": 72,
+      "imdb_rating": 7.4,
+      "metacritic_score": 70,
+      "match_confidence": "verified"
+    },
+    {
       "id": 9326,
       "slug": "romancing-the-stone-1984",
       "title": "Romancing the Stone",
@@ -460,6 +426,62 @@
       "rt_score": 42,
       "imdb_rating": 6.6,
       "metacritic_score": 45,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 9846,
+      "slug": "to-live-and-die-in-l-a-1985",
+      "title": "To Live and Die in L.A.",
+      "year": 1985,
+      "director": "William Friedkin",
+      "runtime_minutes": 116,
+      "overview": "When his longtime partner on the force is killed, reckless U.S. Secret Service agent Richard Chance vows revenge, setting out to nab dangerous counterfeit artist Eric Masters.",
+      "poster_path": "/2iW3pSihBIhXjnBQmUJ0mAiZbB5.jpg",
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Action"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-20T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/to-live-and-die-in-la/4141456/"
+        }
+      ],
+      "imdb_id": "tt0090180",
+      "rt_score": 89,
+      "imdb_rating": 7.3,
+      "metacritic_score": 81,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 9316,
+      "slug": "ong-bak-2003",
+      "title": "Ong-Bak",
+      "year": 2003,
+      "director": "Prachya Pinkaew",
+      "runtime_minutes": 105,
+      "overview": "When the head of a statue sacred to a village is stolen, a young martial artist goes to the big city and finds himself taking on the underworld to retrieve it.",
+      "poster_path": "/oagqAwp48dMPoCT94yDJUDOCVPi.jpg",
+      "genres": [
+        "Action",
+        "Crime",
+        "Thriller"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-20T21:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/ong-bak/4141457/"
+        }
+      ],
+      "imdb_id": "tt0368909",
+      "rt_score": 85,
+      "imdb_rating": 7.2,
+      "metacritic_score": 69,
       "match_confidence": "verified"
     },
     {
@@ -680,6 +702,34 @@
       ]
     },
     {
+      "id": 460059,
+      "slug": "burn-out-2018",
+      "title": "Burn Out",
+      "year": 2018,
+      "director": "Yann Gozlan",
+      "runtime_minutes": 107,
+      "overview": "Tony, a promising young motorcycle racer, is forced to do perilous drug runs to save the mother of his child from a dangerous mobster.",
+      "poster_path": "/3LeFOvzjZuIC7cQiXDeSIy1ym7a.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Crime"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-11-20T19:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/burn-out-friday-november-20th-at-7-00-pm/NXR7DWI6XCIRD3I6IXXYUZYL"
+        }
+      ],
+      "imdb_id": "tt6340604",
+      "rt_score": null,
+      "imdb_rating": 6.2,
+      "metacritic_score": null,
+      "match_confidence": "verified"
+    },
+    {
       "id": 891621,
       "slug": "wild-horse-nine-2026",
       "title": "Wild Horse Nine",
@@ -694,24 +744,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46470"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46471"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T21:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46472"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-14T12:00:00",
@@ -1044,18 +1076,6 @@
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-13T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-13-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-13T21:15",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-13-915pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-14T14:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-14-230pm/"
@@ -1137,6 +1157,18 @@
           "datetime": "2026-11-19T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-19-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-20T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-20-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-20T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-20-915pm/"
         }
       ],
       "imdb_id": "tt15799564",
@@ -1150,7 +1182,7 @@
       "slug": "wicker-2026",
       "title": "Wicker",
       "year": 2026,
-      "director": "Eleanor Wilson",
+      "director": "Alex Huston Fischer",
       "runtime_minutes": 105,
       "overview": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "poster_path": "/6FcBZOKvyrLCKGCyBG0ySCR4okt.jpg",
@@ -1160,24 +1192,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T16:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46458"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46459"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T21:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46460"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-14T12:30:00",
@@ -1418,24 +1432,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T15:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46462"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T19:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46463"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T21:50:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46464"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-11-14T12:15:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46477"
@@ -1523,12 +1519,6 @@
           "datetime": "2026-11-18T19:00:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46549"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-11-13T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103033?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         },
         {
           "venue_id": "baghdad",
@@ -1921,6 +1911,24 @@
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19734?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         },
         {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-20T15:30",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19735?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-20T19:40",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19740?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-17T19:15:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
           "venue_id": "moreland",
           "datetime": "2026-11-17T16:30:00",
           "format": null,
@@ -1958,7 +1966,7 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-17T19:15:00",
+          "datetime": "2026-11-14T16:30:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1970,19 +1978,19 @@
         },
         {
           "venue_id": "moreland",
+          "datetime": "2026-11-14T19:15:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
           "datetime": "2026-11-16T19:15:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-14T16:30:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-11-15T16:30:00",
+          "datetime": "2026-11-14T11:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -2000,13 +2008,7 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-14T11:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-11-14T19:15:00",
+          "datetime": "2026-11-15T16:30:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -2042,24 +2044,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46466"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T18:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46467"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-13T21:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46468"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-14T11:30:00",
@@ -2407,12 +2391,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-11-13T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103044?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-11-14T19:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103045?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -2582,18 +2560,6 @@
           "datetime": "2026-11-19T21:45:00",
           "format": "Subtitled",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/f5ca0644-610b-5b8e-939f-d8c737d898dc"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-13T17:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-13T19:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
         },
         {
           "venue_id": "omsi",
@@ -3319,12 +3285,6 @@
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-13T18:00",
-          "format": "Digital",
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-13-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-14T14:00",
           "format": "Digital",
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-14-200pm/"
@@ -3371,7 +3331,7 @@
       "slug": "mouse-2026",
       "title": "Mouse",
       "year": 2026,
-      "director": "Alex Thompson",
+      "director": "Kelly O'Sullivan",
       "runtime_minutes": 120,
       "overview": "When her closest friendship is suddenly disrupted the summer before senior year, a teenager struggles to find her footing and develops an unexpected, complicated bond with her best friend’s mother.",
       "poster_path": "/iKBFfOCdeu21lxxLxWaSAXxkmJ5.jpg",
@@ -3567,6 +3527,176 @@
       ]
     },
     {
+      "id": 1300968,
+      "slug": "the-hunger-games-sunrise-on-the-reaping-2026",
+      "title": "The Hunger Games: Sunrise on the Reaping",
+      "year": 2026,
+      "director": "Francis Lawrence",
+      "runtime_minutes": 159,
+      "overview": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
+      "poster_path": "/j1MNyNNgNQL6f27cb3m3uKaPKd6.jpg",
+      "genres": [
+        "Science Fiction",
+        "Action",
+        "Adventure"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T17:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a16b2f-6cb9-dfe7-2cc4-ff207079c248"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T20:45:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a16b2f-6cb9-dfe7-2cc4-ff207079c248"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-19T16:15",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19627?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-19T18:45",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19626?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-20T16:15",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19629?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-20T18:45",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19628?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        }
+      ],
+      "imdb_id": "tt32558705",
+      "rt_score": null,
+      "imdb_rating": null,
+      "metacritic_score": null,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 1292597,
+      "slug": "space-the-new-frontier-2024",
+      "title": "Space: The New Frontier",
+      "year": 2024,
+      "director": "Jake Flannery",
+      "runtime_minutes": 45,
+      "overview": "A second golden age of space has quietly dawned on us, with new hope for humanity as a spacefaring species. Space: The New Frontier, a new documentary made for Giant Screen theaters, goes behind the scenes of some of the most promising space technologies and missions of our time, giving audiences a first look into the not-so-distant future.",
+      "poster_path": "/ePCHx732oiFWE6KKEXi8NG8XQV3.jpg",
+      "genres": [
+        "Documentary"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-14T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-15T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-17T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-18T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        }
+      ],
+      "imdb_id": "tt32140915",
+      "rt_score": null,
+      "imdb_rating": null,
+      "metacritic_score": null,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 1411546,
+      "slug": "shark-kingdom-2025",
+      "title": "Shark Kingdom",
+      "year": 2025,
+      "director": "Dave Duce",
+      "runtime_minutes": 40,
+      "overview": "Shark heroes and conservationists Jess Cramp, Liv Rose and Cristina Zenato lead this epic family adventure into the kingdom of sharks, where we’ll come face to face with these ancient and awe-inspiring animals and learn how our future is intertwined with theirs.  Each shark species wields unique powers that help them survive in diverse ecosystems, whether it’s a great white hunting in the wild and wind-swept seas of New Zealand, whaler sharks learning to coexist with Australian fishermen, or elusive oceanic white tip “shipwreck sharks” traversing uncharted depths of the Pacific.  In some of the world’s most beautiful diving locations, join the action to understand and help these magnificent creatures, and be immersed in the larger story of our shared oceans.",
+      "poster_path": "/Amphl8aCSW7IC7a2lUmfp0gbu1g.jpg",
+      "genres": [
+        "Documentary"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-14T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-15T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-17T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-18T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-19T15:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T16:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        }
+      ],
+      "imdb_id": "tt22077760",
+      "rt_score": null,
+      "imdb_rating": 6.3,
+      "metacritic_score": null,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1511663,
       "slug": "elephants-giants-of-the-desert-2024",
       "title": "Elephants: Giants of the Desert",
@@ -3579,12 +3709,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-13T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-11-14T14:00:00",
@@ -3606,6 +3730,12 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-11-19T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
         }
@@ -3633,12 +3763,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-11-13T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-11-14T14:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
@@ -3658,6 +3782,12 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-11-19T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T14:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
         }
@@ -3681,18 +3811,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-13T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-13T15:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-11-14T11:00:00",
@@ -3758,121 +3876,21 @@
           "datetime": "2026-11-19T13:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-20T15:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         }
       ],
       "imdb_id": "tt42702648",
-      "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 1411546,
-      "slug": "shark-kingdom-2025",
-      "title": "Shark Kingdom",
-      "year": 2025,
-      "director": "Dave Duce",
-      "runtime_minutes": 40,
-      "overview": "Shark heroes and conservationists Jess Cramp, Liv Rose and Cristina Zenato lead this epic family adventure into the kingdom of sharks, where we’ll come face to face with these ancient and awe-inspiring animals and learn how our future is intertwined with theirs.  Each shark species wields unique powers that help them survive in diverse ecosystems, whether it’s a great white hunting in the wild and wind-swept seas of New Zealand, whaler sharks learning to coexist with Australian fishermen, or elusive oceanic white tip “shipwreck sharks” traversing uncharted depths of the Pacific.  In some of the world’s most beautiful diving locations, join the action to understand and help these magnificent creatures, and be immersed in the larger story of our shared oceans.",
-      "poster_path": "/Amphl8aCSW7IC7a2lUmfp0gbu1g.jpg",
-      "genres": [
-        "Documentary"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-13T16:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-14T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-15T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-17T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-18T12:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-19T15:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
-        }
-      ],
-      "imdb_id": "tt22077760",
-      "rt_score": null,
-      "imdb_rating": 6.3,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 1292597,
-      "slug": "space-the-new-frontier-2024",
-      "title": "Space: The New Frontier",
-      "year": 2024,
-      "director": "Jake Flannery",
-      "runtime_minutes": 45,
-      "overview": "A second golden age of space has quietly dawned on us, with new hope for humanity as a spacefaring species. Space: The New Frontier, a new documentary made for Giant Screen theaters, goes behind the scenes of some of the most promising space technologies and missions of our time, giving audiences a first look into the not-so-distant future.",
-      "poster_path": "/ePCHx732oiFWE6KKEXi8NG8XQV3.jpg",
-      "genres": [
-        "Documentary"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-13T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-13T16:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-14T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-15T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-17T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-18T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        }
-      ],
-      "imdb_id": "tt32140915",
       "rt_score": null,
       "imdb_rating": null,
       "metacritic_score": null,
@@ -3925,6 +3943,24 @@
           "datetime": "2026-11-19T19:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31348?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-20T16:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31353?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-20T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31349?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-20T21:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31350?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt38058097",
@@ -3959,32 +3995,6 @@
       "rt_score": 76,
       "imdb_rating": 6.9,
       "metacritic_score": 61,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 8769,
-      "slug": "christine-1983",
-      "title": "Christine",
-      "year": 1983,
-      "director": "John Carpenter",
-      "runtime_minutes": 110,
-      "overview": "Nerdy high schooler Arnie Cunningham falls for Christine, a rusty 1958 Plymouth Fury, and becomes obsessed with restoring the classic automobile to her former glory. As the car changes, so does Arnie, whose newfound confidence turns to arrogance behind the wheel of his exotic beauty. Arnie's girlfriend Leigh and best friend Dennis reach out to him, only to be met by a Fury like no other.",
-      "poster_path": "/mMtUJke2TtIoT6JB9hkvERmsSu8.jpg",
-      "genres": [
-        "Horror"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-13T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/christine-2026-11-13-730pm/"
-        }
-      ],
-      "imdb_id": "tt0085333",
-      "rt_score": 69,
-      "imdb_rating": 6.8,
-      "metacritic_score": 57,
       "match_confidence": "verified"
     },
     {
@@ -4093,6 +4103,18 @@
         },
         {
           "venue_id": "hollywood",
+          "datetime": "2026-11-20T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-20-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-20T20:45",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-20-845pm/"
+        },
+        {
+          "venue_id": "hollywood",
           "datetime": "2026-11-16T19:00",
           "format": "35mm",
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-16-700pm/"
@@ -4137,6 +4159,25 @@
       "imdb_rating": 6.4,
       "metacritic_score": 49,
       "match_confidence": "verified"
+    },
+    {
+      "id": null,
+      "slug": "ray-gunn-in-70mm-with-brad-bird",
+      "title": "RAY GUNN in 70mm with Brad Bird",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-20T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/ray-gunn-in-70mm-with-brad-bird-2026-11-20-700pm/"
+        }
+      ]
     },
     {
       "id": 27390,
@@ -4292,37 +4333,30 @@
       ]
     },
     {
-      "id": 1300968,
-      "slug": "the-hunger-games-sunrise-on-the-reaping-2026",
-      "title": "The Hunger Games: Sunrise on the Reaping",
-      "year": 2026,
-      "director": "Francis Lawrence",
-      "runtime_minutes": 159,
-      "overview": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-      "poster_path": "/j1MNyNNgNQL6f27cb3m3uKaPKd6.jpg",
+      "id": 1071215,
+      "slug": "thanksgiving-2023",
+      "title": "Thanksgiving",
+      "year": 2023,
+      "director": "Eli Roth",
+      "runtime_minutes": 106,
+      "overview": "After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts - the birthplace of the holiday. Picking off residents one by one, what begins as random revenge killings are soon revealed to be part of a larger, sinister holiday plan.",
+      "poster_path": "/f5f3TEVst1nHHyqgn7Z3tlwnBIH.jpg",
       "genres": [
-        "Science Fiction",
-        "Action",
-        "Adventure"
+        "Horror",
+        "Mystery"
       ],
       "showtimes": [
         {
-          "venue_id": "st-johns",
-          "datetime": "2026-11-19T16:15",
+          "venue_id": "moreland",
+          "datetime": "2026-11-20T21:30:00",
           "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19627?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-11-19T18:45",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19626?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+          "ticket_url": "https://morelandtheater.com/tickets/"
         }
       ],
-      "imdb_id": "tt32558705",
-      "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
+      "imdb_id": "tt1448754",
+      "rt_score": 83,
+      "imdb_rating": 6.2,
+      "metacritic_score": 63,
       "match_confidence": "verified"
     },
     {
@@ -4369,6 +4403,32 @@
           "ticket_url": "https://tomorrowtheater.org/showtimes/joel-kim-booster-stand-up-carte-blanche-11-19-26-700-pm/"
         }
       ]
+    },
+    {
+      "id": 1362365,
+      "slug": "this-is-buzz-2026",
+      "title": "This Is Buzz",
+      "year": 2026,
+      "director": "Mark Pellington",
+      "runtime_minutes": 102,
+      "overview": "A mind-blowing music documentary about the first immersive TV show on MTV when MTV was cool.",
+      "poster_path": "/ynmDiy9FRTwqP6gpufJQsME0OId.jpg",
+      "genres": [
+        "Documentary"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "tomorrow",
+          "datetime": "2026-11-20T19:00",
+          "format": null,
+          "ticket_url": "https://tomorrowtheater.org/showtimes/this-is-buzz-analog-ecstasy-w-mark-pellington-11-20-26-700-pm/"
+        }
+      ],
+      "imdb_id": "tt40226130",
+      "rt_score": null,
+      "imdb_rating": 4.1,
+      "metacritic_score": null,
+      "match_confidence": "verified"
     },
     {
       "id": 1620477,
