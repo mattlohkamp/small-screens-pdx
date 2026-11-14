@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-13T20:15:16.094Z",
+  "scraped_at": "2026-11-14T02:15:16.574Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -21,25 +21,6 @@
           "datetime": "2026-11-16T19:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/addams-family-values-2026-11-16-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "christine",
-      "title": "Christine",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-13T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/christine-2026-11-13-730pm/"
         }
       ]
     },
@@ -98,12 +79,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-13T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-13-600pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-14T14:00",
@@ -180,6 +155,18 @@
         },
         {
           "venue_id": "hollywood",
+          "datetime": "2026-11-20T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-20-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-20T20:45",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-20-845pm/"
+        },
+        {
+          "venue_id": "hollywood",
           "datetime": "2026-11-16T19:00",
           "format": "35mm",
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-16-700pm/"
@@ -208,6 +195,25 @@
           "datetime": "2026-11-18T19:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/flies-moscas-2026-11-18-730pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "ray-gunn-in-70mm-with-brad-bird",
+      "title": "RAY GUNN in 70mm with Brad Bird",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-20T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/ray-gunn-in-70mm-with-brad-bird-2026-11-20-700pm/"
         }
       ]
     },
@@ -344,18 +350,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-13T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-13-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-13T21:15",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-13-915pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-14T14:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-14-230pm/"
@@ -437,6 +431,18 @@
           "datetime": "2026-11-19T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-19-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-20T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-20-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-20T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-20-915pm/"
         }
       ]
     }
