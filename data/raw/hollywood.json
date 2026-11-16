@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-15T20:15:16.363Z",
+  "scraped_at": "2026-11-16T02:15:15.616Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -45,25 +45,6 @@
     },
     {
       "id": null,
-      "slug": "diebuster",
-      "title": "Diebuster",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-15T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/diebuster-2026-11-15-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "it-s-a-mad-mad-mad-mad-world",
       "title": "It's A Mad Mad Mad Mad World",
       "year": null,
@@ -83,8 +64,8 @@
     },
     {
       "id": null,
-      "slug": "kiki-s-delivery-service",
-      "title": "Kiki's Delivery Service",
+      "slug": "jfk",
+      "title": "Jfk",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -94,9 +75,9 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-15T15:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/kikis-delivery-service-2026-11-15-300pm/"
+          "datetime": "2026-11-22T18:00",
+          "format": "35mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/jfk-in-35mm-2026-11-22-600pm/"
         }
       ]
     },
@@ -111,12 +92,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-15T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-15-600pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-16T21:35",
@@ -205,6 +180,18 @@
         },
         {
           "venue_id": "hollywood",
+          "datetime": "2026-11-22T14:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-22-230pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-22T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-22-700pm/"
+        },
+        {
+          "venue_id": "hollywood",
           "datetime": "2026-11-16T19:00",
           "format": "35mm",
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-16-700pm/"
@@ -257,6 +244,25 @@
     },
     {
       "id": null,
+      "slug": "rrr",
+      "title": "Rrr",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-22T13:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/rrr-2026-11-22-130pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
       "slug": "supersonic-man",
       "title": "Supersonic Man",
       "year": null,
@@ -290,25 +296,6 @@
           "datetime": "2026-11-18T19:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-first-wives-club-2026-11-18-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "the-goonies",
-      "title": "The Goonies",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-15T14:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-goonies-2026-11-15-200pm/"
         }
       ]
     },
@@ -358,8 +345,8 @@
     },
     {
       "id": null,
-      "slug": "wild-horse-nine",
-      "title": "Wild Horse Nine",
+      "slug": "vive-le-punk",
+      "title": "Vive Le Punk",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -369,22 +356,23 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-15T14:30",
+          "datetime": "2026-11-22T21:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-15-230pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-15T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-15-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-15T21:15",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-15-915pm/"
-        },
+          "ticket_url": "https://hollywoodtheatre.org/event/vive-le-punk-2026-11-22-930pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "wild-horse-nine",
+      "title": "Wild Horse Nine",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-16T18:30",
@@ -462,6 +450,24 @@
           "datetime": "2026-11-21T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-21-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-22T14:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-200pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-22T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-22T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-915pm/"
         }
       ]
     }
