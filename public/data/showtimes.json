@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-16T22:30:50.627Z",
-  "generator": "1.7.0-1b9a0c9",
+  "generated_at": "2026-11-17T11:07:12.831Z",
+  "generator": "1.7.0-cc052bb",
   "window": {
-    "start": "2026-11-16",
-    "end": "2026-11-22"
+    "start": "2026-11-17",
+    "end": "2026-11-23"
   },
   "venues": [
     {
@@ -158,62 +158,6 @@
     }
   ],
   "films": [
-    {
-      "id": 290098,
-      "slug": "the-handmaiden-2016",
-      "title": "The Handmaiden",
-      "year": 2016,
-      "director": "Park Chan-wook",
-      "runtime_minutes": 145,
-      "overview": "1930s Korea, in the period of Japanese occupation, a new girl, Sook-hee, is hired as a handmaiden to a Japanese heiress, Hideko, who lives a secluded life on a large countryside estate with her domineering Uncle Kouzuki. But the maid has a secret. She is a pickpocket recruited by a swindler posing as a Japanese Count to help him seduce the Lady to steal her fortune.",
-      "poster_path": "/dLlH4aNHdnmf62umnInL8xPlPzw.jpg",
-      "genres": [
-        "Thriller",
-        "Drama",
-        "Romance"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-16T16:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-handmaiden/4139952/"
-        }
-      ],
-      "imdb_id": "tt4016934",
-      "rt_score": 96,
-      "imdb_rating": 8.1,
-      "metacritic_score": 85,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 284,
-      "slug": "the-apartment-1960",
-      "title": "The Apartment",
-      "year": 1960,
-      "director": "Billy Wilder",
-      "runtime_minutes": 126,
-      "overview": "Bud Baxter is a minor clerk in a huge New York insurance company, until he discovers a quick way to climb the corporate ladder. He lends out his apartment to the executives as a place to take their mistresses. Although he often has to deal with the aftermath of their visits, one night he's left with a major problem to solve.",
-      "poster_path": "/hhSRt1KKfRT0yEhEtRW3qp31JFU.jpg",
-      "genres": [
-        "Comedy",
-        "Drama",
-        "Romance"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-16T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-apartment/4139949/"
-        }
-      ],
-      "imdb_id": "tt0053604",
-      "rt_score": 94,
-      "imdb_rating": 8.3,
-      "metacritic_score": 94,
-      "match_confidence": "verified"
-    },
     {
       "id": 4951,
       "slug": "10-things-i-hate-about-you-1999",
@@ -416,6 +360,12 @@
           "datetime": "2026-11-20T21:30:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/ong-bak/4141457/"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-23T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/ong-bak/4141458/"
         }
       ],
       "imdb_id": "tt0368909",
@@ -525,38 +475,18 @@
           "datetime": "2026-11-22T19:00:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/blue-thunder/4141459/"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-23T16:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/blue-thunder/4141460/"
         }
       ],
       "imdb_id": "tt0085255",
       "rt_score": 79,
       "imdb_rating": 6.4,
       "metacritic_score": 66,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 259985,
-      "slug": "just-eat-it-a-food-waste-story-2014",
-      "title": "Just Eat It: A Food Waste Story",
-      "year": 2014,
-      "director": "Grant Baldwin",
-      "runtime_minutes": 75,
-      "overview": "We all love food. As a society, we devour countless cooking shows, culinary magazines and foodie blogs. So how could we possibly be throwing nearly 50% of it in the trash? Filmmakers and food lovers Jen and Grant dive into the issue of waste from farm, through retail, all the way to the back of their own fridge. After catching a glimpse of the billions of dollars of good food that is tossed each year in North America, they pledge to quit grocery shopping and survive only on discarded food. What they find is truly shocking.",
-      "poster_path": "/eVQ3XX6MJELZOLIuWuCv1lpM1MW.jpg",
-      "genres": [
-        "Documentary"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "clinton-street",
-          "datetime": "2026-11-16T19:00:00",
-          "format": null,
-          "ticket_url": "https://events.humanitix.com/slow-food-portland-presents-just-eat-it-a-food-waste-story"
-        }
-      ],
-      "imdb_id": "tt3597400",
-      "rt_score": 100,
-      "imdb_rating": 7.2,
-      "metacritic_score": null,
       "match_confidence": "verified"
     },
     {
@@ -736,6 +666,25 @@
       "match_confidence": "verified"
     },
     {
+      "id": null,
+      "slug": "chapo-trap-house-presents-chunks",
+      "title": "Chapo Trap House presents: CHUNKS!",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-11-23T19:00:00",
+          "format": null,
+          "ticket_url": "https://cstpdxtickets.square.site/product/chunks-monday-november-23rd-at-7-00-pm/KJZSHL3LZSFHGYFOP6EGQJTW"
+        }
+      ]
+    },
+    {
       "id": 891621,
       "slug": "wild-horse-nine-2026",
       "title": "Wild Horse Nine",
@@ -750,18 +699,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-16T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46518"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-16T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46519"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-17T15:45:00",
@@ -797,30 +734,6 @@
           "datetime": "2026-11-18T18:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46551"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T11:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4315833"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T14:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4315838"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T16:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4315843"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T19:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4315847"
         },
         {
           "venue_id": "living-room",
@@ -896,18 +809,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-11-16T15:45",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31456?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-16T19:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31453?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-11-17T15:45",
           "format": "Open Captions",
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31457?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -943,16 +844,64 @@
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31552?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T18:30",
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-20T18:45",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-16-630pm/"
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31557?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T21:15",
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-20T21:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-16-915pm/"
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31558?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-21T15:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31565?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-21T18:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31566?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-21T21:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31567?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-22T13:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31569?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-22T16:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31570?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-22T19:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31573?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-23T16:40",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31578?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-23T19:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31579?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
           "venue_id": "hollywood",
@@ -1019,6 +968,12 @@
           "datetime": "2026-11-22T18:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-23-730pm/"
         }
       ],
       "imdb_id": "tt15799564",
@@ -1058,7 +1013,7 @@
       "slug": "wicker-2026",
       "title": "Wicker",
       "year": 2026,
-      "director": "Eleanor Wilson",
+      "director": "Alex Huston Fischer",
       "runtime_minutes": 105,
       "overview": "On the outskirts of a village by the sea, lives a Fisherwoman; smelly, single and perpetually ridiculed. One day, fed up with her stuffy, small-minded neighbours, she commissions herself a husband to be made from wicker. In an otherwise conservative town, this unconventional romance sparks outrage, jealousy and chaos.",
       "poster_path": "/6FcBZOKvyrLCKGCyBG0ySCR4okt.jpg",
@@ -1068,18 +1023,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-16T16:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46506"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-16T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46507"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-17T16:00:00",
@@ -1109,30 +1052,6 @@
           "datetime": "2026-11-18T16:00:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46545"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wicker?showingId=4315832"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T14:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wicker?showingId=4315837"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T16:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wicker?showingId=4315841"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T19:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wicker?showingId=4315848"
         },
         {
           "venue_id": "living-room",
@@ -1230,18 +1149,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-11-16T15:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46510"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-16T19:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46511"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-11-17T15:00:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46523"
@@ -1275,18 +1182,6 @@
           "datetime": "2026-11-18T19:00:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46549"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-11-16T15:15:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103031?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-11-16T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103036?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         },
         {
           "venue_id": "baghdad",
@@ -1386,6 +1281,24 @@
         },
         {
           "venue_id": "baghdad",
+          "datetime": "2026-11-23T12:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103299?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
+        },
+        {
+          "venue_id": "baghdad",
+          "datetime": "2026-11-23T15:15:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103305?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
+        },
+        {
+          "venue_id": "baghdad",
+          "datetime": "2026-11-23T19:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103311?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
+        },
+        {
+          "venue_id": "baghdad",
           "datetime": "2026-11-17T12:00:00",
           "format": "OC",
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103027?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
@@ -1395,24 +1308,6 @@
           "datetime": "2026-11-17T15:15:00",
           "format": "OC",
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103032?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-16T12:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/c4d79a24-8422-54fa-87a6-848e3cf0efb9"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-16T16:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/c74b7cb0-6cbb-5fe9-9a91-934348b52505"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-16T19:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/0f68088f-c9fc-5dec-88a2-2d3f5c474c1d"
         },
         {
           "venue_id": "academy",
@@ -1523,22 +1418,22 @@
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/91bc0623-83cf-551b-a855-e4080b4a3bae"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T12:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4315827"
+          "venue_id": "academy",
+          "datetime": "2026-11-22T12:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/5d96060d-73ed-5edc-a7a5-b08d2e071305"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T15:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4315828"
+          "venue_id": "academy",
+          "datetime": "2026-11-22T16:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/8501e39d-bd4b-5da4-a02c-ceb12b7cc88e"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T18:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4315829"
+          "venue_id": "academy",
+          "datetime": "2026-11-22T19:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/1f3cede1-dbee-5963-8666-6d07197a18ec"
         },
         {
           "venue_id": "living-room",
@@ -1662,18 +1557,6 @@
         },
         {
           "venue_id": "st-johns",
-          "datetime": "2026-11-16T15:45",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19718?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-11-16T19:00",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19719?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
           "datetime": "2026-11-17T15:45",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19722?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
@@ -1757,6 +1640,30 @@
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19742?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         },
         {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-23T15:30",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19738?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-23T19:40",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19743?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-17T19:15:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-23T16:30:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
           "venue_id": "moreland",
           "datetime": "2026-11-18T16:30:00",
           "format": null,
@@ -1765,6 +1672,12 @@
         {
           "venue_id": "moreland",
           "datetime": "2026-11-18T19:15:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-23T19:15:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1782,25 +1695,67 @@
         },
         {
           "venue_id": "moreland",
+          "datetime": "2026-11-20T16:30:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
           "datetime": "2026-11-17T16:30:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-16T19:15:00",
+          "datetime": "2026-11-20T19:15:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-16T16:30:00",
+          "datetime": "2026-11-21T11:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-17T19:15:00",
+          "datetime": "2026-11-21T13:45:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-21T16:30:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-21T19:15:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-22T11:00:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-22T13:45:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-22T16:30:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-22T19:15:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1830,18 +1785,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-16T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46514"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-16T18:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46515"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-17T15:30:00",
@@ -1880,18 +1823,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-11-16T15:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31450?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-16T18:45",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31447?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-11-17T15:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31451?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -1927,16 +1858,58 @@
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31471?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
-          "venue_id": "st-johns",
-          "datetime": "2026-11-16T15:20",
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-20T15:30",
           "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19717?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31555?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
-          "venue_id": "st-johns",
-          "datetime": "2026-11-16T19:20",
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-20T19:15",
           "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19720?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31559?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-21T12:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31588?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-21T16:10",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31562?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-21T19:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31563?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-22T14:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31571?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-22T18:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31572?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-23T15:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31574?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-23T18:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31576?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
           "venue_id": "st-johns",
@@ -1970,35 +1943,6 @@
       "match_confidence": "verified"
     },
     {
-      "id": 1204680,
-      "slug": "coyote-vs-acme-2026",
-      "title": "Coyote vs. Acme",
-      "year": 2026,
-      "director": "Dave Green",
-      "runtime_minutes": 103,
-      "overview": "After Acme products fail him one too many times in his dogged pursuit of the Roadrunner, Wile E. Coyote decides to hire a billboard lawyer to sue the Acme Corporation.",
-      "poster_path": "/kYDCl2y0VPvhT5eYWbMRInPoB03.jpg",
-      "genres": [
-        "Comedy",
-        "Adventure",
-        "Family",
-        "Animation"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-11-16T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103051?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        }
-      ],
-      "imdb_id": "tt1756855",
-      "rt_score": null,
-      "imdb_rating": 7.3,
-      "metacritic_score": 77,
-      "match_confidence": "verified"
-    },
-    {
       "id": 1465063,
       "slug": "forgotten-island-2026",
       "title": "Forgotten Island",
@@ -2017,21 +1961,142 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-11-16T16:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103041?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-11-18T16:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103042?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-20T16:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103337?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-21T13:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103348?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-22T13:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103349?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-23T16:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103338?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
         }
       ],
       "imdb_id": "tt36583977",
       "rt_score": null,
       "imdb_rating": 7.7,
       "metacritic_score": 73,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 1263337,
+      "slug": "heart-of-the-beast-2026",
+      "title": "Heart of the Beast",
+      "year": 2026,
+      "director": "David Ayer",
+      "runtime_minutes": 101,
+      "overview": "After a harrowing plane crash, Special Forces officer James Belmont and his combat dog, Odin, find themselves stranded deep in the Alaskan wilderness. Together, they are forced into a brutal fight for survival against the elements.",
+      "poster_path": "/6sYemVUn79UPKz1ZsSG6kPU4RVy.jpg",
+      "genres": [
+        "Adventure",
+        "Thriller"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-20T22:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103334?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-21T16:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103351?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-21T22:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103335?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-22T16:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103352?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-23T13:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103354?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        }
+      ],
+      "imdb_id": "tt7526136",
+      "rt_score": null,
+      "imdb_rating": 7.1,
+      "metacritic_score": 66,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 1375441,
+      "slug": "primetime-2026",
+      "title": "Primetime",
+      "year": 2026,
+      "director": "Lance Oppenheim",
+      "runtime_minutes": 110,
+      "overview": "In 2006, To Catch a Predator host Chris Hansen sets out to make television history. When a high stakes operation goes fatally wrong, his veneered dream of fame curdles into a nightmare of performative justice.",
+      "poster_path": "/lmrulvLbmaejTix1YaMxo1oGhH1.jpg",
+      "genres": [
+        "Thriller",
+        "Drama",
+        "Crime"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-20T13:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103336?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-20T19:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103341?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-21T19:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103342?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-22T19:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103343?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        },
+        {
+          "venue_id": "kennedy-school",
+          "datetime": "2026-11-23T19:00:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103344?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
+        }
+      ],
+      "imdb_id": "tt34206385",
+      "rt_score": null,
+      "imdb_rating": 7,
+      "metacritic_score": 68,
       "match_confidence": "verified"
     },
     {
@@ -2083,24 +2148,6 @@
         "Action"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-16T12:45:00",
-          "format": "Subtitled",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/c4c65981-4775-5b28-952d-96d8d60f9815"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-16T16:15:00",
-          "format": "Subtitled",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/39b31527-5388-5b11-89c0-56d5a2582a20"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-16T19:15:00",
-          "format": "Subtitled",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/733a8a78-51ef-5999-9a4d-731714a9bd1b"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-11-17T12:45:00",
@@ -2210,16 +2257,22 @@
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/db645173-4481-581f-8b8b-9d4fcab99489"
         },
         {
-          "venue_id": "omsi",
-          "datetime": "2026-11-16T16:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
+          "venue_id": "academy",
+          "datetime": "2026-11-22T12:45:00",
+          "format": "Subtitled",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/e41fc7f0-76f3-56da-99ca-aae91dc4c580"
         },
         {
-          "venue_id": "omsi",
-          "datetime": "2026-11-16T18:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a08223-de84-135c-b4ca-3c09637e7566"
+          "venue_id": "academy",
+          "datetime": "2026-11-22T16:15:00",
+          "format": "Subtitled",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/1c30ff54-5c95-519e-8715-4fe0b7664d63"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-11-22T19:15:00",
+          "format": "Subtitled",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/393bdff9-2c4d-536c-b148-bb866bcecad4"
         },
         {
           "venue_id": "omsi",
@@ -2280,12 +2333,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-11-16T19:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/69a9fed7-fc78-5c51-ab63-b124d427392e"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-11-17T13:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/92952629-c486-5320-9fbe-810ca2eeb487"
@@ -2326,12 +2373,6 @@
       "showtimes": [
         {
           "venue_id": "academy",
-          "datetime": "2026-11-16T16:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/ed42b8d2-0d67-5da9-b0d3-2416394fb32d"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-11-17T19:30:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/cd0eb22e-2f6d-5a91-8fc5-f95363379a42"
@@ -2369,12 +2410,6 @@
         "Crime"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-16T13:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/a6bc48b7-c0e5-52a5-b88d-97a8c1e8727c"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-11-17T16:30:00",
@@ -2461,6 +2496,12 @@
           "datetime": "2026-11-21T22:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/9180028e-f117-5b0c-b8c4-034d20152240"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-11-22T19:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/852412bd-549e-58f2-8b91-0b42c611c46d"
         }
       ],
       "imdb_id": "tt0097493",
@@ -2495,6 +2536,12 @@
           "datetime": "2026-11-21T13:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/1f4da06e-0b50-571b-99d4-d808fb3887d6"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-11-22T16:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/eba86f66-dd91-5ddc-a00f-b4d959ee1777"
         }
       ],
       "imdb_id": "tt0120630",
@@ -2530,6 +2577,12 @@
           "datetime": "2026-11-21T19:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/08133a54-6904-5777-854c-78c1917f5452"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-11-22T13:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/aacc782e-2406-5aca-b89e-cc5b27511abb"
         }
       ],
       "imdb_id": "tt14114802",
@@ -2552,30 +2605,6 @@
         "History"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T12:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4315834"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T15:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4315840"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T16:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4315844"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T18:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4315830"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-11-17T12:15:00",
@@ -2644,24 +2673,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-11-16T15:05",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31520?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-16T17:05",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31462?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-16T19:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31459?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-11-17T15:05",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31463?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -2707,6 +2718,30 @@
           "datetime": "2026-11-19T17:45",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31473?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-20T16:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31556?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-21T13:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31560?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-22T12:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31568?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-23T14:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31577?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt37304295",
@@ -2714,6 +2749,25 @@
       "imdb_rating": 7.3,
       "metacritic_score": 90,
       "match_confidence": "verified"
+    },
+    {
+      "id": null,
+      "slug": "josephine-early-access",
+      "title": "Josephine (Early Access)",
+      "year": null,
+      "director": "Beth de Araújo",
+      "runtime_minutes": 121,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-17T19:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/josephine-early-access?showingId=4273407"
+        }
+      ]
     },
     {
       "id": 1422041,
@@ -2729,24 +2783,6 @@
         "War"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T12:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/la-bola-negra?showingId=4315835"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T16:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/la-bola-negra?showingId=4315842"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T18:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/la-bola-negra?showingId=4315846"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-11-17T12:45:00",
@@ -2797,12 +2833,6 @@
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-16T21:35",
-          "format": "Digital",
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-16-935pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-17T21:35",
           "format": "Digital",
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-17-935pm/"
@@ -2843,7 +2873,7 @@
       "slug": "mouse-2026",
       "title": "Mouse",
       "year": 2026,
-      "director": "Kelly O'Sullivan",
+      "director": "Alex Thompson",
       "runtime_minutes": 120,
       "overview": "In 2002 Arkansas, Callie and Minnie’s friendship is suddenly upended the summer before their senior year of high school. Left rudderless without her best friend, Minnie forms a complicated bond with Callie’s mother.",
       "poster_path": "/dI7E0ggldsw2FgEsfi9QcNlfBMT.jpg",
@@ -2852,18 +2882,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T14:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/mouse?showingId=4315839"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/mouse?showingId=4315831"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-11-17T14:20:00",
@@ -2916,18 +2934,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T13:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-only-living-pickpocket-in-new-york?showingId=4315836"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-16T17:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-only-living-pickpocket-in-new-york?showingId=4315845"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-11-17T13:00:00",
@@ -2998,7 +3004,7 @@
       "director": "Francis Lawrence",
       "runtime_minutes": 159,
       "overview": "Return to the world of Panem 24 years before the events of The Hunger Games, starting on the morning of the reaping of the 50th Hunger Games, also known as the Second Quarter Quell.",
-      "poster_path": "/j1MNyNNgNQL6f27cb3m3uKaPKd6.jpg",
+      "poster_path": "/kONfwpf0AZzvL1zqjZV9C89g1PY.jpg",
       "genres": [
         "Science Fiction",
         "Action",
@@ -3076,6 +3082,18 @@
           "datetime": "2026-11-22T18:45",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19632?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-23T16:15",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19635?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-23T18:45",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19634?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         }
       ],
       "imdb_id": "tt32558705",
@@ -3186,6 +3204,24 @@
           "datetime": "2026-11-22T13:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-23T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-23T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-23T15:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         }
       ],
       "imdb_id": "tt42702648",
@@ -3240,6 +3276,12 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-11-22T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-23T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
         }
@@ -3318,6 +3360,12 @@
         },
         {
           "venue_id": "cinema-21",
+          "datetime": "2026-11-21T12:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31356?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
           "datetime": "2026-11-21T16:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31354?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -3351,6 +3399,18 @@
           "datetime": "2026-11-22T19:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31358?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-23T16:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31359?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-23T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31361?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt38058097",
@@ -3387,34 +3447,6 @@
       "match_confidence": "verified"
     },
     {
-      "id": 2758,
-      "slug": "addams-family-values-1993",
-      "title": "Addams Family Values",
-      "year": 1993,
-      "director": "Barry Sonnenfeld",
-      "runtime_minutes": 94,
-      "overview": "Siblings Wednesday and Pugsley Addams will stop at nothing to get rid of Pubert, the new baby boy adored by parents Gomez and Morticia. Things go from bad to worse when the new \"black widow\" nanny, Debbie Jellinsky, launches her plan to add Fester to her collection of dead husbands.",
-      "poster_path": "/sdxT2VjVSx9DRicwnuECUdBHeE7.jpg",
-      "genres": [
-        "Comedy",
-        "Family",
-        "Fantasy"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/addams-family-values-2026-11-16-730pm/"
-        }
-      ],
-      "imdb_id": "tt0106220",
-      "rt_score": 76,
-      "imdb_rating": 6.9,
-      "metacritic_score": 61,
-      "match_confidence": "verified"
-    },
-    {
       "id": 11576,
       "slug": "it-s-a-mad-mad-mad-mad-world-1963",
       "title": "It's A Mad Mad Mad Mad World",
@@ -3434,6 +3466,12 @@
           "datetime": "2026-11-21T13:30",
           "format": "70mm",
           "ticket_url": "https://hollywoodtheatre.org/event/its-a-mad-mad-mad-mad-world-in-70mm-2026-11-21-130pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T18:30",
+          "format": "70mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/its-a-mad-mad-mad-mad-world-in-70mm-2026-11-23-630pm/"
         }
       ],
       "imdb_id": "tt0057193",
@@ -3554,9 +3592,15 @@
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-16T19:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-16-700pm/"
+          "datetime": "2026-11-23T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-23-700pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T21:35",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-23-935pm/"
         },
         {
           "venue_id": "hollywood",
@@ -3647,6 +3691,31 @@
       "match_confidence": "verified"
     },
     {
+      "id": null,
+      "slug": "severin-presents-antiviral",
+      "title": "Severin Presents – ANTIVIRAL",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/severin-presents-antiviral-2026-11-23-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T20:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/severin-presents-antiviral-2026-11-23-800pm/"
+        }
+      ]
+    },
+    {
       "id": 28482,
       "slug": "supersonic-man-1979",
       "title": "Supersonic Man",
@@ -3699,31 +3768,6 @@
       "imdb_rating": 6.5,
       "metacritic_score": 59,
       "match_confidence": "verified"
-    },
-    {
-      "id": null,
-      "slug": "vinegar-syndrome-presents-the-stendhal-syndrome",
-      "title": "Vinegar Syndrome Presents – THE STENDHAL SYNDROME",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/vinegar-syndrome-presents-the-stendhal-syndrome-2026-11-16-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T20:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/vinegar-syndrome-presents-the-stendhal-syndrome-2026-11-16-830pm/"
-        }
-      ]
     },
     {
       "id": null,
@@ -3784,7 +3828,7 @@
       "showtimes": [
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-20T21:30:00",
+          "datetime": "2026-11-20T22:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         }
@@ -3904,24 +3948,6 @@
       "showtimes": [
         {
           "venue_id": "avalon",
-          "datetime": "2026-11-16T13:45:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-11-16T16:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-11-16T18:45:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
           "datetime": "2026-11-17T13:45:00",
           "format": "DCP",
           "ticket_url": null
@@ -4025,6 +4051,24 @@
         {
           "venue_id": "avalon",
           "datetime": "2026-11-21T21:05:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-11-22T13:45:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-11-22T16:15:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-11-22T18:45:00",
           "format": "DCP",
           "ticket_url": null
         }
