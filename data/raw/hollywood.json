@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-16T20:15:18.385Z",
+  "scraped_at": "2026-11-17T02:15:17.558Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -26,25 +26,6 @@
     },
     {
       "id": null,
-      "slug": "addams-family-values",
-      "title": "Addams Family Values",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/addams-family-values-2026-11-16-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "it-s-a-mad-mad-mad-mad-world",
       "title": "It's A Mad Mad Mad Mad World",
       "year": null,
@@ -59,6 +40,12 @@
           "datetime": "2026-11-21T13:30",
           "format": "70mm",
           "ticket_url": "https://hollywoodtheatre.org/event/its-a-mad-mad-mad-mad-world-in-70mm-2026-11-21-130pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T18:30",
+          "format": "70mm",
+          "ticket_url": "https://hollywoodtheatre.org/event/its-a-mad-mad-mad-mad-world-in-70mm-2026-11-23-630pm/"
         }
       ]
     },
@@ -92,12 +79,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T21:35",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-16-935pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-17T21:35",
@@ -210,9 +191,15 @@
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-16T19:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-16-700pm/"
+          "datetime": "2026-11-23T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-23-700pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T21:35",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-23-935pm/"
         },
         {
           "venue_id": "hollywood",
@@ -281,6 +268,31 @@
     },
     {
       "id": null,
+      "slug": "severin-presents-antiviral",
+      "title": "Severin Presents – ANTIVIRAL",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/severin-presents-antiviral-2026-11-23-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T20:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/severin-presents-antiviral-2026-11-23-800pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
       "slug": "supersonic-man",
       "title": "Supersonic Man",
       "year": null,
@@ -314,31 +326,6 @@
           "datetime": "2026-11-18T19:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/the-first-wives-club-2026-11-18-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "vinegar-syndrome-presents-the-stendhal-syndrome",
-      "title": "Vinegar Syndrome Presents – THE STENDHAL SYNDROME",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/vinegar-syndrome-presents-the-stendhal-syndrome-2026-11-16-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T20:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/vinegar-syndrome-presents-the-stendhal-syndrome-2026-11-16-830pm/"
         }
       ]
     },
@@ -391,18 +378,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-16-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-16T21:15",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-16-915pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-17T18:30",
@@ -468,6 +443,12 @@
           "datetime": "2026-11-22T18:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-23T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-23-730pm/"
         }
       ]
     }
