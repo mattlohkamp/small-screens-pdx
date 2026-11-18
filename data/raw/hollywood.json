@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-17T20:15:24.205Z",
+  "scraped_at": "2026-11-18T02:15:16.240Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -81,12 +81,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-17T21:35",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-17-935pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-18T21:35",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-18-935pm/"
@@ -108,25 +102,6 @@
           "datetime": "2026-11-22T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-22-915pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "the-queer-magical-girl-adolescence-of-utena",
-      "title": "The Queer Magical Girl: Adolescence of Utena",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-17T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/the-queer-magical-girl-adolescence-of-utena-2026-11-17-630pm/"
         }
       ]
     },
@@ -203,9 +178,15 @@
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-17T19:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-in-35mm-2026-11-17-700pm/"
+          "datetime": "2026-11-24T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-24-700pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-24T21:35",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-24-935pm/"
         }
       ]
     },
@@ -293,25 +274,6 @@
     },
     {
       "id": null,
-      "slug": "supersonic-man",
-      "title": "Supersonic Man",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-17T19:30",
-          "format": "16mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/supersonic-man-in-16mm-2026-11-17-730pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "the-first-wives-club",
       "title": "The First Wives Club",
       "year": null,
@@ -380,18 +342,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-17T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-17-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-17T21:15",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-17-915pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-18T18:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-18-630pm/"
@@ -449,6 +399,37 @@
           "datetime": "2026-11-23T19:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-23-730pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-24T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-24-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-24T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-24-915pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "school-of-the-holy-beast",
+      "title": "School Of The Holy Beast",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-24T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/school-of-the-holy-beast-2026-11-24-730pm/"
         }
       ]
     }
