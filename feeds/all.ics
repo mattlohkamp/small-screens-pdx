@@ -10,22 +10,6 @@ X-WR-TIMEZONE:America/Los_Angeles
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:omsi-20261119T110000-running-wild-return-to-the-river-2026@small-screen
- s-pdx
-DTSTAMP:20261104T202843Z
-DTSTART:20261119T190000Z
-DTEND:20261119T194500Z
-SUMMARY:Running Wild: Return to the River (2026)
-LOCATION:OMSI Empirical Theatre\, 1945 SE Water Ave\, Portland OR
-GEO:45.5083;-122.6672
-DESCRIPTION:Dir. Myles Connolly · 45 min\n\nPacific salmon swim upstream o
- n their homeward journey\, bearing witness to the interconnected web of li
- fe linking land and sea.\n\nTickets: https://tickets.omsi.edu/events/019e4
- 239-a7c0-1590-2d4f-a3686e412dc4\n\nMore showtimes: https://mattlohkamp.git
- hub.io/small-screens-pdx/
-URL:https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4
-END:VEVENT
-BEGIN:VEVENT
 UID:living-room-20261119T114500-wicker-2026@small-screens-pdx
 DTSTAMP:20261104T202843Z
 DTSTART:20261119T194500Z
@@ -61,24 +45,6 @@ DESCRIPTION:Dir. Martin McDonagh · 117 min\n\nShortly before the 1973 Chil
  314191\n\nMore showtimes: https://mattlohkamp.github.io/small-screens-pdx/
 URL:https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4
  314191
-END:VEVENT
-BEGIN:VEVENT
-UID:baghdad-20261119T120000-wildwood-2026@small-screens-pdx
-DTSTAMP:20261104T202843Z
-DTSTART:20261119T200000Z
-DTEND:20261119T221200Z
-SUMMARY:Wildwood (2026)
-LOCATION:Bagdad Theater & Pub\, 3702 SE Hawthorne Blvd\, Portland OR
-GEO:45.512;-122.6244
-DESCRIPTION:Dir. Travis Knight · 132 min\n\nPrue and her classmate Curtis 
- are drawn into a magical forest filled with enchanted creatures\, loyal al
- lies\, and formidable adversaries as they embark on a desperate quest to r
- escue Prue's abducted baby brother from a murder of crows led by a mysteri
- ous woman named Alexandra.\n\nTickets: https://ticketing.uswest.veezi.com/
- purchase/103291?siteToken=ta6mvcbmchak78n7cqtdb8e3jw\n\nMore showtimes: ht
- tps://mattlohkamp.github.io/small-screens-pdx/
-URL:https://ticketing.uswest.veezi.com/purchase/103291?siteToken=ta6mvcbmch
- ak78n7cqtdb8e3jw
 END:VEVENT
 BEGIN:VEVENT
 UID:living-room-20261119T121500-fatherland-2026@small-screens-pdx
@@ -2921,10 +2887,10 @@ DTEND:20261121T042400Z
 SUMMARY:Chicken Run (2000)
 LOCATION:Academy Theater\, 7818 SE Stark St\, Portland OR
 GEO:45.5191;-122.5829
-DESCRIPTION:Dir. Nick Park · 84 min\n\nThe creators of Wallace & Gromit br
- ing you an exciting and original story about a group of chickens determine
- d to fly the coop–even if they can’t fly! It’s hardly poultry in mot
- ion when Rocky attempts to teach Ginger and her feathered friends to fly
+DESCRIPTION:Dir. Peter Lord · 84 min\n\nThe creators of Wallace & Gromit b
+ ring you an exciting and original story about a group of chickens determin
+ ed to fly the coop–even if they can’t fly! It’s hardly poultry in mo
+ tion when Rocky attempts to teach Ginger and her feathered friends to fly
  …but\, with teamwork\, determination and a little bit o’ cluck\, the f
  earless flock plots one last attempt in a spectacular bid for freedom.\n\n
  Tickets: https://booking.academytheaterpdx.com/launch/ticketing/af944196-0
@@ -3617,11 +3583,12 @@ DTEND:20261121T204400Z
 SUMMARY:A Matter of Life and Death (1946)
 LOCATION:Cinema 21\, 616 NW 21st Ave\, Portland OR
 GEO:45.5271;-122.6975
-DESCRIPTION:Dir. Michael Powell · 104 min\n\nA British wartime aviator who
-  cheats death must argue for his life before a celestial court\, hoping to
-  prolong his fledgling romance with an American girl.\n\nTickets: https://
- ticketing.uswest.veezi.com/purchase/31188?siteToken=02fhxgcv98zq7pswjm69s8
- n9tc\n\nMore showtimes: https://mattlohkamp.github.io/small-screens-pdx/
+DESCRIPTION:Dir. Emeric Pressburger · 104 min\n\nA British wartime aviator
+  who cheats death must argue for his life before a celestial court\, hopin
+ g to prolong his fledgling romance with an American girl.\n\nTickets: http
+ s://ticketing.uswest.veezi.com/purchase/31188?siteToken=02fhxgcv98zq7pswjm
+ 69s8n9tc\n\nMore showtimes: https://mattlohkamp.github.io/small-screens-pd
+ x/
 URL:https://ticketing.uswest.veezi.com/purchase/31188?siteToken=02fhxgcv98z
  q7pswjm69s8n9tc
 END:VEVENT
@@ -4004,10 +3971,10 @@ DTEND:20261121T222400Z
 SUMMARY:Chicken Run (2000)
 LOCATION:Academy Theater\, 7818 SE Stark St\, Portland OR
 GEO:45.5191;-122.5829
-DESCRIPTION:Dir. Nick Park · 84 min\n\nThe creators of Wallace & Gromit br
- ing you an exciting and original story about a group of chickens determine
- d to fly the coop–even if they can’t fly! It’s hardly poultry in mot
- ion when Rocky attempts to teach Ginger and her feathered friends to fly
+DESCRIPTION:Dir. Peter Lord · 84 min\n\nThe creators of Wallace & Gromit b
+ ring you an exciting and original story about a group of chickens determin
+ ed to fly the coop–even if they can’t fly! It’s hardly poultry in mo
+ tion when Rocky attempts to teach Ginger and her feathered friends to fly
  …but\, with teamwork\, determination and a little bit o’ cluck\, the f
  earless flock plots one last attempt in a spectacular bid for freedom.\n\n
  Tickets: https://booking.academytheaterpdx.com/launch/ticketing/1f4da06e-0
@@ -6620,10 +6587,10 @@ DTEND:20261123T015400Z
 SUMMARY:Chicken Run (2000)
 LOCATION:Academy Theater\, 7818 SE Stark St\, Portland OR
 GEO:45.5191;-122.5829
-DESCRIPTION:Dir. Nick Park · 84 min\n\nThe creators of Wallace & Gromit br
- ing you an exciting and original story about a group of chickens determine
- d to fly the coop–even if they can’t fly! It’s hardly poultry in mot
- ion when Rocky attempts to teach Ginger and her feathered friends to fly
+DESCRIPTION:Dir. Peter Lord · 84 min\n\nThe creators of Wallace & Gromit b
+ ring you an exciting and original story about a group of chickens determin
+ ed to fly the coop–even if they can’t fly! It’s hardly poultry in mo
+ tion when Rocky attempts to teach Ginger and her feathered friends to fly
  …but\, with teamwork\, determination and a little bit o’ cluck\, the f
  earless flock plots one last attempt in a spectacular bid for freedom.\n\n
  Tickets: https://booking.academytheaterpdx.com/launch/ticketing/eba86f66-d
@@ -7527,10 +7494,10 @@ DTEND:20261123T222400Z
 SUMMARY:Chicken Run (2000)
 LOCATION:Academy Theater\, 7818 SE Stark St\, Portland OR
 GEO:45.5191;-122.5829
-DESCRIPTION:Dir. Nick Park · 84 min\n\nThe creators of Wallace & Gromit br
- ing you an exciting and original story about a group of chickens determine
- d to fly the coop–even if they can’t fly! It’s hardly poultry in mot
- ion when Rocky attempts to teach Ginger and her feathered friends to fly
+DESCRIPTION:Dir. Peter Lord · 84 min\n\nThe creators of Wallace & Gromit b
+ ring you an exciting and original story about a group of chickens determin
+ ed to fly the coop–even if they can’t fly! It’s hardly poultry in mo
+ tion when Rocky attempts to teach Ginger and her feathered friends to fly
  …but\, with teamwork\, determination and a little bit o’ cluck\, the f
  earless flock plots one last attempt in a spectacular bid for freedom.\n\n
  Tickets: https://booking.academytheaterpdx.com/launch/ticketing/df6630ed-e
@@ -9403,10 +9370,10 @@ DTEND:20261125T015400Z
 SUMMARY:Chicken Run (2000)
 LOCATION:Academy Theater\, 7818 SE Stark St\, Portland OR
 GEO:45.5191;-122.5829
-DESCRIPTION:Dir. Nick Park · 84 min\n\nThe creators of Wallace & Gromit br
- ing you an exciting and original story about a group of chickens determine
- d to fly the coop–even if they can’t fly! It’s hardly poultry in mot
- ion when Rocky attempts to teach Ginger and her feathered friends to fly
+DESCRIPTION:Dir. Peter Lord · 84 min\n\nThe creators of Wallace & Gromit b
+ ring you an exciting and original story about a group of chickens determin
+ ed to fly the coop–even if they can’t fly! It’s hardly poultry in mo
+ tion when Rocky attempts to teach Ginger and her feathered friends to fly
  …but\, with teamwork\, determination and a little bit o’ cluck\, the f
  earless flock plots one last attempt in a spectacular bid for freedom.\n\n
  Tickets: https://booking.academytheaterpdx.com/launch/ticketing/19f4fb10-c
