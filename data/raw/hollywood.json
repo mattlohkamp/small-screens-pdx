@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-20T20:15:15.984Z",
+  "scraped_at": "2026-11-21T02:15:18.458Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -21,6 +21,44 @@
           "datetime": "2026-11-21T19:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/7th-heaven-2026-11-21-700pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "blood-rage",
+      "title": "Blood Rage",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-27T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/blood-rage-2026-11-27-730pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "digger",
+      "title": "Digger",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-27T15:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/digger-2026-11-27-300pm/"
         }
       ]
     },
@@ -100,18 +138,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-20T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-20-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-20T20:45",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-20-845pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-21T14:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-21-230pm/"
@@ -175,25 +201,24 @@
           "datetime": "2026-11-25T21:35",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-25-935pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "ray-gunn-in-70mm-with-brad-bird",
-      "title": "RAY GUNN in 70mm with Brad Bird",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
+        },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-20T19:00",
+          "datetime": "2026-11-27T14:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/ray-gunn-in-70mm-with-brad-bird-2026-11-20-700pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-27-230pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-27T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-27-600pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-27T20:45",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-27-845pm/"
         }
       ]
     },
@@ -273,12 +298,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-20T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-20-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-21T14:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-21-200pm/"
@@ -330,6 +349,24 @@
           "datetime": "2026-11-25T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-25-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-27T15:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-27-330pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-27T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-27-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-27T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-27-915pm/"
         }
       ]
     },
@@ -363,12 +400,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-20T21:15",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-20-915pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-21T21:15",
