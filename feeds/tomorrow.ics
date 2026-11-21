@@ -10,22 +10,6 @@ X-WR-TIMEZONE:America/Los_Angeles
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:tomorrow-20261120T1900-this-is-buzz-2026@small-screens-pdx
-DTSTAMP:20261114T092435Z
-DTSTART:20261121T030000Z
-DTEND:20261121T044200Z
-SUMMARY:This Is Buzz (2026)
-LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
-GEO:45.5158;-122.6831
-DESCRIPTION:Dir. Mark Pellington · 102 min\n\nA mind-blowing music documen
- tary about the first immersive TV show on MTV when MTV was cool.\n\nTicket
- s: https://tomorrowtheater.org/showtimes/this-is-buzz-analog-ecstasy-w-mar
- k-pellington-11-20-26-700-pm/\n\nMore showtimes: https://mattlohkamp.githu
- b.io/small-screens-pdx/
-URL:https://tomorrowtheater.org/showtimes/this-is-buzz-analog-ecstasy-w-mar
- k-pellington-11-20-26-700-pm/
-END:VEVENT
-BEGIN:VEVENT
 UID:tomorrow-20261121T1900-memory-as-a-rock-out-of-reach-by-ema-tabitha-nik
  olai@small-screens-pdx
 DTSTAMP:20261115T095407Z
@@ -65,15 +49,35 @@ DTEND:20261123T044500Z
 SUMMARY:Wicker (2026)
 LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
 GEO:45.5158;-122.6831
-DESCRIPTION:Dir. Alex Huston Fischer · 105 min\n\nOn the outskirts of a vi
- llage by the sea\, lives a Fisherwoman\; smelly\, single and perpetually r
- idiculed. One day\, fed up with her stuffy\, small-minded neighbours\, she
-  commissions herself a husband to be made from wicker. In an otherwise con
- servative town\, this unconventional romance sparks outrage\, jealousy and
-  chaos.\n\nTickets: https://tomorrowtheater.org/showtimes/wicker-x-grand-g
- esture-books-11-22-26-700-pm/\n\nMore showtimes: https://mattlohkamp.githu
- b.io/small-screens-pdx/
+DESCRIPTION:Dir. Eleanor Wilson · 105 min\n\nOn the outskirts of a village
+  by the sea\, lives a Fisherwoman\; smelly\, single and perpetually ridicu
+ led. One day\, fed up with her stuffy\, small-minded neighbours\, she comm
+ issions herself a husband to be made from wicker. In an otherwise conserva
+ tive town\, this unconventional romance sparks outrage\, jealousy and chao
+ s.\n\nTickets: https://tomorrowtheater.org/showtimes/wicker-x-grand-gestur
+ e-books-11-22-26-700-pm/\n\nMore showtimes: https://mattlohkamp.github.io/
+ small-screens-pdx/
 URL:https://tomorrowtheater.org/showtimes/wicker-x-grand-gesture-books-11-2
  2-26-700-pm/
+END:VEVENT
+BEGIN:VEVENT
+UID:tomorrow-20261127T1900-the-muppets-take-manhattan-1984@small-screens-pd
+ x
+DTSTAMP:20261121T101137Z
+DTSTART:20261128T030000Z
+DTEND:20261128T043400Z
+SUMMARY:The Muppets Take Manhattan (1984)
+LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
+GEO:45.5158;-122.6831
+DESCRIPTION:Dir. Frank Oz · 94 min\n\nWhen the Muppets graduate from Danhu
+ rst College\, they take their song-filled senior revue to New York City\, 
+ only to learn that it isn't easy to find a producer who's willing to back 
+ a show starring a frog and a pig. Of course\, Kermit the Frog and Miss Pig
+ gy won't take no for an answer\, launching a search for someone to take th
+ em to Broadway.\n\nTickets: https://tomorrowtheater.org/showtimes/the-mupp
+ ets-take-manhattan-11-27-26-700-pm/\n\nMore showtimes: https://mattlohkamp
+ .github.io/small-screens-pdx/
+URL:https://tomorrowtheater.org/showtimes/the-muppets-take-manhattan-11-27-
+ 26-700-pm/
 END:VEVENT
 END:VCALENDAR
