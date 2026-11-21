@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-21T10:11:37.464Z",
-  "generator": "1.7.0-ba64c39",
+  "generated_at": "2026-11-21T19:46:52.976Z",
+  "generator": "1.7.0-b99ac05",
   "window": {
     "start": "2026-11-21",
     "end": "2026-11-27"
@@ -2146,12 +2146,6 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-21T19:15:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
           "datetime": "2026-11-21T16:30:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
@@ -2171,6 +2165,12 @@
         {
           "venue_id": "moreland",
           "datetime": "2026-11-22T16:30:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-21T19:15:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -2791,7 +2791,7 @@
       "slug": "chicken-run-2000",
       "title": "Chicken Run",
       "year": 2000,
-      "director": "Peter Lord",
+      "director": "Nick Park",
       "runtime_minutes": 84,
       "overview": "The creators of Wallace & Gromit bring you an exciting and original story about a group of chickens determined to fly the coop–even if they can’t fly! It’s hardly poultry in motion when Rocky attempts to teach Ginger and her feathered friends to fly…but, with teamwork, determination and a little bit o’ cluck, the fearless flock plots one last attempt in a spectacular bid for freedom.",
       "poster_path": "/8XgmIsbpVamdhwcNVsYzohFZTtT.jpg",
@@ -2905,7 +2905,7 @@
       "director": "Paweł Pawlikowski",
       "runtime_minutes": 82,
       "overview": "In 1949, German writer Thomas Mann and his daughter Erika embark on a road trip across a Germany in ruins, from US-dominated Frankfurt to Soviet-controlled Weimar.",
-      "poster_path": "/oNejN1l69nBF8LdQwy5FkAQZT44.jpg",
+      "poster_path": "/A4oNFaKi6BuIK3MZL3KEbB9H2T8.jpg",
       "genres": [
         "Drama",
         "History"
@@ -4178,34 +4178,6 @@
       "imdb_id": "tt49317723",
       "rt_score": null,
       "imdb_rating": null,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 28162,
-      "slug": "a-matter-of-life-and-death-1946",
-      "title": "A Matter of Life and Death",
-      "year": 1946,
-      "director": "Michael Powell",
-      "runtime_minutes": 104,
-      "overview": "A British wartime aviator who cheats death must argue for his life before a celestial court, hoping to prolong his fledgling romance with an American girl.",
-      "poster_path": "/H74LWKnhOeIFSk9gNjBcPjIov3.jpg",
-      "genres": [
-        "Romance",
-        "Fantasy",
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-21T11:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31188?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        }
-      ],
-      "imdb_id": "tt0038733",
-      "rt_score": 97,
-      "imdb_rating": 8,
       "metacritic_score": null,
       "match_confidence": "verified"
     },
