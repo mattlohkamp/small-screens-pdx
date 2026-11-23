@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T01:08:53.152Z",
-  "generator": "1.7.0-436fd94",
+  "generated_at": "2026-11-23T11:14:54.654Z",
+  "generator": "1.7.0-ed8b55b",
   "window": {
-    "start": "2026-11-22",
-    "end": "2026-11-28"
+    "start": "2026-11-23",
+    "end": "2026-11-29"
   },
   "venues": [
     {
@@ -159,65 +159,6 @@
   ],
   "films": [
     {
-      "id": 46207,
-      "slug": "white-material-2010",
-      "title": "White Material",
-      "year": 2010,
-      "director": "Claire Denis",
-      "runtime_minutes": 106,
-      "overview": "In the midst of a volatile regime change in a Francophone African state, Maria Vial is fighting to sustain her family’s coffee plantation. With rebels and the army struggling for control, French peacekeeping forces move out, warning the remaining white residents that they’re on their own. But Maria refuses to be driven off the land, even as tragedy looms.",
-      "poster_path": "/qqQOsXOf7HvoWVWjOLuKpGQFjMh.jpg",
-      "genres": [
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-22T14:40:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/white-material/4047152/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-25T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/white-material/4047153/"
-        }
-      ],
-      "imdb_id": "tt1135952",
-      "rt_score": 86,
-      "imdb_rating": 6.9,
-      "metacritic_score": 81,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 25768,
-      "slug": "steamboat-bill-jr-1928",
-      "title": "Steamboat Bill, Jr.",
-      "year": 1928,
-      "director": "Charles Reisner",
-      "runtime_minutes": 70,
-      "overview": "The just-out-of-college, effete son of a no-nonsense steamboat captain comes to visit his father whom he's not seen since he was a child.",
-      "poster_path": "/zygJMsmXxeyDc1N67OCZc8xtq4I.jpg",
-      "genres": [
-        "Comedy",
-        "Romance"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-22T17:15:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/steamboat-bill-jr/4141455/"
-        }
-      ],
-      "imdb_id": "tt0019421",
-      "rt_score": 96,
-      "imdb_rating": 7.8,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
       "id": 6341,
       "slug": "blue-thunder-1983",
       "title": "Blue Thunder",
@@ -234,19 +175,13 @@
       "showtimes": [
         {
           "venue_id": "cinemagic",
-          "datetime": "2026-11-22T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/blue-thunder/4141459/"
-        },
-        {
-          "venue_id": "cinemagic",
           "datetime": "2026-11-23T16:30:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/blue-thunder/4141460/"
         }
       ],
       "imdb_id": "tt0085255",
-      "rt_score": 79,
+      "rt_score": null,
       "imdb_rating": 6.4,
       "metacritic_score": 66,
       "match_confidence": "verified"
@@ -274,7 +209,7 @@
         }
       ],
       "imdb_id": "tt0368909",
-      "rt_score": 85,
+      "rt_score": null,
       "imdb_rating": 7.2,
       "metacritic_score": 69,
       "match_confidence": "verified"
@@ -308,7 +243,7 @@
         }
       ],
       "imdb_id": "tt0147800",
-      "rt_score": 72,
+      "rt_score": null,
       "imdb_rating": 7.4,
       "metacritic_score": 70,
       "match_confidence": "verified"
@@ -339,6 +274,32 @@
       "rt_score": 96,
       "imdb_rating": 8.1,
       "metacritic_score": 85,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 46207,
+      "slug": "white-material-2010",
+      "title": "White Material",
+      "year": 2010,
+      "director": "Claire Denis",
+      "runtime_minutes": 106,
+      "overview": "In the midst of a volatile regime change in a Francophone African state, Maria Vial is fighting to sustain her family’s coffee plantation. With rebels and the army struggling for control, French peacekeeping forces move out, warning the remaining white residents that they’re on their own. But Maria refuses to be driven off the land, even as tragedy looms.",
+      "poster_path": "/qqQOsXOf7HvoWVWjOLuKpGQFjMh.jpg",
+      "genres": [
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-25T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/white-material/4047153/"
+        }
+      ],
+      "imdb_id": "tt1135952",
+      "rt_score": 86,
+      "imdb_rating": 6.9,
+      "metacritic_score": 81,
       "match_confidence": "verified"
     },
     {
@@ -377,7 +338,7 @@
         }
       ],
       "imdb_id": "tt0117731",
-      "rt_score": 93,
+      "rt_score": null,
       "imdb_rating": 7.6,
       "metacritic_score": 70,
       "match_confidence": "verified"
@@ -408,6 +369,12 @@
           "datetime": "2026-11-28T19:00:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133469/"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-29T16:10:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133475/"
         }
       ],
       "imdb_id": "tt0119698",
@@ -458,7 +425,7 @@
         }
       ],
       "imdb_id": "tt0110008",
-      "rt_score": 87,
+      "rt_score": null,
       "imdb_rating": 7.2,
       "metacritic_score": 77,
       "match_confidence": "verified"
@@ -521,13 +488,38 @@
           "datetime": "2026-11-28T21:45:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/porco-rosso-sub/4116572/"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-29T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/porco-rosso-sub/4116574/"
         }
       ],
       "imdb_id": "tt0104652",
-      "rt_score": 96,
+      "rt_score": null,
       "imdb_rating": 7.7,
       "metacritic_score": 83,
       "match_confidence": "verified"
+    },
+    {
+      "id": null,
+      "slug": "the-cat-returns-sub-2002",
+      "title": "The Cat Returns (Subtitled)",
+      "year": 2002,
+      "director": "Hiroyuki Morita",
+      "runtime_minutes": 75,
+      "overview": "Young Haru rescues a cat from being run over, but soon learns it's no ordinary feline; it happens to be the Prince of the Cats.",
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-29T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/the-cat-returns-sub/4116573/"
+        }
+      ]
     },
     {
       "id": null,
@@ -642,24 +634,6 @@
           "datetime": "2026-11-27T19:00:00",
           "format": null,
           "ticket_url": "https://cstpdxtickets.square.site/product/wild-friday-november-27th-at-7-00-pm/JGJPEMRCCAFEIXVW7BDGUVPN"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T12:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46607"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46586"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46587"
         },
         {
           "venue_id": "laurelhurst",
@@ -830,6 +804,30 @@
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4354928"
         },
         {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T12:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324228"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T14:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324232"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T17:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324238"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T19:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324243"
+        },
+        {
           "venue_id": "cinema-21",
           "datetime": "2026-11-23T16:40",
           "format": null,
@@ -866,16 +864,22 @@
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31587?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T14:00",
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-27T16:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-200pm/"
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31482?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T18:30",
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-28T12:30",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-630pm/"
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31491?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T12:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31589?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         },
         {
           "venue_id": "hollywood",
@@ -942,6 +946,18 @@
           "datetime": "2026-11-28T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-28-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T15:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-29-330pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-29-630pm/"
         }
       ],
       "imdb_id": "tt15799564",
@@ -998,7 +1014,7 @@
         }
       ],
       "imdb_id": "tt11003218",
-      "rt_score": 96,
+      "rt_score": null,
       "imdb_rating": 6.9,
       "metacritic_score": 82,
       "match_confidence": "verified"
@@ -1032,30 +1048,42 @@
       "match_confidence": "verified"
     },
     {
-      "id": 649443,
-      "slug": "roadless-2019",
-      "title": "Roadless",
-      "year": 2019,
+      "id": null,
+      "slug": "laika-takes-portland-to-the-movies",
+      "title": "LAIKA Takes Portland to the Movies",
+      "year": null,
       "director": null,
-      "runtime_minutes": 57,
-      "overview": "Bryan Iguchi, Jeremy Jones, and Travis Rice have each followed their own unique journey to become three of the most influential people in the action sports industry. They have changed the way we interact with the mountains and continually re-define what's possible. For the first time in their illustrious careers, these snowboarding legends are united by a common goal: To trek deep into the Yellowstone wilderness in search of groundbreaking first descents in the most remote region of the lower-48. This arduous journey through this winter landscape not only yields world-class riding but allows these three to reflect on their shared past and love of snowboarding in one of America's last wild places.",
-      "poster_path": "/nm5lVeTsAN9iNs7TWd9CzBeotcD.jpg",
-      "genres": [
-        "Documentary"
-      ],
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
       "showtimes": [
         {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T12:30:00",
+          "venue_id": "clinton-street",
+          "datetime": "2026-11-29T13:00:00",
           "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46456"
+          "ticket_url": "https://cstpdxtickets.square.site/product/laika-takes-portland-to-the-movies-for-thanksgiving-sunday-november-29th-at-1-00-pm/7VVYC2VWWW66BFJLXXVVVG3M"
         }
-      ],
-      "imdb_id": "tt12116472",
-      "rt_score": null,
-      "imdb_rating": 6.2,
-      "metacritic_score": null,
-      "match_confidence": "verified"
+      ]
+    },
+    {
+      "id": null,
+      "slug": "melange-a-queer-and-p-o-c-variety-show",
+      "title": "Melange: A Queer and P.O.C. Variety Show",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-11-29T18:00:00",
+          "format": null,
+          "ticket_url": "https://www.tickettomato.com/event/10430"
+        }
+      ]
     },
     {
       "id": 1599230,
@@ -1150,6 +1178,24 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T12:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46672"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T15:15:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46664"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T18:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46665"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-11-25T15:15:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46620"
@@ -1204,6 +1250,12 @@
         },
         {
           "venue_id": "cinema-21",
+          "datetime": "2026-11-28T13:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31492?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
           "datetime": "2026-11-28T16:15",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31484?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -1219,6 +1271,30 @@
           "datetime": "2026-11-28T21:40",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31487?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T14:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31496?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T16:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31497?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T19:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31494?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-29T14:20:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
         },
         {
           "venue_id": "moreland",
@@ -1279,6 +1355,18 @@
           "datetime": "2026-11-28T16:40:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-29T16:40:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-11-29T19:00:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
         }
       ],
       "imdb_id": "tt37363222",
@@ -1302,18 +1390,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T16:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46577"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46578"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-23T16:00:00",
@@ -1435,24 +1511,6 @@
       "showtimes": [
         {
           "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T12:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46606"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T15:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46583"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T19:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46584"
-        },
-        {
-          "venue_id": "laurelhurst",
           "datetime": "2026-11-23T15:00:00",
           "format": null,
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46595"
@@ -1543,6 +1601,24 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T12:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46669"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T15:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46702"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T19:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46703"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-11-25T15:45:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46624"
@@ -1552,12 +1628,6 @@
           "datetime": "2026-11-25T19:00:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46625"
-        },
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-11-22T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103310?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
         },
         {
           "venue_id": "baghdad",
@@ -1890,6 +1960,30 @@
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4354926"
         },
         {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T12:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4324229"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T15:20:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4324234"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T18:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4324239"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T14:30",
+          "format": "Digital",
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-11-29-230pm/"
+        },
+        {
           "venue_id": "st-johns",
           "datetime": "2026-11-23T15:30",
           "format": null,
@@ -1981,6 +2075,12 @@
         },
         {
           "venue_id": "moreland",
+          "datetime": "2026-11-24T16:20:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
           "datetime": "2026-11-23T16:30:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
@@ -1993,7 +2093,7 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-24T16:20:00",
+          "datetime": "2026-11-29T11:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         }
@@ -2017,24 +2117,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T11:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46605"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46580"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-22T18:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46581"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-23T15:30:00",
@@ -2127,6 +2209,24 @@
         },
         {
           "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T11:30:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46667"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T15:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46673"
+        },
+        {
+          "venue_id": "laurelhurst",
+          "datetime": "2026-11-29T18:00:00",
+          "format": null,
+          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46666"
+        },
+        {
+          "venue_id": "laurelhurst",
           "datetime": "2026-11-25T14:45:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46622"
@@ -2184,6 +2284,36 @@
           "datetime": "2026-11-26T18:30",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31585?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-27T19:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31481?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-28T15:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31490?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-28T19:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31489?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T14:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31500?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T18:30",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31501?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt45368240",
@@ -2319,12 +2449,6 @@
         "Crime"
       ],
       "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-11-22T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103343?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
         {
           "venue_id": "kennedy-school",
           "datetime": "2026-11-23T19:00:00",
@@ -2484,7 +2608,7 @@
         }
       ],
       "imdb_id": "tt0097493",
-      "rt_score": 95,
+      "rt_score": null,
       "imdb_rating": 7.1,
       "metacritic_score": 72,
       "match_confidence": "verified"
@@ -2530,7 +2654,7 @@
         }
       ],
       "imdb_id": "tt0120630",
-      "rt_score": 97,
+      "rt_score": null,
       "imdb_rating": 7.1,
       "metacritic_score": 88,
       "match_confidence": "verified"
@@ -2604,7 +2728,7 @@
         }
       ],
       "imdb_id": "tt0377092",
-      "rt_score": 84,
+      "rt_score": null,
       "imdb_rating": 7.1,
       "metacritic_score": 66,
       "match_confidence": "verified"
@@ -2642,7 +2766,7 @@
         }
       ],
       "imdb_id": "tt0093748",
-      "rt_score": 93,
+      "rt_score": null,
       "imdb_rating": 7.6,
       "metacritic_score": 72,
       "match_confidence": "verified"
@@ -2695,7 +2819,7 @@
       "director": "Paweł Pawlikowski",
       "runtime_minutes": 82,
       "overview": "In 1949, German writer Thomas Mann and his daughter Erika embark on a road trip across a Germany in ruins, from US-dominated Frankfurt to Soviet-controlled Weimar.",
-      "poster_path": "/A4oNFaKi6BuIK3MZL3KEbB9H2T8.jpg",
+      "poster_path": "/oNejN1l69nBF8LdQwy5FkAQZT44.jpg",
       "genres": [
         "Drama",
         "History"
@@ -2784,6 +2908,18 @@
           "datetime": "2026-11-28T21:00:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4354924"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T14:40:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4324233"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T19:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4356223"
         },
         {
           "venue_id": "cinema-21",
@@ -2961,6 +3097,24 @@
           "datetime": "2026-11-28T21:10:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-play-rocky?showingId=4354925"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T13:00:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-play-rocky?showingId=4324230"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T15:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-play-rocky?showingId=4324235"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T18:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-play-rocky?showingId=4324240"
         }
       ],
       "imdb_id": "tt11995650",
@@ -3141,16 +3295,28 @@
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4354927"
         },
         {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T14:30",
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T11:50:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-22-230pm/"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324227"
         },
         {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T19:00",
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T14:20:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-22-700pm/"
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324231"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T16:45:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324237"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T19:15:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324242"
         },
         {
           "venue_id": "hollywood",
@@ -3223,6 +3389,18 @@
           "datetime": "2026-11-28T20:45",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-28-845pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T15:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-29-300pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-29-700pm/"
         }
       ],
       "imdb_id": "tt34385689",
@@ -3317,6 +3495,12 @@
           "datetime": "2026-11-28T16:40:00",
           "format": null,
           "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-only-living-pickpocket-in-new-york?showingId=4354916"
+        },
+        {
+          "venue_id": "living-room",
+          "datetime": "2026-11-29T16:30:00",
+          "format": null,
+          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-only-living-pickpocket-in-new-york?showingId=4324236"
         }
       ],
       "imdb_id": "tt36482679",
@@ -3340,18 +3524,6 @@
         "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-22T15:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-22T18:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-11-23T16:00:00",
@@ -3409,6 +3581,18 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-11-28T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-29T15:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-29T18:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
         },
@@ -3501,12 +3685,30 @@
           "datetime": "2026-11-28T19:00",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19818?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-29T12:00",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19838?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-29T15:30",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19821?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-29T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19823?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         }
       ],
       "imdb_id": "tt32558705",
       "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
+      "imdb_rating": 7.6,
+      "metacritic_score": 56,
       "match_confidence": "verified"
     },
     {
@@ -3574,12 +3776,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-11-22T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-11-23T12:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
@@ -3628,12 +3824,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-22T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-11-23T11:00:00",
@@ -3717,6 +3907,18 @@
           "datetime": "2026-11-28T15:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-29T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-11-29T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         }
       ],
       "imdb_id": "tt42702648",
@@ -3738,12 +3940,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-22T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-11-23T14:00:00",
@@ -3796,12 +3992,6 @@
         "Action"
       ],
       "showtimes": [
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-22T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
         {
           "venue_id": "omsi",
           "datetime": "2026-11-23T14:30:00",
@@ -3862,7 +4052,7 @@
         }
       ],
       "imdb_id": "tt0033045",
-      "rt_score": 99,
+      "rt_score": null,
       "imdb_rating": 8,
       "metacritic_score": 96,
       "match_confidence": "verified"
@@ -3928,6 +4118,66 @@
           "datetime": "2026-11-26T19:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31367?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-27T16:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31475?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-27T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31477?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-27T21:50",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31479?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-28T13:15",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31493?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-28T16:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31483?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-28T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31485?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-28T21:50",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31488?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T13:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31498?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T15:45",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31499?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        },
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T19:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31495?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
         }
       ],
       "imdb_id": "tt38058097",
@@ -3935,6 +4185,25 @@
       "imdb_rating": 8.1,
       "metacritic_score": 84,
       "match_confidence": "verified"
+    },
+    {
+      "id": null,
+      "slug": "wildwood-laika-takes-portland-to-the-movies",
+      "title": "Wildwood: Laika Takes Portland to the Movies",
+      "year": null,
+      "director": "Travis Knight",
+      "runtime_minutes": 139,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "cinema-21",
+          "datetime": "2026-11-29T11:00",
+          "format": null,
+          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31594?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+        }
+      ]
     },
     {
       "id": 1481861,
@@ -4045,32 +4314,42 @@
       "match_confidence": "verified"
     },
     {
-      "id": 820,
-      "slug": "jfk-1991",
-      "title": "Jfk",
-      "year": 1991,
-      "director": "Oliver Stone",
-      "runtime_minutes": 189,
-      "overview": "Follows the investigation into the assassination of President John F. Kennedy led by New Orleans district attorney Jim Garrison.",
-      "poster_path": "/r0VWVTYlqdRCK5ZoOdNnHdqM2gt.jpg",
-      "genres": [
-        "Drama",
-        "Thriller",
-        "History"
-      ],
+      "id": null,
+      "slug": "killer-klowns-from-outer-space-with-harrod-blank",
+      "title": "KILLER KLOWNS FROM OUTER SPACE with Harrod Blank",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-22T18:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/jfk-in-35mm-2026-11-22-600pm/"
+          "datetime": "2026-11-29T21:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/killer-klowns-from-outer-space-with-harrod-blank-2026-11-29-900pm/"
         }
-      ],
-      "imdb_id": "tt0102138",
-      "rt_score": 85,
-      "imdb_rating": 8,
-      "metacritic_score": 72,
-      "match_confidence": "verified"
+      ]
+    },
+    {
+      "id": null,
+      "slug": "les-blank-celebration-w-harrod-blank",
+      "title": "LES BLANK CELEBRATION w/Harrod Blank",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/les-blank-celebration-2026-11-29-600pm/"
+        }
+      ]
     },
     {
       "id": 1676784,
@@ -4100,34 +4379,6 @@
       "match_confidence": "verified"
     },
     {
-      "id": 579974,
-      "slug": "rrr-2022",
-      "title": "Rrr",
-      "year": 2022,
-      "director": "S. S. Rajamouli",
-      "runtime_minutes": 187,
-      "overview": "A fictional history of two legendary revolutionaries' journey away from home before they began fighting for their country in the 1920s.",
-      "poster_path": "/wE0I6efAW4cDDmZQWtwZMOW44EJ.jpg",
-      "genres": [
-        "Action",
-        "History",
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T13:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/rrr-2026-11-22-130pm/"
-        }
-      ],
-      "imdb_id": "tt8178634",
-      "rt_score": 96,
-      "imdb_rating": 7.8,
-      "metacritic_score": 83,
-      "match_confidence": "verified"
-    },
-    {
       "id": null,
       "slug": "severin-presents-antiviral",
       "title": "Severin Presents – ANTIVIRAL",
@@ -4153,30 +4404,6 @@
       ]
     },
     {
-      "id": 1726668,
-      "slug": "vive-le-punk",
-      "title": "Vive Le Punk",
-      "year": null,
-      "director": "Danny Garcia",
-      "runtime_minutes": 0,
-      "overview": "50 years after the British Punk explosion, this documentary follows four bands that are still active today (Sham 69, 999, Ruts DC and The Boys) and features interviews with Charlie Harper, Joe Corre, Dr. John Cooper Clarke, Gaye Advert and other Punk Rock luminaries in search for the meaning of Punk and the relevance of its message today.  With rare archival footage, explosive live performances, and an unflinching look at the punk ethos in today’s world, this film is not just a retrospective—In a world that mirrors the one Punk once railed against, is the message still relevant—or has it been consumed by commercialism?. This film should appeal to every generation of rebels, misfits, and outsiders. Punk may have started as anarchy in the streets, but it’s far from finished. Vive le Punk!",
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T21:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/vive-le-punk-2026-11-22-930pm/"
-        }
-      ],
-      "imdb_id": null,
-      "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
       "id": null,
       "slug": "school-of-the-holy-beast",
       "title": "School Of The Holy Beast",
@@ -4196,33 +4423,6 @@
       ]
     },
     {
-      "id": 1422041,
-      "slug": "la-bola-negra-2026",
-      "title": "LA BOLA NEGRA",
-      "year": 2026,
-      "director": "Javier Ambrossi",
-      "runtime_minutes": 159,
-      "overview": "The intertwined lives of three men in three different eras, three lives intimately linked by sexuality and desire, pain, and legacy.",
-      "poster_path": "/7HwFQTMghL6HOvzEnXYUvyuZXeh.jpg",
-      "genres": [
-        "Drama",
-        "War"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T21:15",
-          "format": "Digital",
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-22-915pm/"
-        }
-      ],
-      "imdb_id": "tt35511966",
-      "rt_score": null,
-      "imdb_rating": 7,
-      "metacritic_score": 86,
-      "match_confidence": "verified"
-    },
-    {
       "id": null,
       "slug": "best-of-the-h-p-lovecraft-film-festival",
       "title": "Best of the H. P. Lovecraft Film FestivaL",
@@ -4238,6 +4438,43 @@
           "datetime": "2026-11-28T19:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/best-of-the-h-p-lovecraft-film-festival-2026-11-28-700pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "wildwood-laika-takes-portland-to-the-movies",
+      "title": "Wildwood \"LAIKA Takes Portland to the Movies\"",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-29T11:00",
+          "format": null,
+          "ticket_url": null
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-29T14:10",
+          "format": null,
+          "ticket_url": null
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-29T17:15",
+          "format": null,
+          "ticket_url": null
+        },
+        {
+          "venue_id": "st-johns",
+          "datetime": "2026-11-29T20:20",
+          "format": null,
+          "ticket_url": null
         }
       ]
     },
@@ -4263,7 +4500,7 @@
         }
       ],
       "imdb_id": "tt0240890",
-      "rt_score": 58,
+      "rt_score": null,
       "imdb_rating": 6.9,
       "metacritic_score": 52,
       "match_confidence": "verified"
@@ -4318,9 +4555,65 @@
         }
       ],
       "imdb_id": "tt0087755",
-      "rt_score": 85,
+      "rt_score": null,
       "imdb_rating": 6.9,
       "metacritic_score": 64,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 2039,
+      "slug": "moonstruck-1987",
+      "title": "Moonstruck",
+      "year": 1987,
+      "director": "Norman Jewison",
+      "runtime_minutes": 102,
+      "overview": "37-year-old Italian-American widow Loretta Castorini believes she is unlucky in love, and so accepts a marriage proposal from her boyfriend Johnny, even though she doesn't love him. When she meets his estranged younger brother Ronny, an emotional and passionate man, she finds herself drawn to him. She tries to resist, but Ronny, who blames his brother for the loss of his hand, has no scruples about aggressively pursuing her while Johnny is out of the country. As Loretta falls for Ronny, she learns that she's not the only one in her family with a secret romance.",
+      "poster_path": "/2mnVWpvsHEHHnfvLn1NXYVvBGl5.jpg",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "tomorrow",
+          "datetime": "2026-11-29T19:00",
+          "format": null,
+          "ticket_url": "https://tomorrowtheater.org/showtimes/moonstruck-11-29-26-700-pm/"
+        }
+      ],
+      "imdb_id": "tt0093565",
+      "rt_score": null,
+      "imdb_rating": 7.2,
+      "metacritic_score": 83,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 639,
+      "slug": "when-harry-met-sally-1989",
+      "title": "When Harry Met Sally…",
+      "year": 1989,
+      "director": "Rob Reiner",
+      "runtime_minutes": 96,
+      "overview": "Sex always gets in the way of friendships between men and women. At least, that's what Harry Burns believes. So when Harry meets Sally Albright and a deep friendship blossoms between them, Harry's determined not to let his attraction to Sally destroy it. But when a night of weakness ends in a morning of panic, can the pair avoid succumbing to Harry's fears by remaining friends and admitting they just might be the perfect match for each other?",
+      "poster_path": "/rFOiFUhTMtDetqCGClC9PIgnC1P.jpg",
+      "genres": [
+        "Comedy",
+        "Romance",
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "tomorrow",
+          "datetime": "2026-11-29T16:00",
+          "format": null,
+          "ticket_url": "https://tomorrowtheater.org/showtimes/when-harry-met-sally-11-29-26-400-pm/"
+        }
+      ],
+      "imdb_id": "tt0098635",
+      "rt_score": null,
+      "imdb_rating": 7.7,
+      "metacritic_score": 76,
       "match_confidence": "verified"
     },
     {
@@ -4374,7 +4667,7 @@
         }
       ],
       "imdb_id": "tt0108160",
-      "rt_score": 75,
+      "rt_score": null,
       "imdb_rating": 6.8,
       "metacritic_score": 72,
       "match_confidence": "verified"
