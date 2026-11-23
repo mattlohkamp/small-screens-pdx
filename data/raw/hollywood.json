@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-22T20:15:18.593Z",
+  "scraped_at": "2026-11-23T02:15:18.104Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -83,8 +83,8 @@
     },
     {
       "id": null,
-      "slug": "jfk",
-      "title": "Jfk",
+      "slug": "killer-klowns-from-outer-space-with-harrod-blank",
+      "title": "KILLER KLOWNS FROM OUTER SPACE with Harrod Blank",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -94,9 +94,28 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-22T18:00",
-          "format": "35mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/jfk-in-35mm-2026-11-22-600pm/"
+          "datetime": "2026-11-29T21:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/killer-klowns-from-outer-space-with-harrod-blank-2026-11-29-900pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "les-blank-celebration-w-harrod-blank",
+      "title": "LES BLANK CELEBRATION w/Harrod Blank",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T18:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/les-blank-celebration-2026-11-29-600pm/"
         }
       ]
     },
@@ -111,18 +130,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T14:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-22-230pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-22-700pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-23T19:00",
@@ -194,6 +201,18 @@
           "datetime": "2026-11-28T20:45",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-28-845pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T15:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-29-300pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-29-700pm/"
         }
       ]
     },
@@ -213,25 +232,6 @@
           "datetime": "2026-11-28T19:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/rozz-williams-romeos-distress-2026-11-28-700pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "rrr",
-      "title": "Rrr",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T13:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/rrr-2026-11-22-130pm/"
         }
       ]
     },
@@ -281,25 +281,6 @@
     },
     {
       "id": null,
-      "slug": "vive-le-punk",
-      "title": "Vive Le Punk",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T21:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/vive-le-punk-2026-11-22-930pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "wild-horse-nine",
       "title": "Wild Horse Nine",
       "year": null,
@@ -309,18 +290,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T14:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-200pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-22-630pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-23T19:30",
@@ -386,6 +355,18 @@
           "datetime": "2026-11-28T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-28-915pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T15:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-29-330pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-29-630pm/"
         }
       ]
     },
@@ -410,25 +391,6 @@
     },
     {
       "id": null,
-      "slug": "la-bola-negra-digital",
-      "title": "LA BOLA NEGRA (Digital)",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-22T21:15",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/la-bola-negra-digital-2026-11-22-915pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "best-of-the-h-p-lovecraft-film-festival",
       "title": "Best of the H. P. Lovecraft Film FestivaL",
       "year": null,
@@ -443,6 +405,25 @@
           "datetime": "2026-11-28T19:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/best-of-the-h-p-lovecraft-film-festival-2026-11-28-700pm/"
+        }
+      ]
+    },
+    {
+      "id": null,
+      "slug": "wildwood-digital",
+      "title": "WILDWOOD (Digital)",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-29T14:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wildwood-digital-2026-11-29-230pm/"
         }
       ]
     }
