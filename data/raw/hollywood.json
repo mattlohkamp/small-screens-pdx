@@ -2,9 +2,28 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-23T20:15:18.283Z",
+  "scraped_at": "2026-11-24T02:15:15.874Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
+    {
+      "id": null,
+      "slug": "batman-mask-of-the-phantasm",
+      "title": "Batman: Mask Of The Phantasm",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-30T19:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/batman-mask-of-the-phantasm-2026-11-30-730pm/"
+        }
+      ]
+    },
     {
       "id": null,
       "slug": "blood-rage",
@@ -64,25 +83,6 @@
     },
     {
       "id": null,
-      "slug": "it-s-a-mad-mad-mad-mad-world",
-      "title": "It's A Mad Mad Mad Mad World",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-23T18:30",
-          "format": "70mm",
-          "ticket_url": "https://hollywoodtheatre.org/event/its-a-mad-mad-mad-mad-world-in-70mm-2026-11-23-630pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
       "slug": "killer-klowns-from-outer-space-with-harrod-blank",
       "title": "KILLER KLOWNS FROM OUTER SPACE with Harrod Blank",
       "year": null,
@@ -130,18 +130,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-23T19:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-23-700pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-23T21:35",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-23-935pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-24T19:00",
@@ -213,6 +201,18 @@
           "datetime": "2026-11-29T19:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-29-700pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-30T19:00",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-30-700pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-30T21:35",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-30-935pm/"
         }
       ]
     },
@@ -237,8 +237,8 @@
     },
     {
       "id": null,
-      "slug": "severin-presents-antiviral",
-      "title": "Severin Presents – ANTIVIRAL",
+      "slug": "srs-cinema-presents-kaiju-guy",
+      "title": "SRS Cinema Presents – KAIJU GUY",
       "year": null,
       "director": null,
       "runtime_minutes": null,
@@ -248,15 +248,15 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-23T18:00",
+          "datetime": "2026-11-30T18:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/severin-presents-antiviral-2026-11-23-600pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/srs-cinema-presents-kaiju-guy-2026-11-30-600pm/"
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-23T20:30",
+          "datetime": "2026-11-30T20:00",
           "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/severin-presents-antiviral-2026-11-23-800pm/"
+          "ticket_url": "https://hollywoodtheatre.org/event/srs-cinema-presents-kaiju-guy-2026-11-30-800pm/"
         }
       ]
     },
@@ -290,12 +290,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-23T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-23-730pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-24T18:30",
@@ -367,6 +361,18 @@
           "datetime": "2026-11-29T17:40",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-29-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-30T18:30",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-30-630pm/"
+        },
+        {
+          "venue_id": "hollywood",
+          "datetime": "2026-11-30T21:15",
+          "format": null,
+          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-30-915pm/"
         }
       ]
     },
