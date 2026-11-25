@@ -2,7 +2,7 @@
   "venue_ids": [
     "hollywood"
   ],
-  "scraped_at": "2026-11-24T20:15:23.647Z",
+  "scraped_at": "2026-11-25T02:15:15.442Z",
   "code_hash": "634a8c4b1f5b",
   "films": [
     {
@@ -130,12 +130,6 @@
       "poster_path": null,
       "genres": [],
       "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-24T21:35",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-24-935pm/"
-        },
         {
           "venue_id": "hollywood",
           "datetime": "2026-11-25T19:00",
@@ -286,12 +280,6 @@
       "showtimes": [
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-24T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-24-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-25T18:30",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-25-630pm/"
@@ -361,25 +349,6 @@
           "datetime": "2026-11-30T21:15",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-30-915pm/"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "slug": "school-of-the-holy-beast",
-      "title": "School Of The Holy Beast",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-24T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/school-of-the-holy-beast-2026-11-24-730pm/"
         }
       ]
     },
