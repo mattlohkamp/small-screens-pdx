@@ -10,24 +10,6 @@ X-WR-TIMEZONE:America/Los_Angeles
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:clinton-street-20261127T150000-american-doctor-2026@small-screens-pdx
-DTSTAMP:20261104T202843Z
-DTSTART:20261127T230000Z
-DTEND:20261128T003000Z
-SUMMARY:American Doctor (2026)
-LOCATION:Clinton Street Theater\, 2522 SE Clinton St\, Portland OR
-GEO:45.5058;-122.6482
-DESCRIPTION:Dir. Poh Si Teng · 90 min\n\nUnited by a shared oath to save l
- ives\, three American doctors—Palestinian\, Jewish\, and Zoroastrian—w
- ork in a besieged hospital in Gaza in the middle of a genocide comitted by
-  Israel\, and return to the United States to fight for the patients and co
- lleagues they left behind.\n\nTickets: https://cstpdxtickets.square.site/p
- roduct/american-doctor-friday-november-27th-at-3-00-pm/6UTXP6K3VRRSCIHHPTK
- ZF2QC\n\nMore showtimes: https://mattlohkamp.github.io/small-screens-pdx/
-URL:https://cstpdxtickets.square.site/product/american-doctor-friday-novemb
- er-27th-at-3-00-pm/6UTXP6K3VRRSCIHHPTKZF2QC
-END:VEVENT
-BEGIN:VEVENT
 UID:clinton-street-20261128T110000-the-amazing-bubble-man@small-screens-pdx
 DTSTAMP:20261122T101625Z
 DTSTART:20261128T190000Z
@@ -162,5 +144,19 @@ DESCRIPTION:Dir. Rachel Lambert · 94 min\n\nFran likes to think about dyin
  https://mattlohkamp.github.io/small-screens-pdx/
 URL:https://cstpdxtickets.square.site/product/sometimes-i-think-about-dying
  -thursday-december-3rd-at-7-00-pm/VKHZ6LR5PL7S2JXKIHHY72N3
+END:VEVENT
+BEGIN:VEVENT
+UID:clinton-street-20261204T190000-dungeon-battle-karaoke@small-screens-pdx
+DTSTAMP:20261128T105149Z
+DTSTART:20261205T030000Z
+DTEND:20261205T050000Z
+SUMMARY:Dungeon Battle Karaoke
+LOCATION:Clinton Street Theater\, 2522 SE Clinton St\, Portland OR
+GEO:45.5058;-122.6482
+DESCRIPTION:Tickets: https://www.eventbrite.com/e/dungeon-battle-karaoke-ti
+ ckets-2003554735147?aff=oddtdtcreator\n\nMore showtimes: https://mattlohka
+ mp.github.io/small-screens-pdx/
+URL:https://www.eventbrite.com/e/dungeon-battle-karaoke-tickets-20035547351
+ 47?aff=oddtdtcreator
 END:VEVENT
 END:VCALENDAR

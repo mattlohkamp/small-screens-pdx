@@ -10,26 +10,6 @@ X-WR-TIMEZONE:America/Los_Angeles
 REFRESH-INTERVAL;VALUE=DURATION:PT6H
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
-UID:tomorrow-20261127T1900-the-muppets-take-manhattan-1984@small-screens-pd
- x
-DTSTAMP:20261121T101137Z
-DTSTART:20261128T030000Z
-DTEND:20261128T043400Z
-SUMMARY:The Muppets Take Manhattan (1984)
-LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
-GEO:45.5158;-122.6831
-DESCRIPTION:Dir. Frank Oz · 94 min\n\nWhen the Muppets graduate from Danhu
- rst College\, they take their song-filled senior revue to New York City\, 
- only to learn that it isn't easy to find a producer who's willing to back 
- a show starring a frog and a pig. Of course\, Kermit the Frog and Miss Pig
- gy won't take no for an answer\, launching a search for someone to take th
- em to Broadway.\n\nTickets: https://tomorrowtheater.org/showtimes/the-mupp
- ets-take-manhattan-11-27-26-700-pm/\n\nMore showtimes: https://mattlohkamp
- .github.io/small-screens-pdx/
-URL:https://tomorrowtheater.org/showtimes/the-muppets-take-manhattan-11-27-
- 26-700-pm/
-END:VEVENT
-BEGIN:VEVENT
 UID:tomorrow-20261128T1600-mystic-pizza-1988@small-screens-pdx
 DTSTAMP:20261122T101625Z
 DTSTART:20261129T000000Z
@@ -101,5 +81,20 @@ DESCRIPTION:Dir. Norman Jewison · 102 min\n\n37-year-old Italian-American
  imes/moonstruck-11-29-26-700-pm/\n\nMore showtimes: https://mattlohkamp.gi
  thub.io/small-screens-pdx/
 URL:https://tomorrowtheater.org/showtimes/moonstruck-11-29-26-700-pm/
+END:VEVENT
+BEGIN:VEVENT
+UID:tomorrow-20261204T1900-rent-2005@small-screens-pdx
+DTSTAMP:20261128T105149Z
+DTSTART:20261205T030000Z
+DTEND:20261205T051500Z
+SUMMARY:RENT (2005)
+LOCATION:Tomorrow Theater\, 1219 SW Park Ave\, Portland OR
+GEO:45.5158;-122.6831
+DESCRIPTION:Dir. Chris Columbus · 135 min\n\nIn New York City's gritty Eas
+ t Village\, a group of bohemians strive for success and acceptance while e
+ nduring the obstacles of poverty\, illness and the AIDS epidemic.\n\nTicke
+ ts: https://tomorrowtheater.org/showtimes/rent-movie-bingo-12-4-26-700-pm/
+ \n\nMore showtimes: https://mattlohkamp.github.io/small-screens-pdx/
+URL:https://tomorrowtheater.org/showtimes/rent-movie-bingo-12-4-26-700-pm/
 END:VEVENT
 END:VCALENDAR
