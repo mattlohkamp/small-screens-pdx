@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-27T21:37:43.314Z",
-  "generator": "1.7.0-913a522",
+  "generated_at": "2026-11-28T10:51:49.177Z",
+  "generator": "1.7.0-7571d70",
   "window": {
-    "start": "2026-11-27",
-    "end": "2026-12-03"
+    "start": "2026-11-28",
+    "end": "2026-12-04"
   },
   "venues": [
     {
@@ -159,123 +159,6 @@
   ],
   "films": [
     {
-      "id": 128,
-      "slug": "princess-mononoke-1997",
-      "title": "Princess Mononoke",
-      "year": 1997,
-      "director": "Hayao Miyazaki",
-      "runtime_minutes": 134,
-      "overview": "Ashitaka, a prince of the disappearing Emishi people, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.",
-      "poster_path": "/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
-      "genres": [
-        "Adventure",
-        "Fantasy",
-        "Animation"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-27T16:10:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133468/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-28T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133469/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-29T16:10:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133475/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-30T15:45:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133470/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-12-03T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133471/"
-        }
-      ],
-      "imdb_id": "tt0119698",
-      "rt_score": null,
-      "imdb_rating": 8.3,
-      "metacritic_score": 78,
-      "match_confidence": "verified"
-    },
-    {
-      "id": null,
-      "slug": "whisper-of-the-heart-subbed-1995",
-      "title": "Whisper of the Heart (Subtitled)",
-      "year": 1995,
-      "director": "Yoshifumi Kondo",
-      "runtime_minutes": 111,
-      "overview": "Shizuku lives a simple life, dominated by her love for stories and writing. One day she notices that all the library books she has have been previously checked out by the same person: \"Seiji Amasawa.\"",
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/whisper-of-the-heart-subbed/4116570/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-12-01T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/whisper-of-the-heart-subbed/4116566/"
-        }
-      ]
-    },
-    {
-      "id": 15283,
-      "slug": "pom-poko-1994",
-      "title": "Pom Poko",
-      "year": 1994,
-      "director": "Isao Takahata",
-      "runtime_minutes": 119,
-      "overview": "The Raccoons of the Tama Hills are being forced from their homes by the rapid development of houses and shopping malls. As it becomes harder to find food and shelter, they decide to band together and fight back. The Raccoons practice and perfect the ancient art of transformation until they are even able to appear as humans in hilarious circumstances.",
-      "poster_path": "/gyoJmFf24MOUc4TTu97sd0cHIQF.jpg",
-      "genres": [
-        "Adventure",
-        "Animation",
-        "Fantasy"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-11-27T21:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/pom-poko-sub/4116561/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-12-01T16:20:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/pom-poko-sub/4116576/"
-        },
-        {
-          "venue_id": "cinemagic",
-          "datetime": "2026-12-02T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/pom-poko-sub/4116567/"
-        }
-      ],
-      "imdb_id": "tt0110008",
-      "rt_score": null,
-      "imdb_rating": 7.2,
-      "metacritic_score": 77,
-      "match_confidence": "verified"
-    },
-    {
       "id": null,
       "slug": "the-cat-returns-dub-2002",
       "title": "The Cat Returns (Dubbed)",
@@ -318,6 +201,52 @@
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/whisper-of-the-heart-dubbed/4116568/"
         }
       ]
+    },
+    {
+      "id": 128,
+      "slug": "princess-mononoke-1997",
+      "title": "Princess Mononoke",
+      "year": 1997,
+      "director": "Hayao Miyazaki",
+      "runtime_minutes": 134,
+      "overview": "Ashitaka, a prince of the disappearing Emishi people, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.",
+      "poster_path": "/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
+      "genres": [
+        "Adventure",
+        "Fantasy",
+        "Animation"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-28T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133469/"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-29T16:10:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133475/"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-11-30T15:45:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133470/"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-12-03T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/princess-mononoke/4133471/"
+        }
+      ],
+      "imdb_id": "tt0119698",
+      "rt_score": null,
+      "imdb_rating": 8.3,
+      "metacritic_score": 78,
+      "match_confidence": "verified"
     },
     {
       "id": 11621,
@@ -385,30 +314,6 @@
           "datetime": "2026-11-29T21:00:00",
           "format": null,
           "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/wildwood-2/4406925/"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T12:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46647"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T15:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46706"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46707"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T21:50:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46649"
         },
         {
           "venue_id": "laurelhurst",
@@ -490,12 +395,6 @@
         },
         {
           "venue_id": "baghdad",
-          "datetime": "2026-11-27T15:15:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103320?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "baghdad",
           "datetime": "2026-11-28T12:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103315?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
@@ -565,30 +464,6 @@
           "datetime": "2026-12-01T15:15:00",
           "format": "OC",
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103324?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T12:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/4b413a60-8ba2-5d68-9340-5d7918201b10"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T15:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/2873cc1a-9fa5-577d-b828-678dc7e5f632"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T18:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/cdbf646e-f76c-5c61-bc80-b294d86404ea"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T21:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/845b2f8b-3efe-51ba-a409-cfd4483bf6bb"
         },
         {
           "venue_id": "academy",
@@ -687,28 +562,28 @@
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/aae9bcbc-bdc6-574b-aa8a-863852f6835f"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T12:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4324189"
+          "venue_id": "academy",
+          "datetime": "2026-12-03T12:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/b4f23596-f58d-54d0-a169-80bd535f170e"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T15:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4324195"
+          "venue_id": "academy",
+          "datetime": "2026-12-03T15:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/378a9cdc-649c-51b0-9058-8b7b60b8fe6a"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T18:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4324200"
+          "venue_id": "academy",
+          "datetime": "2026-12-03T18:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/3a5489d1-7bd0-5710-944a-e3ac6fb365ab"
         },
         {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T21:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wildwood?showingId=4324205"
+          "venue_id": "academy",
+          "datetime": "2026-12-03T21:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/ac033228-0987-54fd-b3a9-57c5f896f200"
         },
         {
           "venue_id": "living-room",
@@ -832,18 +707,6 @@
         },
         {
           "venue_id": "st-johns",
-          "datetime": "2026-11-27T15:30",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19812?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-11-27T19:30",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19815?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
           "datetime": "2026-11-28T12:30",
           "format": null,
           "ticket_url": "https://ticketing.useast.veezi.com/purchase/19837?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
@@ -898,12 +761,6 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-27T11:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
           "datetime": "2026-11-29T11:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
@@ -948,29 +805,109 @@
       ]
     },
     {
-      "id": 1596332,
-      "slug": "american-doctor-2026",
-      "title": "American Doctor",
-      "year": 2026,
-      "director": "Poh Si Teng",
-      "runtime_minutes": 90,
-      "overview": "United by a shared oath to save lives, three American doctors—Palestinian, Jewish, and Zoroastrian—work in a besieged hospital in Gaza in the middle of a genocide comitted by Israel, and return to the United States to fight for the patients and colleagues they left behind.",
-      "poster_path": "/sOSrlaXvItVdwU1P5Qpttcl12sd.jpg",
+      "id": 15283,
+      "slug": "pom-poko-1994",
+      "title": "Pom Poko",
+      "year": 1994,
+      "director": "Isao Takahata",
+      "runtime_minutes": 119,
+      "overview": "The Raccoons of the Tama Hills are being forced from their homes by the rapid development of houses and shopping malls. As it becomes harder to find food and shelter, they decide to band together and fight back. The Raccoons practice and perfect the ancient art of transformation until they are even able to appear as humans in hilarious circumstances.",
+      "poster_path": "/gyoJmFf24MOUc4TTu97sd0cHIQF.jpg",
       "genres": [
-        "Documentary",
-        "War"
+        "Adventure",
+        "Animation",
+        "Fantasy"
       ],
       "showtimes": [
         {
-          "venue_id": "clinton-street",
-          "datetime": "2026-11-27T15:00:00",
+          "venue_id": "cinemagic",
+          "datetime": "2026-12-01T16:20:00",
           "format": null,
-          "ticket_url": "https://cstpdxtickets.square.site/product/american-doctor-friday-november-27th-at-3-00-pm/6UTXP6K3VRRSCIHHPTKZF2QC"
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/pom-poko-sub/4116576/"
+        },
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-12-02T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/pom-poko-sub/4116567/"
         }
       ],
-      "imdb_id": "tt39149951",
+      "imdb_id": "tt0110008",
       "rt_score": null,
-      "imdb_rating": null,
+      "imdb_rating": 7.2,
+      "metacritic_score": 77,
+      "match_confidence": "verified"
+    },
+    {
+      "id": null,
+      "slug": "whisper-of-the-heart-subbed-1995",
+      "title": "Whisper of the Heart (Subtitled)",
+      "year": 1995,
+      "director": "Yoshifumi Kondo",
+      "runtime_minutes": 111,
+      "overview": "Shizuku lives a simple life, dominated by her love for stories and writing. One day she notices that all the library books she has have been previously checked out by the same person: \"Seiji Amasawa.\"",
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-12-01T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/whisper-of-the-heart-subbed/4116566/"
+        }
+      ]
+    },
+    {
+      "id": 927,
+      "slug": "gremlins-1984",
+      "title": "Gremlins",
+      "year": 1984,
+      "director": "Joe Dante",
+      "runtime_minutes": 106,
+      "overview": "After receiving an exotic small animal as a Christmas gift, a young man inadvertently breaks three important rules concerning his new pet, which unleashes a horde of malevolently mischievous creatures on a small town.",
+      "poster_path": "/6m0F7fsXjQvUbCZrPWcJNrjvIui.jpg",
+      "genres": [
+        "Fantasy",
+        "Horror",
+        "Comedy"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-12-04T19:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/gremlins/4158029/"
+        }
+      ],
+      "imdb_id": "tt0087363",
+      "rt_score": null,
+      "imdb_rating": 7.3,
+      "metacritic_score": 70,
+      "match_confidence": "verified"
+    },
+    {
+      "id": 237723,
+      "slug": "riot-1997",
+      "title": "Riot",
+      "year": 1997,
+      "director": "David C. Johnson",
+      "runtime_minutes": 95,
+      "overview": "In April 1992, following the notorious Rodney King verdict, the streets of Los Angeles became a battlefield, the backdrop to four personal intertwined stories.",
+      "poster_path": "/ulprH2PdL6COSlvxMBdqXhWVGTf.jpg",
+      "genres": [
+        "Drama"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "cinemagic",
+          "datetime": "2026-12-04T22:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.thecinemagictheater.com/checkout/showing/riot/4311896/"
+        }
+      ],
+      "imdb_id": "tt0120021",
+      "rt_score": null,
+      "imdb_rating": 6.2,
       "metacritic_score": null,
       "match_confidence": "verified"
     },
@@ -1150,6 +1087,25 @@
       "match_confidence": "verified"
     },
     {
+      "id": null,
+      "slug": "dungeon-battle-karaoke",
+      "title": "Dungeon Battle Karaoke",
+      "year": null,
+      "director": null,
+      "runtime_minutes": null,
+      "overview": null,
+      "poster_path": null,
+      "genres": [],
+      "showtimes": [
+        {
+          "venue_id": "clinton-street",
+          "datetime": "2026-12-04T19:00:00",
+          "format": null,
+          "ticket_url": "https://www.eventbrite.com/e/dungeon-battle-karaoke-tickets-2003554735147?aff=oddtdtcreator"
+        }
+      ]
+    },
+    {
       "id": 1599230,
       "slug": "elsinore-2026",
       "title": "Elsinore",
@@ -1162,30 +1118,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T12:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46646"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T15:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46641"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T18:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46642"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T21:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46648"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-28T12:30:00",
@@ -1263,36 +1195,6 @@
           "datetime": "2026-12-02T18:30:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46697"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T11:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/elsinore?showingId=4266877"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T14:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/elsinore?showingId=4266876"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T16:35:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/elsinore?showingId=4266875"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/elsinore?showingId=4266874"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T21:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/elsinore?showingId=4266878"
         },
         {
           "venue_id": "living-room",
@@ -1446,24 +1348,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-11-27T16:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31476?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-27T19:15",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31478?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-27T21:40",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31480?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-11-28T13:45",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31492?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -1584,12 +1468,6 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-27T14:20:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
           "datetime": "2026-11-30T19:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
@@ -1608,19 +1486,7 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
           "datetime": "2026-11-28T19:00:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        },
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-12-03T19:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1638,7 +1504,19 @@
         },
         {
           "venue_id": "moreland",
-          "datetime": "2026-11-27T16:40:00",
+          "datetime": "2026-12-03T19:00:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-12-04T16:40:00",
+          "format": null,
+          "ticket_url": "https://morelandtheater.com/tickets/"
+        },
+        {
+          "venue_id": "moreland",
+          "datetime": "2026-12-04T19:00:00",
           "format": null,
           "ticket_url": "https://morelandtheater.com/tickets/"
         },
@@ -1676,30 +1554,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T12:15:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46719"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T15:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46720"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T18:45:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46721"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T21:20:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46722"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-28T12:15:00",
@@ -1777,36 +1631,6 @@
           "datetime": "2026-12-02T18:45:00",
           "format": "OC",
           "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46737"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T12:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324188"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T14:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324192"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T17:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324199"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T19:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324204"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T22:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/wild-horse-nine?showingId=4324206"
         },
         {
           "venue_id": "living-room",
@@ -1954,12 +1778,6 @@
         },
         {
           "venue_id": "cinema-21",
-          "datetime": "2026-11-27T16:30",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31482?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
           "datetime": "2026-11-28T12:30",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31491?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
@@ -1987,24 +1805,6 @@
           "datetime": "2026-12-02T15:45",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31598?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-27T15:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-27-330pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-27T18:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-27-630pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-27T21:15",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/wild-horse-nine-2026-11-27-915pm/"
         },
         {
           "venue_id": "hollywood",
@@ -2068,30 +1868,6 @@
         "Documentary"
       ],
       "showtimes": [
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T11:30:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46645"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T15:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46643"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T18:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46644"
-        },
-        {
-          "venue_id": "laurelhurst",
-          "datetime": "2026-11-27T21:00:00",
-          "format": null,
-          "ticket_url": "https://3677.formovietickets.com:2235/T.ASP?WCI=bt&Page=PickTickets&SHOWID=46650"
-        },
         {
           "venue_id": "laurelhurst",
           "datetime": "2026-11-28T11:30:00",
@@ -2172,12 +1948,6 @@
         },
         {
           "venue_id": "academy",
-          "datetime": "2026-11-27T18:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/ee4d40d2-c56e-5041-830a-fd102a36d6ef"
-        },
-        {
-          "venue_id": "academy",
           "datetime": "2026-11-28T18:15:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/ab841425-a5e9-5b97-a83e-3da0e258e9b5"
@@ -2207,10 +1977,10 @@
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/f2716b09-deec-51cc-b5fb-2a888c5276bb"
         },
         {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-27T19:30",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31481?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
+          "venue_id": "academy",
+          "datetime": "2026-12-03T12:30:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/7c5e13a5-d815-5071-a5b9-c7332341f0f6"
         },
         {
           "venue_id": "cinema-21",
@@ -2268,25 +2038,6 @@
       "match_confidence": "verified"
     },
     {
-      "id": null,
-      "slug": "wildwood-a-portland-homecoming-with-colin-meloy",
-      "title": "Wildwood: A Portland Homecoming with Colin Meloy",
-      "year": null,
-      "director": null,
-      "runtime_minutes": null,
-      "overview": null,
-      "poster_path": null,
-      "genres": [],
-      "showtimes": [
-        {
-          "venue_id": "baghdad",
-          "datetime": "2026-11-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103448?siteToken=ta6mvcbmchak78n7cqtdb8e3jw"
-        }
-      ]
-    },
-    {
       "id": 1248832,
       "slug": "digger-2026",
       "title": "Digger",
@@ -2300,12 +2051,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-11-27T18:45:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103455?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
         {
           "venue_id": "kennedy-school",
           "datetime": "2026-11-28T18:45:00",
@@ -2335,12 +2080,6 @@
           "datetime": "2026-12-03T19:00:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103465?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-27T15:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/digger-2026-11-27-300pm/"
         }
       ],
       "imdb_id": "tt31450459",
@@ -2360,18 +2099,10 @@
       "poster_path": "/myd1K3gefdNAWFsGNRDdMeiK9Qg.jpg",
       "genres": [
         "Animation",
-        "Adventure",
         "Fantasy",
-        "Comedy",
-        "Family"
+        "Adventure"
       ],
       "showtimes": [
-        {
-          "venue_id": "kennedy-school",
-          "datetime": "2026-11-27T16:00:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103451?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
         {
           "venue_id": "kennedy-school",
           "datetime": "2026-11-28T13:00:00",
@@ -2425,12 +2156,6 @@
       "showtimes": [
         {
           "venue_id": "kennedy-school",
-          "datetime": "2026-11-27T21:45:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103457?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
-        },
-        {
-          "venue_id": "kennedy-school",
           "datetime": "2026-11-28T21:45:00",
           "format": null,
           "ticket_url": "https://ticketing.uswest.veezi.com/purchase/103458?siteToken=wh74yr6fq3am4qbkh72fhcyr4g"
@@ -2481,24 +2206,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T12:30:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/09a9750c-e6f5-5a4c-8f2d-ecd04e8e9e92"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T15:45:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/d28053eb-4c8b-5b5d-bf67-93bdc301ee4d"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T22:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/5160b159-4288-5d6b-bbfd-34368b203f4b"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-11-28T12:30:00",
@@ -2564,6 +2271,24 @@
           "datetime": "2026-12-02T16:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/774437e0-7a61-5f49-9dcb-1c5f5b016bcd"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-12-03T16:15:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/f2104c58-3851-507e-a35b-4c7e67c87ca5"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-12-03T19:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/8637638c-f031-5302-9522-cfef81ee022c"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-12-03T21:45:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/c85b3783-a660-5a7d-9706-e54953452a28"
         }
       ],
       "imdb_id": "tt29611136",
@@ -2586,12 +2311,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T19:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/c639e3b8-bb7d-5eca-b64a-0377383386df"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-11-28T13:00:00",
@@ -2621,6 +2340,18 @@
           "datetime": "2026-12-02T19:30:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/543e6456-42f1-513f-82af-2a846c35d709"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-12-03T16:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/b5028a36-2526-5a77-a3f7-06ff5e0ace55"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-12-03T21:15:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/c85a4f8f-6889-5568-a4a0-df4305ec92d8"
         }
       ],
       "imdb_id": "tt0377092",
@@ -2642,18 +2373,6 @@
         "Comedy"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T16:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/717d0e7a-657d-5f80-bc32-b68d3a7a534b"
-        },
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T21:15:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/9ef69563-49f6-5b54-8470-6b5cfe74a82a"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-11-28T19:00:00",
@@ -2683,6 +2402,12 @@
           "datetime": "2026-12-02T16:30:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/d6471bd8-a0c4-5387-bb50-8359ec206572"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-12-03T13:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/80d9c09d-4dd3-5963-a7d9-1d977fd13b95"
         }
       ],
       "imdb_id": "tt0093748",
@@ -2706,12 +2431,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "academy",
-          "datetime": "2026-11-27T13:00:00",
-          "format": "DCP",
-          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/f77facc0-260b-5d9c-8028-f2155c0b4bf3"
-        },
         {
           "venue_id": "academy",
           "datetime": "2026-11-28T16:00:00",
@@ -2747,6 +2466,12 @@
           "datetime": "2026-12-02T13:00:00",
           "format": "DCP",
           "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/483abd8e-d4a6-5566-95c9-6bc5cda28a85"
+        },
+        {
+          "venue_id": "academy",
+          "datetime": "2026-12-03T19:00:00",
+          "format": "DCP",
+          "ticket_url": "https://booking.academytheaterpdx.com/launch/ticketing/5c639393-a897-572e-a958-ad16de60fea5"
         }
       ],
       "imdb_id": "tt0044079",
@@ -2769,18 +2494,6 @@
         "History"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T14:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4324194"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T18:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/fatherland?showingId=4324201"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-11-28T14:45:00",
@@ -2862,30 +2575,6 @@
         "History"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T13:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-play-rocky?showingId=4324187"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T15:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-play-rocky?showingId=4324193"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T18:30:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-play-rocky?showingId=4324203"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T21:10:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/i-play-rocky?showingId=4324208"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-11-28T13:00:00",
@@ -3022,36 +2711,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T11:50:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324186"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T14:20:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324191"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T16:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324197"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T19:15:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324202"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T21:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/paper-tiger?showingId=4324209"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-11-28T11:50:00",
@@ -3198,24 +2857,6 @@
         },
         {
           "venue_id": "hollywood",
-          "datetime": "2026-11-27T14:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-27-230pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-27T18:00",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-27-600pm/"
-        },
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-27T20:45",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-27-845pm/"
-        },
-        {
-          "venue_id": "hollywood",
           "datetime": "2026-11-28T15:00",
           "format": null,
           "ticket_url": "https://hollywoodtheatre.org/event/paper-tiger-2026-11-28-300pm/"
@@ -3278,24 +2919,6 @@
         "Thriller"
       ],
       "showtimes": [
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T12:45:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-only-living-pickpocket-in-new-york?showingId=4324190"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T16:40:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-only-living-pickpocket-in-new-york?showingId=4324196"
-        },
-        {
-          "venue_id": "living-room",
-          "datetime": "2026-11-27T21:00:00",
-          "format": null,
-          "ticket_url": "https://pdx.livingroomtheaters.com/purchase/the-only-living-pickpocket-in-new-york?showingId=4404510"
-        },
         {
           "venue_id": "living-room",
           "datetime": "2026-11-28T12:45:00",
@@ -3392,18 +3015,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-11-27T16:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-27T19:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-11-28T16:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
@@ -3449,18 +3060,6 @@
           "datetime": "2026-12-03T19:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/01a16b3a-c214-8ad8-9039-e0c0fbce7dc4"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-11-27T15:50",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19813?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
-        },
-        {
-          "venue_id": "st-johns",
-          "datetime": "2026-11-27T19:00",
-          "format": null,
-          "ticket_url": "https://ticketing.useast.veezi.com/purchase/19814?siteToken=wa27tvhkay8eqf8wswr30vk6xg"
         },
         {
           "venue_id": "st-johns",
@@ -3556,18 +3155,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-11-27T13:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
-          "datetime": "2026-11-27T15:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-11-28T11:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
@@ -3643,6 +3230,24 @@
           "datetime": "2026-12-03T15:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T11:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T13:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T15:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019e4239-a7c0-1590-2d4f-a3686e412dc4"
         }
       ],
       "imdb_id": "tt42702648",
@@ -3687,6 +3292,18 @@
           "datetime": "2026-12-03T12:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T12:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T16:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019987c5-cb0c-bec3-97a1-13641c5b3233"
         }
       ],
       "imdb_id": "tt22077760",
@@ -3710,12 +3327,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-11-27T12:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-11-28T12:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
@@ -3735,6 +3346,18 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-12-03T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T12:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T16:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/019783f8-5c3e-818c-8db2-9b1c0d1feaaa"
         }
@@ -3760,12 +3383,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-11-27T14:00:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-11-28T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
@@ -3785,6 +3402,12 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-12-03T14:00:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T14:00:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/0198619f-8f24-533c-aabc-fc55e1a1e16e"
         }
@@ -3812,12 +3435,6 @@
       "showtimes": [
         {
           "venue_id": "omsi",
-          "datetime": "2026-11-27T14:30:00",
-          "format": null,
-          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
-        },
-        {
-          "venue_id": "omsi",
           "datetime": "2026-11-28T14:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
@@ -3837,6 +3454,12 @@
         {
           "venue_id": "omsi",
           "datetime": "2026-12-03T14:30:00",
+          "format": null,
+          "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
+        },
+        {
+          "venue_id": "omsi",
+          "datetime": "2026-12-04T14:30:00",
           "format": null,
           "ticket_url": "https://tickets.omsi.edu/events/018fd064-dd58-14dc-ed5c-dd617dc15720"
         }
@@ -3908,24 +3531,6 @@
         "Drama"
       ],
       "showtimes": [
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-27T16:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31475?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-27T19:00",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31477?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
-        {
-          "venue_id": "cinema-21",
-          "datetime": "2026-11-27T21:50",
-          "format": null,
-          "ticket_url": "https://ticketing.uswest.veezi.com/purchase/31479?siteToken=02fhxgcv98zq7pswjm69s8n9tc"
-        },
         {
           "venue_id": "cinema-21",
           "datetime": "2026-11-28T13:15",
@@ -4049,35 +3654,6 @@
       "rt_score": null,
       "imdb_rating": 7.8,
       "metacritic_score": 65,
-      "match_confidence": "verified"
-    },
-    {
-      "id": 1246991,
-      "slug": "blood-rage-2025",
-      "title": "Blood Rage",
-      "year": 2025,
-      "director": "Yusron Fuadi",
-      "runtime_minutes": 91,
-      "overview": "A woman named Rara experiences a strange incident on the South coast. A murder far from humanity sets in motion a vicious chain of revenge.",
-      "poster_path": "/qASRgTw5Q03a3ehxRUpGi4kGj1h.jpg",
-      "genres": [
-        "Horror",
-        "Mystery",
-        "Thriller",
-        "Crime"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "hollywood",
-          "datetime": "2026-11-27T19:30",
-          "format": null,
-          "ticket_url": "https://hollywoodtheatre.org/event/blood-rage-2026-11-27-730pm/"
-        }
-      ],
-      "imdb_id": "tt29632632",
-      "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
       "match_confidence": "verified"
     },
     {
@@ -4256,33 +3832,6 @@
       ]
     },
     {
-      "id": 1033457,
-      "slug": "serendipity-2022",
-      "title": "Serendipity",
-      "year": 2022,
-      "director": "Yongbo Zhen",
-      "runtime_minutes": 92,
-      "overview": "Xiang Yan and Lin Heng Yu have known each other since childhood, but they parted ways and only reunited in college because of a farce.  One is a surgeon with a bright future, and the other is a talented painter from a wealthy family. With the beautiful vision admired by everyone, from when they were wearing their school uniforms to their wedding, the future slowly unfolds according to plan, but at the same time, unexpected obstacles come quietly.",
-      "poster_path": "/cG3pXsr0nj2XtFrkNIKjWUeDi4t.jpg",
-      "genres": [
-        "Romance",
-        "Drama"
-      ],
-      "showtimes": [
-        {
-          "venue_id": "moreland",
-          "datetime": "2026-11-27T21:30:00",
-          "format": null,
-          "ticket_url": "https://morelandtheater.com/tickets/"
-        }
-      ],
-      "imdb_id": "tt19047816",
-      "rt_score": null,
-      "imdb_rating": null,
-      "metacritic_score": null,
-      "match_confidence": "verified"
-    },
-    {
       "id": 9489,
       "slug": "youve-got-mail-1998",
       "title": "Youve Got Mail",
@@ -4310,31 +3859,31 @@
       "match_confidence": "verified"
     },
     {
-      "id": 11899,
-      "slug": "the-muppets-take-manhattan-1984",
-      "title": "The Muppets Take Manhattan",
-      "year": 1984,
-      "director": "Frank Oz",
-      "runtime_minutes": 94,
-      "overview": "When the Muppets graduate from Danhurst College, they take their song-filled senior revue to New York City, only to learn that it isn't easy to find a producer who's willing to back a show starring a frog and a pig. Of course, Kermit the Frog and Miss Piggy won't take no for an answer, launching a search for someone to take them to Broadway.",
-      "poster_path": "/nMPm9TNoW8zwNibTFJAePryXUgT.jpg",
+      "id": 13398,
+      "slug": "tokyo-godfathers-2003",
+      "title": "Tokyo Godfathers",
+      "year": 2003,
+      "director": "Satoshi Kon",
+      "runtime_minutes": 92,
+      "overview": "On Christmas Eve, three homeless people living on the streets of Tokyo discover a newborn baby among the trash and set out to find its parents.",
+      "poster_path": "/sPC66btzQlzuRdPKiSDYZ5Hvxgc.jpg",
       "genres": [
-        "Romance",
-        "Comedy",
-        "Family"
+        "Animation",
+        "Drama",
+        "Comedy"
       ],
       "showtimes": [
         {
-          "venue_id": "tomorrow",
-          "datetime": "2026-11-27T19:00",
+          "venue_id": "moreland",
+          "datetime": "2026-12-04T21:30:00",
           "format": null,
-          "ticket_url": "https://tomorrowtheater.org/showtimes/the-muppets-take-manhattan-11-27-26-700-pm/"
+          "ticket_url": "https://morelandtheater.com/tickets/"
         }
       ],
-      "imdb_id": "tt0087755",
+      "imdb_id": "tt0388473",
       "rt_score": null,
-      "imdb_rating": 6.9,
-      "metacritic_score": 64,
+      "imdb_rating": 7.8,
+      "metacritic_score": 75,
       "match_confidence": "verified"
     },
     {
@@ -4450,6 +3999,33 @@
       "match_confidence": "verified"
     },
     {
+      "id": 1833,
+      "slug": "rent-2005",
+      "title": "RENT",
+      "year": 2005,
+      "director": "Chris Columbus",
+      "runtime_minutes": 135,
+      "overview": "In New York City's gritty East Village, a group of bohemians strive for success and acceptance while enduring the obstacles of poverty, illness and the AIDS epidemic.",
+      "poster_path": "/fomBrfOHWxlaVcjPk4yCQgIwAnh.jpg",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "showtimes": [
+        {
+          "venue_id": "tomorrow",
+          "datetime": "2026-12-04T19:00",
+          "format": null,
+          "ticket_url": "https://tomorrowtheater.org/showtimes/rent-movie-bingo-12-4-26-700-pm/"
+        }
+      ],
+      "imdb_id": "tt0294870",
+      "rt_score": null,
+      "imdb_rating": 6.9,
+      "metacritic_score": 53,
+      "match_confidence": "verified"
+    },
+    {
       "id": 1538497,
       "slug": "disney-s-hexed-2026",
       "title": "Disney's Hexed",
@@ -4464,30 +4040,6 @@
         "Family"
       ],
       "showtimes": [
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-11-27T13:45:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-11-27T16:15:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-11-27T18:45:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
-        {
-          "venue_id": "avalon",
-          "datetime": "2026-11-27T21:05:00",
-          "format": "DCP",
-          "ticket_url": null
-        },
         {
           "venue_id": "avalon",
           "datetime": "2026-11-28T11:15:00",
@@ -4587,6 +4139,24 @@
         {
           "venue_id": "avalon",
           "datetime": "2026-12-02T18:45:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-12-03T13:45:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-12-03T16:15:00",
+          "format": "DCP",
+          "ticket_url": null
+        },
+        {
+          "venue_id": "avalon",
+          "datetime": "2026-12-03T18:45:00",
           "format": "DCP",
           "ticket_url": null
         }
